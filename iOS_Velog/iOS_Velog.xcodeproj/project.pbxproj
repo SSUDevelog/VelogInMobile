@@ -12,6 +12,12 @@
 		916AEBA128F1675F000B2DA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEBA028F1675F000B2DA0 /* ViewController.swift */; };
 		916AEBA628F16762000B2DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA528F16762000B2DA0 /* Assets.xcassets */; };
 		916AEBA928F16762000B2DA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA728F16762000B2DA0 /* LaunchScreen.storyboard */; };
+		917AA1BA28F2A814004EF8DB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1B928F2A814004EF8DB /* Then */; };
+		917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1BF28F2A93C004EF8DB /* UITextField+.swift */; };
+		917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C328F46053004EF8DB /* UIColor+.swift */; };
+		917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C528F465B3004EF8DB /* UIStackView+.swift */; };
+		917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1CB28F46BB4004EF8DB /* UIView+.swift */; };
+		917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1CE28F4738B004EF8DB /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,10 @@
 		916AEBA528F16762000B2DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916AEBA828F16762000B2DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916AEBAA28F16762000B2DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917AA1BF28F2A93C004EF8DB /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		917AA1CB28F46BB4004EF8DB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917AA1BA28F2A814004EF8DB /* Then in Frameworks */,
+				917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +68,32 @@
 			children = (
 				916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */,
 				916AEB9E28F1675F000B2DA0 /* SceneDelegate.swift */,
-				916AEBA028F1675F000B2DA0 /* ViewController.swift */,
+				917AA1BC28F2A8D8004EF8DB /* Extension */,
+				917AA1BB28F2A8B9004EF8DB /* SignUp */,
 				916AEBA528F16762000B2DA0 /* Assets.xcassets */,
 				916AEBA728F16762000B2DA0 /* LaunchScreen.storyboard */,
 				916AEBAA28F16762000B2DA0 /* Info.plist */,
 			);
 			path = iOS_Velog;
+			sourceTree = "<group>";
+		};
+		917AA1BB28F2A8B9004EF8DB /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				916AEBA028F1675F000B2DA0 /* ViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		917AA1BC28F2A8D8004EF8DB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				917AA1BF28F2A93C004EF8DB /* UITextField+.swift */,
+				917AA1C328F46053004EF8DB /* UIColor+.swift */,
+				917AA1C528F465B3004EF8DB /* UIStackView+.swift */,
+				917AA1CB28F46BB4004EF8DB /* UIView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +112,10 @@
 			dependencies = (
 			);
 			name = iOS_Velog;
+			packageProductDependencies = (
+				917AA1B928F2A814004EF8DB /* Then */,
+				917AA1CE28F4738B004EF8DB /* SnapKit */,
+			);
 			productName = iOS_Velog;
 			productReference = 916AEB9928F1675F000B2DA0 /* iOS_Velog.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +144,10 @@
 				Base,
 			);
 			mainGroup = 916AEB9028F1675F000B2DA0;
+			packageReferences = (
+				917AA1B828F2A814004EF8DB /* XCRemoteSwiftPackageReference "Then" */,
+				917AA1CD28F4738B004EF8DB /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 916AEB9A28F1675F000B2DA0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,8 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				916AEBA128F1675F000B2DA0 /* ViewController.swift in Sources */,
+				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
 				916AEB9F28F1675F000B2DA0 /* SceneDelegate.swift in Sources */,
+				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
+				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
+				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +390,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		917AA1B828F2A814004EF8DB /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		917AA1CD28F4738B004EF8DB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		917AA1B928F2A814004EF8DB /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 917AA1B828F2A814004EF8DB /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		917AA1CE28F4738B004EF8DB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 917AA1CD28F4738B004EF8DB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 916AEB9128F1675F000B2DA0 /* Project object */;
 }
