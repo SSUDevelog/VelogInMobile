@@ -4,7 +4,7 @@
 //
 //  Created by 홍준혁 on 2022/10/08.
 //
-
+//
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,11 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        window?.windowScene = windowScene
+        // 루트 뷰 컨트롤러가 될 뷰컨트롤러 생성 & 위에서 생성한 뷰 컨트롤러 네비게이션 컨트롤러 생성
+        let navigationController = UINavigationController(rootViewController: SignInViewController())
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-
-
-
 }
-
+ 
