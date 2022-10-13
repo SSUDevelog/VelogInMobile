@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
     // make components
     private let titleLabel = UILabel().then {
@@ -58,6 +58,7 @@ class ViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.setTitle("Next", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
+        $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
     
     // funcs
@@ -94,6 +95,11 @@ class ViewController: UIViewController {
         
     }
 
+    @objc func pushView(){
+        print("pushView")
+        let nextVC = SearchKeywordViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
     
 
 }
