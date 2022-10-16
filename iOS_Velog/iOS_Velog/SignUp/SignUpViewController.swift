@@ -15,12 +15,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     // make components
     
     let maxLength:Int = 5
-    private let warningLabel = UILabel().then {
-        $0.font = UIFont(name: "Avenir-Black", size: 12)
-        $0.text = "2글자 이상 8글자 이하로 입력해주세요"
-        $0.textColor = UIColor.customColor(.defaultBlackColor)
-    }
-    
+
     private let titleLabel = UILabel().then {
         $0.text = "Sign Up"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
@@ -53,12 +48,34 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     let passwordTextField = UITextField.attributedTextField(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
     let checkPasswordTextField = UITextField.attributedTextField(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
     
-    let stackView = UIStackView().then{
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.axis = .vertical
-        $0.alignment = .fill
-        $0.spacing = 15
-        $0.distribution = .equalSpacing
+    private let warningLabelForName = UILabel().then {
+        $0.font = UIFont(name: "Avenir-Black", size: 12)
+        $0.text = "2글자 이상 8글자 이하로 입력해주세요."
+        $0.textColor = UIColor.customColor(.defaultBlackColor)
+    }
+    
+    private let warningLabelForEmail = UILabel().then {
+        $0.font = UIFont(name: "Avenir-Black", size: 12)
+        $0.text = "이메일 형식에 맞춰주세요."
+        $0.textColor = UIColor.customColor(.defaultBlackColor)
+    }
+    
+    private let warningLabelForID = UILabel().then {
+        $0.font = UIFont(name: "Avenir-Black", size: 12)
+        $0.text = "2글자 이상 8글자 이하로 입력해주세요."
+        $0.textColor = UIColor.customColor(.defaultBlackColor)
+    }
+    
+    private let warningLabelForPassword = UILabel().then {
+        $0.font = UIFont(name: "Avenir-Black", size: 12)
+        $0.text = "글자와 숫자를 섞어서 2글자 이상 8글자 이하로 입력해주세요."
+        $0.textColor = UIColor.customColor(.defaultBlackColor)
+    }
+    
+    private let warningLabelForCheckPassword = UILabel().then {
+        $0.font = UIFont(name: "Avenir-Black", size: 12)
+        $0.text = "비밀번호를 다시 입력해주세요."
+        $0.textColor = UIColor.customColor(.defaultBlackColor)
     }
     
     let nextButton = UIButton().then{
@@ -69,6 +86,15 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
     
+    
+    let stackView = UIStackView().then{
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.spacing = 15
+        $0.distribution = .equalSpacing
+    }
+    
     let stackViewForWarning = UIStackView().then{
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
@@ -76,6 +102,41 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         $0.spacing = 3
         $0.distribution = .equalSpacing
     }
+    
+    let stackViewForEmail = UIStackView().then{
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.spacing = 3
+        $0.distribution = .equalSpacing
+    }
+    
+    let stackViewForID = UIStackView().then{
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.spacing = 3
+        $0.distribution = .equalSpacing
+    }
+    
+    let stackViewForPassword = UIStackView().then{
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.spacing = 3
+        $0.distribution = .equalSpacing
+    }
+    
+    let stackViewForCheckPassword = UIStackView().then{
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.spacing = 3
+        $0.distribution = .equalSpacing
+    }
+    
+    
+    
     
     // funcs
     override func viewDidLoad() {
@@ -93,24 +154,31 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         view.addSubview(nextButton)
-        self.stackViewForWarning.addArrangedSubviews([nameTextField,warningLabel])
         
-        self.stackView.addArrangedSubviews([labelForNameTextField, stackViewForWarning, labelForEmailTextField,emailTextField,labelForIdTextField,idTextField,labelForPasswordTextField,passwordTextField,labelForCheckpasswordTextField,checkPasswordTextField])
+        self.stackViewForWarning.addArrangedSubviews([nameTextField,warningLabelForName])
+        self.stackViewForEmail.addArrangedSubviews([labelForEmailTextField,emailTextField,warningLabelForEmail])
+        self.stackViewForID.addArrangedSubviews([labelForIdTextField,idTextField,warningLabelForID])
+        self.stackViewForPassword.addArrangedSubviews([labelForPasswordTextField,passwordTextField,warningLabelForPassword])
+        self.stackViewForCheckPassword.addArrangedSubviews([labelForCheckpasswordTextField,checkPasswordTextField,warningLabelForCheckPassword])
+
+        
+        
+        self.stackView.addArrangedSubviews([labelForNameTextField, stackViewForWarning,stackViewForEmail,stackViewForID,stackViewForPassword,stackViewForCheckPassword])
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(70)
+            $0.top.equalToSuperview().offset(110)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-100)
         }
         
         stackView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
         
         nextButton.snp.makeConstraints{
-            $0.top.equalTo(stackView.snp.bottom).offset(50)
+            $0.top.equalTo(stackView.snp.bottom).offset(20)
             $0.trailing.equalToSuperview().offset(-30)
             $0.leading.equalToSuperview().offset(250)
         }
@@ -151,12 +219,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                     }
                     
                     else if text.count < 2 {
-                        warningLabel.text = "2글자 이상 8글자 이하로 입력해주세요"
-                        warningLabel.textColor = .red
+                        warningLabelForName.text = "2글자 이상 8글자 이하로 입력해주세요"
+                        warningLabelForName.textColor = .red
                     }
                     else {
-                        warningLabel.text = "사용 가능한 닉네임입니다."
-                        warningLabel.textColor = .red
+                        warningLabelForName.text = "사용 가능한 닉네임입니다."
+                        warningLabelForName.textColor = .black
                     }
                 }
             }
