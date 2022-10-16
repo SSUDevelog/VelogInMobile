@@ -39,7 +39,7 @@ class SignInViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
         $0.alignment = .fill
-        $0.spacing = 10
+        $0.spacing = 20
         $0.distribution = .equalSpacing
     }
 
@@ -66,7 +66,7 @@ class SignInViewController: UIViewController {
         }
         
         stackView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
