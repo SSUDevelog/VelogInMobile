@@ -17,10 +17,11 @@
 		917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C528F465B3004EF8DB /* UIStackView+.swift */; };
 		917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1CB28F46BB4004EF8DB /* UIView+.swift */; };
 		917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1CE28F4738B004EF8DB /* SnapKit */; };
+		918F79F328FEB80E0080B500 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F79F228FEB80E0080B500 /* ContentView.swift */; };
+		918F79F528FEB8330080B500 /* MyWebview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F79F428FEB8330080B500 /* MyWebview.swift */; };
 		91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */; };
 		91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD128F80142005159AD /* SearchKeywordViewController.swift */; };
 		91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */; };
-		91B73FD628F83D87005159AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD528F83D86005159AD /* HomeViewController.swift */; };
 		91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD728F83DA1005159AD /* SubScribeViewController.swift */; };
 		91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD928F83DB1005159AD /* ProfileViewController.swift */; };
 		91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FDE28F84405005159AD /* SignInViewController.swift */; };
@@ -37,10 +38,11 @@
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		917AA1CB28F46BB4004EF8DB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		918F79F228FEB80E0080B500 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		918F79F428FEB8330080B500 /* MyWebview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebview.swift; sourceTree = "<group>"; };
 		91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91B73FD128F80142005159AD /* SearchKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordViewController.swift; sourceTree = "<group>"; };
 		91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		91B73FD528F83D86005159AD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		91B73FD728F83DA1005159AD /* SubScribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeViewController.swift; sourceTree = "<group>"; };
 		91B73FD928F83DB1005159AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		91B73FDE28F84405005159AD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		918F79F628FECA010080B500 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				918F79F428FEB8330080B500 /* MyWebview.swift */,
+				918F79F228FEB80E0080B500 /* ContentView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		91B73FD028F8012A005159AD /* SearchKeyword */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +144,7 @@
 			children = (
 				91B73FD928F83DB1005159AD /* ProfileViewController.swift */,
 				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
-				91B73FD528F83D86005159AD /* HomeViewController.swift */,
+				918F79F628FECA010080B500 /* HomeView */,
 			);
 			path = TabBarComponent;
 			sourceTree = "<group>";
@@ -226,11 +237,12 @@
 			files = (
 				91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */,
 				91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */,
+				918F79F328FEB80E0080B500 /* ContentView.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
+				918F79F528FEB8330080B500 /* MyWebview.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
-				91B73FD628F83D87005159AD /* HomeViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
