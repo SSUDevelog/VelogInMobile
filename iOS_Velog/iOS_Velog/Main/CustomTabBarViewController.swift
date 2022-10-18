@@ -7,12 +7,15 @@
 import Foundation
 import UIKit
 import SnapKit
+import SwiftUI
 
 
 class CustomTabBarController: UITabBarController{
     
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
-    let homeVC = HomeViewController()
+    
+//    let homeVC = HomeViewController()
+    let homeVC = UIHostingController(rootView: ContentView())
     let subScribeVC = SubScribeViewController()
     let profileVC = ProfileViewController()
     
