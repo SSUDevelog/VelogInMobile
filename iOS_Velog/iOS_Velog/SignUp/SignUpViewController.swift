@@ -148,6 +148,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nameTextField)
         
         // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true  // for hideBackBtn in NavigationController
         setUI()
     }
     func setUI(){

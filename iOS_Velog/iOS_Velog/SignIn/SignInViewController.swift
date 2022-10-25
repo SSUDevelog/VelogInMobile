@@ -12,17 +12,26 @@ import Then
 class SignInViewController: UIViewController {
 
     private let titleLabel = UILabel().then {
-        $0.text = "Sign In"
+        $0.text = "Login"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
     }
     
-    let EmailTextField = UITextField.attributedTextField(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
-    let passwordTextField = UITextField.attributedTextField(frame: CGRect(x: 0, y: 0, width: 300, height: 40))
+    let EmailTextField = UITextField().then{
+        $0.placeholder = ("Email")
+        $0.layer.cornerRadius = 10
+        $0.borderStyle = .roundedRect
+    }
+    let PasswordTextField = UITextField().then{
+        $0.placeholder = ("Password")
+        $0.layer.cornerRadius = 10
+        $0.borderStyle = .roundedRect
+        
+    }
     
     let SignInButton = UIButton().then{
         $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
         $0.layer.cornerRadius = 10
-        $0.setTitle("Enter", for: .normal)
+        $0.setTitle("Login", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
         $0.addTarget(self, action: #selector(pushViewForSignIn), for: .touchUpInside)
     }
@@ -30,12 +39,20 @@ class SignInViewController: UIViewController {
     let SignUpButton = UIButton().then{
         $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
         $0.layer.cornerRadius = 10
-        $0.setTitle("SignUp", for: .normal)
+        $0.setTitle("For Sign Up", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
         $0.addTarget(self, action: #selector(pushViewForSignUp), for: .touchUpInside)
     }
     
     let stackView = UIStackView().then{
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.spacing = 20
+        $0.distribution = .equalSpacing
+    }
+    
+    let stackView2 = UIStackView().then{
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
         $0.alignment = .fill
@@ -55,18 +72,25 @@ class SignInViewController: UIViewController {
     func setUIForSignIn(){
         view.addSubview(titleLabel)
         view.addSubview(stackView)
-        self.stackView.addArrangedSubviews([EmailTextField,passwordTextField,SignInButton,SignUpButton])
-        EmailTextField.placeholder = "Give your email"
-        passwordTextField.placeholder = "Give your password"
-        
+        view.addSubview(stackView2)
+        self.stackView.addArrangedSubviews([EmailTextField,PasswordTextField])
+        self.stackView2.addArrangedSubviews([SignInButton,SignUpButton])
+
+
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(200)
-            $0.leading.equalToSuperview().offset(90)
-            $0.trailing.equalToSuperview().offset(-90)
+            $0.leading.equalToSuperview().offset(130)
+            $0.trailing.equalToSuperview().offset(-100)
         }
         
         stackView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.equalToSuperview().offset(-30)
+        }
+        
+        stackView2.snp.makeConstraints{
+            $0.top.equalTo(stackView.snp.bottom).offset(100)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
