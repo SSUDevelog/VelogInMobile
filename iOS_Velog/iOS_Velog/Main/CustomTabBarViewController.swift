@@ -15,12 +15,14 @@ class CustomTabBarController: UITabBarController{
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     
 //    let homeVC = HomeViewController()
-    let homeVC = UIHostingController(rootView: ContentView())
+//    let homeVC = UIHostingController(rootView: ContentView())
+    let homeVC = MyWebViewContoller()
     let subScribeVC = SubScribeViewController()
     let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
         setUpTabBar()
     }
     
@@ -28,8 +30,9 @@ class CustomTabBarController: UITabBarController{
 
     func setUpTabBar(){
         self.tabBar.tintColor = UIColor.customColor(.pointColor)
-        self.tabBar.unselectedItemTintColor = .white
-        self.tabBar.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        self.tabBar.unselectedItemTintColor = .black
+//        self.tabBar.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        self.tabBar.backgroundColor = .systemBackground
 
         homeVC.title = "Home"
         subScribeVC.title = "Subscribe"

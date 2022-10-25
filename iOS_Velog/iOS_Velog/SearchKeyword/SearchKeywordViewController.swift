@@ -23,13 +23,12 @@ class SearchKeywordViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        self.navigationItem.hidesBackButton = true
         setUI()
     }
     
     func setUI(){
         view.addSubview(nextButton)
-        
-        
         
         nextButton.snp.makeConstraints{
             $0.top.equalToSuperview().offset(200)
