@@ -14,8 +14,6 @@ class CustomTabBarController: UITabBarController{
     
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     
-//    let homeVC = HomeViewController()
-//    let homeVC = UIHostingController(rootView: ContentView())
     let homeVC = MyWebViewContoller()
     let subScribeVC = SubScribeViewController()
     let profileVC = ProfileViewController()
@@ -31,7 +29,6 @@ class CustomTabBarController: UITabBarController{
     func setUpTabBar(){
         self.tabBar.tintColor = UIColor.customColor(.pointColor)
         self.tabBar.unselectedItemTintColor = .black
-//        self.tabBar.backgroundColor = UIColor.customColor(.defaultBlackColor)
         self.tabBar.backgroundColor = .systemBackground
 
         homeVC.title = "Home"
@@ -51,4 +48,5 @@ class CustomTabBarController: UITabBarController{
         viewWillLayoutSubviews()
     }
 }
+
 
