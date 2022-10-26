@@ -181,7 +181,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         nextButton.snp.makeConstraints{
             $0.top.equalTo(stackView.snp.bottom).offset(20)
             $0.trailing.equalToSuperview().offset(-30)
-            $0.leading.equalToSuperview().offset(250)
+            $0.leading.equalToSuperview().offset(30)
         }
         
     }
