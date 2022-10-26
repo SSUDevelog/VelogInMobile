@@ -32,7 +32,7 @@ class SignInViewController: UIViewController {
         $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
         $0.layer.cornerRadius = 10
         $0.setTitle("Login", for: .normal)
-        $0.setTitleColor(.systemBackground, for: .normal)
+        // $0.setTitleColor(.systemBackground, for: .normal)
         $0.addTarget(self, action: #selector(pushViewForSignIn), for: .touchUpInside)
     }
     
