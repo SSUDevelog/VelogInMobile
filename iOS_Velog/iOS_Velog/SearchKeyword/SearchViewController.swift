@@ -4,14 +4,12 @@
 //
 //  Created by 홍준혁 on 2022/10/26.
 //
-
 import UIKit
 import Then
 import SnapKit
 
 class SearchViewController: UIViewController {
 
-    
     let searchController = UISearchController()
     
     let nextButton = UIButton().then{

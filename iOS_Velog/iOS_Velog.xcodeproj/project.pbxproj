@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
+		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
+		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
 		916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */; };
 		916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */; };
 		916AEBA628F16762000B2DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA528F16762000B2DA0 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
+		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
 		916AEB9928F1675F000B2DA0 /* iOS_Velog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Velog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9123228729090FF900C204A8 /* SubScribe */ = {
+			isa = PBXGroup;
+			children = (
+				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
+				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
+				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
+			);
+			path = SubScribe;
+			sourceTree = "<group>";
+		};
+		9123228A290916AC00C204A8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				91B73FD928F83DB1005159AD /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9123228B290916BA00C204A8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				918F79F428FEB8330080B500 /* MyWebviewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		916AEB9028F1675F000B2DA0 = {
 			isa = PBXGroup;
 			children = (
@@ -134,9 +164,9 @@
 		91B73FDC28F83EEE005159AD /* TabBarComponent */ = {
 			isa = PBXGroup;
 			children = (
-				918F79F428FEB8330080B500 /* MyWebviewController.swift */,
-				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
-				91B73FD928F83DB1005159AD /* ProfileViewController.swift */,
+				9123228B290916BA00C204A8 /* Home */,
+				9123228A290916AC00C204A8 /* Profile */,
+				9123228729090FF900C204A8 /* SubScribe */,
 			);
 			path = TabBarComponent;
 			sourceTree = "<group>";
@@ -237,8 +267,10 @@
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				912322862909010900C204A8 /* SearchViewController.swift in Sources */,
 				91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */,
+				912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
+				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
 			);
