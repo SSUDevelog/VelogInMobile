@@ -91,7 +91,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
         $0.alignment = .fill
-        $0.spacing = 15
+        $0.spacing = 10
         $0.distribution = .equalSpacing
     }
     
@@ -157,10 +157,10 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         view.addSubview(nextButton)
         
         self.stackViewForWarning.addArrangedSubviews([nameTextField,warningLabelForName])
-        self.stackViewForEmail.addArrangedSubviews([labelForEmailTextField,emailTextField,warningLabelForEmail])
+        self.stackViewForEmail.addArrangedSubviews([labelForEmailTextField,emailTextField])
         self.stackViewForID.addArrangedSubviews([labelForIdTextField,idTextField,warningLabelForID])
         self.stackViewForPassword.addArrangedSubviews([labelForPasswordTextField,passwordTextField,warningLabelForPassword])
-        self.stackViewForCheckPassword.addArrangedSubviews([labelForCheckpasswordTextField,checkPasswordTextField,warningLabelForCheckPassword])
+        self.stackViewForCheckPassword.addArrangedSubviews([labelForCheckpasswordTextField,checkPasswordTextField])
 
         
         
@@ -179,7 +179,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         }
         
         nextButton.snp.makeConstraints{
-            $0.top.equalTo(stackView.snp.bottom).offset(20)
+            $0.top.equalTo(stackView.snp.bottom).offset(60)
             $0.trailing.equalToSuperview().offset(-30)
             $0.leading.equalToSuperview().offset(30)
         }
