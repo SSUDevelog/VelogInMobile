@@ -131,9 +131,9 @@
 		91B73FDC28F83EEE005159AD /* TabBarComponent */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FD928F83DB1005159AD /* ProfileViewController.swift */,
-				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
 				918F79F428FEB8330080B500 /* MyWebviewController.swift */,
+				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
+				91B73FD928F83DB1005159AD /* ProfileViewController.swift */,
 			);
 			path = TabBarComponent;
 			sourceTree = "<group>";
