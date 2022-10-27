@@ -11,10 +11,16 @@ import Then
 
 class SubScribeViewController: UIViewController {
 
+    let titleLabel = UILabel().then {
+        $0.text = "Subscribe"
+        $0.font = UIFont(name: "Avenir-Black", size: 50)
+    }
+    
     let addSubscribeBtn = UIButton().then{
         $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
         $0.layer.cornerRadius = 10
-        $0.setTitle("Subscribe List", for: .normal)
+        $0.setTitle("My Subscribe List", for: .normal)
+        
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
     
@@ -27,12 +33,19 @@ class SubScribeViewController: UIViewController {
     }
     
     func setUI(){
+        view.addSubview(titleLabel)
         view.addSubview(addSubscribeBtn)
         
-        addSubscribeBtn.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(600)
+        titleLabel.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(100)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
+        }
+        
+        addSubscribeBtn.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
         }
     }
     
