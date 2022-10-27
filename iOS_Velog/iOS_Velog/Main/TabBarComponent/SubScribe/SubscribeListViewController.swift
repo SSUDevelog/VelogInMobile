@@ -26,6 +26,7 @@ class SubscribeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
         // Do any additional setup after loading the view.
         setUI()
     }
@@ -41,13 +42,14 @@ class SubscribeListViewController: UIViewController {
         }
         
         addButton.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(200)
+//            $0.top.equalToSuperview().offset(200)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
         }
         
     }
-
+ 
     @objc func addSubscribe(){
         print("pushView")
         let nextVC = SearchSubscribeViewController()
