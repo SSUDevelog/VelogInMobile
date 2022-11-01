@@ -10,6 +10,9 @@
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
+		9168AD59290FBB6900BA42E2 /* SubscribeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168AD58290FBB6900BA42E2 /* SubscribeList.swift */; };
+		9168AD5C290FBC2200BA42E2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9168AD5B290FBC2200BA42E2 /* Realm */; };
+		9168AD5E290FBC2200BA42E2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9168AD5D290FBC2200BA42E2 /* RealmSwift */; };
 		916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */; };
 		916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */; };
 		916AEBA628F16762000B2DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA528F16762000B2DA0 /* Assets.xcassets */; };
@@ -33,6 +36,7 @@
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
+		9168AD58290FBB6900BA42E2 /* SubscribeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeList.swift; sourceTree = "<group>"; };
 		916AEB9928F1675F000B2DA0 /* iOS_Velog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Velog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9168AD5E290FBC2200BA42E2 /* RealmSwift in Frameworks */,
+				9168AD5C290FBC2200BA42E2 /* Realm in Frameworks */,
 				917AA1BA28F2A814004EF8DB /* Then in Frameworks */,
 				917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */,
 			);
@@ -91,6 +97,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		9168AD57290FBB2C00BA42E2 /* LocalDB */ = {
+			isa = PBXGroup;
+			children = (
+				9168AD58290FBB6900BA42E2 /* SubscribeList.swift */,
+			);
+			path = LocalDB;
+			sourceTree = "<group>";
+		};
 		916AEB9028F1675F000B2DA0 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +124,7 @@
 		916AEB9B28F1675F000B2DA0 /* iOS_Velog */ = {
 			isa = PBXGroup;
 			children = (
+				9168AD57290FBB2C00BA42E2 /* LocalDB */,
 				91B73FDD28F843BB005159AD /* SignIn */,
 				91B73FDB28F83EDB005159AD /* Main */,
 				91B73FD028F8012A005159AD /* SearchKeyword */,
@@ -198,6 +213,8 @@
 			packageProductDependencies = (
 				917AA1B928F2A814004EF8DB /* Then */,
 				917AA1CE28F4738B004EF8DB /* SnapKit */,
+				9168AD5B290FBC2200BA42E2 /* Realm */,
+				9168AD5D290FBC2200BA42E2 /* RealmSwift */,
 			);
 			productName = iOS_Velog;
 			productReference = 916AEB9928F1675F000B2DA0 /* iOS_Velog.app */;
@@ -230,6 +247,7 @@
 			packageReferences = (
 				917AA1B828F2A814004EF8DB /* XCRemoteSwiftPackageReference "Then" */,
 				917AA1CD28F4738B004EF8DB /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 916AEB9A28F1675F000B2DA0 /* Products */;
 			projectDirPath = "";
@@ -273,6 +291,7 @@
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
+				9168AD59290FBB6900BA42E2 /* SubscribeList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +503,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		917AA1B828F2A814004EF8DB /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
@@ -503,6 +530,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9168AD5B290FBC2200BA42E2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		9168AD5D290FBC2200BA42E2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		917AA1B928F2A814004EF8DB /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 917AA1B828F2A814004EF8DB /* XCRemoteSwiftPackageReference "Then" */;
