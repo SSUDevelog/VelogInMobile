@@ -72,27 +72,28 @@ class ProfileViewController: UIViewController {
 
     }
     
-//    let littleTitle2Label = UILabel().then{
-//        $0.text = "Setting"
-//        $0.font = UIFont(name: "Avenir-Black", size: 15)
-//    }
+    let littleTitle2Label = UILabel().then{
+        $0.text = "Setting"
+        $0.font = UIFont(name: "Avenir-Black", size: 15)
+    }
     
-//    let SubscriptionNotificationBtn = UIButton().then {
-//        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
-//        $0.setTitle("구독 알림", for: .normal)
-//        $0.layer.masksToBounds = true
-//        $0.layer.cornerRadius = 10
-//        $0.layer.borderWidth = 2
-//        $0.setTitleColor(.white, for: .normal)
-//
-//    }
+    let SubscriptionNotificationBtn = UIButton().then {
+        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.setTitle("구독 알림", for: .normal)
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 2
+        $0.setTitleColor(.white, for: .normal)
+
+    }
     
-//    let switchforSubscription = UISwitch().then{
-//
-//        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
-//        $0.onTintColor = UIColor.customColor(.defaultBlackColor)
-//
-//    }
+    let switchforSubscription = UISwitch().then{
+
+        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.onTintColor = UIColor.customColor(.defaultBlackColor)
+//        $0.onTintColor = UIColor.customColor(.defaultBackgroundColor)
+
+    }
     
     
     override func viewDidLoad() {
@@ -107,11 +108,11 @@ class ProfileViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(littleTitleLabel)
         view.addSubview(stackView)
-//        view.addSubview(littleTitle2Label)
-//        view.addSubview(SubscriptionNotificationBtn)
-//        SubscriptionNotificationBtn.addSubview(switchforSubscription)
+        view.addSubview(littleTitle2Label)
+        view.addSubview(SubscriptionNotificationBtn)
+        SubscriptionNotificationBtn.addSubview(switchforSubscription)
         
-        self.stackView.addArrangedSubviews([logOutBtn,withdrawalBtn,changeEmailBtn,changePasswordOutBtn])
+        self.stackView.addArrangedSubviews([logOutBtn,withdrawalBtn])
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
@@ -130,24 +131,23 @@ class ProfileViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
         }
         
-//        littleTitle2Label.snp.makeConstraints{
-//            $0.top.equalTo(stackView.snp.bottom).offset(30)
-//            $0.leading.equalToSuperview().offset(30)
-//        }
-//
-//        SubscriptionNotificationBtn.snp.makeConstraints{
-//            $0.top.equalTo(littleTitle2Label.snp.bottom).offset(20)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.equalToSuperview().offset(-30)
-//            $0.bottom.equalToSuperview().offset(-250)
-//        }
-//
-//        switchforSubscription.snp.makeConstraints{
-//            $0.top.equalToSuperview().offset(10)
-//            $0.bottom.equalToSuperview().offset(-10)
-//            $0.trailing.equalToSuperview().offset(-10)
-//
-//        }
+        littleTitle2Label.snp.makeConstraints{
+            $0.top.equalTo(stackView.snp.bottom).offset(30)
+            $0.leading.equalToSuperview().offset(30)
+        }
+
+        SubscriptionNotificationBtn.snp.makeConstraints{
+            $0.top.equalTo(littleTitle2Label.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(30)
+            $0.trailing.equalToSuperview().offset(-30)
+        }
+
+        switchforSubscription.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.trailing.equalToSuperview().offset(-10)
+
+        }
     }
     
 }

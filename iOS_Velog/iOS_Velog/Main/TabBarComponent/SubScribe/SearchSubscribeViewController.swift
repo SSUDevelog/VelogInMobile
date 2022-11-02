@@ -12,13 +12,24 @@ import Then
 class SearchSubscribeViewController: UIViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
+    
+//    let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
+//
+////    let okAction = UIAlertAction(title: "OK", style: .default) { action in
+////        // add button event
+////    }
+//    let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
+//    let okAction = UIAlertAction(title: "OK", style: .default,handler: nil)
 
+
+
+    
     private let tableView: UITableView = {
         let tableview = UITableView()
         return tableview
     }()
     
-    var dummyData = ["홍대 핵인싸 인영~~", "Alan Walker", "David Guetta", "Avicii", "Marshmello", "Steve Aoki", "R3HAB", "Armin van Buuren", "Skrillex", "Illenium", "The Chainsmokers", "Don Diablo", "Afrojack", "Tiesto", "KSHMR", "DJ Snake", "Kygo", "Galantis", "Major Lazer", "Vicetone","hong","Kang","King","Kun","Han","amerd"]
+    var dummyData = ["Aaliyah","Aaron","Olivia","Hazel","Lily","Zoe","Grace","Ava","Isabella","Harry","Liam","Lucas","Declan","Elliot","Owen","Theodore","Jasper","Oskar","Tyler","Jade","Cameron","Kailani","Rochella","Floriana","Melody","Agata","Mia"]
     
     // fillerArr
     var filteredArr: [String] = []
@@ -27,11 +38,15 @@ class SearchSubscribeViewController: UIViewController {
         super.viewDidLoad()
         self.setupSearchController()
         self.setupTableView()
-        
+//        self.setAlert()
         // UI
         setUI()
     }
-
+//
+//    func setAlert(){
+//        alert.addAction(cancel)
+//        alert.addAction(okAction)
+//    }
     func setupSearchController(){
         // Do any additional setup after loading the view.
         navigationItem.title = "Subscribe Search"
@@ -46,6 +61,8 @@ class SearchSubscribeViewController: UIViewController {
         // text 입력할 때 마다 업데이트 될 부분
         searchController.searchResultsUpdater = self
         
+        // keyboard up -> not finish
+//        searchController.becomeFirstResponder()
     }
     
     func setupTableView(){
@@ -69,6 +86,21 @@ class SearchSubscribeViewController: UIViewController {
         let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
         return isActive && isSearchBarHasText
     }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
+    //    let okAction = UIAlertAction(title: "OK", style: .default) { action in
+    //        // add button event
+    //    }
+        let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil)
+        let okAction = UIAlertAction(title: "OK", style: .default,handler: nil)
+        alert.addAction(cancel)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
 }
 
 extension SearchSubscribeViewController:UITableViewDelegate, UITableViewDataSource{
@@ -88,6 +120,16 @@ extension SearchSubscribeViewController:UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
+    
+    // cell 클릭 시 생기는 alert
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        present(alert, animated: false, completion: nil)
+        showAlert()
+        print("cell touched")
+    }
+    
+
+
 }
 
 extension SearchSubscribeViewController: UISearchResultsUpdating{
