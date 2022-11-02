@@ -13,17 +13,6 @@ class SearchSubscribeViewController: UIViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
     
-//    let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
-//
-////    let okAction = UIAlertAction(title: "OK", style: .default) { action in
-////        // add button event
-////    }
-//    let cancel = UIAlertAction(title: "cancel", style: .cancel, handler : nil)
-//    let okAction = UIAlertAction(title: "OK", style: .default,handler: nil)
-
-
-
-    
     private let tableView: UITableView = {
         let tableview = UITableView()
         return tableview
@@ -38,15 +27,11 @@ class SearchSubscribeViewController: UIViewController {
         super.viewDidLoad()
         self.setupSearchController()
         self.setupTableView()
-//        self.setAlert()
+        
         // UI
         setUI()
     }
-//
-//    func setAlert(){
-//        alert.addAction(cancel)
-//        alert.addAction(okAction)
-//    }
+
     func setupSearchController(){
         // Do any additional setup after loading the view.
         navigationItem.title = "Subscribe Search"
