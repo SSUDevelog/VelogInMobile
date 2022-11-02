@@ -44,6 +44,7 @@ class SearchKeywordViewController:UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         self.navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.tintColor = .black 
 
         
         setUI()
