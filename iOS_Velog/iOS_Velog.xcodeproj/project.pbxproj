@@ -17,6 +17,8 @@
 		916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */; };
 		916AEBA628F16762000B2DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA528F16762000B2DA0 /* Assets.xcassets */; };
 		916AEBA928F16762000B2DA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA728F16762000B2DA0 /* LaunchScreen.storyboard */; };
+		9170F14029154A720056E182 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170F13F29154A710056E182 /* CustomCell.swift */; };
+		9170F14229154C5C0056E182 /* CustomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170F14129154C5C0056E182 /* CustomCellModel.swift */; };
 		917AA1BA28F2A814004EF8DB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1B928F2A814004EF8DB /* Then */; };
 		917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1BF28F2A93C004EF8DB /* UITextField+.swift */; };
 		917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C328F46053004EF8DB /* UIColor+.swift */; };
@@ -43,6 +45,8 @@
 		916AEBA528F16762000B2DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916AEBA828F16762000B2DA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916AEBAA28F16762000B2DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9170F13F29154A710056E182 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		9170F14129154C5C0056E182 /* CustomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellModel.swift; sourceTree = "<group>"; };
 		917AA1BF28F2A93C004EF8DB /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -74,8 +78,8 @@
 		9123228729090FF900C204A8 /* SubScribe */ = {
 			isa = PBXGroup;
 			children = (
+				9170F13E291549040056E182 /* SubscribeList */,
 				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
-				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
 				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
 			);
 			path = SubScribe;
@@ -137,6 +141,16 @@
 				916AEBAA28F16762000B2DA0 /* Info.plist */,
 			);
 			path = iOS_Velog;
+			sourceTree = "<group>";
+		};
+		9170F13E291549040056E182 /* SubscribeList */ = {
+			isa = PBXGroup;
+			children = (
+				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
+				9170F13F29154A710056E182 /* CustomCell.swift */,
+				9170F14129154C5C0056E182 /* CustomCellModel.swift */,
+			);
+			path = SubscribeList;
 			sourceTree = "<group>";
 		};
 		917AA1BB28F2A8B9004EF8DB /* SignUp */ = {
@@ -283,9 +297,11 @@
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
+				9170F14029154A720056E182 /* CustomCell.swift in Sources */,
 				912322862909010900C204A8 /* SearchViewController.swift in Sources */,
 				91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */,
 				912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */,
+				9170F14229154C5C0056E182 /* CustomCellModel.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
