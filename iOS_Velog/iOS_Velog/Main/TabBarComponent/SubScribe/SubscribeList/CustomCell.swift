@@ -22,7 +22,6 @@ class CustomCell:UITableViewCell{
     
     lazy var rightButton: UIButton = {
         let button = UIButton()
-//        button.backgroundColor = UIColor.customColor(.defaultBlackColor)
         button.backgroundColor = .systemBackground
         button.setTitle("delete", for: .normal)
         button.setTitleColor(UIColor.systemRed, for: .normal)
@@ -40,8 +39,8 @@ class CustomCell:UITableViewCell{
         return stackView
     }()
     
-
     
+    // 생성자
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // 어떻게 이 코드가.... 뭐지..
@@ -51,7 +50,10 @@ class CustomCell:UITableViewCell{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been impl")
     }
+    
 }
+
+
 
 extension CustomCell {
     public func bind(model: CustomCellModel) {
