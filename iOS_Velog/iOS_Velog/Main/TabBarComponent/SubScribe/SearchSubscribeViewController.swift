@@ -74,11 +74,12 @@ class SearchSubscribeViewController: UIViewController {
     
     func showAlert(){
         let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
-    //    let okAction = UIAlertAction(title: "OK", style: .default) { action in
-    //        // add button event
-    //    }
+
         let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil)
-        let okAction = UIAlertAction(title: "OK", style: .default,handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default){ action in
+            
+        }
+        
         alert.addAction(cancel)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
