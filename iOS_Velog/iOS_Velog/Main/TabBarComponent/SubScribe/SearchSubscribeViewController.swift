@@ -95,7 +95,7 @@ extension SearchSubscribeViewController:UITableViewDelegate, UITableViewDataSour
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         if self.isFiltering {
         cell.textLabel?.text = self.filteredArr[indexPath.row]
         } else {

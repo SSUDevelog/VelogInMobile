@@ -26,10 +26,11 @@ class SubscribeListViewController: UIViewController {
         $0.setTitle("add Subscribe", for: .normal)
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
+    
+    
 
     let tableViewForSubscribeList :UITableView = {
         let tableview = UITableView()
-        
         return tableview
     }()
     
@@ -41,6 +42,8 @@ class SubscribeListViewController: UIViewController {
         btn.backgroundColor = UIColor.customColor(.defaultBlackColor)
         return btn
     }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,9 +105,14 @@ class SubscribeListViewController: UIViewController {
         tableViewForSubscribeList.reloadData()
     }
     
-    
-    
-    
+    @objc func deleteBtnAction(_ sender: UIButton) {
+      let point = sender.convert(CGPoint.zero, to: tableViewForSubscribeList)
+      guard let indexPath = tableViewForSubscribeList.indexPathForRow(at: point) else { return }
+      data.remove(at: indexPath.row)
+      tableViewForSubscribeList.deleteRows(at: [indexPath], with: .automatic)
+    }
+
+
     
     
 
@@ -120,6 +128,9 @@ extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier) as? CustomCell ?? CustomCell()
         cell.bind(model: data[indexPath.row])
+        cell.rightButton.addTarget(self, action: #selector(deleteBtnAction), for: .touchUpInside)
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
