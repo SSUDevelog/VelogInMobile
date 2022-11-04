@@ -75,11 +75,8 @@ class SearchSubscribeViewController: UIViewController {
     func showAlert(){
         let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
 
-        let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil)
-        let okAction = UIAlertAction(title: "OK", style: .default){ action in
-            
-        }
-        
+        let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil) // 여기에 클로저 형태로 이후 이벤트 구현
+        let okAction = UIAlertAction(title: "OK", style: .default,handler: nil) // 여기에 클로저 형태로 이후 이벤트 구현
         alert.addAction(cancel)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
