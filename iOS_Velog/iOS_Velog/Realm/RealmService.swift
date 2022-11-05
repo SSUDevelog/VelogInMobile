@@ -26,6 +26,11 @@ class RealmService{
             localRealm.delete(localRealm.objects(Subscriber.self).filter("velogId == \(deleteId)"))
         }
     }
+    
+    func readDB(){
+        let subScriber = localRealm.objects(Subscriber.self)
+        print(subScriber)
+    }
 
         
     // 스키마 수정 시 해야한다
@@ -49,6 +54,6 @@ class RealmService{
     
     init() {
         print("Realm Location: ", localRealm.configuration.fileURL ?? "cannot find location.")
-        }
+    }
 
 }

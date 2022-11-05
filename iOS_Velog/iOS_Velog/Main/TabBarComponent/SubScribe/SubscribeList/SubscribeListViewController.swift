@@ -8,12 +8,19 @@
 import UIKit
 import SnapKit
 import Then
+import RealmSwift
+import Realm
 
 class SubscribeListViewController: UIViewController {
     
-    // for 더미 데이터
-    var data = [CustomCellModel]()
+    var realm = try! Realm()
     
+    
+    // for 더미 데이터
+//    var data = [CustomCellModel]()
+
+    // velog 사용자 아이디만 가져온 list
+    var subScribeList = [String]()
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe List"
@@ -35,14 +42,14 @@ class SubscribeListViewController: UIViewController {
     }()
     
     // 임시 버튼
-    let pracBtn:UIButton = {
-        let btn = UIButton()
-        btn.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside)
-        btn.setTitle("+", for: .normal)
-        btn.layer.cornerRadius = 10
-        btn.backgroundColor = UIColor.customColor(.defaultBlackColor)
-        return btn
-    }()
+//    let pracBtn:UIButton = {
+//        let btn = UIButton()
+//        btn.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside)
+//        btn.setTitle("+", for: .normal)
+//        btn.layer.cornerRadius = 10
+//        btn.backgroundColor = UIColor.customColor(.defaultBlackColor)
+//        return btn
+//    }()
     
     
     
@@ -50,6 +57,8 @@ class SubscribeListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
+        
+        resetSubScribeList()
         
         tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
@@ -59,11 +68,24 @@ class SubscribeListViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        resetSubScribeList()
+        
+    }
+
+    // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
+    func resetSubScribeList(){
+        for item in realm.objects(Subscriber.self){
+            self.subScribeList.append(item.velogId)
+        }
+        tableViewForSubscribeList.reloadData()
+    }
+    
     func setUI(){
         view.addSubview(titleLabel)
         view.addSubview(addButton)
         view.addSubview(tableViewForSubscribeList)
-        view.addSubview(pracBtn)
+//        view.addSubview(pracBtn)
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
@@ -77,17 +99,17 @@ class SubscribeListViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
         }
         
-        pracBtn.snp.makeConstraints{
-            $0.bottom.equalToSuperview().offset(-60)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
-        }
+//        pracBtn.snp.makeConstraints{
+//            $0.bottom.equalToSuperview().offset(-60)
+//            $0.leading.equalToSuperview().offset(30)
+//            $0.trailing.equalToSuperview().offset(-30)
+//        }
         
         tableViewForSubscribeList.snp.makeConstraints{
             $0.top.equalTo(addButton.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
-            $0.bottom.equalTo(pracBtn.snp.top).offset(-20)
+            $0.bottom.equalToSuperview().offset(-90)
         }
         
 
@@ -100,20 +122,21 @@ class SubscribeListViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    @objc func addBtnAction() {
-        print("addBtn")
-        data.append(.init(leftTitle: "cell\(data.count)"))
-        tableViewForSubscribeList.reloadData()
-    }
+//    @objc func addBtnAction() {
+//        print("addBtn")
+//        data.append(.init(leftTitle: "cell\(data.count)"))
+//        tableViewForSubscribeList.reloadData()
+//    }
     
+    // 일단 여긴 보류
     @objc func deleteBtnAction(_ sender: UIButton) {
       let point = sender.convert(CGPoint.zero, to: tableViewForSubscribeList)
       guard let indexPath = tableViewForSubscribeList.indexPathForRow(at: point) else { return }
-      data.remove(at: indexPath.row)
+      subScribeList.remove(at: indexPath.row)   // 일단 보류
       tableViewForSubscribeList.deleteRows(at: [indexPath], with: .automatic)
     }
 
-
+    
     
     
 
@@ -123,12 +146,13 @@ class SubscribeListViewController: UIViewController {
 
 extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+//        return data.count // 더미 데이터 코드
+        return (subScribeList.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier) as? CustomCell ?? CustomCell()
-        cell.bind(model: data[indexPath.row])
+        cell.bind(model: subScribeList[indexPath.row])
         cell.rightButton.addTarget(self, action: #selector(deleteBtnAction), for: .touchUpInside)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
