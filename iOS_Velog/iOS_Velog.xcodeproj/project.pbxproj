@@ -81,8 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
-				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
 				9170F13E291549040056E182 /* SubscribeList */,
+				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
 			);
 			path = SubScribe;
 			sourceTree = "<group>";
