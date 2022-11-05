@@ -56,7 +56,7 @@ class CustomCell:UITableViewCell{
 
 
 extension CustomCell {
-    public func bind(model: CustomCellModel) {
-        leftLabel.text = model.leftTitle
+    public func bind(model: String) {
+        leftLabel.text = model
     }
 }
