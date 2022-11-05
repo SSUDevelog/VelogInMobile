@@ -10,7 +10,6 @@
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
-		9168AD59290FBB6900BA42E2 /* SubscribeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9168AD58290FBB6900BA42E2 /* SubscribeList.swift */; };
 		9168AD5C290FBC2200BA42E2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9168AD5B290FBC2200BA42E2 /* Realm */; };
 		9168AD5E290FBC2200BA42E2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9168AD5D290FBC2200BA42E2 /* RealmSwift */; };
 		916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */; };
@@ -19,6 +18,8 @@
 		916AEBA928F16762000B2DA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916AEBA728F16762000B2DA0 /* LaunchScreen.storyboard */; };
 		9170F14029154A720056E182 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170F13F29154A710056E182 /* CustomCell.swift */; };
 		9170F14229154C5C0056E182 /* CustomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170F14129154C5C0056E182 /* CustomCellModel.swift */; };
+		9172F2A02916340600C6C890 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172F29F2916340600C6C890 /* Subscriber.swift */; };
+		9172F2A22916358900C6C890 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172F2A12916358900C6C890 /* RealmService.swift */; };
 		917AA1BA28F2A814004EF8DB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1B928F2A814004EF8DB /* Then */; };
 		917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1BF28F2A93C004EF8DB /* UITextField+.swift */; };
 		917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C328F46053004EF8DB /* UIColor+.swift */; };
@@ -38,7 +39,6 @@
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
-		9168AD58290FBB6900BA42E2 /* SubscribeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeList.swift; sourceTree = "<group>"; };
 		916AEB9928F1675F000B2DA0 /* iOS_Velog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Velog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		916AEBAA28F16762000B2DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9170F13F29154A710056E182 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		9170F14129154C5C0056E182 /* CustomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellModel.swift; sourceTree = "<group>"; };
+		9172F29F2916340600C6C890 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		9172F2A12916358900C6C890 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		917AA1BF28F2A93C004EF8DB /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -78,9 +80,9 @@
 		9123228729090FF900C204A8 /* SubScribe */ = {
 			isa = PBXGroup;
 			children = (
-				9170F13E291549040056E182 /* SubscribeList */,
 				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
 				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
+				9170F13E291549040056E182 /* SubscribeList */,
 			);
 			path = SubScribe;
 			sourceTree = "<group>";
@@ -99,14 +101,6 @@
 				918F79F428FEB8330080B500 /* MyWebviewController.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		9168AD57290FBB2C00BA42E2 /* LocalDB */ = {
-			isa = PBXGroup;
-			children = (
-				9168AD58290FBB6900BA42E2 /* SubscribeList.swift */,
-			);
-			path = LocalDB;
 			sourceTree = "<group>";
 		};
 		916AEB9028F1675F000B2DA0 = {
@@ -128,7 +122,7 @@
 		916AEB9B28F1675F000B2DA0 /* iOS_Velog */ = {
 			isa = PBXGroup;
 			children = (
-				9168AD57290FBB2C00BA42E2 /* LocalDB */,
+				9172F29E291633ED00C6C890 /* Realm */,
 				91B73FDD28F843BB005159AD /* SignIn */,
 				91B73FDB28F83EDB005159AD /* Main */,
 				91B73FD028F8012A005159AD /* SearchKeyword */,
@@ -146,11 +140,20 @@
 		9170F13E291549040056E182 /* SubscribeList */ = {
 			isa = PBXGroup;
 			children = (
-				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
-				9170F13F29154A710056E182 /* CustomCell.swift */,
 				9170F14129154C5C0056E182 /* CustomCellModel.swift */,
+				9170F13F29154A710056E182 /* CustomCell.swift */,
+				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
 			);
 			path = SubscribeList;
+			sourceTree = "<group>";
+		};
+		9172F29E291633ED00C6C890 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9172F29F2916340600C6C890 /* Subscriber.swift */,
+				9172F2A12916358900C6C890 /* RealmService.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		917AA1BB28F2A8B9004EF8DB /* SignUp */ = {
@@ -297,6 +300,7 @@
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
+				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
 				9170F14029154A720056E182 /* CustomCell.swift in Sources */,
 				912322862909010900C204A8 /* SearchViewController.swift in Sources */,
 				91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */,
@@ -307,7 +311,7 @@
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
-				9168AD59290FBB6900BA42E2 /* SubscribeList.swift in Sources */,
+				9172F2A22916358900C6C890 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

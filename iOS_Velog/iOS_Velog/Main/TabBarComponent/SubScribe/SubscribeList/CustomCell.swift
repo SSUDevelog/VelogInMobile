@@ -12,7 +12,7 @@ import SnapKit
 
 class CustomCell:UITableViewCell{
     // id 정의
-    static let identifier = "customCell"
+    static let identifier = "CustomCell"
     
     var leftLabel:UILabel = {
         let label = UILabel()

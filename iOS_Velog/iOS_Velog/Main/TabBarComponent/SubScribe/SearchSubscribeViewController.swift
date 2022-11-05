@@ -8,9 +8,13 @@
 import UIKit
 import SnapKit
 import Then
+import Realm
+import RealmSwift
 
 class SearchSubscribeViewController: UIViewController {
 
+    var realm = RealmService()
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     private let tableView: UITableView = {
@@ -24,10 +28,12 @@ class SearchSubscribeViewController: UIViewController {
     var filteredArr: [String] = []
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.setupSearchController()
         self.setupTableView()
-        
+    
+
         // UI
         setUI()
     }
@@ -72,16 +78,22 @@ class SearchSubscribeViewController: UIViewController {
         return isActive && isSearchBarHasText
     }
     
-    func showAlert(){
+    func showAlert(velogId:String){
         let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
 
         let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil) // 여기에 클로저 형태로 이후 이벤트 구현
-        let okAction = UIAlertAction(title: "OK", style: .default,handler: nil) // 여기에 클로저 형태로 이후 이벤트 구현
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { okAction in   // 여기에 클로저 형태로 이후 이벤트 구현
+            self.makeSubscribe(velogId: velogId)
+        })
+        
         alert.addAction(cancel)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-    
+    // showAlert에서의 okAction (구독 최종 추가 함수)
+    func makeSubscribe(velogId:String){
+        self.realm.add(item: velogId)
+    }
     
     
 }
@@ -106,8 +118,14 @@ extension SearchSubscribeViewController:UITableViewDelegate, UITableViewDataSour
     
     // cell 클릭 시 생기는 alert
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        present(alert, animated: false, completion: nil)
-        showAlert()
+        var str = dummyData[indexPath.row]  // 일단 이렇게 두면 서치하지 않은 상태에서 dummy data 에서는 로컬에 추가 된다
+        if self.isFiltering{
+            str = self.filteredArr[indexPath.row]
+        } else {
+            str = self.dummyData[indexPath.row]
+        }
+        
+        showAlert(velogId: str)  // ""안에 table cell의 label String이 들어가면 된다.
         print("cell touched")
     }
     
