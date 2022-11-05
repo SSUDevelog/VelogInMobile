@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CustomCellModel {
     let leftTitle: String

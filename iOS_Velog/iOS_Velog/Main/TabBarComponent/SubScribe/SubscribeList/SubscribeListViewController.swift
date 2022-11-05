@@ -20,6 +20,7 @@ class SubscribeListViewController: UIViewController {
         $0.font = UIFont(name: "Avenir-Black", size: 50)
     }
     
+    // 구독 검색 버튼
     let addButton = UIButton().then{
         $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
         $0.layer.cornerRadius = 10
@@ -27,13 +28,13 @@ class SubscribeListViewController: UIViewController {
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
-    
-
+    // 구독 리스트 tableView
     let tableViewForSubscribeList :UITableView = {
         let tableview = UITableView()
         return tableview
     }()
     
+    // 임시 버튼
     let pracBtn:UIButton = {
         let btn = UIButton()
         btn.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside)
