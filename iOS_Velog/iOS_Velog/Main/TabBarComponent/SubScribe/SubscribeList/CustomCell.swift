@@ -12,7 +12,7 @@ import SnapKit
 
 class CustomCell:UITableViewCell{
     // id 정의
-    static let identifier = "customCell"
+    static let identifier = "CustomCell"
     
     var leftLabel:UILabel = {
         let label = UILabel()
@@ -56,7 +56,7 @@ class CustomCell:UITableViewCell{
 
 
 extension CustomCell {
-    public func bind(model: CustomCellModel) {
-        leftLabel.text = model.leftTitle
+    public func bind(model: String) {
+        leftLabel.text = model
     }
 }
