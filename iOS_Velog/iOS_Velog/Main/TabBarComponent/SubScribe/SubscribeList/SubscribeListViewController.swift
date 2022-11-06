@@ -31,7 +31,7 @@ class SubscribeListViewController: UIViewController {
     let addButton = UIButton().then{
         $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
         $0.layer.cornerRadius = 10
-        $0.setTitle("add Subscribe", for: .normal)
+        $0.setTitle("+", for: .normal)
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
@@ -60,7 +60,7 @@ class SubscribeListViewController: UIViewController {
         
         resetSubScribeList()
         
-        tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
+        tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)  // ..
         tableViewForSubscribeList.delegate = self
         tableViewForSubscribeList.dataSource = self
         
@@ -95,7 +95,7 @@ class SubscribeListViewController: UIViewController {
         
         addButton.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(30)
+            $0.leading.equalToSuperview().offset(300)
             $0.trailing.equalToSuperview().offset(-30)
         }
         
