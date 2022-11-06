@@ -13,8 +13,11 @@ import Moya
 
 class SignInViewController: UIViewController {
     
-    private let provider = MoyaProvider<APIService>()
-
+    // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
+    private let provider = MoyaProvider<LoginServices>()
+    // ResponseModel를 userData에 넣어주자!
+    var userData: SignInModel?
+    
     
     private let titleLabel = UILabel().then {
         $0.text = "Login"
@@ -73,32 +76,26 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUIForSignIn()
         
-        // for
-        // 1
-//        state = .loading
+        // server
         provider.request(.exception) { [weak self] result in
             guard self != nil else { return }
-        
-            // 3
             switch result {
             case .success(let response):
                 do {
-                    // 4
                     print(try response.mapJSON())
                     print("ServerOk")
                 } catch {
-//              self.state = .error
                     print("ServerError")
                 }
             case .failure:
-                // 5
 //           self.state = .error
                 print("error")
             }
         }
         
-}
+    }
 
+    
     func setUIForSignIn(){
         view.addSubview(titleLabel)
         view.addSubview(stackView)
@@ -135,6 +132,25 @@ class SignInViewController: UIViewController {
     }
     
     @objc func pushViewForSignIn(){
+        
+        // server
+        let param = SignInRequest.init(self.EmailTextField.text!,self.PasswordTextField.text!)
+        print(param)
+        self.provider.request(.signIn(param: param)){ response in
+            switch response {
+                case .success(let result):
+                    do {
+                        print("success server") // 여기까지는 들어온다... 근데... 아래 코드에서 에러나서 catch로 들어간다
+                        self.userData = try result.map(SignInModel.self)
+                    } catch(let err) {
+                        print(err.localizedDescription) // Failed to map data to a Decodable object.
+                    }
+                case .failure(let err):
+                    print("fail server")
+                    print(err.localizedDescription)
+            }
+        }
+        
         // 일단 default 로그인 성공으로 가정
         print("pushView")
         let nextVC = CustomTabBarController()
