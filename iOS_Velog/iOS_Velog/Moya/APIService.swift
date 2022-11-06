@@ -31,6 +31,10 @@ extension APIService: TargetType{
         }
     }
     
+    public var sampleData: Data {
+      return Data()
+    }
+    
     var task: Task {
         switch self{
         case .exception:
