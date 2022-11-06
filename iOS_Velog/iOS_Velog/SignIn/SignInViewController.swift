@@ -13,6 +13,9 @@ import Moya
 
 class SignInViewController: UIViewController {
     
+    private let provider = MoyaProvider<APIService>()
+
+    
     private let titleLabel = UILabel().then {
         $0.text = "Login"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
@@ -69,7 +72,32 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         setUIForSignIn()
-    }
+        
+        // for
+        // 1
+//        state = .loading
+        provider.request(.exception) { [weak self] result in
+            guard self != nil else { return }
+        
+            // 3
+            switch result {
+            case .success(let response):
+                do {
+                    // 4
+                    print(try response.mapJSON())
+                    print("ServerOk")
+                } catch {
+//              self.state = .error
+                    print("ServerError")
+                }
+            case .failure:
+                // 5
+//           self.state = .error
+                print("error")
+            }
+        }
+        
+}
 
     func setUIForSignIn(){
         view.addSubview(titleLabel)
