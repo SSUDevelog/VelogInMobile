@@ -10,13 +10,13 @@ import Moya
 
 
 
-enum LoginServices {
+enum SignServices {
     case exception
-    case signUp(param: SignupRequest)
+    case signUp(param: SignUpRequest)
     case signIn(param: SignInRequest)
 }
 
-extension LoginServices: TargetType {
+extension SignServices: TargetType {
   public var baseURL: URL {
       return URL(string: BaseURL.BURL)!
   }
@@ -42,9 +42,26 @@ extension LoginServices: TargetType {
     }
   }
   
-  var sampleData: Data {
-    return "@@".data(using: .utf8)!
-  }
+//  var sampleData: Data {
+////    return "@@".data(using: .utf8)!
+//      return Data()
+//  }
+    
+var sampleData: Data {
+    switch self {
+    case .signUp:
+        let user = SignUpModel(name: "hong", id: "junhyeok@daum.net", password: "1234567", role: "user")
+        if let data = try? JSONEncoder().encode(user) {
+            return data
+        } else {
+            return Data()
+        }
+    case .exception: return Data()
+        
+    case .signIn(param: _): return Data()
+    }
+}
+    
   
   var task: Task {
     switch self {
