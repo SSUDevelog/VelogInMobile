@@ -46,22 +46,22 @@ extension SignServices: TargetType {
 ////    return "@@".data(using: .utf8)!
 //      return Data()
 //  }
-    
-var sampleData: Data {
-    switch self {
-    case .signUp:
-        let user = SignUpModel(name: "hong", id: "junhyeok@daum.net", password: "1234567", role: "user")
-        if let data = try? JSONEncoder().encode(user) {
-            return data
-        } else {
-            return Data()
-        }
-    case .exception: return Data()
-        
-    case .signIn(param: _): return Data()
-    }
-}
-    
+//
+//var sampleData: Data {
+//    switch self {
+//    case .signUp:
+//        let user = SignUpModel(code: 0, msg: "aaa", success: tr)
+//        if let data = try? JSONEncoder().encode(user) {
+//            return data
+//        } else {
+//            return Data()
+//        }
+//    case .exception: return Data()
+//
+//    case .signIn(param: _): return Data()
+//    }
+//}
+
   
   var task: Task {
     switch self {
