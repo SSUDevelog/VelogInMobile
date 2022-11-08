@@ -143,7 +143,7 @@ class SignInViewController: UIViewController {
                     do {
 //                            var responseData = try moyaResponse.map(SignupResponse.self)
                         let res1 = try moyaResponse.statusCode
-                        // 이 부분이 res2가 의미 있는것 같은데 - 물어보자!
+                        // 이 부분이 res2가 의미 있는것 같은데 - 물어보자!j
                         let res2 = try moyaResponse.response
                         let res3 = try moyaResponse.description
                         let res4 = try moyaResponse.data
