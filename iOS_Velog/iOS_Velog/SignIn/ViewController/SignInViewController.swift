@@ -138,11 +138,27 @@ class SignInViewController: UIViewController {
         print(param)
         self.provider.request(.signIn(param: param)){ response in
             switch response {
-                case .success(let result):
+                case .success(let moyaResponse):
+//                    var responseData = moyaResponse.data
                     do {
-                        print("success server") // 여기까지는 들어온다... 근데... 아래 코드에서 에러나서 catch로 들어간다
-//                        self.userData = try result.map(SignInModel.self)
-                        print(result)
+//                            var responseData = try moyaResponse.map(SignupResponse.self)
+                        let res1 = try moyaResponse.statusCode
+                        // 이 부분이 res2가 의미 있는것 같은데 - 물어보자!
+                        let res2 = try moyaResponse.response
+                        let res3 = try moyaResponse.description
+                        let res4 = try moyaResponse.data
+                        let res5 = try moyaResponse.request
+                        print("res1")
+                        print(res1)
+                        print("res2")
+                        print(res2)
+                        print("res3")
+                        print(res3)
+                        print("res4")
+                        print(res4)
+                        print("res5")
+                        print(res5)
+                        
                     } catch(let err) {
                         print(err.localizedDescription) // Failed to map data to a Decodable object.
                     }
