@@ -10,6 +10,8 @@ import SnapKit
 import Then
 import Moya
 
+
+
 class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
@@ -198,13 +200,27 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         provider.request(.signUp(param: param)) { response in
                 switch response {
                 case .success(let moyaResponse):
+//                    var responseData = moyaResponse.data
                         do {
-                            print("signUp success")
-//                            self.userData = try result.map(SignUpModel.self)
-                            print(moyaResponse)
-//                            let data = moyaResponse.data
-//                            let statusCode = moyaResponse.response
+//                            var responseData = try moyaResponse.map(SignupResponse.self)
+                            let res1 = try moyaResponse.statusCode
+                            let res2 = try moyaResponse.response
+                            let res3 = try moyaResponse.description
+                            let res4 = try moyaResponse.data
+                            let res5 = try moyaResponse.request
+                            print("res1")
+                            print(res1)
+                            print("res2")
+                            print(res2)
+                            print("res3")
+                            print(res3)
+                            print("res4")
+                            print(res4)
+                            print("res5")
+                            print(res5)
+
                         } catch(let err) {
+                            print("signUp no...")
                             print(err.localizedDescription)
                         }
                     case .failure(let err):
@@ -212,6 +228,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 }
             }
     }
+    
+
+
 
 
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -21,11 +21,9 @@ struct SignUpModel: Codable {
 
 // MARK: - SignupResponse
 struct SignupResponse: Codable {
-    let code:Int
-    let msg:String
-    let success:Bool
-//    let id:String
-//    let name:String
-//    let password:String
-//    let role:String
+//    let code:Int
+//    let msg:String
+//    let success:Bool
+    let StatusCode: String
+    let DataLength: String
 }
