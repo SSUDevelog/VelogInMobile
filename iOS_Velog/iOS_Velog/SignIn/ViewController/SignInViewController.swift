@@ -14,7 +14,7 @@ import Moya
 class SignInViewController: UIViewController {
     
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
-    private let provider = MoyaProvider<LoginServices>()
+    private let provider = MoyaProvider<SignServices>()
     // ResponseModel를 userData에 넣어주자!
     var userData: SignInModel?
     

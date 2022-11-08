@@ -37,9 +37,9 @@
 		91C277052917A3D100F5F53B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 91C277042917A3D100F5F53B /* Moya */; };
 		91C277072917A3D100F5F53B /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 91C277062917A3D100F5F53B /* ReactiveMoya */; };
 		91C277092917A3D100F5F53B /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 91C277082917A3D100F5F53B /* RxMoya */; };
-		91C277112917CCF100F5F53B /* LoginServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277102917CCF100F5F53B /* LoginServices.swift */; };
+		91C277112917CCF100F5F53B /* SignServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277102917CCF100F5F53B /* SignServices.swift */; };
 		91C277132917E53100F5F53B /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277122917E53000F5F53B /* BaseURL.swift */; };
-		91C277152917E72A00F5F53B /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277142917E72A00F5F53B /* SignupRequest.swift */; };
+		91C277152917E72A00F5F53B /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277142917E72A00F5F53B /* SignUpRequest.swift */; };
 		91C277172917E86600F5F53B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277162917E86600F5F53B /* SignUpModel.swift */; };
 		91C277192917EB0600F5F53B /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277182917EB0600F5F53B /* SignInModel.swift */; };
 		91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2771A2917EC1D00F5F53B /* SignInRequest.swift */; };
@@ -70,9 +70,9 @@
 		91B73FD728F83DA1005159AD /* SubScribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeViewController.swift; sourceTree = "<group>"; };
 		91B73FD928F83DB1005159AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		91B73FDE28F84405005159AD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		91C277102917CCF100F5F53B /* LoginServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServices.swift; sourceTree = "<group>"; };
+		91C277102917CCF100F5F53B /* SignServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignServices.swift; sourceTree = "<group>"; };
 		91C277122917E53000F5F53B /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
-		91C277142917E72A00F5F53B /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		91C277142917E72A00F5F53B /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		91C277162917E86600F5F53B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		91C277182917EB0600F5F53B /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		91C2771A2917EC1D00F5F53B /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		912D275E291A2DE3004382BB /* SignInUpService */ = {
 			isa = PBXGroup;
 			children = (
+				91C277102917CCF100F5F53B /* SignServices.swift */,
 				91C2771A2917EC1D00F5F53B /* SignInRequest.swift */,
-				91C277142917E72A00F5F53B /* SignupRequest.swift */,
-				91C277102917CCF100F5F53B /* LoginServices.swift */,
+				91C277142917E72A00F5F53B /* SignUpRequest.swift */,
 			);
 			path = SignInUpService;
 			sourceTree = "<group>";
@@ -428,7 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */,
-				91C277112917CCF100F5F53B /* LoginServices.swift in Sources */,
+				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
 				91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */,
 				91C277172917E86600F5F53B /* SignUpModel.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
@@ -440,7 +440,7 @@
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
 				91C277132917E53100F5F53B /* BaseURL.swift in Sources */,
-				91C277152917E72A00F5F53B /* SignupRequest.swift in Sources */,
+				91C277152917E72A00F5F53B /* SignUpRequest.swift in Sources */,
 				9170F14029154A720056E182 /* CustomCell.swift in Sources */,
 				912322862909010900C204A8 /* SearchViewController.swift in Sources */,
 				91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */,

@@ -8,13 +8,20 @@
 import Foundation
 
 // MARK: - SignupModel
-struct SignupModel: Codable {
-    let code: Int
-    let msg: String
-    let success: Bool
+struct SignUpModel: Codable {
+//    let code: Int
+//    let msg: String
+//    let success: Bool
+    let name:String
+    let id:String
+    let password:String
+    let role:String
+    
 }
 
 // MARK: - SignupResponse
 struct SignupResponse: Codable {
-    let id,name,password,role:String
+    let code:Int
+    let msg:String
+    let success:Bool
 }

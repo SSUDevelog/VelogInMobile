@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - SignInModel
 struct SignInModel: Codable {
-    let code: Int
-    let msg: String
-    let success: Bool
-    let token: String
+    let id,password:String
 }
 
 // MARK: - SignupResponse
 struct SigninResponse: Codable {
-    let id,password:String
+    let code: Int
+    let msg: String
+    let success: Bool
+    let token: String
 }
