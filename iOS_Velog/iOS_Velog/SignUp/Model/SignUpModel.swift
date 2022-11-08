@@ -24,4 +24,8 @@ struct SignupResponse: Codable {
     let code:Int
     let msg:String
     let success:Bool
+//    let id:String
+//    let name:String
+//    let password:String
+//    let role:String
 }

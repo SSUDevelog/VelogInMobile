@@ -141,7 +141,8 @@ class SignInViewController: UIViewController {
                 case .success(let result):
                     do {
                         print("success server") // 여기까지는 들어온다... 근데... 아래 코드에서 에러나서 catch로 들어간다
-                        self.userData = try result.map(SignInModel.self)
+//                        self.userData = try result.map(SignInModel.self)
+                        print(result)
                     } catch(let err) {
                         print(err.localizedDescription) // Failed to map data to a Decodable object.
                     }

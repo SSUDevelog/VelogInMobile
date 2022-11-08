@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
     private let provider = MoyaProvider<SignServices>()
     // ResponseModel를 userData에 넣어주자!
-    var Data: SignUpModel?
+    var userData: SignUpModel?
 
     // make components
 
@@ -197,10 +197,13 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         // 위에 선언해뒀던 SignupModel모습을 갖춘 userData에 넣어줍니다.
         provider.request(.signUp(param: param)) { response in
                 switch response {
-                    case .success(let result):
+                case .success(let moyaResponse):
                         do {
                             print("signUp success")
-                            self.Data = try result.map(SignUpModel.self)
+//                            self.userData = try result.map(SignUpModel.self)
+                            print(moyaResponse)
+//                            let data = moyaResponse.data
+//                            let statusCode = moyaResponse.response
                         } catch(let err) {
                             print(err.localizedDescription)
                         }
