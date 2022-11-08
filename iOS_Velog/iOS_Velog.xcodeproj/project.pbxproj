@@ -100,9 +100,9 @@
 		9123228729090FF900C204A8 /* SubScribe */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
+				912D275A291A2CAF004382BB /* SubScribe */,
 				9170F13E291549040056E182 /* SubscribeList */,
-				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
+				912D275B291A2CC9004382BB /* SearchSubScribe */,
 			);
 			path = SubScribe;
 			sourceTree = "<group>";
@@ -121,6 +121,105 @@
 				918F79F428FEB8330080B500 /* MyWebviewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		912D2753291A2AE1004382BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91C277162917E86600F5F53B /* SignUpModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		912D2754291A2B22004382BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9170F13F29154A710056E182 /* CustomCell.swift */,
+				9170F14129154C5C0056E182 /* CustomCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		912D2755291A2B39004382BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		912D2756291A2BA4004382BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		912D2757291A2C06004382BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		912D2758291A2C4A004382BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91C277182917EB0600F5F53B /* SignInModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		912D2759291A2C58004382BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91B73FDE28F84405005159AD /* SignInViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		912D275A291A2CAF004382BB /* SubScribe */ = {
+			isa = PBXGroup;
+			children = (
+				912D275D291A2D0D004382BB /* ViewController */,
+			);
+			path = SubScribe;
+			sourceTree = "<group>";
+		};
+		912D275B291A2CC9004382BB /* SearchSubScribe */ = {
+			isa = PBXGroup;
+			children = (
+				912D275C291A2D00004382BB /* ViewController */,
+			);
+			path = SearchSubScribe;
+			sourceTree = "<group>";
+		};
+		912D275C291A2D00004382BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		912D275D291A2D0D004382BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		912D275E291A2DE3004382BB /* SignInUpService */ = {
+			isa = PBXGroup;
+			children = (
+				91C2771A2917EC1D00F5F53B /* SignInRequest.swift */,
+				91C277142917E72A00F5F53B /* SignupRequest.swift */,
+				91C277102917CCF100F5F53B /* LoginServices.swift */,
+			);
+			path = SignInUpService;
 			sourceTree = "<group>";
 		};
 		916AEB9028F1675F000B2DA0 = {
@@ -161,9 +260,8 @@
 		9170F13E291549040056E182 /* SubscribeList */ = {
 			isa = PBXGroup;
 			children = (
-				9170F14129154C5C0056E182 /* CustomCellModel.swift */,
-				9170F13F29154A710056E182 /* CustomCell.swift */,
-				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
+				912D2755291A2B39004382BB /* ViewController */,
+				912D2754291A2B22004382BB /* Model */,
 			);
 			path = SubscribeList;
 			sourceTree = "<group>";
@@ -180,7 +278,8 @@
 		917AA1BB28F2A8B9004EF8DB /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */,
+				912D2756291A2BA4004382BB /* ViewController */,
+				912D2753291A2AE1004382BB /* Model */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -208,7 +307,7 @@
 		91B73FDB28F83EDB005159AD /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
+				912D2757291A2C06004382BB /* ViewController */,
 				91B73FDC28F83EEE005159AD /* TabBarComponent */,
 			);
 			path = Main;
@@ -227,7 +326,8 @@
 		91B73FDD28F843BB005159AD /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FDE28F84405005159AD /* SignInViewController.swift */,
+				912D2759291A2C58004382BB /* ViewController */,
+				912D2758291A2C4A004382BB /* Model */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -236,11 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				91C277122917E53000F5F53B /* BaseURL.swift */,
-				91C277102917CCF100F5F53B /* LoginServices.swift */,
-				91C277142917E72A00F5F53B /* SignupRequest.swift */,
-				91C2771A2917EC1D00F5F53B /* SignInRequest.swift */,
-				91C277162917E86600F5F53B /* SignUpModel.swift */,
-				91C277182917EB0600F5F53B /* SignInModel.swift */,
+				912D275E291A2DE3004382BB /* SignInUpService */,
 			);
 			path = Moya;
 			sourceTree = "<group>";
