@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     private let provider = MoyaProvider<SignServices>()
     // ResponseModel를 userData에 넣어주자!
     var userData: SignUpModel?
+    var responseData : SignUpResponse?
 
     // make components
 
@@ -180,7 +181,6 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     }
 
     @objc func pushView(){
-        print("pushView")
         self.signUp()
         let nextVC = SearchKeywordViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
@@ -192,7 +192,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         // signUpModel에서 요청하는 데이터인 name, email, id, password를 넣어줬어요.
         let param = SignUpRequest.init(self.nameTextField.text!, self.emailTextField.text!, self.passwordTextField.text!, self.checkPasswordTextField.text!)
         // !!! 여기 db 구조 클라랑 서버 다름 (role)
-        print(param)
+//        print(param)
         // LoginServices enum값 중에서 .signUp를 골라서 param과 함께 request시켜줍니다.
         // 그에 대한 response가 돌아오면 해당 response가 .success이면 result값을
         // SignupModel에 맞게끔 가공해주고나서
@@ -200,25 +200,13 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         provider.request(.signUp(param: param)) { response in
                 switch response {
                 case .success(let moyaResponse):
-//                    var responseData = moyaResponse.data
                         do {
-//                            var responseData = try moyaResponse.map(SignupResponse.self)
-//                            var res1 = try moyaResponse.map(SignUpResponse.self)
-                            var res1 = try moyaResponse.statusCode
-//                            let res2 = try moyaResponse.response
-//                            let res3 = try moyaResponse.description
-//                            let res4 = try moyaResponse.data
-//                            let res5 = try moyaResponse.request
-                            print("res1")
-                            print(res1)
-//                            print("res2")
-//                            print(res2)
-//                            print("res3")
-//                            print(res3)
-//                            print("res4")
-//                            print(res4)
-//                            print("res5")
-//                            print(res5)
+                            self.responseData = try moyaResponse.mapJSON() as? SignUpResponse
+//                            print(moyaResponse.statusCode)
+//                            print(self.responseData?.token)
+//                            print(self.responseData?.success)
+                            print(self.responseData?.token as Any)
+                            
 
                         } catch(let err) {
                             print("signUp no...")
