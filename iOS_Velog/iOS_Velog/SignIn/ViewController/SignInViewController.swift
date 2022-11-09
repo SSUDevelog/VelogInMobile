@@ -80,10 +80,12 @@ class SignInViewController: UIViewController {
         provider.request(.exception) { [weak self] result in
             guard self != nil else { return }
             switch result {
-            case .success(let response):
+            case .success(let moyaResponse):
                 do {
-                    print(try response.mapJSON())
+                    print(try moyaResponse.mapJSON())
                     print("ServerOk")
+//                    let res1 = try moyaResponse.statusCode
+//                    print(res1)
                 } catch {
                     print("ServerError")
                 }
@@ -143,7 +145,7 @@ class SignInViewController: UIViewController {
                     do {
 //                            var responseData = try moyaResponse.map(SignupResponse.self)
                         let res1 = try moyaResponse.statusCode
-                        // 이 부분이 res2가 의미 있는것 같은데 - 물어보자!j
+                        // 이 부분이 res2가 의미 있는것 같은데 - 물어보자!
                         let res2 = try moyaResponse.response
                         let res3 = try moyaResponse.description
                         let res4 = try moyaResponse.data

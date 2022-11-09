@@ -203,21 +203,22 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 //                    var responseData = moyaResponse.data
                         do {
 //                            var responseData = try moyaResponse.map(SignupResponse.self)
-                            let res1 = try moyaResponse.statusCode
-                            let res2 = try moyaResponse.response
-                            let res3 = try moyaResponse.description
-                            let res4 = try moyaResponse.data
-                            let res5 = try moyaResponse.request
+//                            var res1 = try moyaResponse.map(SignUpResponse.self)
+                            var res1 = try moyaResponse.statusCode
+//                            let res2 = try moyaResponse.response
+//                            let res3 = try moyaResponse.description
+//                            let res4 = try moyaResponse.data
+//                            let res5 = try moyaResponse.request
                             print("res1")
                             print(res1)
-                            print("res2")
-                            print(res2)
-                            print("res3")
-                            print(res3)
-                            print("res4")
-                            print(res4)
-                            print("res5")
-                            print(res5)
+//                            print("res2")
+//                            print(res2)
+//                            print("res3")
+//                            print(res3)
+//                            print("res4")
+//                            print(res4)
+//                            print("res5")
+//                            print(res5)
 
                         } catch(let err) {
                             print("signUp no...")

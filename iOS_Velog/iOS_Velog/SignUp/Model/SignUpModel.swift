@@ -20,7 +20,7 @@ struct SignUpModel: Codable {
 }
 
 // MARK: - SignupResponse
-struct SignupResponse: Codable {
+struct SignUpResponse: Codable {
 //    let code:Int
 //    let msg:String
 //    let success:Bool
