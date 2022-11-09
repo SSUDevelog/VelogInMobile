@@ -17,7 +17,7 @@ class SignInViewController: UIViewController {
     private let provider = MoyaProvider<SignServices>()
     // ResponseModel를 userData에 넣어주자!
     var userData: SignInModel?
-    
+    var responseData: SigninResponse?
     
     private let titleLabel = UILabel().then {
         $0.text = "Login"
@@ -77,15 +77,12 @@ class SignInViewController: UIViewController {
         setUIForSignIn()
         
         // server
-        provider.request(.exception) { [weak self] result in
-            guard self != nil else { return }
-            switch result {
+        provider.request(.exception) { response in
+            switch response {
             case .success(let moyaResponse):
                 do {
                     print(try moyaResponse.mapJSON())
                     print("ServerOk")
-//                    let res1 = try moyaResponse.statusCode
-//                    print(res1)
                 } catch {
                     print("ServerError")
                 }
@@ -138,28 +135,16 @@ class SignInViewController: UIViewController {
         // server
         let param = SignInRequest.init(self.EmailTextField.text!,self.PasswordTextField.text!)
         print(param)
-        self.provider.request(.signIn(param: param)){ response in
+        self.provider.request(.signIn(param: param)){ [self] response in
             switch response {
                 case .success(let moyaResponse):
 //                    var responseData = moyaResponse.data
                     do {
 //                            var responseData = try moyaResponse.map(SignupResponse.self)
-                        let res1 = try moyaResponse.statusCode
-                        // 이 부분이 res2가 의미 있는것 같은데 - 물어보자!
-                        let res2 = try moyaResponse.response
-                        let res3 = try moyaResponse.description
-                        let res4 = try moyaResponse.data
-                        let res5 = try moyaResponse.request
-                        print("res1")
-                        print(res1)
-                        print("res2")
-                        print(res2)
-                        print("res3")
-                        print(res3)
-                        print("res4")
-                        print(res4)
-                        print("res5")
-                        print(res5)
+                        self.responseData = try moyaResponse.mapJSON() as? SigninResponse
+                        print(self.responseData?.token as Any)
+                        
+
                         
                     } catch(let err) {
                         print(err.localizedDescription) // Failed to map data to a Decodable object.
