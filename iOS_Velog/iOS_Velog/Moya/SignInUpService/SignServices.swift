@@ -24,11 +24,11 @@ extension SignServices: TargetType {
   var path: String {
     switch self {
     case .exception:
-        return "/sign-api/exception"
+        return "sign-api/exception"
     case .signUp:
-        return "/sign-api/sign-up"
+        return "sign-api/sign-up"
     case .signIn:
-        return "/sign-api/sign-in"
+        return "sign-api/sign-in"
     }
   }
   
