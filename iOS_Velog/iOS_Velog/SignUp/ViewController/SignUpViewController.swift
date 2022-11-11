@@ -192,7 +192,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         // signUpModel에서 요청하는 데이터인 name, email, id, password를 넣어줬어요.
         let param = SignUpRequest.init(self.nameTextField.text!, self.emailTextField.text!, self.passwordTextField.text!, self.checkPasswordTextField.text!)
         // !!! 여기 db 구조 클라랑 서버 다름 (role)
-//        print(param)
+        print(param)
         // LoginServices enum값 중에서 .signUp를 골라서 param과 함께 request시켜줍니다.
         // 그에 대한 response가 돌아오면 해당 response가 .success이면 result값을
         // SignupModel에 맞게끔 가공해주고나서
@@ -202,10 +202,11 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 case .success(let moyaResponse):
                         do {
                             self.responseData = try moyaResponse.mapJSON() as? SignUpResponse
-//                            print(moyaResponse.statusCode)
+                            print(moyaResponse.statusCode)
 //                            print(self.responseData?.token)
 //                            print(self.responseData?.success)
-                            print(self.responseData?.token as Any)
+                            
+//                            print(self.responseData?.token as Any)
                             
 
                         } catch(let err) {
