@@ -24,21 +24,13 @@ class SubscribeListViewController: UIViewController {
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe List"
-        $0.font = UIFont(name: "Avenir-Black", size: 50)
+        $0.font = UIFont(name: "Avenir-Black", size: 40)
     }
     
     // 구독 검색 버튼
     let addButton = UIButton().then{
-//        let imageForAddBtn = UIImage(named: "plus.square.fill")?.withRenderingMode(.alwaysTemplate)
-        $0.backgroundColor = .black
-//        $0.setImage(UIImage(systemName: "plus.square.fill")?.withTintColor(.black), for: .normal)
-//        $0.setImage(UIImage(named: "plus.square.fill")?.withRenderingMode(.alwaysTemplate), for: UIControl.State.normal)
-//        $0.setImage(imageForAddBtn, for: .normal)
-//        $0.tintColor = .black
-
-        $0.layer.cornerRadius = 10
-        $0.setTitle("+", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .systemBackground
+        $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
@@ -57,7 +49,7 @@ class SubscribeListViewController: UIViewController {
         
         resetSubScribeList()
         
-        tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)  // ..
+        tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
         tableViewForSubscribeList.dataSource = self
         
@@ -82,19 +74,17 @@ class SubscribeListViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(addButton)
         view.addSubview(tableViewForSubscribeList)
-        
-        addButton.tintColor = UIColor.black
-        
+
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
             $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.trailing.equalToSuperview().offset(-50)
         }
         
         addButton.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(300)
-            $0.trailing.equalToSuperview().offset(-30)
+
+            $0.centerY.equalTo(titleLabel)
+            $0.trailing.equalToSuperview().offset(-40)
         }
         
 
@@ -115,12 +105,17 @@ class SubscribeListViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    // 일단 여긴 보류
+    // 일단 여긴 보류 - 아직 로컬db 데어터 삭제 불가
     @objc func deleteBtnAction(_ sender: UIButton) {
-      let point = sender.convert(CGPoint.zero, to: tableViewForSubscribeList)
-      guard let indexPath = tableViewForSubscribeList.indexPathForRow(at: point) else { return }
-      subScribeList.remove(at: indexPath.row)   // 일단 보류
-      tableViewForSubscribeList.deleteRows(at: [indexPath], with: .automatic)
+        let point = sender.convert(CGPoint.zero, to: tableViewForSubscribeList)
+        guard let indexPath = tableViewForSubscribeList.indexPathForRow(at: point) else { return }
+        let person = subScribeList[indexPath.row]
+        subScribeList.remove(at: indexPath.row)   // 일단 보류
+        tableViewForSubscribeList.deleteRows(at: [indexPath], with: .automatic)
+        print(type(of: person)) // String
+//        let subscribeToDelete = Subscriber(velogId: person)
+//        realm.delete(subscribeToDelete)
+
     }
 
     
