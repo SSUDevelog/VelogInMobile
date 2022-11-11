@@ -120,10 +120,21 @@ class SignInViewController: UIViewController {
     
     @objc func pushViewForSignIn(){
         
+        // 서버 통신
+        postServer()
+        
+        // 일단 default 로그인 성공으로 가정
+        print("pushView")
+        let nextVC = CustomTabBarController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+    func postServer(){
         // server
         let param = SignInRequest.init(self.EmailTextField.text!,self.PasswordTextField.text!)
         print(param)
-        self.provider.request(.signIn(param: param)){ [self] response in
+        self.provider.request(.signIn(param: param)){ response in
             switch response {
                 case .success(let moyaResponse):
 //                    var responseData = moyaResponse.data
@@ -133,22 +144,21 @@ class SignInViewController: UIViewController {
                         print(responseData.token)
                         
                         // add token in realm
-                        self.realm.addToken(item: responseData.token)
-
+                        self.addTokenInRealm(item: responseData.token)
                         
                     } catch(let err) {
-                        print(err.localizedDescription) // Failed to map data to a Decodable object.
+                        print(err.localizedDescription)
                     }
                 case .failure(let err):
-                    print("fail server")
                     print(err.localizedDescription)
             }
         }
-        
-        // 일단 default 로그인 성공으로 가정
-        print("pushView")
-        let nextVC = CustomTabBarController()
-        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+    func addTokenInRealm(item:String){
+        // add token in realm
+        self.realm.addToken(item: item)
     }
     
 }
