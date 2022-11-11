@@ -29,9 +29,16 @@ class SubscribeListViewController: UIViewController {
     
     // 구독 검색 버튼
     let addButton = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+//        let imageForAddBtn = UIImage(named: "plus.square.fill")?.withRenderingMode(.alwaysTemplate)
+        $0.backgroundColor = .black
+//        $0.setImage(UIImage(systemName: "plus.square.fill")?.withTintColor(.black), for: .normal)
+//        $0.setImage(UIImage(named: "plus.square.fill")?.withRenderingMode(.alwaysTemplate), for: UIControl.State.normal)
+//        $0.setImage(imageForAddBtn, for: .normal)
+//        $0.tintColor = .black
+
         $0.layer.cornerRadius = 10
         $0.setTitle("+", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
@@ -41,22 +48,12 @@ class SubscribeListViewController: UIViewController {
         return tableview
     }()
     
-    // 임시 버튼
-//    let pracBtn:UIButton = {
-//        let btn = UIButton()
-//        btn.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside)
-//        btn.setTitle("+", for: .normal)
-//        btn.layer.cornerRadius = 10
-//        btn.backgroundColor = UIColor.customColor(.defaultBlackColor)
-//        return btn
-//    }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
+    
         
         resetSubScribeList()
         
@@ -85,7 +82,8 @@ class SubscribeListViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(addButton)
         view.addSubview(tableViewForSubscribeList)
-//        view.addSubview(pracBtn)
+        
+        addButton.tintColor = UIColor.black
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
@@ -99,12 +97,7 @@ class SubscribeListViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
         }
         
-//        pracBtn.snp.makeConstraints{
-//            $0.bottom.equalToSuperview().offset(-60)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.equalToSuperview().offset(-30)
-//        }
-        
+
         tableViewForSubscribeList.snp.makeConstraints{
             $0.top.equalTo(addButton.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(30)
@@ -121,12 +114,6 @@ class SubscribeListViewController: UIViewController {
         let nextVC = SearchSubscribeViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-//    @objc func addBtnAction() {
-//        print("addBtn")
-//        data.append(.init(leftTitle: "cell\(data.count)"))
-//        tableViewForSubscribeList.reloadData()
-//    }
     
     // 일단 여긴 보류
     @objc func deleteBtnAction(_ sender: UIButton) {
