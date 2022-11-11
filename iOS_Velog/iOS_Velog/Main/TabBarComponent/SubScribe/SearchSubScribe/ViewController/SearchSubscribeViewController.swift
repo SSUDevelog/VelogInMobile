@@ -50,7 +50,7 @@ class SearchSubscribeViewController: UIViewController {
         searchController.automaticallyShowsCancelButton = false
 
         // text 입력할 때 마다 업데이트 될 부분
-        searchController.searchResultsUpdater = self
+//        searchController.searchResultsUpdater = self
         
         // keyboard up -> not finish
 //        searchController.becomeFirstResponder()
