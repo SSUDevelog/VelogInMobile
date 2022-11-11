@@ -11,7 +11,6 @@ import Moya
 
 
 enum SignServices {
-    case exception
     case signUp(param: SignUpRequest)
     case signIn(param: SignInRequest)
 }
@@ -23,8 +22,6 @@ extension SignServices: TargetType {
   
   var path: String {
     switch self {
-    case .exception:
-        return "sign-api/exception"
     case .signUp:
         return "sign-api/sign-up"
     case .signIn:
@@ -34,8 +31,6 @@ extension SignServices: TargetType {
   
   var method: Moya.Method {
     switch self {
-    case .exception:
-        return .get
     case .signUp,
          .signIn:
       return .post
@@ -65,8 +60,6 @@ extension SignServices: TargetType {
   
   var task: Task {
     switch self {
-    case .exception:
-        return .requestPlain
     case .signUp(let param):
         return .requestJSONEncodable(param)
     case .signIn(let param):
