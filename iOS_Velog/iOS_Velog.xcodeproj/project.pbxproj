@@ -10,6 +10,7 @@
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
+		9160AB8E291E1D4300079BF9 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160AB8D291E1D4300079BF9 /* Token.swift */; };
 		9168AD5C290FBC2200BA42E2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9168AD5B290FBC2200BA42E2 /* Realm */; };
 		9168AD5E290FBC2200BA42E2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9168AD5D290FBC2200BA42E2 /* RealmSwift */; };
 		916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
+		9160AB8D291E1D4300079BF9 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		916AEB9928F1675F000B2DA0 /* iOS_Velog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Velog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		9172F29E291633ED00C6C890 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				9160AB8D291E1D4300079BF9 /* Token.swift */,
 				9172F29F2916340600C6C890 /* Subscriber.swift */,
 				9172F2A12916358900C6C890 /* RealmService.swift */,
 			);
@@ -436,6 +439,7 @@
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
+				9160AB8E291E1D4300079BF9 /* Token.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
