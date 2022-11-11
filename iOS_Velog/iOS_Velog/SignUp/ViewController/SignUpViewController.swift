@@ -181,36 +181,22 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     }
 
     @objc func pushView(){
-        self.signUp()
+        self.postServer()
         let nextVC = SearchKeywordViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
-    func signUp(){
-        // signUp에서는 param값을 사용하기 때문에 signUpRequest 모델에 맞게
-        // 데이터들을 넣어줍니다.
-        // signUpModel에서 요청하는 데이터인 name, email, id, password를 넣어줬어요.
+    func postServer(){
+        // name : id , pw : pw
         let param = SignUpRequest.init(self.nameTextField.text!, self.emailTextField.text!, self.passwordTextField.text!, self.checkPasswordTextField.text!)
-        // !!! 여기 db 구조 클라랑 서버 다름 (role)
         print(param)
-        // LoginServices enum값 중에서 .signUp를 골라서 param과 함께 request시켜줍니다.
-        // 그에 대한 response가 돌아오면 해당 response가 .success이면 result값을
-        // SignupModel에 맞게끔 가공해주고나서
-        // 위에 선언해뒀던 SignupModel모습을 갖춘 userData에 넣어줍니다.
         provider.request(.signUp(param: param)) { response in
                 switch response {
                 case .success(let moyaResponse):
                         do {
-                            self.responseData = try moyaResponse.mapJSON() as? SignUpResponse
+                            self.responseData = try moyaResponse.map(SignUpResponse.self)
                             print(moyaResponse.statusCode)
-//                            print(self.responseData?.token)
-//                            print(self.responseData?.success)
-                            
-//                            print(self.responseData?.token as Any)
-                            
-
                         } catch(let err) {
-                            print("signUp no...")
                             print(err.localizedDescription)
                         }
                     case .failure(let err):
@@ -218,6 +204,8 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
                 }
             }
     }
+    
+    
     
 
 
