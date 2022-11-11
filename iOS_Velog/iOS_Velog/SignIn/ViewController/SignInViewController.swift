@@ -19,6 +19,8 @@ class SignInViewController: UIViewController {
     var userData: SignInModel?
     var responseData: SigninResponse?
     
+    let realm = RealmService()
+    
     private let titleLabel = UILabel().then {
         $0.text = "Login"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
@@ -72,6 +74,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.realm.readDB()
+//        self.realm.resetDB()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         setUIForSignIn()
@@ -124,10 +128,12 @@ class SignInViewController: UIViewController {
                 case .success(let moyaResponse):
 //                    var responseData = moyaResponse.data
                     do {
-//                            var responseData = try moyaResponse.map(SignupResponse.self)
-                        self.responseData = try moyaResponse.mapJSON() as? SigninResponse
-                        print(self.responseData?.token as Any)
+                        let responseData = try moyaResponse.map(SigninResponse.self)
+                        print(moyaResponse.statusCode)
+                        print(responseData.token)
                         
+                        // add token in realm
+                        self.realm.addToken(item: responseData.token)
 
                         
                     } catch(let err) {
