@@ -76,22 +76,6 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUIForSignIn()
         
-        // server
-        provider.request(.exception) { response in
-            switch response {
-            case .success(let moyaResponse):
-                do {
-                    print(try moyaResponse.mapJSON())
-                    print("ServerOk")
-                } catch {
-                    print("ServerError")
-                }
-            case .failure:
-//           self.state = .error
-                print("error")
-            }
-        }
-        
     }
 
     
