@@ -124,9 +124,9 @@ class SignInViewController: UIViewController {
                 case .success(let moyaResponse):
 //                    var responseData = moyaResponse.data
                     do {
-//                            var responseData = try moyaResponse.map(SignupResponse.self)
-                        self.responseData = try moyaResponse.mapJSON() as? SigninResponse
-                        print(self.responseData?.token as Any)
+                        let responseData = try moyaResponse.map(SigninResponse.self)
+                        print(moyaResponse.statusCode)
+                        print(responseData.token)
                         
 
                         
