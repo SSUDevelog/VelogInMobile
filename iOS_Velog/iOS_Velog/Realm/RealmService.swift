@@ -21,6 +21,13 @@ class RealmService{
         print("add")
     }
     
+    func addToken(item:String){
+        let token =  Token(token: item)
+        try! localRealm.write{
+            localRealm.add(token)
+        }
+    }
+    
     func delete(deleteId:String) {
         try! localRealm.write{
             localRealm.delete(localRealm.objects(Subscriber.self).filter("velogId == \(deleteId)"))
