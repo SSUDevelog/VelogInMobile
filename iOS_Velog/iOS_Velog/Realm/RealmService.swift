@@ -32,6 +32,7 @@ class RealmService{
         try! localRealm.write{
             localRealm.delete(localRealm.objects(Subscriber.self).filter("velogId == \(deleteId)"))
         }
+        print("deleted")
     }
     
     func readDB(){
