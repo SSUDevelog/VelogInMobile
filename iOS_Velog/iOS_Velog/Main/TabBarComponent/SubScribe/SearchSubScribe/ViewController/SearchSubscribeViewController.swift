@@ -40,7 +40,7 @@ class SearchSubscribeViewController: UIViewController {
         self.setupSearchController()
         self.setupTableView()
     
-        postServer()
+//        postServer()
 
         // UI
         setUI()
@@ -100,7 +100,8 @@ class SearchSubscribeViewController: UIViewController {
     }
     // showAlert에서의 okAction (구독 최종 추가 함수)
     func makeSubscribe(velogId:String){
-        RealmService.add(item: velogId)
+//        realm.add(item: velogId)
+        realm.add(item: velogId)
     }
     
     func postServer(){
