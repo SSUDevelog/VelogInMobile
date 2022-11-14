@@ -11,9 +11,9 @@ import Realm
 
 class RealmService{
     
-    let localRealm = try! Realm()
+    static let localRealm = try! Realm()
     
-    func add(item:String) {
+    static func add(item:String) {
         let subscriber = Subscriber(velogId: item)
         try! localRealm.write {
             localRealm.add(subscriber)
@@ -21,27 +21,32 @@ class RealmService{
         print("add")
     }
     
-    func addToken(item:String){
+    static func addToken(item:String){
         let token =  Token(token: item)
         try! localRealm.write{
             localRealm.add(token)
         }
     }
     
-    func delete(deleteId:String) {
+    static func getToken()->String{
+        let token = localRealm.objects(Token.self).description
+        return token
+    }
+    
+    static func delete(deleteId:String) {
         try! localRealm.write{
             localRealm.delete(localRealm.objects(Subscriber.self).filter("velogId == \(deleteId)"))
         }
         print("deleted")
     }
     
-    func readDB(){
+    static func readDB(){
         let subScriber = localRealm.objects(Subscriber.self)
         print(subScriber)
     }
 
         
-    // 스키마 수정 시 해야한다
+    // 스키마 수정시 한번 돌려야 한다.
     func resetDB(){
         let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
         let realmURLs = [
@@ -61,7 +66,7 @@ class RealmService{
     }
     
     init() {
-        print("Realm Location: ", localRealm.configuration.fileURL ?? "cannot find location.")
+        print("Realm Location: ", RealmService.localRealm.configuration.fileURL ?? "cannot find location.")
     }
 
 }
