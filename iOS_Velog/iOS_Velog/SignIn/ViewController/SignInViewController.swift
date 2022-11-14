@@ -158,7 +158,7 @@ class SignInViewController: UIViewController {
     
     func addTokenInRealm(item:String){
         // add token in realm
-        RealmService.addToken(item: item)
+        realm.addToken(item: item)
     }
     
 }

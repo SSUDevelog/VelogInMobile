@@ -11,9 +11,9 @@ import Realm
 
 class RealmService{
     
-    static let localRealm = try! Realm()
+    let localRealm = try! Realm()
     
-    static func add(item:String) {
+    func add(item:String) {
         let subscriber = Subscriber(velogId: item)
         try! localRealm.write {
             localRealm.add(subscriber)
@@ -21,26 +21,26 @@ class RealmService{
         print("add")
     }
     
-    static func addToken(item:String){
+    func addToken(item:String){
         let token =  Token(token: item)
         try! localRealm.write{
             localRealm.add(token)
         }
     }
     
-    static func getToken()->String{
+    func getToken()->String{
         let token = localRealm.objects(Token.self).description
         return token
     }
     
-    static func delete(deleteId:String) {
+    func delete(deleteId:String) {
         try! localRealm.write{
             localRealm.delete(localRealm.objects(Subscriber.self).filter("velogId == \(deleteId)"))
         }
         print("deleted")
     }
     
-    static func readDB(){
+    func readDB(){
         let subScriber = localRealm.objects(Subscriber.self)
         print(subScriber)
     }
@@ -66,7 +66,7 @@ class RealmService{
     }
     
     init() {
-        print("Realm Location: ", RealmService.localRealm.configuration.fileURL ?? "cannot find location.")
+        print("Realm Location: ", localRealm.configuration.fileURL ?? "cannot find location.")
     }
 
 }
