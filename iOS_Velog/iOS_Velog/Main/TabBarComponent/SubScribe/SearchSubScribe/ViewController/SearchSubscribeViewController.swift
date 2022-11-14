@@ -10,9 +10,16 @@ import SnapKit
 import Then
 import Realm
 import RealmSwift
+import Moya
 
 class SearchSubscribeViewController: UIViewController {
 
+    // for server
+    private let provider = MoyaProvider<SubscriberService>()
+//    var subScriberData: SubscriberModel?
+    var responseData: SubscriberResponse?
+    
+    
     var realm = RealmService()
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -33,6 +40,7 @@ class SearchSubscribeViewController: UIViewController {
         self.setupSearchController()
         self.setupTableView()
     
+        postServer()
 
         // UI
         setUI()
@@ -92,7 +100,31 @@ class SearchSubscribeViewController: UIViewController {
     }
     // showAlert에서의 okAction (구독 최종 추가 함수)
     func makeSubscribe(velogId:String){
-        self.realm.add(item: velogId)
+        RealmService.add(item: velogId)
+    }
+    
+    func postServer(){
+        // server
+        let param = AddRequest("@superlipbalm") // 일단 더미 데이터
+        print(param)
+        self.provider.request(.addSubscriber(param:param)){ response in
+            switch response {
+                case .success(let moyaResponse):
+                    do {
+                        let responseData = try moyaResponse.map(SubscriberResponse.self)
+                        
+                        print("subscribe Get")
+                        print(moyaResponse.statusCode)
+                        print(responseData.msg)
+                        
+                    } catch(let err) {
+                        print(err.localizedDescription)
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+            }
+        }
+
     }
     
     
