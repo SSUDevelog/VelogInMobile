@@ -29,8 +29,10 @@ class SubscribeListViewController: UIViewController {
     
     // 구독 검색 버튼
     let addButton = UIButton().then{
-        $0.backgroundColor = .systemBackground
-        $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        $0.backgroundColor = .black
+        $0.setTitle("+", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
@@ -58,7 +60,8 @@ class SubscribeListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        resetSubScribeList()
+        print("viewWillAppear")
+//        resetSubScribeList()
         
     }
 
@@ -83,7 +86,8 @@ class SubscribeListViewController: UIViewController {
         
         addButton.snp.makeConstraints{
 
-            $0.centerY.equalTo(titleLabel)
+//            $0.centerY.equalTo(titleLabel)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.trailing.equalToSuperview().offset(-40)
         }
         
