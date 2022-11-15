@@ -40,7 +40,8 @@ class SearchSubscribeViewController: UIViewController {
         self.setupSearchController()
         self.setupTableView()
     
-//        postServer()
+        // UI 설계가 아직 안나와서 일단 여기에
+        postServer()
 
         // UI
         setUI()
