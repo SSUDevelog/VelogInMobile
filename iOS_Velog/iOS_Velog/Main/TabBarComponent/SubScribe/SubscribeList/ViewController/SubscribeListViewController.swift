@@ -72,6 +72,7 @@ class SubscribeListViewController: UIViewController {
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){
+        
         for item in realm.objects(Subscriber.self){
             // 여기서 get subscriber list
             self.subScribeList.append(item.velogId)
@@ -85,6 +86,7 @@ class SubscribeListViewController: UIViewController {
             case .success(let moyaResponse):
                 do{
                     let responseData = try moyaResponse.map(SubscriberListResponse.self)
+                    
                     print("subscriber List Get")
                     print(moyaResponse.statusCode)
                     print(responseData.msg)
