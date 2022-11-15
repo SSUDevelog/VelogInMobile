@@ -88,10 +88,10 @@ class SubscribeListViewController: UIViewController {
             case .success(let moyaResponse):
                 do{
                     print(moyaResponse.statusCode)
-//                    let responseData = try moyaResponse.map(SubscriberListResponse.self)
-//                    print(moyaResponse.mapJSON())
 //                    print(moyaResponse.description)
-                    print(moyaResponse)
+//                    let responseData = try moyaResponse.map(SubscriberListResponse.self)
+//                    print(moyaResponse.response)
+//                    print(moyaResponse.data)
                 } catch(let err) {
                     print(err.localizedDescription)
                 }

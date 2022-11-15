@@ -25,7 +25,7 @@ extension SubscriberService: TargetType{
     var path: String{
         switch self{
         case .addSubscriber(let param):
-            return "subscribe/addsubscriber/@\(param.name)"
+            return "subscribe/addsubscriber/\(param.name)"
         case .getSubscriber:
             return "subscribe/getsubscriber"
         }
