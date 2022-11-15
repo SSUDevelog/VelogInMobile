@@ -40,11 +40,15 @@ class SearchSubscribeViewController: UIViewController {
         self.setupSearchController()
         self.setupTableView()
     
-        // UI 설계가 아직 안나와서 일단 여기에
-        postServer()
 
         // UI
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // UI 설계가 아직 안나와서 일단 여기에
+        postServer()  // 일단 여기 막을게
     }
 
     func setupSearchController(){
@@ -107,17 +111,16 @@ class SearchSubscribeViewController: UIViewController {
     
     func postServer(){
         // server
-        let param = AddRequest("@superlipbalm") // 일단 더미 데이터
+        let param = AddRequest("turtle601") // 일단 더미 데이터 - 이건 일단 들어가네!!!
         print(param)
         self.provider.request(.addSubscriber(param:param)){ response in
             switch response {
                 case .success(let moyaResponse):
                     do {
-                        let responseData = try moyaResponse.map(SubscriberResponse.self)
-                        
-                        print("subscribe Get")
+//                        let responseData = try moyaResponse.map(SubscriberResponse.self)
+//                        print("subscribe Get")
                         print(moyaResponse.statusCode)
-                        print(responseData.msg)
+//                        print(responseData.msg)
                         
                     } catch(let err) {
                         print(err.localizedDescription)

@@ -51,10 +51,15 @@ extension SubscriberService: TargetType{
     }
     
     var headers: [String : String]? {
+
         
         let realm = RealmService()
+        let accessToken = realm.getToken()
+        switch self{
+        default:
+            return ["Content-Type": "application/json","X-AUTH-TOKEN":accessToken]
+        }
 
-        return [ "Content-type": "application/json", "X-AUTH-TOKEN" : realm.getToken()]
-        
     }
+    
 }

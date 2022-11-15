@@ -9,9 +9,13 @@ import UIKit
 import SnapKit
 import Then
 import Moya
+import Realm
+import RealmSwift
 
 
 class SignInViewController: UIViewController {
+    
+    
     
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
     private let provider = MoyaProvider<SignServices>()
@@ -20,6 +24,7 @@ class SignInViewController: UIViewController {
     var responseData: SigninResponse?
     
     let realm = RealmService()
+    
     
     private let titleLabel = UILabel().then {
         $0.text = "Login"
@@ -70,12 +75,16 @@ class SignInViewController: UIViewController {
         $0.distribution = .equalSpacing
     }
 
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.realm.readDB()
 //        self.realm.resetDB()
+//        print(realm.getToken())
+
+//        print(realm.getToken()) // string 형태로 token 나온다.
+        
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         setUIForSignIn()

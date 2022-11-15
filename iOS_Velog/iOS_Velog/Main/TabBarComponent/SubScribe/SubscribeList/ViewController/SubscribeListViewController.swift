@@ -12,6 +12,7 @@ import RealmSwift
 import Realm
 import Moya
 
+
 class SubscribeListViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
@@ -64,9 +65,9 @@ class SubscribeListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
+        super.viewWillAppear(animated)
 //        resetSubScribeList()
-        getServer()
+        getServer() // 일단 여기 막을게
         
     }
 
@@ -81,15 +82,14 @@ class SubscribeListViewController: UIViewController {
     }
     
     func getServer(){
+
         self.provider.request(.getSubscriber){response in
             switch response{
             case .success(let moyaResponse):
                 do{
-                    let responseData = try moyaResponse.map(SubscriberListResponse.self)
-                    
-                    print("subscriber List Get")
                     print(moyaResponse.statusCode)
-                    print(responseData.msg)
+                    let responseData = try moyaResponse.map(SubscriberListResponse.self)
+                    print(responseData)
                 } catch(let err) {
                     print(err.localizedDescription)
                 }
