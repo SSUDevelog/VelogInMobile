@@ -27,7 +27,7 @@ extension SubscriberService: TargetType{
         case .addSubscriber(let param):
             return "subscribe/addsubscriber/@\(param.name)"
         case .getSubscriber:
-            return "subscribe/getsubscrider"
+            return "subscribe/getsubscriber"
         }
     }
     
