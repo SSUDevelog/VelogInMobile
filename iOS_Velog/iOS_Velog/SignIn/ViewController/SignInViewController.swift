@@ -112,8 +112,7 @@ class SignInViewController: UIViewController {
         
     }
     
-    @objc func pushViewForSignUp(){
-        print("pushView")
+    @objc func pushViewForSignUp(){        print("pushView")
         let nextVC = SignUpViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
