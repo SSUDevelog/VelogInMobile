@@ -24,6 +24,6 @@ struct SignUpResponse: Codable {
     let code:Int
     let msg:String
     let success:Bool
-    let token:String
+    var token:String? = nil // 서버에서는 null로 던지는데 swift에서는 null 이 없어서 nil로 옵셔널 걸었다.
 
 }

@@ -29,8 +29,8 @@ class RealmService{
     }
     
     func getToken()->String{
-        let token = localRealm.objects(Token.self).description
-        return token
+        let token = localRealm.objects(Token.self)
+        return token[0].token
     }
     
     func delete(deleteId:String) {

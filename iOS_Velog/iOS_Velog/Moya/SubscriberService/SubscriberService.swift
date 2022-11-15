@@ -7,6 +7,8 @@
 
 import Foundation
 import Moya
+import Realm
+import RealmSwift
 
 enum SubscriberService{
     case addSubscriber(param: AddRequest)
@@ -14,6 +16,8 @@ enum SubscriberService{
 }
 
 extension SubscriberService: TargetType{
+    
+    
     var baseURL: URL {
         return URL(string: BaseURL.BURL)!
     }
@@ -21,9 +25,9 @@ extension SubscriberService: TargetType{
     var path: String{
         switch self{
         case .addSubscriber(let param):
-            return "subscribe/addsubscriber/@\(param.name)"
+            return "subscribe/addsubscriber/\(param.name)"
         case .getSubscriber:
-            return "subscribe/getsubscrider"
+            return "subscribe/getsubscriber"
         }
     }
     
@@ -47,8 +51,15 @@ extension SubscriberService: TargetType{
     }
     
     var headers: [String : String]? {
+
         
-        return [ "Content-type": "application/json", "X-AUTH-TOKEN" : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJaeGN2YiIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Njg0NDM3NTcsImV4cCI6MTY2ODQ0NzM1N30.k3JwblKYGTE9GPkinprT0klxB4j5jIp8cNK0YOSFpXc"]
-        
+        let realm = RealmService()
+        let accessToken = realm.getToken()
+        switch self{
+        default:
+            return ["Content-Type": "application/json","X-AUTH-TOKEN":accessToken]
+        }
+
     }
+    
 }

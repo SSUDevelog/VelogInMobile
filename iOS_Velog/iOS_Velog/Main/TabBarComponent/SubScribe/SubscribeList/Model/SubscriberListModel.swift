@@ -7,5 +7,5 @@
 
 import Foundation
 struct SubscriberListResponse: Codable{
-    let msg: String
+    let msg: [String]
 }
