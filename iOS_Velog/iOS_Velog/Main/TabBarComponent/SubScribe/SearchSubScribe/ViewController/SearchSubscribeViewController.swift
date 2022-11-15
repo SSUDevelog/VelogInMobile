@@ -111,17 +111,13 @@ class SearchSubscribeViewController: UIViewController {
     
     func postServer(){
         // server
-        let param = AddRequest("turtle601") // 일단 더미 데이터 - 이건 일단 들어가네!!!
+        let param = AddRequest("qwer") // 일단 더미 데이터 - 이건 일단 들어가네!!!
         print(param)
         self.provider.request(.addSubscriber(param:param)){ response in
             switch response {
                 case .success(let moyaResponse):
                     do {
-//                        let responseData = try moyaResponse.map(SubscriberResponse.self)
-//                        print("subscribe Get")
                         print(moyaResponse.statusCode)
-//                        print(responseData.msg)
-                        
                     } catch(let err) {
                         print(err.localizedDescription)
                     }
