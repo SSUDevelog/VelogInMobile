@@ -202,8 +202,8 @@
 		912D275B291A2CC9004382BB /* SearchSubScribe */ = {
 			isa = PBXGroup;
 			children = (
-				916AE8212922A706007CCDE7 /* SubscriberModel.swift */,
 				912D275C291A2D00004382BB /* ViewController */,
+				916AE8212922A706007CCDE7 /* SubscriberModel.swift */,
 			);
 			path = SearchSubScribe;
 			sourceTree = "<group>";
