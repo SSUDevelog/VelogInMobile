@@ -24,6 +24,7 @@
 		9170F14229154C5C0056E182 /* CustomCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9170F14129154C5C0056E182 /* CustomCellModel.swift */; };
 		9172F2A02916340600C6C890 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172F29F2916340600C6C890 /* Subscriber.swift */; };
 		9172F2A22916358900C6C890 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9172F2A12916358900C6C890 /* RealmService.swift */; };
+		91755F1B29233C24005C94D7 /* SubscriberListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91755F1A29233C24005C94D7 /* SubscriberListModel.swift */; };
 		917AA1BA28F2A814004EF8DB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1B928F2A814004EF8DB /* Then */; };
 		917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1BF28F2A93C004EF8DB /* UITextField+.swift */; };
 		917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C328F46053004EF8DB /* UIColor+.swift */; };
@@ -67,6 +68,7 @@
 		9170F14129154C5C0056E182 /* CustomCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellModel.swift; sourceTree = "<group>"; };
 		9172F29F2916340600C6C890 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		9172F2A12916358900C6C890 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		91755F1A29233C24005C94D7 /* SubscriberListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberListModel.swift; sourceTree = "<group>"; };
 		917AA1BF28F2A93C004EF8DB /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		912D2754291A2B22004382BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				91755F1A29233C24005C94D7 /* SubscriberListModel.swift */,
 				9170F13F29154A710056E182 /* CustomCell.swift */,
 				9170F14129154C5C0056E182 /* CustomCellModel.swift */,
 			);
@@ -458,6 +461,7 @@
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
+				91755F1B29233C24005C94D7 /* SubscriberListModel.swift in Sources */,
 				9160AB8E291E1D4300079BF9 /* Token.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
