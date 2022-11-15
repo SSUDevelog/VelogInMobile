@@ -10,8 +10,12 @@ import SnapKit
 import Then
 import RealmSwift
 import Realm
+import Moya
 
 class SubscribeListViewController: UIViewController {
+    
+    private let provider = MoyaProvider<SubscriberService>()
+    var responseData: SubscriberListResponse?
     
     var realm = try! Realm()
     
@@ -62,15 +66,35 @@ class SubscribeListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
 //        resetSubScribeList()
+        getServer()
         
     }
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){
         for item in realm.objects(Subscriber.self){
+            // 여기서 get subscriber list
             self.subScribeList.append(item.velogId)
         }
         tableViewForSubscribeList.reloadData()
+    }
+    
+    func getServer(){
+        self.provider.request(.getSubscriber){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    let responseData = try moyaResponse.map(SubscriberListResponse.self)
+                    print("subscriber List Get")
+                    print(moyaResponse.statusCode)
+                    print(responseData.msg)
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
     
     func setUI(){
@@ -85,8 +109,6 @@ class SubscribeListViewController: UIViewController {
         }
         
         addButton.snp.makeConstraints{
-
-//            $0.centerY.equalTo(titleLabel)
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.trailing.equalToSuperview().offset(-40)
         }
