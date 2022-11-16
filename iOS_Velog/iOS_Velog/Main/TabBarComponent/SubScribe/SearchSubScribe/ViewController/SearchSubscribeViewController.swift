@@ -111,13 +111,14 @@ class SearchSubscribeViewController: UIViewController {
     
     func postServer(){
         // server
-        let param = AddRequest("qwer") // 일단 더미 데이터 - 이건 일단 들어가네!!!
+        let param = AddRequest("haha") // 일단 더미 데이터 - 이건 일단 들어가네!!!
         print(param)
         self.provider.request(.addSubscriber(param:param)){ response in
             switch response {
                 case .success(let moyaResponse):
                     do {
                         print(moyaResponse.statusCode)
+                        self.getServer()
                     } catch(let err) {
                         print(err.localizedDescription)
                     }
@@ -128,39 +129,60 @@ class SearchSubscribeViewController: UIViewController {
 
     }
     
+    func getServer(){
+
+        self.provider.request(.getSubscriber){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    
+                    print(moyaResponse.statusCode)
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+//                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
+                
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     
 }
 
 extension SearchSubscribeViewController:UITableViewDelegate, UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return self.dummyData.count
-        return self.isFiltering ? self.filteredArr.count : self.dummyData.count
+//        return self.isFiltering ? self.filteredArr.count : self.dummyData.count
+        return 1
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        if self.isFiltering {
-        cell.textLabel?.text = self.filteredArr[indexPath.row]
-        } else {
-            cell.textLabel?.text = self.dummyData[indexPath.row]
-        }
+//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+//        if self.isFiltering {
+//        cell.textLabel?.text = self.filteredArr[indexPath.row]
+//        } else {
+//            cell.textLabel?.text = self.dummyData[indexPath.row]
+//        }
         return cell
     }
     
     // cell 클릭 시 생기는 alert
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var str = dummyData[indexPath.row]  // 일단 이렇게 두면 서치하지 않은 상태에서 dummy data 에서는 로컬에 추가 된다
-        if self.isFiltering{
-            str = self.filteredArr[indexPath.row]
-        } else {
-            str = self.dummyData[indexPath.row]
-        }
-        
-        showAlert(velogId: str)  // ""안에 table cell의 label String이 들어가면 된다.
-        print("cell touched")
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var str = dummyData[indexPath.row]  // 일단 이렇게 두면 서치하지 않은 상태에서 dummy data 에서는 로컬에 추가 된다
+//        if self.isFiltering{
+//            str = self.filteredArr[indexPath.row]
+//        } else {
+//            str = self.dummyData[indexPath.row]
+//        }
+//
+//        showAlert(velogId: str)  // ""안에 table cell의 label String이 들어가면 된다.
+//        print("cell touched")
+//    }
     
 
 

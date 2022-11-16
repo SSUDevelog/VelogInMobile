@@ -27,7 +27,7 @@ class SubscribeListViewController: UIViewController {
 //    var data = [CustomCellModel]()
 
     // velog 사용자 아이디만 가져온 list
-    var subScribeList = [String]()
+//    var subScribeList = [String]()
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe List"
@@ -98,8 +98,8 @@ class SubscribeListViewController: UIViewController {
                 do{
                     
                     print(moyaResponse.statusCode)
-                    self.subScribeList = try moyaResponse.mapJSON() as! [String]
-                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+//                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
                 
                 }catch(let err) {
                     print(err.localizedDescription)
@@ -148,10 +148,10 @@ class SubscribeListViewController: UIViewController {
     @objc func deleteBtnAction(_ sender: UIButton) {
         let point = sender.convert(CGPoint.zero, to: tableViewForSubscribeList)
         guard let indexPath = tableViewForSubscribeList.indexPathForRow(at: point) else { return }
-        let person = subScribeList[indexPath.row]
-        subScribeList.remove(at: indexPath.row)   // 일단 보류
+//        let person = subScribeList[indexPath.row]
+//        subScribeList.remove(at: indexPath.row)   // 일단 보류
         tableViewForSubscribeList.deleteRows(at: [indexPath], with: .automatic)
-        print(type(of: person)) // String
+//        print(type(of: person)) // String
 //        let subscribeToDelete = Subscriber(velogId: person)
 //        realm.delete(subscribeToDelete)
 
@@ -168,13 +168,14 @@ class SubscribeListViewController: UIViewController {
 extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return data.count // 더미 데이터 코드
-        return (subScribeList.count)
+        return userList.List.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        var cell = UITableViewCell()
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier) as? CustomCell ?? CustomCell()
-        cell.bind(model: subScribeList[indexPath.row])
-        cell.rightButton.addTarget(self, action: #selector(deleteBtnAction), for: .touchUpInside)
+        cell.bind(model: userList.List[indexPath.row])
+//        cell.rightButton.addTarget(self, action: #selector(deleteBtnAction), for: .touchUpInside)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
