@@ -79,19 +79,20 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.realm.readDB()
-//        self.realm.resetDB()
-//        print(realm.getToken())
-
-//        print(realm.getToken()) // string 형태로 token 나온다.
-        
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
+        
+        // 자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
+        // 자동로그인 시 새로운 토큰 발급 받지 않는다
+        if checkRealmToken() {
+            pushViewForSignIn()
+        }
+        
+        
         setUIForSignIn()
         
     }
 
-    
     func setUIForSignIn(){
         view.addSubview(titleLabel)
         view.addSubview(stackView)
@@ -121,24 +122,52 @@ class SignInViewController: UIViewController {
         
     }
     
-    @objc func pushViewForSignUp(){        print("pushView")
+    @objc func pushViewForSignUp(){
         let nextVC = SignUpViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+
     @objc func pushViewForSignIn(){
         
-        // 서버 통신
-        postServer()
-        
-        // 일단 default 로그인 성공으로 가정
-        print("pushView")
+        switch checkRealmToken(){
+        case false :   // 토근 발급 전
+            // 서버 통신
+            let successInt = postServer()
+            if successInt > 200 && successInt < 200 {
+                // 잘못된 접근
+                showFailAlert()
+                break
+            }
+            else{
+                // 올바른 접근
+                ifSuccessPushHome()
+                break
+            }
+        default:
+            ifSuccessPushHome()
+        }
+    }
+    
+    private func ifSuccessPushHome(){
         let nextVC = CustomTabBarController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    // 로컬db에 토큰이 있는지 확인하는 함수
+    func checkRealmToken()->Bool{
+        if realm.getToken() == ""{
+            return false
+        }else{
+            return true
+        }
+    }
     
-    func postServer(){
+    
+    func postServer()->Int{
+        
+        var successInt = 499
+        
         // server
         let param = SignInRequest.init(self.EmailTextField.text!,self.PasswordTextField.text!)
         print(param)
@@ -150,8 +179,8 @@ class SignInViewController: UIViewController {
                         let responseData = try moyaResponse.map(SigninResponse.self)
                         print(moyaResponse.statusCode)
                         print(responseData.token)
-                        
-                        // add token in realm
+                        successInt =  moyaResponse.statusCode
+                        // 로컬에 토큰 저장
                         self.addTokenInRealm(item: responseData.token)
                         
                     } catch(let err) {
@@ -161,7 +190,20 @@ class SignInViewController: UIViewController {
                     print(err.localizedDescription)
             }
         }
+        
+        return successInt
     }
+    
+    // Alert : 로그인 실패로 회원가입하라는 알림
+    func showFailAlert(){
+        let alert = UIAlertController(title: "로그인 실패", message: "회원가입 이후 다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+
+        let okAction = UIAlertAction(title: "OK", style: .default, handler : nil) // 여기에 클로저 형태로 이후 이벤트 구현
+    
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     
     
     func addTokenInRealm(item:String){
