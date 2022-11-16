@@ -82,6 +82,8 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         
+//        realm.resetDB()
+        
         // 자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
         // 자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
@@ -133,8 +135,9 @@ class SignInViewController: UIViewController {
         switch checkRealmToken(){
         case false :   // 토근 발급 전
             // 서버 통신
+            print("no token")
             let successInt = postServer()
-            if successInt > 200 && successInt < 200 {
+            if successInt > 200 {
                 // 잘못된 접근
                 showFailAlert()
                 break
@@ -176,21 +179,21 @@ class SignInViewController: UIViewController {
                 case .success(let moyaResponse):
 //                    var responseData = moyaResponse.data
                     do {
-                        let responseData = try moyaResponse.map(SigninResponse.self)
-                        print(moyaResponse.statusCode)
-                        print(responseData.token)
+//                        print(moyaResponse.statusCode)
                         successInt =  moyaResponse.statusCode
+//                        print(responseData.token)
+                        let responseData = try moyaResponse.map(SigninResponse.self)
                         // 로컬에 토큰 저장
                         self.addTokenInRealm(item: responseData.token)
                         
                     } catch(let err) {
                         print(err.localizedDescription)
+                        
                     }
                 case .failure(let err):
                     print(err.localizedDescription)
             }
         }
-        
         return successInt
     }
     
