@@ -21,7 +21,7 @@ class SubscribeListViewController: UIViewController {
     var realm = try! Realm()
     
     // 구독자 리스트
-    var subscriberList = [String]()
+//    var subscriberList = [String]()
     
     // for 더미 데이터
 //    var data = [CustomCellModel]()
@@ -56,31 +56,38 @@ class SubscribeListViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
     
         
-        resetSubScribeList()
+//        resetSubScribeList()
         
         tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
         tableViewForSubscribeList.dataSource = self
         
         // Do any additional setup after loading the view.
+//        resetSubScribeList()
+        
+//        self.subScribeList.append(self.subScribeList)
+        
+        
         setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated
         super.viewWillAppear(animated)
-//        resetSubScribeList()
-        getServer() // 일단 여기 막을게
-        
+        resetSubScribeList()
+    
     }
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){
         
-        for item in realm.objects(Subscriber.self){
-            // 여기서 get subscriber list
-            self.subScribeList.append(item.velogId)
-        }
+//        for item in realm.objects(Subscriber.self){
+//            // 여기서 get subscriber list
+//            self.subScribeList.append(item.velogId)
+//        }
+        getServer()
         tableViewForSubscribeList.reloadData()
+        
     }
     
     func getServer(){
@@ -91,11 +98,9 @@ class SubscribeListViewController: UIViewController {
                 do{
                     
                     print(moyaResponse.statusCode)
-                    self.subscriberList = try moyaResponse.mapJSON() as! [String]
-                    print(self.subscriberList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
-                    
-                    
-
+                    self.subScribeList = try moyaResponse.mapJSON() as! [String]
+                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
+                
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
