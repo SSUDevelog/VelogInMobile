@@ -8,8 +8,14 @@
 import UIKit
 import SnapKit
 import Then
+import Moya
 
 class SubScribeViewController: UIViewController {
+    
+    private let provider = MoyaProvider<SubscriberService>()
+    var responseData: SubscriberListResponse?
+    
+    var subScribeList = [String]()
 
     let titleLabel = UILabel().then {
         $0.text = "Subscribe"
@@ -29,7 +35,14 @@ class SubScribeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         
+//        self.getServer()
+        
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getServer()
+        
     }
     
     func setUI(){
@@ -49,6 +62,27 @@ class SubScribeViewController: UIViewController {
         }
     }
     
+    
+    func getServer(){
+
+        self.provider.request(.getSubscriber){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print(moyaResponse.statusCode)
+//                    self.subScribeList = try moyaResponse.mapJSON() as! [String]
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+                    print(userList.List)
+//                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
+                
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 
     
     @objc func pushView(){
