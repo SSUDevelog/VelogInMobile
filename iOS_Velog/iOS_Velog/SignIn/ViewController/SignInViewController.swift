@@ -40,7 +40,6 @@ class SignInViewController: UIViewController {
         $0.placeholder = ("Password")
         $0.layer.cornerRadius = 10
         $0.borderStyle = .roundedRect
-        
     }
     
     let SignInButton = UIButton().then{
@@ -92,8 +91,15 @@ class SignInViewController: UIViewController {
         
         
         setUIForSignIn()
-        
+//        print("viewDidLoad")
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        print("viewWillAppear")
+//    }
+    // Alert 꺼져도 view가 새로 뜨는 건 아니네!
+    
+    
 
     func setUIForSignIn(){
         view.addSubview(titleLabel)
@@ -168,11 +174,10 @@ class SignInViewController: UIViewController {
     
     
     func postServer()->Int{
-        
         var successInt = 499
         
         // server
-        let param = SignInRequest.init(self.EmailTextField.text!,self.PasswordTextField.text!)
+        let param = SignInRequest.init(self.EmailTextField.text ?? "" ,self.PasswordTextField.text ?? "")
         print(param)
         self.provider.request(.signIn(param: param)){ response in
             switch response {
@@ -197,16 +202,27 @@ class SignInViewController: UIViewController {
         return successInt
     }
     
+    
     // Alert : 로그인 실패로 회원가입하라는 알림
     func showFailAlert(){
-        let alert = UIAlertController(title: "로그인 실패", message: "회원가입 이후 다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+        
+        let alert = UIAlertController(title: "로그인 실패", message: "이메일 또는 비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
 
-        let okAction = UIAlertAction(title: "OK", style: .default, handler : nil) // 여기에 클로저 형태로 이후 이벤트 구현
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { okAction in   // 여기에 클로저 형태로 이후 이벤트 구현
+            
+            // 텍스트 필드 초기화
+            self.EmailTextField.text = ""
+            self.PasswordTextField.text = ""
+            
+
+
+        })
     
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
     
+
     
     
     func addTokenInRealm(item:String){
@@ -214,4 +230,14 @@ class SignInViewController: UIViewController {
         realm.addToken(item: item)
     }
     
+}
+
+extension UIAlertAction {
+    var titleTextColor: UIColor? {
+        get {
+            return self.value(forKey: "titleTextColor") as? UIColor
+        } set {
+            self.setValue(newValue, forKey: "titleTextColor")
+        }
+    }
 }
