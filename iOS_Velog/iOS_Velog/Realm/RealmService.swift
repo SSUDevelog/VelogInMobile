@@ -30,7 +30,9 @@ class RealmService{
     
     func getToken()->String{
         let token = localRealm.objects(Token.self)
-        return token[0].token
+//        return token[0].token
+        // 가장 마지막 토큰을 헤더에 넣기
+        return token.last?.token ?? ""
     }
     
     func delete(deleteId:String) {
