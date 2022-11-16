@@ -20,8 +20,8 @@ class SubscribeListViewController: UIViewController {
     
     var realm = try! Realm()
     
-    
-    var subscriberList:[String]!
+    // 구독자 리스트
+    var subscriberList = [String]()
     
     // for 더미 데이터
 //    var data = [CustomCellModel]()
@@ -91,8 +91,8 @@ class SubscribeListViewController: UIViewController {
                 do{
                     
                     print(moyaResponse.statusCode)
-                    subscriberList = try moyaResponse.mapJSON()
-                    print(subscriberList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
+                    self.subscriberList = try moyaResponse.mapJSON() as! [String]
+                    print(self.subscriberList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
                     
                     
 
