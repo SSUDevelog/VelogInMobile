@@ -8,9 +8,10 @@
 import Foundation
 
 struct AddRequest: Codable{
+    var fcmToken:String
     var name:String
-    
-    init(_ name:String){
+    init(_ fcmToken:String,_ name:String){
+        self.fcmToken = fcmToken
         self.name = name
     }
 }
