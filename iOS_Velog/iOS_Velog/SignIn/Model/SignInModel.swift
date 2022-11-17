@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - SignInModel
 struct SignInModel: Codable {
-    let id,password:String
+    let fcmToken,id,password:String
 }
 
 // MARK: - SignupResponse
