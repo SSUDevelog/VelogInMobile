@@ -17,24 +17,23 @@ enum SubscriberService{
 
 extension SubscriberService: TargetType{
     
-    
     var baseURL: URL {
         return URL(string: BaseURL.BURL)!
     }
-
-    var path: String{
+    var path: String {
         switch self{
-        case .addSubscriber(let param):
-            return "subscribe/addsubscriber/\(param.name)"
+        case .addSubscriber:
+            return "subscribe/addsubscriber"
         case .getSubscriber:
             return "subscribe/getsubscriber"
         }
     }
+//http://34.125.230.85:8080/subscribe/addsubscriber?fcmToken=temporaryFCMToken&name=lhr4884
     
     var method: Moya.Method {
         switch self{
         case .addSubscriber:
-            return .get
+            return .post
         case .getSubscriber:
             return .get
         }
@@ -42,8 +41,9 @@ extension SubscriberService: TargetType{
     
     var task: Task {
         switch self{
-        case .addSubscriber:
-            return .requestPlain
+        case .addSubscriber(param: let param):
+//            return .requestJSONEncodable(param)   여기가 문제야!!!!
+            return .requestParameters(parameters: ["fcmToken" : param.fcmToken,"name" : param.name], encoding: URLEncoding.queryString)
         case .getSubscriber:
             return .requestPlain
         }
