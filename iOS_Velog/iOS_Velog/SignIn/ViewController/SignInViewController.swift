@@ -177,7 +177,7 @@ class SignInViewController: UIViewController {
         var successInt = 499
         
         // server
-        let param = SignInRequest.init(self.EmailTextField.text ?? "" ,self.PasswordTextField.text ?? "")
+        let param = SignInRequest.init("temporaryFCMToken", self.EmailTextField.text ?? "" ,self.PasswordTextField.text ?? "")
         print(param)
         self.provider.request(.signIn(param: param)){ response in
             switch response {

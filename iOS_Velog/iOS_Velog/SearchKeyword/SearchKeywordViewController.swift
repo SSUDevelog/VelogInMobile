@@ -88,7 +88,7 @@ class SearchKeywordViewController:UIViewController{
     
     @objc func pushView2(){
         print("pushView2")
-        let nextVC = CustomTabBarController()
+        let nextVC = SignInViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
