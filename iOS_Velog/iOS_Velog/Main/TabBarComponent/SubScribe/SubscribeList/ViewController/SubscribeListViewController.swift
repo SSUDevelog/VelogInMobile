@@ -8,8 +8,6 @@
 import UIKit
 import SnapKit
 import Then
-import RealmSwift
-import Realm
 import Moya
 
 
@@ -17,17 +15,6 @@ class SubscribeListViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
     var responseData: SubscriberListResponse?
-    
-    var realm = try! Realm()
-    
-    // 구독자 리스트
-//    var subscriberList = [String]()
-    
-    // for 더미 데이터
-//    var data = [CustomCellModel]()
-
-    // velog 사용자 아이디만 가져온 list
-//    var subScribeList = [String]()
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe List"
@@ -54,9 +41,6 @@ class SubscribeListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
-    
-        
-//        resetSubScribeList()
         
         tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
@@ -117,8 +101,6 @@ class SubscribeListViewController: UIViewController {
 
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
-//            $0.leading.equalToSuperview().offset(20)
-//            $0.trailing.equalToSuperview().offset(-50)
             $0.centerX.equalToSuperview()
         }
         

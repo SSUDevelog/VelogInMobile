@@ -15,6 +15,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     // for server
     private let provider = MoyaProvider<SubscriberService>()
     var responseData: AddSubscriberResponse?
+    
 
     let titleLabel = UILabel().then {
         $0.text = "Search"
@@ -126,7 +127,10 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                     
                     print(responseData.userName as Any)
 
-                    if responseData.validate == true {
+                    if self.checkDoubleSubscription(inputId: responseData.userName) == false {
+                        self.label.text = "이미 구독한 유저입니다."
+                        self.label.textColor = .red
+                    }else if responseData.validate == true {
                         print("구독자 추가 성공!")
                         self.label.textColor = UIColor.black
                         self.label.text = "구독 추가 되었습니다."
@@ -155,7 +159,6 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                 do{
                     print(moyaResponse.statusCode)
                     print("최종추가됨")
-                    
                     self.getServer()
                 }catch(let err){
                     print(err.localizedDescription)
@@ -165,6 +168,8 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             }
         }
     }
+    
+    
     
     // 구독자 추가했을 경우 서버 디비 재호출
     func getServer(){
@@ -183,5 +188,16 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             }
         }
     }
+    
+    // 구독하려는 아이디가 구독리스트에 있는지 체크하는 메소드
+    func checkDoubleSubscription(inputId:String)->Bool{
+        for list in userList.List {
+            if list == inputId {
+                return false
+            }
+        }
+        return true
+    }
+    
 }
 
