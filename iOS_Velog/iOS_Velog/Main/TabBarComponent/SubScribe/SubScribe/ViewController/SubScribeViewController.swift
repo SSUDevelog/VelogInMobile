@@ -14,8 +14,6 @@ class SubScribeViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
     var responseData: SubscriberListResponse?
-    
-    var subScribeList = [String]()
 
     let titleLabel = UILabel().then {
         $0.text = "Subscribe"
@@ -31,13 +29,15 @@ class SubScribeViewController: UIViewController {
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
     
+    let contentsScrollView = ScrollView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         
-//        self.getServer()
-        
+        self.getServer()
+
         setUI()
     }
     
@@ -47,8 +47,11 @@ class SubScribeViewController: UIViewController {
     }
     
     func setUI(){
+
+        
         view.addSubview(titleLabel)
         view.addSubview(addSubscribeBtn)
+        view.addSubview(contentsScrollView)
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
@@ -60,8 +63,16 @@ class SubScribeViewController: UIViewController {
             $0.leading.equalToSuperview().offset(200)
             $0.trailing.equalToSuperview().offset(-30)
         }
+        
+        contentsScrollView.snp.makeConstraints { make in
+            make.top.equalTo(addSubscribeBtn.snp.bottom).offset(20)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+
     }
-    
+
     
     func getServer(){
 
