@@ -23,14 +23,16 @@ class CustomCell:UITableViewCell{
     lazy var rightButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemBackground
-        button.setTitle("delete", for: .normal)
-        button.setTitleColor(UIColor.systemRed, for: .normal)
+//        button.setTitle("delete", for: .normal)
+        button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        button.setTitleColor(UIColor.systemRed, for: .normal)
         print("btn")
         return button
     }()
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [leftLabel, rightButton])
+        stackView.spacing = 80
         contentView.addSubview(stackView)
 
         stackView.snp.makeConstraints{
