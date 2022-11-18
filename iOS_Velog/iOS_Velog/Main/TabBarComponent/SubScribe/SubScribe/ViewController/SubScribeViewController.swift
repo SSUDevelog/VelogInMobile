@@ -23,8 +23,9 @@ class SubScribeViewController: UIViewController {
     }
     
     let addSubscribeBtn = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.setTitle("My Subscribe List", for: .normal)
         
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
@@ -51,15 +52,11 @@ class SubScribeViewController: UIViewController {
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.equalToSuperview().offset(-30)
             $0.centerX.equalToSuperview()
         }
         
         addSubscribeBtn.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-//            $0.leading.equalToSuperview().offset(20)
-//            $0.trailing.equalToSuperview().offset(-20)
             $0.leading.equalToSuperview().offset(90)
             $0.trailing.equalToSuperview().offset(-90)
         }
