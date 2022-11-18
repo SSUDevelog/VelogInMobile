@@ -8,22 +8,23 @@
 import UIKit
 import SnapKit
 import Then
-import Realm
-import RealmSwift
 import Moya
 
 class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
 
     // for server
     private let provider = MoyaProvider<SubscriberService>()
-//    var subScriberData: SubscriberModel?
-    var responseData: SubscriberResponse?
-    
-    
-    var realm = RealmService()
-    
-    let searchController = UISearchController(searchResultsController: nil)
+    var responseData: AddSubscriberResponse?
 
+    let titleLabel = UILabel().then {
+        $0.text = "Search"
+        $0.font = UIFont(name: "Avenir-Black", size: 40)
+    }
+    let titleLabel2 = UILabel().then {
+        $0.text = "Subscriber"
+        $0.font = UIFont(name: "Avenir-Black", size: 40)
+    }
+    
     let AddSubscriberBtn = UIButton().then {
         $0.setTitle("구독 추가", for: .normal)
         $0.setTitleColor(UIColor.customColor(.pointColor), for: .normal)
@@ -41,22 +42,11 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         $0.textColor = UIColor.red
     }
 
-    
-//    private let tableView: UITableView = {
-//        let tableview = UITableView()
-//        return tableview
-//    }()
-    
-//    var dummyData:[String] = ["Aaliyah","Aaron","Olivia","Hazel","Lily","Zoe","Grace","Ava","Isabella","Harry","Liam","Lucas","Declan","Elliot","Owen","Theodore","Jasper","Oskar","Tyler","Jade","Cameron","Kailani","Rochella","Floriana","Melody","Agata","Mia"]
-    
-    // fillerArr
-//    var filteredArr: [String] = []
+
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-//        self.setupSearchController()
-//        self.setupTableView()
         self.textField.delegate = self  // 필요??
         
         // UI
@@ -65,81 +55,59 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // UI 설계가 아직 안나와서 일단 여기에
-//        postServer()  // 일단 여기 막을게
+
         getServer()
     }
 
-//    func setupSearchController(){
-        // Do any additional setup after loading the view.
-//        navigationItem.title = "Subscribe Search"
-                
-        // navigation item 에 searchController 추가
-//        navigationItem.searchController = searchController
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        self.navigationItem.hidesSearchBarWhenScrolling = false
-//        searchController.automaticallyShowsCancelButton = false
-
-        // text 입력할 때 마다 업데이트 될 부분
-//        searchController.searchResultsUpdater = self
-        
-        // keyboard up -> not finish
-//        searchController.becomeFirstResponder()
-//    }
-    
-//    func setupTableView(){
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
-//    }
     
     func setUI(){
-        view.backgroundColor = .systemBackground
-//        view.addSubview(tableView)
         
-//        tableView.snp.makeConstraints{
-//            $0.top.leading.trailing.equalToSuperview()
-//            $0.bottom.equalToSuperview().offset(-20)
-//        }
+        setTextField()
+        
+        view.backgroundColor = .systemBackground
+
+        view.addSubviews(titleLabel)
+        view.addSubviews(titleLabel2)
         view.addSubviews(textField)
         view.addSubviews(AddSubscriberBtn)
         view.addSubviews(label)
         
-        textField.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(150)
-            make.centerX.equalToSuperview()
+        
+        titleLabel.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(100)
+            $0.centerX.equalToSuperview()
         }
-        AddSubscriberBtn.snp.makeConstraints { make in
-            make.top.equalTo(textField.snp.bottom).offset(30)
+        titleLabel2.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
+            $0.centerX.equalTo(titleLabel)
+        }
+        
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel2.snp.bottom).offset(60)
+            make.centerX.equalTo(titleLabel2)
+        }
+        
+        label.snp.makeConstraints{ make in
+            make.top.equalTo(textField.snp.bottom).offset(5)
             make.centerX.equalTo(textField)
         }
-        label.snp.makeConstraints{ make in
-            make.top.equalTo(AddSubscriberBtn.snp.bottom).offset(10)
-            make.centerX.equalTo(AddSubscriberBtn)
+        
+        AddSubscriberBtn.snp.makeConstraints { make in
+            make.top.equalTo(textField.snp.bottom).offset(90)
+            make.leading.equalToSuperview().offset(90)
+            make.trailing.equalToSuperview().offset(-90)
         }
+
         
     }
-        
-//    func showAlert(velogId:String){
-//        let alert = UIAlertController(title: "Want to subscribe?", message: "will be added to the subscription list", preferredStyle: UIAlertController.Style.alert)
-//
-//        let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil) // 여기에 클로저 형태로 이후 이벤트 구현
-//        let okAction = UIAlertAction(title: "OK", style: .default, handler: { okAction in   // 여기에 클로저 형태로 이후 이벤트 구현
-//            self.makeSubscribe(velogId: velogId)
-//        })
-//
-//        alert.addAction(cancel)
-//        alert.addAction(okAction)
-//        present(alert, animated: true, completion: nil)
-//    }
+
+    func setTextField(){
+        self.textField.autocapitalizationType = .none
+        self.textField.borderStyle = UITextField.BorderStyle.roundedRect
+        self.textField.clearButtonMode = .always
+    }
     
-//    // showAlert에서의 okAction (구독 최종 추가 함수)
-//    func makeSubscribe(velogId:String){
-//        realm.add(item: velogId)
-//    }
-    
-    
+    // velog 유저 체크 시작점
     @objc func checkVelogUser(){
         let id = self.textField.text ?? ""
         print(id)
@@ -148,19 +116,26 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     // 검색 결과 확인
     func postServer(id:String){
-        var status: Int = 0
         self.provider.request(.checkSubscriber(self.textField.text ?? "")){ response in
-            switch response{
+        switch response{
             case .success(let moyaResponse):
                 do{
-                    status = moyaResponse.statusCode
-                    print("ohoh \(status)")
-                    if(status == 200){
+                    
+                    print(try moyaResponse.mapJSON())
+                    let responseData = try moyaResponse.map(AddSubscriberResponse.self)
+                    
+                    print(responseData.userName as Any)
+
+                    if responseData.validate == true {
                         print("구독자 추가 성공!")
                         self.label.textColor = UIColor.black
-                        self.label.text = "존재하는 사용자입니다."
+                        self.label.text = "구독 추가 되었습니다."
                         // 최종 구독자 추가
                         self.addSubscriber(Id: id)
+                    }else{
+                        print("없는 사용자입니다.")
+                        self.label.text = "없는 사용자입니다."
+                        self.textField.text = ""
                     }
                 }catch(let err){
                     print(err.localizedDescription)
@@ -180,6 +155,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                 do{
                     print(moyaResponse.statusCode)
                     print("최종추가됨")
+                    
                     self.getServer()
                 }catch(let err){
                     print(err.localizedDescription)
@@ -207,90 +183,5 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             }
         }
     }
-    
-    
-    
-    //
-    //    var isFiltering: Bool {
-    //        let searchController = self.navigationItem.searchController
-    //        let isActive = searchController?.isActive ?? false
-    //        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
-    //        return isActive && isSearchBarHasText
-    //    }
-
 }
 
-//extension SearchSubscribeViewController: UISearchBarDelegate{
-//        private func dissmissKeyboard() {
-////            self.searchBar.resignFirstResponder()
-//            self.searchController.searchBar.resignFirstResponder()
-//        }
-//        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//            // 검색 시작
-//            //키보드가 올라와 있을떄, 내려가게
-//            dissmissKeyboard()
-//            // 검색어가 있는지
-//            guard let searchTerm = searchBar.text, searchTerm.isEmpty == false else { return }
-//            print("--> 검색어: \(searchTerm)")
-//
-//        }
-//
-//}
-//
-
-
-
-
-
-
-
-
-
-
-//extension SearchSubscribeViewController:UITableViewDelegate, UITableViewDataSource{
-//    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.dummyData.count
-//        return self.isFiltering ? self.filteredArr.count : self.dummyData.count
-//        return 1
-//    }
-//
-//    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = UITableViewCell()
-//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-//        if self.isFiltering {
-//        cell.textLabel?.text = self.filteredArr[indexPath.row]
-//        } else {
-//            cell.textLabel?.text = self.dummyData[indexPath.row]
-//        }
-//        return cell
-//    }
-    
-    // cell 클릭 시 생기는 alert
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var str = dummyData[indexPath.row]  // 일단 이렇게 두면 서치하지 않은 상태에서 dummy data 에서는 로컬에 추가 된다
-//        if self.isFiltering{
-//            str = self.filteredArr[indexPath.row]
-//        } else {
-//            str = self.dummyData[indexPath.row]
-//        }
-//
-//        showAlert(velogId: str)  // ""안에 table cell의 label String이 들어가면 된다.
-//        print("cell touched")
-//    }
-    
-
-
-
-//extension SearchSubscribeViewController: UISearchResultsUpdating{
-//    func updateSearchResults(for searchController: UISearchController) {
-//        searchController의 searchBar text를 Print -> 이렇게 Search Bar 업데이트를 볼 수 있다
-//        dump(searchController.searchBar.text)
-//        guard let text = searchController.searchBar.text?.lowercased() else { return }
-//        print(text)
-//        self.filteredArr = self.dummyData.filter { $0.localizedCaseInsensitiveContains(text) }
-//        self.tableView.reloadData()
-
-//        dump(filteredArr)
-//    }
-//}
