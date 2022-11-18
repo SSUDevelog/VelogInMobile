@@ -28,9 +28,9 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     let AddSubscriberBtn = UIButton().then {
         $0.setTitle("구독 추가", for: .normal)
-        $0.setTitleColor(UIColor.customColor(.pointColor), for: .normal)
+        $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.addTarget(self, action: #selector(checkVelogUser), for: .touchDown)
     }
     
@@ -97,6 +97,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             make.top.equalTo(textField.snp.bottom).offset(90)
             make.leading.equalToSuperview().offset(90)
             make.trailing.equalToSuperview().offset(-90)
+            
         }
 
         
@@ -130,9 +131,10 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                     if self.checkDoubleSubscription(inputId: responseData.userName) == false {
                         self.label.text = "이미 구독한 유저입니다."
                         self.label.textColor = .red
+                        self.textField.text = ""
                     }else if responseData.validate == true {
                         print("구독자 추가 성공!")
-                        self.label.textColor = UIColor.black
+                        self.label.textColor = UIColor.customColor(.pointColor)
                         self.label.text = "구독 추가 되었습니다."
                         // 최종 구독자 추가
                         self.addSubscriber(Id: id)

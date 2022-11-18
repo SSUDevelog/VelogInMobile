@@ -25,8 +25,9 @@ class SubscribeListViewController: UIViewController {
     let addButton = UIButton().then{
         $0.backgroundColor = .black
         $0.setTitle("Add", for: .normal)
-        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
@@ -41,6 +42,7 @@ class SubscribeListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
+
         
         tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
