@@ -37,7 +37,7 @@ class SubscribeListViewController: UIViewController {
     // 구독 검색 버튼
     let addButton = UIButton().then{
         $0.backgroundColor = .black
-        $0.setTitle("+", for: .normal)
+        $0.setTitle("Add", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.layer.cornerRadius = 10
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
@@ -117,13 +117,15 @@ class SubscribeListViewController: UIViewController {
 
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-50)
+//            $0.leading.equalToSuperview().offset(20)
+//            $0.trailing.equalToSuperview().offset(-50)
+            $0.centerX.equalToSuperview()
         }
         
         addButton.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.trailing.equalToSuperview().offset(-40)
+            $0.trailing.equalToSuperview().offset(-30)
+            $0.leading.equalToSuperview().offset(250)
         }
         
 
@@ -163,7 +165,6 @@ class SubscribeListViewController: UIViewController {
 
 
 }
-
 
 extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

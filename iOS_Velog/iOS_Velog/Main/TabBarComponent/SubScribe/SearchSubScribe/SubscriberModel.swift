@@ -12,6 +12,15 @@ struct SubscriberModel: Codable{
     let name: String
 }
 
-struct SubscriberResponse: Codable{
-    let msg: String
+struct AddSubscriberResponse: Codable{
+
+    let profilePictureURL: String?
+    let profileURL: String?
+    let userName: String
+    let validate: Bool
 }
+
+//"validate": true,
+//"userName": "city7310",
+//"profilePictureURL": "",
+//"profileURL": "https://velog.io/@city7310"
