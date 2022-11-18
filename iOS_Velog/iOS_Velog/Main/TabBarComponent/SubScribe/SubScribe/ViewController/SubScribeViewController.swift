@@ -51,14 +51,17 @@ class SubScribeViewController: UIViewController {
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
+//            $0.leading.equalToSuperview().offset(30)
+//            $0.trailing.equalToSuperview().offset(-30)
+            $0.centerX.equalToSuperview()
         }
         
         addSubscribeBtn.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+//            $0.leading.equalToSuperview().offset(20)
+//            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.equalToSuperview().offset(90)
+            $0.trailing.equalToSuperview().offset(-90)
         }
     }
     
