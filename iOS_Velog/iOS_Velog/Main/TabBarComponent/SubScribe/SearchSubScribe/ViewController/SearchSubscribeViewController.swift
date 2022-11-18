@@ -17,7 +17,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     // for server
     private let provider = MoyaProvider<SubscriberService>()
 //    var subScriberData: SubscriberModel?
-    var responseData: SubscriberResponse?
+    var responseData: AddSubscriberResponse?
     
     
     var realm = RealmService()
@@ -95,6 +95,9 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
 //    }
     
     func setUI(){
+        
+        self.textField.autocapitalizationType = .none
+        
         view.backgroundColor = .systemBackground
 //        view.addSubview(tableView)
         
@@ -148,19 +151,26 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     // 검색 결과 확인
     func postServer(id:String){
-        var status: Int = 0
         self.provider.request(.checkSubscriber(self.textField.text ?? "")){ response in
-            switch response{
+        switch response{
             case .success(let moyaResponse):
                 do{
-                    status = moyaResponse.statusCode
-                    print("ohoh \(status)")
-                    if(status == 200){
+                    
+                    print(try moyaResponse.mapJSON())
+                    let responseData = try moyaResponse.map(AddSubscriberResponse.self)
+                    
+                    print(responseData.userName as Any)
+
+                    if responseData.validate == true {
                         print("구독자 추가 성공!")
                         self.label.textColor = UIColor.black
-                        self.label.text = "존재하는 사용자입니다."
+                        self.label.text = "구독 추가 되었습니다."
                         // 최종 구독자 추가
                         self.addSubscriber(Id: id)
+                    }else{
+                        print("없는 사용자입니다.")
+                        self.label.text = "없는 사용자입니다."
+                        self.textField.text = ""
                     }
                 }catch(let err){
                     print(err.localizedDescription)
@@ -180,6 +190,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                 do{
                     print(moyaResponse.statusCode)
                     print("최종추가됨")
+                    
                     self.getServer()
                 }catch(let err){
                     print(err.localizedDescription)
