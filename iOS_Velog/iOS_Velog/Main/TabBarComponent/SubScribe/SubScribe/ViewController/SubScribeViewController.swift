@@ -23,9 +23,10 @@ class SubScribeViewController: UIViewController {
     }
     
     let addSubscribeBtn = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
-        $0.setTitle("My Subscribe List", for: .normal)
+        $0.backgroundColor = UIColor.customColor(.pointColor)
+        $0.setTitle("Subscribe List", for: .normal)
         
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
@@ -51,17 +52,13 @@ class SubScribeViewController: UIViewController {
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
-//            $0.leading.equalToSuperview().offset(30)
-//            $0.trailing.equalToSuperview().offset(-30)
             $0.centerX.equalToSuperview()
         }
         
         addSubscribeBtn.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-//            $0.leading.equalToSuperview().offset(20)
-//            $0.trailing.equalToSuperview().offset(-20)
-            $0.leading.equalToSuperview().offset(90)
-            $0.trailing.equalToSuperview().offset(-90)
+            $0.leading.equalToSuperview().offset(200)
+            $0.trailing.equalToSuperview().offset(-30)
         }
     }
     
@@ -73,11 +70,9 @@ class SubScribeViewController: UIViewController {
             case .success(let moyaResponse):
                 do{
                     print(moyaResponse.statusCode)
-//                    self.subScribeList = try moyaResponse.mapJSON() as! [String]
                     userList.List = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
-//                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
-                
+                    
                 }catch(let err) {
                     print(err.localizedDescription)
                 }

@@ -8,8 +8,6 @@
 import UIKit
 import SnapKit
 import Then
-import RealmSwift
-import Realm
 import Moya
 
 
@@ -17,17 +15,6 @@ class SubscribeListViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
     var responseData: SubscriberListResponse?
-    
-    var realm = try! Realm()
-    
-    // 구독자 리스트
-//    var subscriberList = [String]()
-    
-    // for 더미 데이터
-//    var data = [CustomCellModel]()
-
-    // velog 사용자 아이디만 가져온 list
-//    var subScribeList = [String]()
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe List"
@@ -38,8 +25,9 @@ class SubscribeListViewController: UIViewController {
     let addButton = UIButton().then{
         $0.backgroundColor = .black
         $0.setTitle("Add", for: .normal)
-        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
@@ -54,18 +42,12 @@ class SubscribeListViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
-    
-        
-//        resetSubScribeList()
+
         
         tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
         tableViewForSubscribeList.dataSource = self
         
-        // Do any additional setup after loading the view.
-//        resetSubScribeList()
-        
-//        self.subScribeList.append(self.subScribeList)
         
         
         setUI()
@@ -80,14 +62,8 @@ class SubscribeListViewController: UIViewController {
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){
-        
-//        for item in realm.objects(Subscriber.self){
-//            // 여기서 get subscriber list
-//            self.subScribeList.append(item.velogId)
-//        }
         getServer()
         tableViewForSubscribeList.reloadData()
-        
     }
     
     func getServer(){
@@ -99,8 +75,7 @@ class SubscribeListViewController: UIViewController {
                     
                     print(moyaResponse.statusCode)
                     userList.List = try moyaResponse.mapJSON() as! [String]
-//                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
-                
+
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
@@ -117,8 +92,6 @@ class SubscribeListViewController: UIViewController {
 
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
-//            $0.leading.equalToSuperview().offset(20)
-//            $0.trailing.equalToSuperview().offset(-50)
             $0.centerX.equalToSuperview()
         }
         
