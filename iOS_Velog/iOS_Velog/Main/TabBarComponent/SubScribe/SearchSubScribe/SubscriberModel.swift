@@ -19,8 +19,3 @@ struct AddSubscriberResponse: Codable{
     let userName: String
     let validate: Bool
 }
-
-//"validate": true,
-//"userName": "city7310",
-//"profilePictureURL": "",
-//"profileURL": "https://velog.io/@city7310"
