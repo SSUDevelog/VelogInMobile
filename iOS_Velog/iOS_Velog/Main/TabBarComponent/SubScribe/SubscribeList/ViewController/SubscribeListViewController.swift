@@ -48,10 +48,6 @@ class SubscribeListViewController: UIViewController {
         tableViewForSubscribeList.delegate = self
         tableViewForSubscribeList.dataSource = self
         
-        // Do any additional setup after loading the view.
-//        resetSubScribeList()
-        
-//        self.subScribeList.append(self.subScribeList)
         
         
         setUI()
@@ -66,14 +62,8 @@ class SubscribeListViewController: UIViewController {
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){
-        
-//        for item in realm.objects(Subscriber.self){
-//            // 여기서 get subscriber list
-//            self.subScribeList.append(item.velogId)
-//        }
         getServer()
         tableViewForSubscribeList.reloadData()
-        
     }
     
     func getServer(){
@@ -85,8 +75,7 @@ class SubscribeListViewController: UIViewController {
                     
                     print(moyaResponse.statusCode)
                     userList.List = try moyaResponse.mapJSON() as! [String]
-//                    print(self.subScribeList)   // 서버에서 구독자 리스트 받아와서 subscriberList 에 저장
-                
+
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
