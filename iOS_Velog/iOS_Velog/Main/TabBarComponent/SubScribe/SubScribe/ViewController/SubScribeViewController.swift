@@ -29,7 +29,8 @@ class SubScribeViewController: UIViewController {
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
     
-    let contentsScrollView = ScrollView()
+    let scrollview = ScrollView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,21 +38,18 @@ class SubScribeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.getServer()
-
-        setUI()
+        self.setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
-        
     }
     
     func setUI(){
-
         
         view.addSubview(titleLabel)
         view.addSubview(addSubscribeBtn)
-        view.addSubview(contentsScrollView)
+        view.addSubview(scrollview)
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
@@ -64,11 +62,11 @@ class SubScribeViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
         }
         
-        contentsScrollView.snp.makeConstraints { make in
-            make.top.equalTo(addSubscribeBtn.snp.bottom).offset(20)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
+        scrollview.snp.makeConstraints { make in
+            make.top.equalTo(addSubscribeBtn.snp.bottom).offset(30)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-30)
         }
 
     }

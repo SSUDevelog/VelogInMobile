@@ -4,32 +4,35 @@
 //
 //  Created by 홍준혁 on 2022/11/18.
 //
-
+//
 import UIKit
 import Then
 import SnapKit
 
 class ScrollView: UIView {
+    
+    let scrollView = UIScrollView().then{
+        $0.backgroundColor = .red
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var contentView: UIView = {
+      let contentView = UIView()
+      contentView.backgroundColor = .green
+      contentView.translatesAutoresizingMaskIntoConstraints = false
+      return contentView
+    }()
+    
+    lazy var stackView: UIStackView = {
+        //arrangedSubviews <- 안에 있는 값은 클래스에서 불러온값
+        let stackV = UIStackView()
+        stackV.translatesAutoresizingMaskIntoConstraints = false
+        stackV.axis = .vertical
+        stackV.spacing = 170
+        stackV.distribution = .fillEqually
+        return stackV
+    }()
 
-    private let scrollView = UIScrollView().then {
-        $0.automaticallyAdjustsScrollIndicatorInsets = false
-//        $0.backgroundColor = .gray
-    }
-    
-    var topView = TopView()
-    
-    func topViewCus(){
-        topView.backgroundColor = .gray
-    }
-    
-    var underView = UnderBar()
-    
-    var stackView = UIStackView().then{
-        $0.axis = .vertical
-        $0.spacing = 80
-        $0.distribution = .fillProportionally
-//        $0.backgroundColor = .blue
-    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -37,28 +40,52 @@ class ScrollView: UIView {
        
     override init(frame: CGRect) {
         super .init(frame: .zero)
+        
         setViewHierarchy()
         setConstraints()
-        topViewCus()
+
     }
     
     func setViewHierarchy(){
         addSubview(scrollView)
-        stackView.addArrangedSubview(topView)
-//        stackView.addArrangedSubview(underView)
-        scrollView.addSubview(stackView)
-        
+        scrollView.addSubview(contentView)
+        contentView.addSubview(stackView)
+
+        for _ in 0..<10 {
+          let view = PostView()
+          view.backgroundColor = .blue
+          stackView.addArrangedSubview(view)
+        }
     }
     
     func setConstraints(){
-        scrollView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+        scrollView.snp.makeConstraints { make in
+            make.top.trailing.leading.bottom.equalToSuperview()
         }
-        stackView.snp.makeConstraints {
-//           $0.top.equalTo(scrollView.snp.top)
-//           $0.bottom.equalTo(scrollView.snp.bottom)
-           $0.width.equalTo(scrollView.snp.width)
+
+        NSLayoutConstraint.activate([
+          contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+          contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+          contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+          contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+          contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+        ])
+
+        NSLayoutConstraint.activate([
+          stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+          stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+          stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+          stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor)
+        ])
+
+        for view in stackView.arrangedSubviews {
+          NSLayoutConstraint.activate([
+            view.widthAnchor.constraint(equalToConstant: 100),
+            view.heightAnchor.constraint(equalToConstant: 100)
+          ])
         }
+
     }
+    
 
 }

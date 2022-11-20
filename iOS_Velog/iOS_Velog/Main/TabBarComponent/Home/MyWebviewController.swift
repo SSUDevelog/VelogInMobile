@@ -31,7 +31,7 @@ class MyWebViewContoller: UIViewController {
         self.getServer()
     }
     
-    
+    // 여기 비동기 처리해야 하나??? 동기 처리로 viewDidLoad 에 넣으면 에러 뜨네
     // 일단 임시 !!!
     func getServer(){
 
