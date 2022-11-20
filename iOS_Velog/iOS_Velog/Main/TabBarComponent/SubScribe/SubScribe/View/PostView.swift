@@ -59,6 +59,7 @@ class PostView: UIView {
         textView.isEditable = false
         textView.isSelectable = false
         textView.font = UIFont.systemFont(ofSize: 15)
+//        textView.backgroundColor = .red
     }
     
     func setViewHierarchy(){
@@ -73,7 +74,6 @@ class PostView: UIView {
     func setConstraints(){
 
         imageView.snp.makeConstraints{
-
             $0.top.leading.trailing.equalToSuperview()
             $0.height.equalTo(100)
         }
@@ -81,9 +81,7 @@ class PostView: UIView {
         title.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(5)
             $0.leading.equalToSuperview().offset(40)
-//            $0.width.equalTo(300)
             $0.trailing.equalToSuperview()
-            
         }
         
         textView.snp.makeConstraints {
@@ -94,16 +92,16 @@ class PostView: UIView {
             $0.height.equalTo(80)
         }
         
-        date.snp.makeConstraints{
-            $0.top.equalTo(textView.snp.bottom)
+        name.snp.makeConstraints{
+            $0.top.equalTo(textView.snp.bottom).offset(5)
             $0.leading.equalToSuperview().offset(40)
-            $0.trailing.equalToSuperview().offset(-100)
+            $0.trailing.equalToSuperview().offset(-130)
         }
         
-        name.snp.makeConstraints{
-            $0.top.equalTo(textView.snp.bottom)
+        date.snp.makeConstraints{
+            $0.top.equalTo(textView.snp.bottom).offset(5)
+            $0.leading.equalTo(name.snp.trailing)
             $0.trailing.equalToSuperview().offset(-30)
-            $0.leading.equalToSuperview().offset(200)
             
         }
     }
