@@ -15,6 +15,7 @@ enum SubscriberService{
     case addSubscriber(param: AddRequest)
     case getSubscriber
     case checkSubscriber(_ name: String)
+    case subscriberpost
 }
 
 extension SubscriberService: TargetType{
@@ -30,6 +31,8 @@ extension SubscriberService: TargetType{
             return "subscribe/getsubscriber"
         case .checkSubscriber(let name):
             return "subscribe/inputname/\(name)"
+        case .subscriberpost:
+            return "subscribe/subscriberpost"
         }
     }
 
@@ -42,6 +45,8 @@ extension SubscriberService: TargetType{
             return .get
         case .checkSubscriber:
             return .get
+        case .subscriberpost:
+            return .get
         }
     }
     
@@ -53,6 +58,8 @@ extension SubscriberService: TargetType{
         case .getSubscriber:
             return .requestPlain
         case .checkSubscriber:
+            return .requestPlain
+        case .subscriberpost:
             return .requestPlain
         }
 

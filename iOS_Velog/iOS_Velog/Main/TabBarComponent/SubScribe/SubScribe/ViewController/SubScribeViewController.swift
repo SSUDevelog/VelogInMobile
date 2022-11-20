@@ -13,10 +13,9 @@ import Moya
 class SubScribeViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
-    var responseData: SubscriberListResponse?
+//    var responseData: SubscriberListResponse?
+//    let responseData: onePostModel? = nil
     
-    var subScribeList = [String]()
-
     let titleLabel = UILabel().then {
         $0.text = "Subscribe"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
@@ -31,24 +30,30 @@ class SubScribeViewController: UIViewController {
         $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
     }
     
+    let scrollview = ScrollView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         
-//        self.getServer()
+        self.getServer()
+//        self.getPostDataServer()
         
-        setUI()
+        self.setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
-        
+//        self.getPostDataServer()
     }
     
     func setUI(){
+        
         view.addSubview(titleLabel)
         view.addSubview(addSubscribeBtn)
+        view.addSubview(scrollview)
         
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(100)
@@ -59,6 +64,35 @@ class SubScribeViewController: UIViewController {
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(200)
             $0.trailing.equalToSuperview().offset(-30)
+        }
+        
+        scrollview.snp.makeConstraints { make in
+            make.top.equalTo(addSubscribeBtn.snp.bottom).offset(30)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-30)
+        }
+
+    }
+
+    
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    print(moyaResponse.statusCode)
+                    print(try moyaResponse.mapJSON())
+                    print("성공")  // 여기까지는 들어온다.
+                    
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
     
