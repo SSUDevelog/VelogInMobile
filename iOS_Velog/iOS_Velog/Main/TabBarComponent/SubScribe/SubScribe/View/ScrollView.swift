@@ -12,13 +12,13 @@ import SnapKit
 class ScrollView: UIView {
     
     let scrollView = UIScrollView().then{
-        $0.backgroundColor = .red
+//        $0.backgroundColor = .red
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var contentView: UIView = {
       let contentView = UIView()
-      contentView.backgroundColor = .green
+//      contentView.backgroundColor = .green
       contentView.translatesAutoresizingMaskIntoConstraints = false
       return contentView
     }()
@@ -51,10 +51,11 @@ class ScrollView: UIView {
         scrollView.addSubview(contentView)
         contentView.addSubview(stackView)
 
+        // 여기 for 문으로 post 개수 바뀐다
         for _ in 0..<10 {
-          let view = PostView()
-          view.backgroundColor = .blue
-          stackView.addArrangedSubview(view)
+            let view = PostView()
+//            view.backgroundColor = .yellow
+            stackView.addArrangedSubview(view)
         }
     }
     
@@ -62,21 +63,21 @@ class ScrollView: UIView {
         scrollView.snp.makeConstraints { make in
             make.top.trailing.leading.bottom.equalToSuperview()
         }
-
-        NSLayoutConstraint.activate([
-          contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-          contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-          contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-          contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
-          contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-        ])
-
-        NSLayoutConstraint.activate([
-          stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-          stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-          stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-          stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor)
-        ])
+        
+        contentView.snp.makeConstraints { make in
+            make.top.equalTo(scrollView.snp.top)
+            make.right.equalTo(scrollView.snp.right)
+            make.left.equalTo(scrollView.snp.left)
+            make.bottom.equalTo(scrollView.snp.bottom)
+            make.width.equalTo(scrollView.snp.width)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top)
+            make.right.equalTo(contentView.snp.right)
+            make.left.equalTo(contentView.snp.left)
+            make.bottom.equalTo(contentView.snp.bottom)
+        }
 
         for view in stackView.arrangedSubviews {
           NSLayoutConstraint.activate([
@@ -86,6 +87,4 @@ class ScrollView: UIView {
         }
 
     }
-    
-
 }

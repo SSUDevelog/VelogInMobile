@@ -13,8 +13,9 @@ import Moya
 class SubScribeViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
-    var responseData: SubscriberListResponse?
-
+//    var responseData: SubscriberListResponse?
+//    let responseData: onePostModel? = nil
+    
     let titleLabel = UILabel().then {
         $0.text = "Subscribe"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
@@ -38,11 +39,14 @@ class SubScribeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.getServer()
+//        self.getPostDataServer()
+        
         self.setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
+        self.getPostDataServer()
     }
     
     func setUI(){
@@ -71,6 +75,27 @@ class SubScribeViewController: UIViewController {
 
     }
 
+    
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    print(moyaResponse.statusCode)
+                    print(try moyaResponse.mapJSON())
+                    print("성공")  // 여기까지는 들어온다.
+                    
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     
     func getServer(){
 
