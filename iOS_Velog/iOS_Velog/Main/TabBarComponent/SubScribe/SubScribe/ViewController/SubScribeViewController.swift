@@ -46,7 +46,7 @@ class SubScribeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
-        self.getPostDataServer()
+//        self.getPostDataServer()
     }
     
     func setUI(){

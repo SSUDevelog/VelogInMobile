@@ -28,7 +28,7 @@ class ScrollView: UIView {
         let stackV = UIStackView()
         stackV.translatesAutoresizingMaskIntoConstraints = false
         stackV.axis = .vertical
-        stackV.spacing = 170
+        stackV.spacing = 300
         stackV.distribution = .fillEqually
         return stackV
     }()
@@ -54,7 +54,7 @@ class ScrollView: UIView {
         // 여기 for 문으로 post 개수 바뀐다
         for _ in 0..<10 {
             let view = PostView()
-//            view.backgroundColor = .yellow
+            view.backgroundColor = .yellow
             stackView.addArrangedSubview(view)
         }
     }
@@ -79,12 +79,18 @@ class ScrollView: UIView {
             make.bottom.equalTo(contentView.snp.bottom)
         }
 
-        for view in stackView.arrangedSubviews {
-          NSLayoutConstraint.activate([
-            view.widthAnchor.constraint(equalToConstant: 100),
-            view.heightAnchor.constraint(equalToConstant: 100)
-          ])
-        }
+//        for view in stackView.arrangedSubviews {
+////          NSLayoutConstraint.activate([
+//
+////            view.widthAnchor.constraint(equalToConstant: 100)
+////            view.heightAnchor.constraint(equalToConstant: 100)
+////          ])
+//
+//            view.snp.makeConstraints { make in
+//                make.width.equalTo(300)
+//                make.height.equalTo(100)
+//            }
+//        }
 
     }
 }

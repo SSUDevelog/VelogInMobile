@@ -63,6 +63,7 @@ class PostView: UIView {
     }
     
     func setViewHierarchy(){
+        
         addSubview(imageView)
         addSubview(title)
         addSubview(textView)
@@ -80,15 +81,14 @@ class PostView: UIView {
         
         title.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(5)
-            $0.leading.equalToSuperview().offset(40)
+            $0.leading.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview()
         }
         
         textView.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom).offset(5)
-            $0.leading.equalToSuperview().offset(20)
-            $0.width.equalTo(300)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
             $0.height.equalTo(80)
         }
         
@@ -101,7 +101,7 @@ class PostView: UIView {
         date.snp.makeConstraints{
             $0.top.equalTo(textView.snp.bottom).offset(5)
             $0.leading.equalTo(name.snp.trailing)
-            $0.trailing.equalToSuperview().offset(-30)
+            $0.trailing.equalToSuperview().offset(-5)
             
         }
     }
