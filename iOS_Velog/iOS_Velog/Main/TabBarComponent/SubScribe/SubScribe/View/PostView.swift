@@ -12,12 +12,6 @@ import Then
 
 class PostView: UIView {
     
-//    var stackView = UIStackView().then{
-//        $0.axis = .vertical
-//        $0.spacing = 3
-//        $0.distribution = .fillEqually
-//    }
-    
     var imageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "pencil")
@@ -68,11 +62,6 @@ class PostView: UIView {
     }
     
     func setViewHierarchy(){
-//        stackView.addArrangedSubview(imageView)
-//        stackView.addArrangedSubview(title)
-//        stackView.addArrangedSubview(textView)
-//        stackView.addArrangedSubview(date)
-//        addSubview(stackView)
         addSubview(imageView)
         addSubview(title)
         addSubview(textView)
@@ -82,41 +71,40 @@ class PostView: UIView {
     }
     
     func setConstraints(){
-//        stackView.snp.makeConstraints{
-////            $0.top.equalToSuperview().offset(10)
-//            $0.leading.equalToSuperview().offset(20)
-//            $0.width.equalTo(300)
-//            $0.height.equalTo(200)
-//        }
+
         imageView.snp.makeConstraints{
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
-            $0.height.equalTo(80)
+
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(100)
         }
         
         title.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(5)
-            $0.leading.equalToSuperview().offset(30)
+            $0.leading.equalToSuperview().offset(40)
+//            $0.width.equalTo(300)
+            $0.trailing.equalToSuperview()
             
-//            $0.trailing.equalToSuperview().offset(-30)
         }
         
         textView.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom).offset(5)
             $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-30)
-            $0.height.equalTo(90)
+            $0.width.equalTo(300)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.height.equalTo(80)
         }
         
         date.snp.makeConstraints{
             $0.top.equalTo(textView.snp.bottom)
-            $0.leading.equalToSuperview().offset(30)
+            $0.leading.equalToSuperview().offset(40)
+            $0.trailing.equalToSuperview().offset(-100)
         }
         
         name.snp.makeConstraints{
             $0.top.equalTo(textView.snp.bottom)
             $0.trailing.equalToSuperview().offset(-30)
+            $0.leading.equalToSuperview().offset(200)
+            
         }
     }
 }
