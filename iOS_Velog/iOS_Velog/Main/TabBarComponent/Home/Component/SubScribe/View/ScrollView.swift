@@ -54,7 +54,7 @@ class ScrollView: UIView {
         // 여기 for 문으로 post 개수 바뀐다
         for _ in 0..<10 {
             let view = PostView()
-            view.backgroundColor = .yellow
+//            view.backgroundColor = .yellow
             stackView.addArrangedSubview(view)
         }
     }
