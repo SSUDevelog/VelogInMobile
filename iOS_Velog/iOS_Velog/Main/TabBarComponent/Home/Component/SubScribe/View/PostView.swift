@@ -94,7 +94,7 @@ class PostView: UIView {
         
         name.snp.makeConstraints{
             $0.top.equalTo(textView.snp.bottom).offset(5)
-            $0.leading.equalToSuperview().offset(40)
+            $0.leading.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-130)
         }
         

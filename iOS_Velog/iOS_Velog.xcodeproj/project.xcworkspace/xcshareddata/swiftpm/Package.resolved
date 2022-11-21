@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "Pageboy",
+        "repositoryURL": "https://github.com/uias/Pageboy",
+        "state": {
+          "branch": null,
+          "revision": "5522aa6ae88633f6c23cf504e9cd684e963822f1",
+          "version": "4.0.2"
+        }
+      },
+      {
         "package": "ReactiveSwift",
         "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
         "state": {
@@ -62,6 +71,15 @@
           "branch": "develop",
           "revision": "07c5d1f6044701d97e94dc11157259e8811977be",
           "version": null
+        }
+      },
+      {
+        "package": "Tabman",
+        "repositoryURL": "https://github.com/uias/Tabman",
+        "state": {
+          "branch": null,
+          "revision": "6a87a2825939f5da06cf52a6582d67a646488cff",
+          "version": "3.0.1"
         }
       },
       {

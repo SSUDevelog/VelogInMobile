@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     
     private let titleLabel = UILabel().then {
         $0.text = "My Page"
-        $0.font = UIFont(name: "Avenir-Black", size: 50)
+        $0.font = UIFont(name: "Avenir-Black", size: 30)
     }
 
     let stackView = UIStackView().then {
@@ -114,10 +114,10 @@ class ProfileViewController: UIViewController {
         
         self.stackView.addArrangedSubviews([logOutBtn,withdrawalBtn])
         
-        titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
-            $0.leading.equalToSuperview().offset(30)
-
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(90)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-100)
         }
         
         littleTitleLabel.snp.makeConstraints{

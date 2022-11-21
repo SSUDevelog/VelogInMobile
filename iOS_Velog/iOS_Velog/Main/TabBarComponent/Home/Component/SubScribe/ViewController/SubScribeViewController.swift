@@ -37,6 +37,7 @@ class SubScribeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
+//        navigationController?.navigationBar.tintColor = .black
         
         self.getServer()
 //        self.getPostDataServer()
@@ -46,29 +47,29 @@ class SubScribeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
-//        self.getPostDataServer()
+        self.getPostDataServer()
     }
     
     func setUI(){
         
-        view.addSubview(titleLabel)
-        view.addSubview(addSubscribeBtn)
+//        view.addSubview(titleLabel)
+//        view.addSubview(addSubscribeBtn)
         view.addSubview(scrollview)
         
-        titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
-            $0.centerX.equalToSuperview()
-        }
+//        titleLabel.snp.makeConstraints{
+//            $0.top.equalToSuperview().offset(100)
+//            $0.centerX.equalToSuperview()
+//        }
         
-        addSubscribeBtn.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
-            $0.leading.equalToSuperview().offset(200)
-            $0.trailing.equalToSuperview().offset(-30)
-        }
+//        addSubscribeBtn.snp.makeConstraints{
+//            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+//            $0.leading.equalToSuperview().offset(200)
+//            $0.trailing.equalToSuperview().offset(-30)
+//        }
         
         scrollview.snp.makeConstraints { make in
-            make.top.equalTo(addSubscribeBtn.snp.bottom).offset(30)
-            make.leading.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(250)
+            make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-30)
         }
@@ -105,6 +106,8 @@ class SubScribeViewController: UIViewController {
                 do{
                     print(moyaResponse.statusCode)
                     userList.List = try moyaResponse.mapJSON() as! [String]
+                    // 이거 임시!!!
+                    NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
                     
                 }catch(let err) {

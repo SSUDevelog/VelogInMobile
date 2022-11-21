@@ -34,7 +34,6 @@
 		917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C528F465B3004EF8DB /* UIStackView+.swift */; };
 		917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1CB28F46BB4004EF8DB /* UIView+.swift */; };
 		917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1CE28F4738B004EF8DB /* SnapKit */; };
-		918F79F528FEB8330080B500 /* MyWebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F79F428FEB8330080B500 /* MyWebviewController.swift */; };
 		9191602829256BE200497AC9 /* userList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191602729256BE200497AC9 /* userList.swift */; };
 		91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */; };
 		91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD128F80142005159AD /* SearchKeywordViewController.swift */; };
@@ -52,6 +51,11 @@
 		91C277172917E86600F5F53B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277162917E86600F5F53B /* SignUpModel.swift */; };
 		91C277192917EB0600F5F53B /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277182917EB0600F5F53B /* SignInModel.swift */; };
 		91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2771A2917EC1D00F5F53B /* SignInRequest.swift */; };
+		91E47771292BAC4F00AFC26E /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 91E47770292BAC4F00AFC26E /* Tabman */; };
+		91E47773292BAC6500AFC26E /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E47772292BAC6500AFC26E /* TabViewController.swift */; };
+		91E47777292BD20400AFC26E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E47776292BD20400AFC26E /* NotificationViewController.swift */; };
+		91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */; };
+		91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777C292BECD100AFC26E /* NotificationList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +84,6 @@
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		917AA1CB28F46BB4004EF8DB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		918F79F428FEB8330080B500 /* MyWebviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebviewController.swift; sourceTree = "<group>"; };
 		9191602729256BE200497AC9 /* userList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userList.swift; sourceTree = "<group>"; };
 		91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91B73FD128F80142005159AD /* SearchKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +97,10 @@
 		91C277162917E86600F5F53B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		91C277182917EB0600F5F53B /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		91C2771A2917EC1D00F5F53B /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		91E47772292BAC6500AFC26E /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		91E47776292BD20400AFC26E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		91E4777C292BECD100AFC26E /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +113,7 @@
 				9168AD5C290FBC2200BA42E2 /* Realm in Frameworks */,
 				91C277052917A3D100F5F53B /* Moya in Frameworks */,
 				917AA1BA28F2A814004EF8DB /* Then in Frameworks */,
+				91E47771292BAC4F00AFC26E /* Tabman in Frameworks */,
 				91C277032917A3D100F5F53B /* CombineMoya in Frameworks */,
 				91C277092917A3D100F5F53B /* RxMoya in Frameworks */,
 				917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */,
@@ -115,18 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9123228729090FF900C204A8 /* SubScribe */ = {
-			isa = PBXGroup;
-			children = (
-				9191602729256BE200497AC9 /* userList.swift */,
-				916827A8292A487A00DDA369 /* PostData.swift */,
-				912D275A291A2CAF004382BB /* SubScribe */,
-				9170F13E291549040056E182 /* SubscribeList */,
-				912D275B291A2CC9004382BB /* SearchSubScribe */,
-			);
-			path = SubScribe;
-			sourceTree = "<group>";
-		};
 		9123228A290916AC00C204A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +134,11 @@
 		9123228B290916BA00C204A8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				918F79F428FEB8330080B500 /* MyWebviewController.swift */,
+				91E4777C292BECD100AFC26E /* NotificationList.swift */,
+				9191602729256BE200497AC9 /* userList.swift */,
+				916827A8292A487A00DDA369 /* PostData.swift */,
+				91E47779292BE85400AFC26E /* ViewController */,
+				91E47778292BE82D00AFC26E /* Component */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -155,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				91755F1A29233C24005C94D7 /* SubscriberListModel.swift */,
-				9170F13F29154A710056E182 /* CustomCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,9 +202,9 @@
 		912D275A291A2CAF004382BB /* SubScribe */ = {
 			isa = PBXGroup;
 			children = (
+				91682791292747BB00DDA369 /* Model */,
 				916827962927595100DDA369 /* View */,
 				912D275D291A2D0D004382BB /* ViewController */,
-				91682791292747BB00DDA369 /* Model */,
 			);
 			path = SubScribe;
 			sourceTree = "<group>";
@@ -213,8 +212,8 @@
 		912D275B291A2CC9004382BB /* SearchSubScribe */ = {
 			isa = PBXGroup;
 			children = (
+				916827AA292A6AD700DDA369 /* Model */,
 				912D275C291A2D00004382BB /* ViewController */,
-				916AE8212922A706007CCDE7 /* SubscriberModel.swift */,
 			);
 			path = SearchSubScribe;
 			sourceTree = "<group>";
@@ -262,6 +261,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		916827AA292A6AD700DDA369 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				916AE8212922A706007CCDE7 /* SubscriberModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		916AE8232922A878007CCDE7 /* SubscriberService */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,9 +301,9 @@
 				9172F29E291633ED00C6C890 /* Realm */,
 				91B73FDB28F83EDB005159AD /* Main */,
 				91B73FD028F8012A005159AD /* SearchKeyword */,
-				917AA1BC28F2A8D8004EF8DB /* Extension */,
 				917AA1BB28F2A8B9004EF8DB /* SignUp */,
 				91B73FDD28F843BB005159AD /* SignIn */,
+				917AA1BC28F2A8D8004EF8DB /* Extension */,
 				91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */,
 				916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */,
 				916AEBA528F16762000B2DA0 /* Assets.xcassets */,
@@ -309,6 +316,7 @@
 		9170F13E291549040056E182 /* SubscribeList */ = {
 			isa = PBXGroup;
 			children = (
+				91E47780292BF3D300AFC26E /* TableCell */,
 				912D2755291A2B39004382BB /* ViewController */,
 				912D2754291A2B22004382BB /* Model */,
 			);
@@ -367,8 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				9123228B290916BA00C204A8 /* Home */,
+				91E47775292BD1E000AFC26E /* Notification */,
 				9123228A290916AC00C204A8 /* Profile */,
-				9123228729090FF900C204A8 /* SubScribe */,
 			);
 			path = TabBarComponent;
 			sourceTree = "<group>";
@@ -390,6 +398,57 @@
 				912D275E291A2DE3004382BB /* SignInUpService */,
 			);
 			path = Moya;
+			sourceTree = "<group>";
+		};
+		91E47775292BD1E000AFC26E /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				91E4777F292BF3C700AFC26E /* ViewController */,
+				91E4777E292BF3BA00AFC26E /* TableCell */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		91E47778292BE82D00AFC26E /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				912D275A291A2CAF004382BB /* SubScribe */,
+				9170F13E291549040056E182 /* SubscribeList */,
+				912D275B291A2CC9004382BB /* SearchSubScribe */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		91E47779292BE85400AFC26E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91E47772292BAC6500AFC26E /* TabViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91E4777E292BF3BA00AFC26E /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
+		91E4777F292BF3C700AFC26E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91E47776292BD20400AFC26E /* NotificationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91E47780292BF3D300AFC26E /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				9170F13F29154A710056E182 /* CustomCell.swift */,
+			);
+			path = TableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +476,7 @@
 				91C277042917A3D100F5F53B /* Moya */,
 				91C277062917A3D100F5F53B /* ReactiveMoya */,
 				91C277082917A3D100F5F53B /* RxMoya */,
+				91E47770292BAC4F00AFC26E /* Tabman */,
 			);
 			productName = iOS_Velog;
 			productReference = 916AEB9928F1675F000B2DA0 /* iOS_Velog.app */;
@@ -451,6 +511,7 @@
 				917AA1CD28F4738B004EF8DB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				91C277012917A3D100F5F53B /* XCRemoteSwiftPackageReference "Moya" */,
+				91E4776F292BAC4F00AFC26E /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 916AEB9A28F1675F000B2DA0 /* Products */;
 			projectDirPath = "";
@@ -487,22 +548,25 @@
 				91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */,
 				91C277172917E86600F5F53B /* SignUpModel.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
-				918F79F528FEB8330080B500 /* MyWebviewController.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
+				91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */,
 				91755F1B29233C24005C94D7 /* SubscriberListModel.swift in Sources */,
 				9160AB8E291E1D4300079BF9 /* Token.swift in Sources */,
+				91E47777292BD20400AFC26E /* NotificationViewController.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
 				91C277132917E53100F5F53B /* BaseURL.swift in Sources */,
+				91E47773292BAC6500AFC26E /* TabViewController.swift in Sources */,
 				91C277152917E72A00F5F53B /* SignUpRequest.swift in Sources */,
 				9170F14029154A720056E182 /* CustomCell.swift in Sources */,
 				912322862909010900C204A8 /* SearchViewController.swift in Sources */,
 				916827A7292A2FCA00DDA369 /* PostModel.swift in Sources */,
 				91B73FD828F83DA1005159AD /* SubScribeViewController.swift in Sources */,
 				91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */,
+				91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */,
 				916827A32927729600DDA369 /* PostView.swift in Sources */,
 				912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */,
 				916827A52927752C00DDA369 /* ScrollView.swift in Sources */,
@@ -758,6 +822,14 @@
 				kind = branch;
 			};
 		};
+		91E4776F292BAC4F00AFC26E /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -800,6 +872,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 91C277012917A3D100F5F53B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		91E47770292BAC4F00AFC26E /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91E4776F292BAC4F00AFC26E /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
