@@ -41,8 +41,6 @@ class SubscribeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.tintColor = .black  // navigation back btn color change
-
         
         tableViewForSubscribeList.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableViewForSubscribeList.delegate = self
@@ -62,48 +60,50 @@ class SubscribeListViewController: UIViewController {
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){
-        getServer()
+//        getServer()
         tableViewForSubscribeList.reloadData()
     }
     
-    func getServer(){
-
-        self.provider.request(.getSubscriber){response in
-            switch response{
-            case .success(let moyaResponse):
-                do{
-                    
-                    print(moyaResponse.statusCode)
-                    userList.List = try moyaResponse.mapJSON() as! [String]
-
-                }catch(let err) {
-                    print(err.localizedDescription)
-                }
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
+//    func getServer(){
+//        self.provider.request(.getSubscriber){response in
+//            switch response{
+//            case .success(let moyaResponse):
+//                do{
+//
+//                    print(moyaResponse.statusCode)
+//                    userList.List = try moyaResponse.mapJSON() as! [String]
+//
+//                }catch(let err) {
+//                    print(err.localizedDescription)
+//                }
+//            case .failure(let err):
+//                print(err.localizedDescription)
+//            }
+//        }
+//    }
     
     func setUI(){
-        view.addSubview(titleLabel)
-        view.addSubview(addButton)
+        
+//        self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
+//        view.addSubview(titleLabel)
+//        view.addSubview(addButton)
         view.addSubview(tableViewForSubscribeList)
 
-        titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
-            $0.centerX.equalToSuperview()
-        }
-        
-        addButton.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.trailing.equalToSuperview().offset(-30)
-            $0.leading.equalToSuperview().offset(250)
-        }
+//        titleLabel.snp.makeConstraints{
+//            $0.top.equalToSuperview().offset(100)
+//            $0.centerX.equalToSuperview()
+//        }
+//
+//        addButton.snp.makeConstraints{
+//            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+//            $0.trailing.equalToSuperview().offset(-30)
+//            $0.leading.equalToSuperview().offset(250)
+//        }
         
 
         tableViewForSubscribeList.snp.makeConstraints{
-            $0.top.equalTo(addButton.snp.bottom).offset(20)
+//            $0.top.equalTo(addButton.snp.bottom).offset(20)
+            $0.top.equalToSuperview().offset(250)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
             $0.bottom.equalToSuperview().offset(-90)
