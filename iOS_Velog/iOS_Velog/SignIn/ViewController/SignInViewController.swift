@@ -88,7 +88,7 @@ class SignInViewController: UIViewController {
         if checkRealmToken() {
             pushViewForSignIn()
         }
-        
+  
         
         setUIForSignIn()
 //        print("viewDidLoad")
@@ -137,8 +137,7 @@ class SignInViewController: UIViewController {
     
 
     @objc func pushViewForSignIn(){
-        
-        switch checkRealmToken(){
+        switch checkRealmToken() {
         case false :   // 토근 발급 전
             // 서버 통신
             print("no token")
@@ -214,8 +213,6 @@ class SignInViewController: UIViewController {
             self.EmailTextField.text = ""
             self.PasswordTextField.text = ""
             
-
-
         })
     
         alert.addAction(okAction)

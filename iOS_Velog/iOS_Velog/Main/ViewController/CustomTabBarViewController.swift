@@ -8,14 +8,15 @@ import Foundation
 import UIKit
 import SnapKit
 import SwiftUI
+import Tabman
 
 
 class CustomTabBarController: UITabBarController{
     
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     
-    let homeVC = MyWebViewContoller()
-    let subScribeVC = SubScribeViewController()
+    let homeVC = TabViewController()
+    let subScribeVC = NotificationViewController()
     let profileVC = ProfileViewController()
     
     override func viewDidLoad() {
@@ -32,7 +33,7 @@ class CustomTabBarController: UITabBarController{
         self.tabBar.backgroundColor = .systemBackground
 
         homeVC.title = "Home"
-        subScribeVC.title = "Subscribe"
+        subScribeVC.title = "Notification"
         profileVC.title = "Profile"
 
         let ViewControllers:[UIViewController] = [homeVC,subScribeVC,profileVC]
@@ -40,7 +41,7 @@ class CustomTabBarController: UITabBarController{
         self.setViewControllers(ViewControllers, animated: true)
 
         homeVC.tabBarItem.image = UIImage(systemName: "house")
-        subScribeVC.tabBarItem.image = UIImage(systemName: "command")
+        subScribeVC.tabBarItem.image = UIImage(systemName: "megaphone")
         profileVC.tabBarItem.image = UIImage(systemName: "person")
         
         //네비게이션 뷰컨으로 푸쉬했을 때 밑에 바가 사라지지 않도록
