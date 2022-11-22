@@ -40,6 +40,14 @@ class SubScribeCollectionViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.frame = view.bounds
         
+        collectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(250)
+            make.leading.equalToSuperview().offset(25)
+            make.trailing.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-30)
+        }
+        view.backgroundColor = .systemBackground
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
