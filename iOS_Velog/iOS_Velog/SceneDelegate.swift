@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         // 루트 뷰 컨트롤러가 될 뷰컨트롤러 생성 & 위에서 생성한 뷰 컨트롤러 네비게이션 컨트롤러 생성
         let navigationController = UINavigationController(rootViewController: SignInViewController())
+//        let navigationController = UINavigationController(rootViewController: SubScribeCollectionViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 

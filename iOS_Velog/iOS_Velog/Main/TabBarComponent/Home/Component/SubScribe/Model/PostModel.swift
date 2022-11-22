@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct PostList:Codable {
+// MARK: - Welcome
+struct PostList: Codable {
     let subscribePostDtoList: [SubscribePostDtoList]
 }
 
 // MARK: - SubscribePostDtoList
-struct SubscribePostDtoList:Codable {
+struct SubscribePostDtoList: Codable {
     let comment: Int
     let date, img: String
     let like: Int

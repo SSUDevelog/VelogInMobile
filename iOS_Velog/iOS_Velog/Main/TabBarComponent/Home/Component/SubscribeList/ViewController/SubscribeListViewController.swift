@@ -108,9 +108,6 @@ class SubscribeListViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
             $0.bottom.equalToSuperview().offset(-90)
         }
-        
-
-        
     }
  
     @objc func addSubscribe(){
