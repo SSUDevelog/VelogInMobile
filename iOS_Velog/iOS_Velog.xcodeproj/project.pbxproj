@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */; };
+		91161051292CB9BC00AC1627 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91161050292CB9BC00AC1627 /* CollectionViewCell.swift */; };
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeCollectionViewController.swift; sourceTree = "<group>"; };
+		91161050292CB9BC00AC1627 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				91B73FD728F83DA1005159AD /* SubScribeViewController.swift */,
+				9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			children = (
 				916827A22927729600DDA369 /* PostView.swift */,
 				916827A42927752C00DDA369 /* ScrollView.swift */,
+				91161050292CB9BC00AC1627 /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,8 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				91E47780292BF3D300AFC26E /* TableCell */,
-				912D2755291A2B39004382BB /* ViewController */,
 				912D2754291A2B22004382BB /* Model */,
+				912D2755291A2B39004382BB /* ViewController */,
 			);
 			path = SubscribeList;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 				91C277172917E86600F5F53B /* SignUpModel.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
+				91161051292CB9BC00AC1627 /* CollectionViewCell.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */,
@@ -571,6 +578,7 @@
 				912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */,
 				916827A52927752C00DDA369 /* ScrollView.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
+				9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
