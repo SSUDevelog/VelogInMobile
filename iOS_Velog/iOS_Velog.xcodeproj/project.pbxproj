@@ -129,18 +129,6 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		9123228B290916BA00C204A8 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				91E4777C292BECD100AFC26E /* NotificationList.swift */,
-				9191602729256BE200497AC9 /* userList.swift */,
-				916827A8292A487A00DDA369 /* PostData.swift */,
-				91E47779292BE85400AFC26E /* ViewController */,
-				91E47778292BE82D00AFC26E /* Component */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		912D2753291A2AE1004382BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +230,41 @@
 			path = SignInUpService;
 			sourceTree = "<group>";
 		};
+		9142D798292CEB0D00D9BB7C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9191602729256BE200497AC9 /* userList.swift */,
+				916827A8292A487A00DDA369 /* PostData.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9142D79A292CEB3500D9BB7C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				91E4777C292BECD100AFC26E /* NotificationList.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9142D79B292CEBDE00D9BB7C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9142D79C292CEC2700D9BB7C /* TabBarComponent */ = {
+			isa = PBXGroup;
+			children = (
+				9142D79B292CEBDE00D9BB7C /* Home */,
+				91B73FDC28F83EEE005159AD /* Subscribe */,
+				91E47775292BD1E000AFC26E /* Notification */,
+				9123228A290916AC00C204A8 /* Profile */,
+			);
+			path = TabBarComponent;
+			sourceTree = "<group>";
+		};
 		91682791292747BB00DDA369 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,7 +319,7 @@
 			children = (
 				91C276FE2917A12400F5F53B /* Moya */,
 				9172F29E291633ED00C6C890 /* Realm */,
-				91B73FDB28F83EDB005159AD /* Main */,
+				91B73FDB28F83EDB005159AD /* MainTabBar */,
 				91B73FD028F8012A005159AD /* SearchKeyword */,
 				917AA1BB28F2A8B9004EF8DB /* SignUp */,
 				91B73FDD28F843BB005159AD /* SignIn */,
@@ -359,23 +382,23 @@
 			path = SearchKeyword;
 			sourceTree = "<group>";
 		};
-		91B73FDB28F83EDB005159AD /* Main */ = {
+		91B73FDB28F83EDB005159AD /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FDC28F83EEE005159AD /* TabBarComponent */,
+				9142D79C292CEC2700D9BB7C /* TabBarComponent */,
 				912D2757291A2C06004382BB /* ViewController */,
 			);
-			path = Main;
+			path = MainTabBar;
 			sourceTree = "<group>";
 		};
-		91B73FDC28F83EEE005159AD /* TabBarComponent */ = {
+		91B73FDC28F83EEE005159AD /* Subscribe */ = {
 			isa = PBXGroup;
 			children = (
-				9123228B290916BA00C204A8 /* Home */,
-				91E47775292BD1E000AFC26E /* Notification */,
-				9123228A290916AC00C204A8 /* Profile */,
+				91E47778292BE82D00AFC26E /* Component */,
+				91E47779292BE85400AFC26E /* ViewController */,
+				9142D798292CEB0D00D9BB7C /* Resource */,
 			);
-			path = TabBarComponent;
+			path = Subscribe;
 			sourceTree = "<group>";
 		};
 		91B73FDD28F843BB005159AD /* SignIn */ = {
@@ -400,6 +423,7 @@
 		91E47775292BD1E000AFC26E /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				9142D79A292CEB3500D9BB7C /* Resource */,
 				91E4777F292BF3C700AFC26E /* ViewController */,
 				91E4777E292BF3BA00AFC26E /* TableCell */,
 			);
