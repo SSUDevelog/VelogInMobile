@@ -7,9 +7,9 @@
 import Foundation
 struct PostData{
 
-    static var PostListData : Dictionary<String, Any> = [String : Any]()
+    static var PostListData : [SubscribePostDtoList] = [SubscribePostDtoList]()
     
-    init(postListData:Dictionary<String, Any>){
+    init(postListData: [SubscribePostDtoList]){
         PostData.PostListData = postListData
     }
 }
