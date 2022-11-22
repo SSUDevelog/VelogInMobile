@@ -8,8 +8,12 @@
 import UIKit
 import SnapKit
 import Then
+import Moya
 
 class SubScribeCollectionViewController: UIViewController {
+    
+    private let provider = MoyaProvider<SubscriberService>()
+    
     private var collectionView:UICollectionView?
     
     
@@ -37,6 +41,60 @@ class SubScribeCollectionViewController: UIViewController {
         collectionView.frame = view.bounds
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getServer()
+        self.getPostDataServer()
+    }
+    
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    print(moyaResponse.statusCode)
+                    print(try moyaResponse.mapJSON())
+//                    var responseData = try moyaResponse.mapJSON()
+//                    var responseDataa = try JSONSerialization.
+                    print("과연 성공?")
+                    
+//                    print(responseDataa)
+//                    print("과연 성공?")
+                    print("성공")  // 여기까지는 들어온다.
+                    
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func getServer(){
+
+        self.provider.request(.getSubscriber){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print(moyaResponse.statusCode)
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+//                     이거 임시!!!
+                    NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
+                    print(userList.List)
+                    
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+
 
 }
 
