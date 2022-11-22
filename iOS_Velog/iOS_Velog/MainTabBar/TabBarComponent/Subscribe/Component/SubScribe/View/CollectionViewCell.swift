@@ -59,6 +59,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         textView.textColor = UIColor.darkGray
         textView.isEditable = false
         textView.isSelectable = false
+        textView.isScrollEnabled = false
         textView.font = UIFont.systemFont(ofSize: 15)
 //        textView.backgroundColor = .red
     }
