@@ -15,6 +15,8 @@ class SubScribeViewController: UIViewController {
     private let provider = MoyaProvider<SubscriberService>()
 //    var responseData: SubscriberListResponse?
 //    let responseData: onePostModel? = nil
+//    var responseData: PostList?
+    
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe"
@@ -85,6 +87,12 @@ class SubScribeViewController: UIViewController {
                     print("getPost")
                     print(moyaResponse.statusCode)
                     print(try moyaResponse.mapJSON())
+//                    var responseData = try moyaResponse.mapJSON()
+//                    var responseDataa = try JSONSerialization.
+                    print("과연 성공?")
+                    
+//                    print(responseDataa)
+//                    print("과연 성공?")
                     print("성공")  // 여기까지는 들어온다.
                     
                 }catch(let err){
@@ -106,7 +114,7 @@ class SubScribeViewController: UIViewController {
                 do{
                     print(moyaResponse.statusCode)
                     userList.List = try moyaResponse.mapJSON() as! [String]
-                    // 이거 임시!!!
+//                     이거 임시!!!
                     NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
                     
