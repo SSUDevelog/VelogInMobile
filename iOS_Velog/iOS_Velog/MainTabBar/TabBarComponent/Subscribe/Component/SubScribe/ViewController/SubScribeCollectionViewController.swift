@@ -16,16 +16,13 @@ class SubScribeCollectionViewController: UIViewController {
     
     private var collectionView:UICollectionView?
     
+    let layout = UICollectionViewFlowLayout()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 50
-        layout.minimumInteritemSpacing = 1
-        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.height/3)
-        
+        setCellLayer()
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
@@ -50,6 +47,11 @@ class SubScribeCollectionViewController: UIViewController {
         
     }
     
+    func setCellLayer(){
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.height/3)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
         self.getPostDataServer()
@@ -61,8 +63,8 @@ class SubScribeCollectionViewController: UIViewController {
             case .success(let moyaResponse):
                 do{
                     print("getPost")
-                    print(moyaResponse.statusCode)
-                    print(try moyaResponse.mapJSON())
+//                    print(moyaResponse.statusCode)
+//                    print(try moyaResponse.mapJSON())
 //                    var responseData = try moyaResponse.mapJSON()
 //                    var responseDataa = try JSONSerialization.
                     print("과연 성공?")
@@ -120,6 +122,4 @@ extension SubScribeCollectionViewController: UICollectionViewDelegate, UICollect
         return cell
     }
     
-    
-
 }
