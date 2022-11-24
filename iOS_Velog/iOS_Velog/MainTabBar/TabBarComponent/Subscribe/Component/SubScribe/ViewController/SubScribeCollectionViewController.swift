@@ -52,9 +52,11 @@ class SubScribeCollectionViewController: UIViewController {
         layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.height/3)
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
-        self.getServer()
-        self.getPostDataServer()
+//        self.getServer()
+//        self.getPostDataServer()  -> 이건 db 한번지우고 해야함/ 500,400 에러 뜨면 앱을 꺼버린다.
     }
     
     func getPostDataServer(){
@@ -104,6 +106,8 @@ class SubScribeCollectionViewController: UIViewController {
             }
         }
     }
+    
+    
 
 
 }
@@ -116,10 +120,25 @@ extension SubScribeCollectionViewController: UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//        cell.contentView.backgroundColor = .systemBlue
+
 //        cell.configure(title: "Custom \(indexPath.row)", textViewText: <#T##String#>, name: <#T##String#>, date: <#T##String#>)
         // 이걸로 cell 초기화!!
         return cell
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        cell?.layer.borderColor = UIColor.blue.cgColor
+//        cell?.layer.borderWidth = 1
+//        cell?.isSelected = true
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        cell?.layer.borderColor = UIColor.clear.cgColor
+//        cell?.layer.borderWidth = 1
+//        cell?.isSelected = false
+//    }
+    
 }
+
