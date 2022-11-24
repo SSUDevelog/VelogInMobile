@@ -40,11 +40,13 @@ class TabViewController: TabmanViewController {
         settingTabBar(ctBar: bar)
         addBar(bar, dataSource: self, at: .custom(view: customContainer, layout: { (bar) in
             bar.snp.makeConstraints { make in
-                make.top.equalToSuperview()
+//                make.top.equalToSuperview()
                 make.leading.equalToSuperview()
                 make.trailing.equalToSuperview()
             }
             }))
+
+        
 
         setUI()
 //        addBar(bar, dataSource: self, at: .top)
@@ -70,8 +72,8 @@ class TabViewController: TabmanViewController {
         
         customContainer.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(50)
+            make.trailing.equalToSuperview().offset(50)
         }
     }
     
@@ -80,7 +82,7 @@ class TabViewController: TabmanViewController {
     func settingTabBar (ctBar : TMBar.ButtonBar) {
         ctBar.layout.transitionStyle = .snap
         // 왼쪽 여백주기
-        ctBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 50.0, bottom: 0.0, right: 50.0)
+        ctBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         
         // 간격
         ctBar.layout.interButtonSpacing = 60
@@ -141,4 +143,3 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
       return nil
   }
 }
-

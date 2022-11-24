@@ -82,9 +82,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.top.equalToSuperview().offset(1)
+            make.leading.equalToSuperview().offset(1)
+            make.trailing.equalToSuperview().offset(-1)
             make.height.equalTo(100)
         }
 
