@@ -47,7 +47,7 @@ class SignInViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.setTitle("Login", for: .normal)
         // $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(self, action: #selector(pushViewForSignIn), for: .touchUpInside)
+        $0.addTarget(SignInViewController.self, action: #selector(pushViewForSignIn), for: .touchUpInside)
     }
     
     let SignUpButton = UIButton().then{
@@ -55,7 +55,7 @@ class SignInViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.setTitle("For Sign Up", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(self, action: #selector(pushViewForSignUp), for: .touchUpInside)
+        $0.addTarget(SignInViewController.self, action: #selector(pushViewForSignUp), for: .touchUpInside)
     }
     
     let stackView = UIStackView().then{
