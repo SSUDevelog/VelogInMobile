@@ -82,36 +82,36 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(1)
-            make.leading.equalToSuperview().offset(1)
-            make.trailing.equalToSuperview().offset(-1)
+            make.top.equalToSuperview().offset(20)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
             make.height.equalTo(100)
         }
 
         title.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(5)
 //            make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(30)
+            make.leading.equalToSuperview().offset(40)
             make.trailing.equalToSuperview()
         }
         
         textView.snp.makeConstraints { make in
             make.top.equalTo(title.snp.bottom).offset(5)
             make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.trailing.equalToSuperview().offset(-35)
             make.height.equalTo(80)
         }
         
         name.snp.makeConstraints { make in
             make.top.equalTo(textView.snp.bottom).offset(5)
-            make.leading.equalToSuperview().offset(30)
+            make.leading.equalToSuperview().offset(40)
             make.trailing.equalToSuperview().offset(-150)
         }
         
         date.snp.makeConstraints { make in
             make.top.equalTo(textView.snp.bottom).offset(5)
             make.leading.equalTo(name.snp.trailing)
-            make.trailing.equalToSuperview().offset(-30)
+            make.trailing.equalToSuperview().offset(-40)
         }
     }
     
