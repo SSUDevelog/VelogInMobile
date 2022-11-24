@@ -60,7 +60,7 @@ class SubScribeCollectionViewController: UIViewController {
     func getPostDataServer(){
         self.provider.request(.subscriberpost){ response in
             switch response{
-            case .success(let moyaResponse):
+            case .success(_):
                 do{
                     print("getPost")
 //                    print(moyaResponse.statusCode)

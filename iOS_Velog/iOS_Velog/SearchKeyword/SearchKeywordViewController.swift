@@ -28,7 +28,7 @@ class SearchKeywordViewController:UIViewController{
         $0.layer.cornerRadius = 10
         $0.setTitle("keyword 입력할래요.", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(self, action: #selector(pushView), for: .touchUpInside)
+        $0.addTarget(SearchKeywordViewController.self, action: #selector(pushView), for: .touchUpInside)
     }
 
     let nextButtonForHome = UIButton().then{
@@ -36,7 +36,7 @@ class SearchKeywordViewController:UIViewController{
         $0.layer.cornerRadius = 10
         $0.setTitle("일단 시작할래요.", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(self, action: #selector(pushView2), for: .touchUpInside)
+        $0.addTarget(SearchKeywordViewController.self, action: #selector(pushView2), for: .touchUpInside)
     }
     
     
