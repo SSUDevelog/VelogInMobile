@@ -8,5 +8,5 @@
 import Foundation
 
 struct BaseURL{
-    static let BURL = ""
+    static let BURL = "http://34.112.190.79:8080/"
 }
