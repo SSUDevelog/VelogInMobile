@@ -81,7 +81,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         $0.layer.cornerRadius = 10
         $0.setTitle("Next", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(SignUpViewController.self, action: #selector(pushView), for: .touchUpInside) // addTarget(SignUpViewController.self -> 때문에 "unrecognized selector sent to class" 에러 뜸
+        $0.addTarget(self, action: #selector(pushView), for: .touchUpInside) // addTarget(SignUpViewController.self -> 때문에 "unrecognized selector sent to class" 에러 뜸
     }
 
 

@@ -47,7 +47,7 @@ class SignInViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.setTitle("Login", for: .normal)
         // $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(SignInViewController.self, action: #selector(pushViewForSignIn), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(pushViewForSignIn), for: .touchUpInside)
     }
     
     let SignUpButton = UIButton().then{
@@ -55,7 +55,7 @@ class SignInViewController: UIViewController {
         $0.layer.cornerRadius = 10
         $0.setTitle("For Sign Up", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(SignInViewController.self, action: #selector(pushViewForSignUp), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(pushViewForSignUp), for: .touchUpInside)
     }
     
     let stackView = UIStackView().then{
@@ -86,7 +86,8 @@ class SignInViewController: UIViewController {
         // 자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
         // 자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
-            pushViewForSignIn()
+//            pushViewForSignIn()
+            ifSuccessPushHome()
         }
   
         
@@ -192,7 +193,6 @@ class SignInViewController: UIViewController {
                         
                     } catch(let err) {
                         print(err.localizedDescription)
-                        
                     }
                 case .failure(let err):
                     print(err.localizedDescription)

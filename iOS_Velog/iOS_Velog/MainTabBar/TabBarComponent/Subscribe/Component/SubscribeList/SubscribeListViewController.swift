@@ -28,7 +28,7 @@ class SubscribeListViewController: UIViewController {
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.addTarget(SubscribeListViewController.self, action: #selector(addSubscribe), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
     // 구독 리스트 tableView

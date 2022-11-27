@@ -31,7 +31,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.addTarget(SearchSubscribeViewController.self, action: #selector(checkVelogUser), for: .touchDown)
+        $0.addTarget(self, action: #selector(checkVelogUser), for: .touchDown)
     }
     
     let textField = UITextField().then{
