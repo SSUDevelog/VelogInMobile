@@ -87,6 +87,7 @@ class SignInViewController: UIViewController {
         // 자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
 //            pushViewForSignIn()
+            
             ifSuccessPushHome()
         }
   

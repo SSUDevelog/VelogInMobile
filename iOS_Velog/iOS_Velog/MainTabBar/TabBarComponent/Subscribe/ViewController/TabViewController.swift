@@ -27,13 +27,14 @@ class TabViewController: TabmanViewController {
     // 구독 검색 버튼
     let addButton = UIButton().then{
         $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        $0.addTarget(TabViewController.self, action: #selector(addSubscribe), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
     }
     
     // 페이징 할 뷰 컨트롤러
     var viewControllers: Array<UIViewController> = [SubScribeCollectionViewController(),SubscribeListViewController()]
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.dataSource = self
         
