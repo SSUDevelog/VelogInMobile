@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIImagePickerController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -77,7 +77,8 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         view.addSubviews(label)
         
         
-        titleLabel.snp.makeConstraints{            $0.top.equalToSuperview().offset(100)
+        titleLabel.snp.makeConstraints{
+            $0.top.equalToSuperview().offset(100)
             $0.centerX.equalToSuperview()
         }
         titleLabel2.snp.makeConstraints{

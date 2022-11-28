@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */; };
 		91161051292CB9BC00AC1627 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91161050292CB9BC00AC1627 /* CollectionViewCell.swift */; };
+		91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91178E042934803B00A9BDE7 /* PostWebViewController.swift */; };
+		91178E0A2934A79300A9BDE7 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E092934A79300A9BDE7 /* SwiftSoup */; };
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
@@ -61,6 +63,7 @@
 /* Begin PBXFileReference section */
 		9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeCollectionViewController.swift; sourceTree = "<group>"; };
 		91161050292CB9BC00AC1627 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		91178E042934803B00A9BDE7 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 				91C277032917A3D100F5F53B /* CombineMoya in Frameworks */,
 				91C277092917A3D100F5F53B /* RxMoya in Frameworks */,
 				917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */,
+				91178E0A2934A79300A9BDE7 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +173,7 @@
 				916827A6292A2FCA00DDA369 /* PostModel.swift */,
 				91161050292CB9BC00AC1627 /* CollectionViewCell.swift */,
 				9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */,
+				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
 			);
 			path = SubScribePost;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				91C277062917A3D100F5F53B /* ReactiveMoya */,
 				91C277082917A3D100F5F53B /* RxMoya */,
 				91E47770292BAC4F00AFC26E /* Tabman */,
+				91178E092934A79300A9BDE7 /* SwiftSoup */,
 			);
 			productName = iOS_Velog;
 			productReference = 916AEB9928F1675F000B2DA0 /* iOS_Velog.app */;
@@ -448,6 +454,7 @@
 				9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				91C277012917A3D100F5F53B /* XCRemoteSwiftPackageReference "Moya" */,
 				91E4776F292BAC4F00AFC26E /* XCRemoteSwiftPackageReference "Tabman" */,
+				91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 916AEB9A28F1675F000B2DA0 /* Products */;
 			projectDirPath = "";
@@ -508,6 +515,7 @@
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
 				9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
+				91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,
@@ -726,6 +734,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -769,6 +785,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		91178E092934A79300A9BDE7 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		9168AD5B290FBC2200BA42E2 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9168AD5A290FBC2200BA42E2 /* XCRemoteSwiftPackageReference "realm-swift" */;
