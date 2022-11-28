@@ -10,7 +10,11 @@ import SnapKit
 import Then
 import Moya
 
+
+
 class SubScribeCollectionViewController: UIViewController {
+    
+//    static var URL:String = ""
     
     private let provider = MoyaProvider<SubscriberService>()
     
@@ -18,6 +22,7 @@ class SubScribeCollectionViewController: UIViewController {
     
     let layout = UICollectionViewFlowLayout()
 
+    let PostVC = PostWebViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +59,8 @@ class SubScribeCollectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.getServer() -> 일단 보류!!!
-        self.getPostDataServer()
+        self.getServer()
+//        self.getPostDataServer() // 아직 사용하지 않는다
     }
     
     func getPostDataServer(){
@@ -105,6 +110,13 @@ class SubScribeCollectionViewController: UIViewController {
             }
         }
     }
+    
+    // webView 푸시
+    func pushWebView(){
+        print("finish to push WebView")
+        let nextVC = PostWebViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 
 
 }
@@ -123,4 +135,12 @@ extension SubScribeCollectionViewController: UICollectionViewDelegate, UICollect
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("didSelectItemAt")
+        print("\(indexPath)")
+        
+        pushWebView()
+    }
+    
+
 }

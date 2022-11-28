@@ -115,6 +115,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    
+    // 아래 함수들은 더미데이터 없앨때 쓰자!!!
 //image:String, -> 일단 보류
     public func configure(title:String,textViewText:String,name:String,date:String){
         self.title.text = title
