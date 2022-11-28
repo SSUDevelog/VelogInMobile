@@ -30,6 +30,7 @@ class SubScribeCollectionViewController: UIViewController {
             return
         }
         
+        //CustomCollectionViewCell.self
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -53,7 +54,7 @@ class SubScribeCollectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.getServer()
+//        self.getServer() -> 일단 보류!!!
         self.getPostDataServer()
     }
     

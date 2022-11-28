@@ -60,7 +60,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        getServer()
+//        getServer() -> 일단 보류!!!
     }
 
     
@@ -77,8 +77,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         view.addSubviews(label)
         
         
-        titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
+        titleLabel.snp.makeConstraints{            $0.top.equalToSuperview().offset(100)
             $0.centerX.equalToSuperview()
         }
         titleLabel2.snp.makeConstraints{

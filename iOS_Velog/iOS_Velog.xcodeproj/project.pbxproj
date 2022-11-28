@@ -163,14 +163,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		912D275A291A2CAF004382BB /* SubScribe */ = {
+		912D275A291A2CAF004382BB /* SubScribePost */ = {
 			isa = PBXGroup;
 			children = (
 				916827A6292A2FCA00DDA369 /* PostModel.swift */,
 				91161050292CB9BC00AC1627 /* CollectionViewCell.swift */,
 				9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */,
 			);
-			path = SubScribe;
+			path = SubScribePost;
 			sourceTree = "<group>";
 		};
 		912D275B291A2CC9004382BB /* SearchSubScribe */ = {
@@ -333,9 +333,11 @@
 		91B73FDC28F83EEE005159AD /* Subscribe */ = {
 			isa = PBXGroup;
 			children = (
-				91E47778292BE82D00AFC26E /* Component */,
-				91E47779292BE85400AFC26E /* ViewController */,
+				91E47772292BAC6500AFC26E /* TabViewController.swift */,
 				9142D798292CEB0D00D9BB7C /* Resource */,
+				912D275A291A2CAF004382BB /* SubScribePost */,
+				9170F13E291549040056E182 /* SubscribeList */,
+				912D275B291A2CC9004382BB /* SearchSubScribe */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -367,24 +369,6 @@
 				91E4777E292BF3BA00AFC26E /* TableCell */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		91E47778292BE82D00AFC26E /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				912D275A291A2CAF004382BB /* SubScribe */,
-				9170F13E291549040056E182 /* SubscribeList */,
-				912D275B291A2CC9004382BB /* SearchSubScribe */,
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
-		91E47779292BE85400AFC26E /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				91E47772292BAC6500AFC26E /* TabViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		91E4777E292BF3BA00AFC26E /* TableCell */ = {
