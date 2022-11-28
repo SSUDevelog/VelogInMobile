@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "nvactivityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView",
+      "state" : {
+        "branch" : "master",
+        "revision" : "93f5bdb857cbf545a281cd08f7954ddea76855a5"
+      }
+    },
+    {
       "identity" : "pageboy",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uias/Pageboy",
