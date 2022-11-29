@@ -9,63 +9,81 @@ import Foundation
 import UIKit
 import SnapKit
 import Then
+import Kingfisher
 
 class PostCell: UITableViewCell {
+    
+    
     
     static let identifier = "PostCell"
     
     var imgView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "pencil")
+        let url = URL(string: "https://velog.velcdn.com/images/lms7802/post/7defe4e7-7259-4c9b-801c-bea50c1e68b9/image.png")
+//        view.image = UIImage(systemName: "pencil")
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
+        view.kf.setImage(with: url)
+        view.snp.makeConstraints { make in
+            make.height.equalTo(150)
+        }
         return view
     }()
     
-    var textView = UITextView().then{
-        $0.textColor = UIColor.darkGray
-        $0.isEditable = false
-        $0.isSelectable = false
-        $0.isScrollEnabled = false
-        $0.font = UIFont.systemFont(ofSize: 15)
-    }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//
+//        imageView.image = //Default image
+//        Whatever other things you need cleared.
+//    }
+    
+    
+    var textView :UITextView = {
+        let textView = UITextView()
+        textView.textColor = UIColor.darkGray
+        textView.isEditable = false
+        textView.isSelectable = false
+        textView.isScrollEnabled = false
+        textView.font = UIFont.systemFont(ofSize: 15)
+        textView.snp.makeConstraints { make in
+            make.height.equalTo(100)
+        }
+        return textView
+    }()
+    
     var title = UILabel().then{
-//        $0.text = "함께 일하고 싶은 사람"
         $0.font = UIFont(name: "Avenir-Black", size: 15)
     }
     
     var date = UILabel().then {
-//        $0.text = "2022년 11월 9월"
         $0.font = UIFont.systemFont(ofSize: 13)
     }
     var name = UILabel().then{
-//        $0.text = "city7310"
         $0.font = UIFont(name: "Avenir-Black", size: 13)
     }
-    
-    func setTextViewText(text:String){
-        let attributedString = NSMutableAttributedString(string: text)
-        self.textView.attributedText = attributedString
-    }
-    
-    
+
     lazy var UserAndDateStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [name,date])
-        stackView.spacing = 10
-        contentView.addSubview(stackView)
-
-        stackView.snp.makeConstraints{
-            $0.top.left.bottom.right.equalTo(contentView)
+        stackView.spacing = 5
+        stackView.axis = .horizontal
+        stackView.alignment = .leading
+        stackView.snp.makeConstraints { make in
+            make.height.equalTo(20)
         }
         return stackView
     }()
     
     lazy var GlobalstackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [imgView,UserAndDateStackView,title,textView])
-        stackView.spacing = 10
+        stackView.spacing = 5
+//        stackView.backgroundColor = .blue
+        stackView.alignment = .fill
+//        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally // 이걸로 하면 다 나온다... 왜지
         stackView.axis = .vertical
         contentView.addSubview(stackView)
-
+//
         stackView.snp.makeConstraints{
             $0.top.left.bottom.right.equalTo(contentView)
         }
@@ -76,6 +94,7 @@ class PostCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // 어떻게 이 코드가.... 뭐지..
         print(GlobalstackView)
+
     }
     
     required init?(coder: NSCoder) {
@@ -87,9 +106,15 @@ class PostCell: UITableViewCell {
 extension PostCell {
     public func binding(model:SubscribePostDtoList){
         title.text = model.title
-        self.setTextViewText(text: model.summary)
+        let attributedString = NSMutableAttributedString(string: model.summary)
+        textView.attributedText = attributedString
+        
         name.text = model.name
         date.text = model.date
 //        imgView.image = model.img
+        print("binding")
     }
 }
+
+
+

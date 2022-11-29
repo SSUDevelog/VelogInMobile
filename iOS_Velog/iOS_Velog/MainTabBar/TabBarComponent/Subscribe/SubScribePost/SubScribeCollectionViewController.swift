@@ -17,11 +17,26 @@ import Moya
 class SubScribeCollectionViewController: UIViewController {
     
     
-    let d1: SubscribePostDtoList = SubscribePostDtoList(comment: 3, date: "2022.10.2", img: "", like: 3, name: "joon", summary: "경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나", tag: ["swift","iOS"], title: "함께 일하고 싶은 사람", url: "https://velog.io/@city7310/%ED%95%A8%EA%BB%98-%EC%9D%BC%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EC%82%AC%EB%9E%8C-1.-%EC%97%85%EB%AC%B4-%EC%8A%B5%EA%B4%80-w1mfhsf2")
+    let d1: SubscribePostDtoList = SubscribePostDtoList(comment: 3, date: "2022.10.2", img: "", like: 3, name: "1", summary: "경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나", tag: ["swift","iOS"], title: "함께 일하고 싶은 사람1", url: "https://velog.io/@city7310/%ED%95%A8%EA%BB%98-%EC%9D%BC%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EC%82%AC%EB%9E%8C-1.-%EC%97%85%EB%AC%B4-%EC%8A%B5%EA%B4%80-w1mfhsf2")
     
-    let d2: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.10.7", img: "", like: 7, name: "Kim", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d2: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.10.7", img: "", like: 7, name: "2", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나2", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
     
-    lazy var dummy: [SubscribePostDtoList] = [d1, d2]
+    let d3: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.11.20", img: "", like: 7, name: "3", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다.3", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    
+    let d4: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "4", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지4", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d5: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "5", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지5", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d6: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "6", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지6", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    
+    let d7: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "7", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지6", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d8: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "8", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지6", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d9: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "9", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지6", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d10: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "10", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지6", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    let d11: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.09.10", img: "", like: 7, name: "11", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나 료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지6", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+
+
+    
+    
+    lazy var dummy: [SubscribePostDtoList] = [d1, d2, d3, d4, d5, d6, d7, d8,d9,d10,d11]
     
     
     private let provider = MoyaProvider<SubscriberService>()
@@ -117,27 +132,40 @@ class SubScribeCollectionViewController: UIViewController {
         let nextVC = PostWebViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
 
 
 }
 
+extension SubScribeCollectionViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("Will Display Cell : \(indexPath.row)")
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didEndDisplaying cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+      print("Did End Display Cell : \(indexPath.row)")
+    }
+}
 
-extension SubScribeCollectionViewController:UITableViewDelegate,UITableViewDataSource{
+
+extension SubScribeCollectionViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return PostData.PostListData.count    // decoding 전까지
         return self.dummy.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as? PostCell ?? PostCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell ?? PostCell()
 //        cell.binding(model: PostData.PostListData[indexPath.row]) // decoding 전까지
         cell.binding(model: self.dummy[indexPath.row])
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 300
     }
     
 }
