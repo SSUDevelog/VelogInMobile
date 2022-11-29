@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9109F2652935E1B500DDE54B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109F2642935E1B500DDE54B /* PostCell.swift */; };
+		9109F26929367A5400DDE54B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9109F26829367A5400DDE54B /* Kingfisher */; };
 		9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */; };
-		91161051292CB9BC00AC1627 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91161050292CB9BC00AC1627 /* CollectionViewCell.swift */; };
 		91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91178E042934803B00A9BDE7 /* PostWebViewController.swift */; };
 		91178E0A2934A79300A9BDE7 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E092934A79300A9BDE7 /* SwiftSoup */; };
 		91178E112934B90E00A9BDE7 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E102934B90E00A9BDE7 /* NVActivityIndicatorView */; };
@@ -63,8 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9109F2642935E1B500DDE54B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeCollectionViewController.swift; sourceTree = "<group>"; };
-		91161050292CB9BC00AC1627 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		91178E042934803B00A9BDE7 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 				91E47771292BAC4F00AFC26E /* Tabman in Frameworks */,
 				91C277032917A3D100F5F53B /* CombineMoya in Frameworks */,
 				91C277092917A3D100F5F53B /* RxMoya in Frameworks */,
+				9109F26929367A5400DDE54B /* Kingfisher in Frameworks */,
 				91178E112934B90E00A9BDE7 /* NVActivityIndicatorView in Frameworks */,
 				91178E132934B90E00A9BDE7 /* NVActivityIndicatorViewExtended in Frameworks */,
 				917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */,
@@ -131,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9109F2662935E84D00DDE54B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		9123228A290916AC00C204A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,9 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				916827A6292A2FCA00DDA369 /* PostModel.swift */,
-				91161050292CB9BC00AC1627 /* CollectionViewCell.swift */,
+				9109F2642935E1B500DDE54B /* PostCell.swift */,
 				9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */,
-				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
 			);
 			path = SubScribePost;
 			sourceTree = "<group>";
@@ -285,8 +294,8 @@
 		9170F13E291549040056E182 /* SubscribeList */ = {
 			isa = PBXGroup;
 			children = (
-				9170F13F29154A710056E182 /* CustomCell.swift */,
 				91755F1A29233C24005C94D7 /* SubscriberListModel.swift */,
+				9170F13F29154A710056E182 /* CustomCell.swift */,
 				912322882909102E00C204A8 /* SubscribeListViewController.swift */,
 			);
 			path = SubscribeList;
@@ -343,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				91E47772292BAC6500AFC26E /* TabViewController.swift */,
+				9109F2662935E84D00DDE54B /* WebView */,
 				9142D798292CEB0D00D9BB7C /* Resource */,
 				912D275A291A2CAF004382BB /* SubScribePost */,
 				9170F13E291549040056E182 /* SubscribeList */,
@@ -425,6 +435,7 @@
 				91178E092934A79300A9BDE7 /* SwiftSoup */,
 				91178E102934B90E00A9BDE7 /* NVActivityIndicatorView */,
 				91178E122934B90E00A9BDE7 /* NVActivityIndicatorViewExtended */,
+				9109F26829367A5400DDE54B /* Kingfisher */,
 			);
 			productName = iOS_Velog;
 			productReference = 916AEB9928F1675F000B2DA0 /* iOS_Velog.app */;
@@ -462,6 +473,7 @@
 				91E4776F292BAC4F00AFC26E /* XCRemoteSwiftPackageReference "Tabman" */,
 				91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				91178E0F2934B90D00A9BDE7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				9109F26729367A5400DDE54B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 916AEB9A28F1675F000B2DA0 /* Products */;
 			projectDirPath = "";
@@ -500,7 +512,6 @@
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				91E694F62933D4E1000E312B /* BaseURL.swift in Sources */,
-				91161051292CB9BC00AC1627 /* CollectionViewCell.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */,
@@ -526,6 +537,7 @@
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,
+				9109F2652935E1B500DDE54B /* PostCell.swift in Sources */,
 				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
 				9172F2A22916358900C6C890 /* RealmService.swift in Sources */,
 			);
@@ -741,6 +753,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9109F26729367A5400DDE54B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup";
@@ -800,6 +820,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9109F26829367A5400DDE54B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9109F26729367A5400DDE54B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		91178E092934A79300A9BDE7 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
