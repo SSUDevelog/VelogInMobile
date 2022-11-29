@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9109F2652935E1B500DDE54B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109F2642935E1B500DDE54B /* PostCell.swift */; };
 		9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */; };
 		91161051292CB9BC00AC1627 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91161050292CB9BC00AC1627 /* CollectionViewCell.swift */; };
 		91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91178E042934803B00A9BDE7 /* PostWebViewController.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9109F2642935E1B500DDE54B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeCollectionViewController.swift; sourceTree = "<group>"; };
 		91161050292CB9BC00AC1627 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		91178E042934803B00A9BDE7 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9109F2662935E84D00DDE54B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		9123228A290916AC00C204A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +186,8 @@
 			children = (
 				916827A6292A2FCA00DDA369 /* PostModel.swift */,
 				91161050292CB9BC00AC1627 /* CollectionViewCell.swift */,
+				9109F2642935E1B500DDE54B /* PostCell.swift */,
 				9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */,
-				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
 			);
 			path = SubScribePost;
 			sourceTree = "<group>";
@@ -343,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				91E47772292BAC6500AFC26E /* TabViewController.swift */,
+				9109F2662935E84D00DDE54B /* WebView */,
 				9142D798292CEB0D00D9BB7C /* Resource */,
 				912D275A291A2CAF004382BB /* SubScribePost */,
 				9170F13E291549040056E182 /* SubscribeList */,
@@ -526,6 +537,7 @@
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,
+				9109F2652935E1B500DDE54B /* PostCell.swift in Sources */,
 				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
 				9172F2A22916358900C6C890 /* RealmService.swift in Sources */,
 			);
