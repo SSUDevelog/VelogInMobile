@@ -21,16 +21,10 @@ class SubScribeCollectionViewController: UIViewController {
     
     let d2: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.10.7", img: "", like: 7, name: "Kim", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
     
-//    let d3: SubscribePostDtoList
-    
     lazy var dummy: [SubscribePostDtoList] = [d1, d2]
     
     
     private let provider = MoyaProvider<SubscriberService>()
-    
-//    private var collectionView:UICollectionView?
-    
-//    let layout = UICollectionViewFlowLayout()
 
     let PostVC = PostWebViewController()
     
@@ -49,31 +43,6 @@ class SubScribeCollectionViewController: UIViewController {
         tableViewForPosts.delegate = self
         tableViewForPosts.dataSource = self
         
-//        setCellLayer()
-        
-//        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//
-//        guard let collectionView = collectionView else {
-//            return
-//        }
-        
-//        CustomCollectionViewCell.self
-//        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
-//
-//        view.addSubview(collectionView)
-//        collectionView.frame = view.bounds
-//
-//        collectionView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(250)
-//            make.leading.equalToSuperview().offset(25)
-//            make.trailing.equalToSuperview().offset(-20)
-//            make.bottom.equalToSuperview().offset(-30)
-//        }
-//        view.backgroundColor = .systemBackground
-        
-        
         setUI()
     }
     
@@ -87,11 +56,7 @@ class SubScribeCollectionViewController: UIViewController {
             $0.bottom.equalToSuperview().offset(-90)
         }
     }
-    
-//    func setCellLayer(){
-//        layout.scrollDirection = .vertical
-//        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.height/3)
-//    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
@@ -156,29 +121,6 @@ class SubScribeCollectionViewController: UIViewController {
 
 }
 
-//extension SubScribeCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 10
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-////        cell.contentView.backgroundColor = .systemBlue
-////        cell.configure(title: "Custom \(indexPath.row)", textViewText: <#T##String#>, name: <#T##String#>, date: <#T##String#>)
-//        // 이걸로 cell 초기화!!
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print("didSelectItemAt")
-//        print("\(indexPath)")
-//
-//        pushWebView()
-//    }
-//
-//
-//}
 
 extension SubScribeCollectionViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
