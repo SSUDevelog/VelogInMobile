@@ -12,6 +12,9 @@ import RxSwift
 
 class PostWebViewController: UIViewController {
     
+    // 일단 더미, static
+    static var url = URL(string: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
+    
     lazy var loadingBgView: UIView = {
         let bgView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         bgView.backgroundColor = .systemBackground
@@ -54,6 +57,9 @@ class PostWebViewController: UIViewController {
         
         return webView
     }()
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +67,9 @@ class PostWebViewController: UIViewController {
         setActivityIndicator()
 
         // 임시 url !! 더미 데이터
-        guard let url = URL(string: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85") else { return }
+//        guard var url = URL(string: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85") else { return }
         
-        webView.load(URLRequest(url: url))
+        webView.load(URLRequest(url: PostWebViewController.url!)) // 임시
 
         self.Queue()
         
@@ -87,8 +93,6 @@ class PostWebViewController: UIViewController {
                 self.loadingBgView.removeFromSuperview()
         }
     }
-    
-    
 }
 
 
