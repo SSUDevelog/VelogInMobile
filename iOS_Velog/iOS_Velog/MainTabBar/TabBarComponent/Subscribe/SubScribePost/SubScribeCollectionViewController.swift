@@ -171,7 +171,7 @@ extension SubScribeCollectionViewController:UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell ?? PostCell()
 //        cell.binding(model: PostData.PostListData[indexPath.row]) // decoding 전까지
         cell.binding(model: self.dummy[indexPath.row])
-//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        cell.selectionStyle = .none
         
         return cell
     }
