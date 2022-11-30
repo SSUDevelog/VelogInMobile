@@ -46,17 +46,38 @@ class SubscribeListViewController: UIViewController {
         tableViewForSubscribeList.delegate = self
         tableViewForSubscribeList.dataSource = self
         
-        
+        // 구독자 추가한 다음에 구독자 리스트 뷰로 들어오니까, 여기서 구독자 글 목록 불러오자!
+        getPostDataServer()
         
         setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated
+//        super.viewWillAppear(animated)
         super.viewWillAppear(animated)
         resetSubScribeList()
     
     }
+    
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    print(moyaResponse.statusCode)
+                    PostData.Post = try moyaResponse.map(PostList.self)
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+
 
     // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
     func resetSubScribeList(){

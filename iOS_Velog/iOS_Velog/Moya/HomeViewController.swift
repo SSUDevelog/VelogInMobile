@@ -18,23 +18,21 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
+        // 데이터 띄우기 직전 뷰에서 서버 통신해서 데이터 미리 받아놓아야 한다!!
         getPostDataServer()
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        print(PostData.Post.subscribePostDtoList.first?.title as Any)
-//        print(PostData.Post.subscribePostDtoList.count)
-//    }
-    
+
     func getPostDataServer(){
         self.provider.request(.subscriberpost){ response in
             switch response{
             case .success(let moyaResponse):
                 do{
                     print("getPost")
+                    
                     print(moyaResponse.statusCode)
-//                    var postList = PostData(data: try moyaResponse.map(PostList.self))
                     PostData.Post = try moyaResponse.map(PostList.self)
-                    print(PostData.Post.subscribePostDtoList.count)
+                    self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
+                    
                     print("성공")
                 }catch(let err){
                     print(err.localizedDescription)
@@ -45,4 +43,17 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    func resetURL(indexSize:Int){
+        
+        for x in 0..<indexSize {
+            urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
+        }
+
+//        for x in 0..<indexSize {
+//            print(urlList.list[x])
+//        }
+        
+    }
+    
 }

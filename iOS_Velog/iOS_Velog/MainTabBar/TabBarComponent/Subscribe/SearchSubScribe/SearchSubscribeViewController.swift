@@ -178,7 +178,6 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     // 구독자 추가했을 경우 서버 디비 재호출
     func getServer(){
-
         self.provider.request(.getSubscriber){response in
             switch response{
             case .success(let moyaResponse):
