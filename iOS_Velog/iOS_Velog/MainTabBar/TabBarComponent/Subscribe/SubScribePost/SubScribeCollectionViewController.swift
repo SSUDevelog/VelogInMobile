@@ -17,6 +17,7 @@ import Moya
 class SubScribeCollectionViewController: UIViewController {
     
     
+    
     let d1: SubscribePostDtoList = SubscribePostDtoList(comment: 3, date: "2022.10.2", img: "", like: 3, name: "1", summary: "경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나", tag: ["swift","iOS"], title: "함께 일하고 싶은 사람1", url: "https://velog.io/@wijoonwu/22%EB%85%84-4%EB%B6%84%EA%B8%B0-%ED%9A%8C%EA%B3%A0-%EC%B2%AB-%EC%B7%A8%EC%97%85-%ED%9B%84%EA%B8%B0feat.%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85")
     
     let d2: SubscribePostDtoList = SubscribePostDtoList(comment: 5, date: "2022.10.7", img: "", like: 7, name: "2", summary: "국비지원 수료부터 스타트업 입사, 퇴사고민까지. 10월~11월 회고 경력을 시작한 지 2년 쯤 지날을 때, 팀장님이 질문했습니다. 함께 일하고 싶은 사람은 어떤 사람일까요? 괜찮은 대답을 하지 못 했습니다. 막연한 좋은 모습들 중 하나2", tag: ["백엔드","스타트업","취업","핀테크","회고"], title: "22년 4분기 회고 : 첫 취업 후기(feat.스타트업)", url: "https://velog.io/@lky5697/react-junior-code-review-and-refactoring")
@@ -37,6 +38,7 @@ class SubScribeCollectionViewController: UIViewController {
     
     
     lazy var dummy: [SubscribePostDtoList] = [d1, d2, d3, d4, d5, d6, d7, d8,d9,d10,d11]
+    var dumy:PostList?
     
     
     private let provider = MoyaProvider<SubscriberService>()
@@ -46,6 +48,7 @@ class SubScribeCollectionViewController: UIViewController {
     // 구독 리스트 tableView
     let tableViewForPosts :UITableView = {
         let tableview = UITableView()
+//        tableview.backgroundColor = .red
         return tableview
     }()
     
@@ -57,8 +60,9 @@ class SubScribeCollectionViewController: UIViewController {
         tableViewForPosts.register(PostCell.self, forCellReuseIdentifier: PostCell.identifier)
         tableViewForPosts.delegate = self
         tableViewForPosts.dataSource = self
-        
+        self.getPostDataServer()
         setUI()
+        print(PostData.Post.subscribePostDtoList)
     }
     
     func setUI(){
@@ -84,20 +88,11 @@ class SubScribeCollectionViewController: UIViewController {
             case .success(let moyaResponse):
                 do{
                     print("getPost")
-//                    print(moyaResponse.statusCode)
-//                    print(try moyaResponse.mapJSON())
-//                    var responseData = try moyaResponse.mapJSON()
-//                    var responseDataa = try JSONSerialization.
                     print(moyaResponse.statusCode)
-                    let responDto = try moyaResponse.map(PostList.self)
-                    
-//                    var postData = PostData(postListData: responDto)
-//                    print(postData)
-                    print(responDto.subscribePostDtoList.count)
-                    print(responDto.subscribePostDtoList.first?.url ?? "")
-                    
-                    print("성공")  // 여기까지는 들어온다.
-                    
+//                    var postList = PostData(data: try moyaResponse.map(PostList.self))
+//                    PostData.Post = try moyaResponse.map(PostList.self)
+                    PostData.Post = try moyaResponse.map(PostList.self)
+                    print("성공")
                 }catch(let err){
                     print(err.localizedDescription)
                     print("맵핑 안됨")
@@ -168,13 +163,21 @@ extension SubScribeCollectionViewController : UITableViewDelegate {
 extension SubScribeCollectionViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dummy.count
+//        return self.dummy.count
+//        return PostData.Post.count
+//        return 1
+        return PostData.Post.subscribePostDtoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell ?? PostCell()
 //        cell.binding(model: PostData.PostListData[indexPath.row]) // decoding 전까지
-        cell.binding(model: self.dummy[indexPath.row])
+//        cell.binding(model: self.dummy[indexPath.row])
+//        cell.binding(model: PostData.Post[indexPath.row])
+        cell.binding(model: PostData.Post.subscribePostDtoList[indexPath.row])
+//        cell.binding(model: PostData.Post.first)
+//        print(PostData.Post.first!)
+        
         cell.selectionStyle = .none
         
         return cell

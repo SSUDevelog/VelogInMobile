@@ -13,3 +13,4 @@ struct userList{
         userList.List = list
     }
 }
+
