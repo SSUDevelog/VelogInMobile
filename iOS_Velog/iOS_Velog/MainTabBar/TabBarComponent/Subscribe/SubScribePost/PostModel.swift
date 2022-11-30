@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Welcome
 struct PostList: Codable {
-    let subscribePostDtoList: [SubscribePostDtoList]
+    var subscribePostDtoList =  [SubscribePostDtoList]()
 }
 
 // MARK: - SubscribePostDtoList

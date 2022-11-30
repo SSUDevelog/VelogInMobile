@@ -9,13 +9,20 @@ import UIKit
 import SnapKit
 import SwiftUI
 import Tabman
+import Moya
 
 
 class CustomTabBarController: UITabBarController{
     
+    
+    static var posts: PostList?
+    
+    private let provider = MoyaProvider<SubscriberService>()
+    
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     
-    let homeVC = TabViewController()
+    let homeVC = HomeViewController()
+    let PostListVC = TabViewController()
     let subScribeVC = NotificationViewController()
     let profileVC = ProfileViewController()
     
@@ -23,9 +30,8 @@ class CustomTabBarController: UITabBarController{
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         setUpTabBar()
+        print("tabBar")
     }
-    
-
 
     func setUpTabBar(){
         self.tabBar.tintColor = UIColor.customColor(.pointColor)
@@ -33,14 +39,16 @@ class CustomTabBarController: UITabBarController{
         self.tabBar.backgroundColor = .systemBackground
 
         homeVC.title = "Home"
+        PostListVC.title = "Post"
         subScribeVC.title = "Notification"
         profileVC.title = "Profile"
 
-        let ViewControllers:[UIViewController] = [homeVC,subScribeVC,profileVC]
+        let ViewControllers:[UIViewController] = [homeVC,PostListVC,subScribeVC,profileVC]
         // assign view controllers to tab bar
         self.setViewControllers(ViewControllers, animated: true)
 
         homeVC.tabBarItem.image = UIImage(systemName: "house")
+        PostListVC.tabBarItem.image = UIImage(systemName: "scribble")
         subScribeVC.tabBarItem.image = UIImage(systemName: "megaphone")
         profileVC.tabBarItem.image = UIImage(systemName: "person")
         

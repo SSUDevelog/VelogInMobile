@@ -6,24 +6,54 @@
 //
 
 import UIKit
+import Moya
 
 class HomeViewController: UIViewController {
+    
+    
 
+    private let provider = MoyaProvider<SubscriberService>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        // Do any additional setup after loading the view.
+
+        // 데이터 띄우기 직전 뷰에서 서버 통신해서 데이터 미리 받아놓아야 한다!!
+        getPostDataServer()
+    }
+
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    
+                    print(moyaResponse.statusCode)
+                    PostData.Post = try moyaResponse.map(PostList.self)
+                    self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
+                    
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
     
+    func resetURL(indexSize:Int){
+        
+        for x in 0..<indexSize {
+            urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
+        }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//        for x in 0..<indexSize {
+//            print(urlList.list[x])
+//        }
+        
     }
-    */
-
+    
 }
