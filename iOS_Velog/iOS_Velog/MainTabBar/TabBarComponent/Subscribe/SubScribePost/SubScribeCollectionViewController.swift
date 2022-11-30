@@ -75,23 +75,27 @@ class SubScribeCollectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.getServer()
-//        self.getPostDataServer() // 아직 사용하지 않는다
+        self.getPostDataServer() // 아직 사용하지 않는다
     }
     
     func getPostDataServer(){
         self.provider.request(.subscriberpost){ response in
             switch response{
-            case .success(_):
+            case .success(let moyaResponse):
                 do{
                     print("getPost")
 //                    print(moyaResponse.statusCode)
 //                    print(try moyaResponse.mapJSON())
 //                    var responseData = try moyaResponse.mapJSON()
 //                    var responseDataa = try JSONSerialization.
-                    print("과연 성공?")
+                    print(moyaResponse.statusCode)
+                    let responDto = try moyaResponse.map(PostList.self)
                     
-//                    print(responseDataa)
-//                    print("과연 성공?")
+//                    var postData = PostData(postListData: responDto)
+//                    print(postData)
+                    print(responDto.subscribePostDtoList.count)
+                    print(responDto.subscribePostDtoList.first?.url ?? "")
+                    
                     print("성공")  // 여기까지는 들어온다.
                     
                 }catch(let err){
