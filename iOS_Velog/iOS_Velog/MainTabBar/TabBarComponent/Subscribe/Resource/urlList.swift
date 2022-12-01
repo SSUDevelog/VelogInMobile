@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct urlList{
-
-    static var list = [String]()
-    
-    init(list:[String]){
-        urlList.list = list
-    }
-}
+//struct urlList{
+//
+//    static var list = [String]()
+//    
+//    init(list:[String]){
+//        urlList.list = list
+//    }
+//}

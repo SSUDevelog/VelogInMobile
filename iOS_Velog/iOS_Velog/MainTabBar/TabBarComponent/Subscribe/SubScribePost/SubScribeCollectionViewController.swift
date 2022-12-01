@@ -25,7 +25,6 @@ class SubScribeCollectionViewController: UIViewController {
     // 구독 리스트 tableView
     let tableViewForPosts :UITableView = {
         let tableview = UITableView()
-//        tableview.backgroundColor = .red
         return tableview
     }()
     
@@ -114,8 +113,6 @@ class SubScribeCollectionViewController: UIViewController {
 extension SubScribeCollectionViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        let url:String = urlList.list[indexPath.row]
 
         SubScribeCollectionViewController.url = urlList.list[indexPath.row]
         
