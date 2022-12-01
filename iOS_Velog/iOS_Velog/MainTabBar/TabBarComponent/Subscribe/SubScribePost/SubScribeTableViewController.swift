@@ -14,7 +14,7 @@ import Moya
 
 
 
-class SubScribeCollectionViewController: UIViewController {
+class SubScribeTableViewController: UIViewController {
 
     private let provider = MoyaProvider<SubscriberService>()
 
@@ -38,7 +38,7 @@ class SubScribeCollectionViewController: UIViewController {
         tableViewForPosts.dataSource = self
 //        getPostDataServer()
         setUI()
-        print(PostData.Post.subscribePostDtoList)
+//        print(PostData.Post.subscribePostDtoList)
     }
     
     func setUI(){
@@ -110,20 +110,20 @@ class SubScribeCollectionViewController: UIViewController {
 
 }
 
-extension SubScribeCollectionViewController : UITableViewDelegate {
+extension SubScribeTableViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        SubScribeCollectionViewController.url = urlList.list[indexPath.row]
+        SubScribeTableViewController.url = urlList.list[indexPath.row]
         
 //        PostWebViewController.url = URL(string: url)
-        print(SubScribeCollectionViewController.url)  // 일단 좋아!!! 여기까지
+        print(SubScribeTableViewController.url)  // 일단 좋아!!! 여기까지
         self.pushWebView()
     }
 }
 
 
-extension SubScribeCollectionViewController:UITableViewDataSource {
+extension SubScribeTableViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PostData.Post.subscribePostDtoList.count

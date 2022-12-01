@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9109F2652935E1B500DDE54B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9109F2642935E1B500DDE54B /* PostCell.swift */; };
 		9109F26929367A5400DDE54B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9109F26829367A5400DDE54B /* Kingfisher */; };
-		9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */; };
+		9116104F292CB99200AC1627 /* SubScribeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */; };
 		91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91178E042934803B00A9BDE7 /* PostWebViewController.swift */; };
 		91178E0A2934A79300A9BDE7 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E092934A79300A9BDE7 /* SwiftSoup */; };
 		91178E112934B90E00A9BDE7 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E102934B90E00A9BDE7 /* NVActivityIndicatorView */; };
@@ -69,7 +69,7 @@
 
 /* Begin PBXFileReference section */
 		9109F2642935E1B500DDE54B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeCollectionViewController.swift; sourceTree = "<group>"; };
+		9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeTableViewController.swift; sourceTree = "<group>"; };
 		91178E042934803B00A9BDE7 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 			children = (
 				916827A6292A2FCA00DDA369 /* PostModel.swift */,
 				9109F2642935E1B500DDE54B /* PostCell.swift */,
-				9116104E292CB99200AC1627 /* SubScribeCollectionViewController.swift */,
+				9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */,
 			);
 			path = SubScribePost;
 			sourceTree = "<group>";
@@ -553,7 +553,7 @@
 				91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */,
 				912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
-				9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */,
+				9116104F292CB99200AC1627 /* SubScribeTableViewController.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
 				91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */,
 				918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */,

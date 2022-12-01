@@ -33,7 +33,7 @@ class TabViewController: TabmanViewController {
     }
     
     // 페이징 할 뷰 컨트롤러
-    var viewControllers: Array<UIViewController> = [SubScribeCollectionViewController(),SubscribeListViewController()]
+    var viewControllers: Array<UIViewController> = [SubScribeTableViewController(),SubscribeListViewController()]
 
     override func viewDidLoad() {
         

@@ -82,9 +82,9 @@ class PostWebViewController: UIViewController {
     
     
     func loadPostWebView(){
-        if SubScribeCollectionViewController.url != ""{
+        if SubScribeTableViewController.url != ""{
             
-            let urlString = "https://velog.io\(SubScribeCollectionViewController.url)"
+            let urlString = "https://velog.io\(SubScribeTableViewController.url)"
 //            print(urlString)
             guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
             let PostURL = URL(string: encodedStr)!
