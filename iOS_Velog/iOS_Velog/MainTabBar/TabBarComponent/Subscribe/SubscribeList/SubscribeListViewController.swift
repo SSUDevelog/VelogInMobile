@@ -53,7 +53,6 @@ class SubscribeListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
         super.viewWillAppear(animated)
         resetSubScribeList()
     
@@ -104,26 +103,10 @@ class SubscribeListViewController: UIViewController {
 //    }
     
     func setUI(){
-        
-//        self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
-//        view.addSubview(titleLabel)
-//        view.addSubview(addButton)
+
         view.addSubview(tableViewForSubscribeList)
 
-//        titleLabel.snp.makeConstraints{
-//            $0.top.equalToSuperview().offset(100)
-//            $0.centerX.equalToSuperview()
-//        }
-//
-//        addButton.snp.makeConstraints{
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-//            $0.trailing.equalToSuperview().offset(-30)
-//            $0.leading.equalToSuperview().offset(250)
-//        }
-        
-
         tableViewForSubscribeList.snp.makeConstraints{
-//            $0.top.equalTo(addButton.snp.bottom).offset(20)
             $0.top.equalToSuperview().offset(250)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
@@ -159,7 +142,6 @@ class SubscribeListViewController: UIViewController {
 
 extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return data.count // 더미 데이터 코드
         return userList.List.count
     }
     

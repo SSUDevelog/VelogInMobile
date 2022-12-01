@@ -10,20 +10,17 @@ import SnapKit
 import Then
 import Moya
 
-
-
-
-
-class SubScribeCollectionViewController: UIViewController {
+class SubScribeTableViewController: UIViewController {
 
     private let provider = MoyaProvider<SubscriberService>()
 
     let PostVC = PostWebViewController()
     
+    static var url:String = ""
+    
     // 구독 리스트 tableView
     let tableViewForPosts :UITableView = {
         let tableview = UITableView()
-//        tableview.backgroundColor = .red
         return tableview
     }()
     
@@ -37,7 +34,7 @@ class SubScribeCollectionViewController: UIViewController {
         tableViewForPosts.dataSource = self
 //        getPostDataServer()
         setUI()
-        print(PostData.Post.subscribePostDtoList)
+//        print(PostData.Post.subscribePostDtoList)
     }
     
     func setUI(){
@@ -109,50 +106,29 @@ class SubScribeCollectionViewController: UIViewController {
 
 }
 
-extension SubScribeCollectionViewController : UITableViewDelegate {
+extension SubScribeTableViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var url:String = dummy[indexPath.row].url
-//        print(dummy[indexPath.row].url)
-        let url:String = urlList.list[indexPath.row]
+
+        SubScribeTableViewController.url = urlList.list[indexPath.row]
         
-//        self.PostVC.resetURL(url: url)
-//        self.navigationController?.pushViewController(PostVC, animated: true)
-        PostWebViewController.url = URL(string: url)
-        print(url)  // 일단 좋아!!! 여기까지
+//        PostWebViewController.url = URL(string: url)
+        print(SubScribeTableViewController.url)  // 일단 좋아!!! 여기까지
         self.pushWebView()
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("Will Display Cell : \(indexPath.row)")
-        
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   didEndDisplaying cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-      print("Did End Display Cell : \(indexPath.row)")
     }
 }
 
 
-extension SubScribeCollectionViewController:UITableViewDataSource {
+extension SubScribeTableViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.dummy.count
-//        return PostData.Post.count
-//        return 1
         return PostData.Post.subscribePostDtoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell ?? PostCell()
-//        cell.binding(model: PostData.PostListData[indexPath.row]) // decoding 전까지
-//        cell.binding(model: self.dummy[indexPath.row])
-//        cell.binding(model: PostData.Post[indexPath.row])
         cell.binding(model: PostData.Post.subscribePostDtoList[indexPath.row])
-//        cell.binding(model: PostData.Post.first)
-//        print(PostData.Post.first!)
+
         
         cell.selectionStyle = .none
         
