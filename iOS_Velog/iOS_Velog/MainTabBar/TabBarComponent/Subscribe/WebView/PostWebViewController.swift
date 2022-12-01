@@ -13,7 +13,7 @@ import RxSwift
 class PostWebViewController: UIViewController {
     
     // 일단 더미, static
-    static var url:URL?
+//    static var url:URL?
     
     lazy var loadingBgView: UIView = {
         let bgView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -66,10 +66,35 @@ class PostWebViewController: UIViewController {
         view.addSubview(webView)
         setActivityIndicator()
         
-        webView.load(URLRequest(url: PostWebViewController.url!))
-
+//        webView.load(URLRequest(url: PostWebViewController.url!))
+        
+        
+        loadPostWebView()
+        
         self.Queue()
         
+    }
+    
+    let serverURL = "https://velog.io/@bricksky/HCI-스터디-2주차"
+    let realURL = "https://velog.io/@bricksky/HCI-%EC%8A%A4%ED%84%B0%EB%94%94-2%EC%A3%BC%EC%B0%A8"
+    
+    let dummyURL = "https://stackoverflow.com/questions/24410473/how-to-convert-this-var-string-to-url-in-swift"
+    
+    
+    func loadPostWebView(){
+        if SubScribeCollectionViewController.url != ""{
+            
+            let urlString = "https://velog.io\(SubScribeCollectionViewController.url)"
+//            print(urlString)
+            guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+            let PostURL = URL(string: encodedStr)!
+//            print("url")
+            print(PostURL.absoluteString)
+//            print(PostURL)
+            webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+        }else{
+            print("해당하는 URL이 존재하지 않습니다.")
+        }
     }
     
     override func viewDidLayoutSubviews() {

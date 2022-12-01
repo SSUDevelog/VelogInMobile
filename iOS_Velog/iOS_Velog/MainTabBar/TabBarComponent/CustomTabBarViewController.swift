@@ -32,6 +32,10 @@ class CustomTabBarController: UITabBarController{
         setUpTabBar()
         print("tabBar")
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        setUpTabBar()
+//    }
 
     func setUpTabBar(){
         self.tabBar.tintColor = UIColor.customColor(.pointColor)

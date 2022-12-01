@@ -48,13 +48,7 @@ class TabViewController: TabmanViewController {
                 make.trailing.equalToSuperview()
             }
             }))
-
-        
-
         setUI()
-//        addBar(bar, dataSource: self, at: .top)
-
-        
     }
     
     func setUI(){        

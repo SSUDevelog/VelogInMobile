@@ -20,6 +20,8 @@ class SubScribeCollectionViewController: UIViewController {
 
     let PostVC = PostWebViewController()
     
+    static var url:String = ""
+    
     // 구독 리스트 tableView
     let tableViewForPosts :UITableView = {
         let tableview = UITableView()
@@ -112,26 +114,14 @@ class SubScribeCollectionViewController: UIViewController {
 extension SubScribeCollectionViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var url:String = dummy[indexPath.row].url
-//        print(dummy[indexPath.row].url)
-        let url:String = urlList.list[indexPath.row]
         
-//        self.PostVC.resetURL(url: url)
-//        self.navigationController?.pushViewController(PostVC, animated: true)
-        PostWebViewController.url = URL(string: url)
-        print(url)  // 일단 좋아!!! 여기까지
+//        let url:String = urlList.list[indexPath.row]
+
+        SubScribeCollectionViewController.url = urlList.list[indexPath.row]
+        
+//        PostWebViewController.url = URL(string: url)
+        print(SubScribeCollectionViewController.url)  // 일단 좋아!!! 여기까지
         self.pushWebView()
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print("Will Display Cell : \(indexPath.row)")
-        
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   didEndDisplaying cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-      print("Did End Display Cell : \(indexPath.row)")
     }
 }
 
@@ -139,20 +129,13 @@ extension SubScribeCollectionViewController : UITableViewDelegate {
 extension SubScribeCollectionViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.dummy.count
-//        return PostData.Post.count
-//        return 1
         return PostData.Post.subscribePostDtoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier, for: indexPath) as? PostCell ?? PostCell()
-//        cell.binding(model: PostData.PostListData[indexPath.row]) // decoding 전까지
-//        cell.binding(model: self.dummy[indexPath.row])
-//        cell.binding(model: PostData.Post[indexPath.row])
         cell.binding(model: PostData.Post.subscribePostDtoList[indexPath.row])
-//        cell.binding(model: PostData.Post.first)
-//        print(PostData.Post.first!)
+
         
         cell.selectionStyle = .none
         

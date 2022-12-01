@@ -17,11 +17,19 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
+//        print(PostData.Post.subscribePostDtoList.first)
 
         // 데이터 띄우기 직전 뷰에서 서버 통신해서 데이터 미리 받아놓아야 한다!!
         getPostDataServer()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getPostDataServer()
+    }
 
+    
+    
     func getPostDataServer(){
         self.provider.request(.subscriberpost){ response in
             switch response{
@@ -49,7 +57,7 @@ class HomeViewController: UIViewController {
         for x in 0..<indexSize {
             urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
         }
-
+        
 //        for x in 0..<indexSize {
 //            print(urlList.list[x])
 //        }
