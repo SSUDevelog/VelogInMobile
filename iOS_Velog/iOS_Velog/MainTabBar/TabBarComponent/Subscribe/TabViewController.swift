@@ -43,7 +43,7 @@ class TabViewController: TabmanViewController {
         settingTabBar(ctBar: bar)
         addBar(bar, dataSource: self, at: .custom(view: customContainer, layout: { (bar) in
             bar.snp.makeConstraints { make in
-//                make.top.equalToSuperview()
+
                 make.leading.equalToSuperview()
                 make.trailing.equalToSuperview()
             }

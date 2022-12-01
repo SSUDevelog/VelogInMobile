@@ -10,10 +10,6 @@ import SnapKit
 import Then
 import Moya
 
-
-
-
-
 class SubScribeTableViewController: UIViewController {
 
     private let provider = MoyaProvider<SubscriberService>()

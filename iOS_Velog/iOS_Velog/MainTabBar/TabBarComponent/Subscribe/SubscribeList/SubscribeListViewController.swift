@@ -103,23 +103,8 @@ class SubscribeListViewController: UIViewController {
 //    }
     
     func setUI(){
-        
-//        self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
-//        view.addSubview(titleLabel)
-//        view.addSubview(addButton)
-        view.addSubview(tableViewForSubscribeList)
 
-//        titleLabel.snp.makeConstraints{
-//            $0.top.equalToSuperview().offset(100)
-//            $0.centerX.equalToSuperview()
-//        }
-//
-//        addButton.snp.makeConstraints{
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-//            $0.trailing.equalToSuperview().offset(-30)
-//            $0.leading.equalToSuperview().offset(250)
-//        }
-        
+        view.addSubview(tableViewForSubscribeList)
 
         tableViewForSubscribeList.snp.makeConstraints{
             $0.top.equalToSuperview().offset(250)
