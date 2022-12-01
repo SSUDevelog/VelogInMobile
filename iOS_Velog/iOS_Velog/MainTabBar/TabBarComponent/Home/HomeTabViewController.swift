@@ -1,8 +1,8 @@
 //
-//  TabManViewController.swift
+//  HomeTabViewController.swift
 //  iOS_Velog
 //
-//  Created by 홍준혁 on 2022/11/21.
+//  Created by 홍준혁 on 2022/12/02.
 //
 
 import Foundation
@@ -11,14 +11,14 @@ import Tabman
 import Pageboy
 import SnapKit
 
-class TabViewController: TabmanViewController {
+class HomeTabViewController: TabmanViewController {
 
     
     
     let customContainer = UIView()
     
     let titleLabel = UILabel().then {
-        $0.text = "Subscribe"
+        $0.text = "Home"
         $0.font = UIFont(name: "Avenir-Black", size: 30)
     }
     // Create bar
@@ -26,14 +26,13 @@ class TabViewController: TabmanViewController {
     
 
     
-    // 구독 검색 버튼
-    let addButton = UIButton().then{
-        $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
+    let TagViewBtn = UIButton().then {
+        $0.setImage(UIImage(systemName: "tag"), for: .normal)
+        $0.addTarget(self, action: #selector(pushTagView), for: .touchUpInside)
     }
     
     // 페이징 할 뷰 컨트롤러
-    var viewControllers: Array<UIViewController> = [SubScribeCollectionViewController(),SubscribeListViewController()]
+    var viewControllers: Array<UIViewController> = [HomeViewController(),TagViewController()]
 
     override func viewDidLoad() {
         
@@ -51,9 +50,9 @@ class TabViewController: TabmanViewController {
         setUI()
     }
     
-    func setUI(){        
+    func setUI(){
         view.addSubview(titleLabel)
-        view.addSubview(addButton)
+        view.addSubview(TagViewBtn)
         view.addSubview(customContainer)
         
         titleLabel.snp.makeConstraints { make in
@@ -62,7 +61,7 @@ class TabViewController: TabmanViewController {
             make.trailing.equalToSuperview().offset(-100)
         }
         
-        addButton.snp.makeConstraints { make in
+        TagViewBtn.snp.makeConstraints { make in
             make.centerY.equalTo(titleLabel)
             make.leading.equalTo(titleLabel.snp.trailing).offset(40)
         }
@@ -73,8 +72,6 @@ class TabViewController: TabmanViewController {
             make.trailing.equalToSuperview().offset(50)
         }
     }
-    
-    
     
     func settingTabBar (ctBar : TMBar.ButtonBar) {
         ctBar.layout.transitionStyle = .snap
@@ -99,17 +96,16 @@ class TabViewController: TabmanViewController {
         ctBar.indicator.tintColor = UIColor.black
     }
     
-    @objc func addSubscribe(){
-        print("pushView")
-        let nextVC = SearchSubscribeViewController()
+    
+    @objc func pushTagView(){
+        let nextVC = AddTagViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
 }
 
 
 
-extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
+extension HomeTabViewController: PageboyViewControllerDataSource, TMBarDataSource {
   
   func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
  

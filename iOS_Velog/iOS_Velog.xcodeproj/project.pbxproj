@@ -40,6 +40,9 @@
 		917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C528F465B3004EF8DB /* UIStackView+.swift */; };
 		917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1CB28F46BB4004EF8DB /* UIView+.swift */; };
 		917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1CE28F4738B004EF8DB /* SnapKit */; };
+		918CDB5429390A59000C016E /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB5329390A59000C016E /* TagViewController.swift */; };
+		918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB5529390D36000C016E /* AddTagViewController.swift */; };
+		918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB572939100F000C016E /* HomeTabViewController.swift */; };
 		9191602829256BE200497AC9 /* userList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191602729256BE200497AC9 /* userList.swift */; };
 		91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */; };
 		91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD128F80142005159AD /* SearchKeywordViewController.swift */; };
@@ -92,6 +95,9 @@
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		917AA1CB28F46BB4004EF8DB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		918CDB5329390A59000C016E /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/TagViewController.swift; sourceTree = SOURCE_ROOT; };
+		918CDB5529390D36000C016E /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTagViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/AddTagViewController.swift; sourceTree = SOURCE_ROOT; };
+		918CDB572939100F000C016E /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTabViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/HomeTabViewController.swift; sourceTree = SOURCE_ROOT; };
 		9191602729256BE200497AC9 /* userList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userList.swift; sourceTree = "<group>"; };
 		91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91B73FD128F80142005159AD /* SearchKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +114,7 @@
 		91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		91E4777C292BECD100AFC26E /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 		91E694F52933D4E1000E312B /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
-		91E694F72933D523000E312B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iOS_Velog/Moya/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		91E694F72933D523000E312B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,19 +236,11 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		9142D79B292CEBDE00D9BB7C /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				91E694F72933D523000E312B /* HomeViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		9142D79C292CEC2700D9BB7C /* TabBarComponent */ = {
 			isa = PBXGroup;
 			children = (
 				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
-				9142D79B292CEBDE00D9BB7C /* Home */,
+				918CDB5929391638000C016E /* Home */,
 				91B73FDC28F83EEE005159AD /* Subscribe */,
 				91E47775292BD1E000AFC26E /* Notification */,
 				9123228A290916AC00C204A8 /* Profile */,
@@ -332,6 +330,25 @@
 				917AA1CB28F46BB4004EF8DB /* UIView+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		918CDB5929391638000C016E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				918CDB572939100F000C016E /* HomeTabViewController.swift */,
+				918CDB5A2939168A000C016E /* TabViewComponet */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		918CDB5A2939168A000C016E /* TabViewComponet */ = {
+			isa = PBXGroup;
+			children = (
+				91E694F72933D523000E312B /* HomeViewController.swift */,
+				918CDB5329390A59000C016E /* TagViewController.swift */,
+				918CDB5529390D36000C016E /* AddTagViewController.swift */,
+			);
+			path = TabViewComponet;
 			sourceTree = "<group>";
 		};
 		91B73FD028F8012A005159AD /* SearchKeyword */ = {
@@ -525,6 +542,7 @@
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
+				918CDB5429390A59000C016E /* TagViewController.swift in Sources */,
 				91E694F82933D523000E312B /* HomeViewController.swift in Sources */,
 				91E47773292BAC6500AFC26E /* TabViewController.swift in Sources */,
 				91C277152917E72A00F5F53B /* SignUpRequest.swift in Sources */,
@@ -538,6 +556,8 @@
 				9116104F292CB99200AC1627 /* SubScribeCollectionViewController.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
 				91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */,
+				918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */,
+				918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,

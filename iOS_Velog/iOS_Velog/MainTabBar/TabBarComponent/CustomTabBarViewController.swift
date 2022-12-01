@@ -21,7 +21,7 @@ class CustomTabBarController: UITabBarController{
     
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     
-    let homeVC = HomeViewController()
+    let homeVC = HomeTabViewController()
     let PostListVC = TabViewController()
     let subScribeVC = NotificationViewController()
     let profileVC = ProfileViewController()
