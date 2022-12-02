@@ -56,6 +56,7 @@ class TagPostCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [name,date])
         stackView.spacing = 5
         stackView.axis = .horizontal
+//        stackView.backgroundColor = .black
         stackView.alignment = .leading
         stackView.snp.makeConstraints { make in
             make.height.equalTo(20)
@@ -68,8 +69,8 @@ class TagPostCell: UITableViewCell {
         stackView.spacing = 5
 //        stackView.backgroundColor = .blue
         stackView.alignment = .fill
-//        stackView.distribution = .fill
-        stackView.distribution = .fillProportionally // 이걸로 하면 다 나온다... 왜지
+        stackView.distribution = .fill
+//        stackView.distribution = .fillProportionally // 이걸로 하면 다 나온다... 왜지
         stackView.axis = .vertical
         contentView.addSubview(stackView)
 //

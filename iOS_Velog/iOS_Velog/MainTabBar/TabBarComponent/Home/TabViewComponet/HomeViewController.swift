@@ -166,7 +166,7 @@ extension HomeViewController : UITableViewDelegate {
         
 //        PostWebViewController.url = URL(string: url)
         print(HomeViewController.url)  // 일단 좋아!!! 여기까지
-        self.pushWebView()
+//        self.pushWebView()
     }
 }
 
