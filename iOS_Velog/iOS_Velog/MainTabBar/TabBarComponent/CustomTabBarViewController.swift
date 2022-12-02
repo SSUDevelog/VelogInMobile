@@ -33,6 +33,8 @@ class CustomTabBarController: UITabBarController{
         print("tabBar")
     }
     
+    
+    
 //    override func viewWillAppear(_ animated: Bool) {
 //        setUpTabBar()
 //    }

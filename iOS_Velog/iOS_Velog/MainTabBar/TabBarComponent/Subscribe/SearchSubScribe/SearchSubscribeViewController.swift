@@ -141,7 +141,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                         self.label.text = "구독 추가 되었습니다."
                         // 최종 구독자 추가
                         self.addSubscriber(Id: id)
-                    }else{
+                    }else {
                         print("없는 사용자입니다.")
                         self.label.text = "없는 사용자입니다."
                         self.textField.text = ""

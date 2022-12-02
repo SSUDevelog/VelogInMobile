@@ -47,6 +47,8 @@ class HomeTabViewController: TabmanViewController {
                 make.trailing.equalToSuperview()
             }
             }))
+        
+        print("HomeTabView")
         setUI()
     }
     

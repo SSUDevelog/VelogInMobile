@@ -1,8 +1,8 @@
 //
-//  TableViewForPosts.swift
+//  TagPostCell.swift
 //  iOS_Velog
 //
-//  Created by 홍준혁 on 2022/11/29.
+//  Created by 홍준혁 on 2022/12/02.
 //
 
 import Foundation
@@ -11,11 +11,9 @@ import SnapKit
 import Then
 import Kingfisher
 
-class PostCell: UITableViewCell {
-    
-    
-    
-    static let identifier = "PostCell"
+class TagPostCell: UITableViewCell {
+
+    static let identifier = "TagPostCell"
     
     var imgView: UIImageView = {
         let view = UIImageView()
@@ -94,8 +92,8 @@ class PostCell: UITableViewCell {
     
 }
 
-extension PostCell {
-    public func binding(model:SubscribePostDtoList){
+extension TagPostCell {
+    public func binding(model:TagPostDtoList){
         title.text = model.title
         let attributedString = NSMutableAttributedString(string: model.summary)
         textView.attributedText = attributedString

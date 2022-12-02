@@ -14,11 +14,13 @@ import RealmSwift
 
 
 class SignInViewController: UIViewController {
-    
+
     
     
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
     private let provider = MoyaProvider<SignServices>()
+    private let providerForTag = MoyaProvider<TagService>()
+    
     // ResponseModel를 userData에 넣어주자!
     var userData: SignInModel?
     var responseData: SigninResponse?
@@ -80,28 +82,18 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
-        
+        print("singIn")
 //        realm.resetDB()
         
         // 자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
         // 자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
-//            pushViewForSignIn()
-            
             ifSuccessPushHome()
         }
   
         
         setUIForSignIn()
-//        print("viewDidLoad")
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        print("viewWillAppear")
-//    }
-    // Alert 꺼져도 view가 새로 뜨는 건 아니네!
-    
-    
 
     func setUIForSignIn(){
         view.addSubview(titleLabel)
@@ -151,6 +143,7 @@ class SignInViewController: UIViewController {
             }
             else{
                 // 올바른 접근
+//                getTagPostDataServer()
                 ifSuccessPushHome()
                 break
             }
@@ -227,6 +220,28 @@ class SignInViewController: UIViewController {
         // add token in realm
         realm.addToken(item: item)
     }
+    
+    // 태그 맞춤 글 추천 아직 어디에 사용할 지 모름
+    func getTagPostDataServer(){
+        self.providerForTag.request(.tagpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPostTag in SingUp")
+                    print(moyaResponse.statusCode)
+//                    TagPostData.Post = try moyaResponse.map(PostTagList.self)
+                    
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     
 }
 
