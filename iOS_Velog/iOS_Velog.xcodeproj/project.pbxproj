@@ -65,6 +65,8 @@
 		91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777C292BECD100AFC26E /* NotificationList.swift */; };
 		91E694F62933D4E1000E312B /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E694F52933D4E1000E312B /* BaseURL.swift */; };
 		91E694F82933D523000E312B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E694F72933D523000E312B /* HomeViewController.swift */; };
+		91FFF31D2939CE9800D80859 /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31C2939CE9800D80859 /* TagService.swift */; };
+		91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31E2939CF2D00D80859 /* AddTag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +117,8 @@
 		91E4777C292BECD100AFC26E /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 		91E694F52933D4E1000E312B /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91E694F72933D523000E312B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		91FFF31C2939CE9800D80859 /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
+		91FFF31E2939CF2D00D80859 /* AddTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				91E694F52933D4E1000E312B /* BaseURL.swift */,
+				91FFF31B2939CE8000D80859 /* TagService */,
 				916AE8232922A878007CCDE7 /* SubscriberService */,
 				912D275E291A2DE3004382BB /* SignInUpService */,
 			);
@@ -424,6 +429,15 @@
 				91E47776292BD20400AFC26E /* NotificationViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91FFF31B2939CE8000D80859 /* TagService */ = {
+			isa = PBXGroup;
+			children = (
+				91FFF31C2939CE9800D80859 /* TagService.swift */,
+				91FFF31E2939CF2D00D80859 /* AddTag.swift */,
+			);
+			path = TagService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +537,7 @@
 			files = (
 				916AE8252922A89D007CCDE7 /* SubscriberService.swift in Sources */,
 				91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */,
+				91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */,
 				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
 				9191602829256BE200497AC9 /* userList.swift in Sources */,
 				916AE8272922A8F6007CCDE7 /* AddRequest.swift in Sources */,
@@ -541,6 +556,7 @@
 				91E47777292BD20400AFC26E /* NotificationViewController.swift in Sources */,
 				91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */,
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
+				91FFF31D2939CE9800D80859 /* TagService.swift in Sources */,
 				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
 				918CDB5429390A59000C016E /* TagViewController.swift in Sources */,
 				91E694F82933D523000E312B /* HomeViewController.swift in Sources */,
