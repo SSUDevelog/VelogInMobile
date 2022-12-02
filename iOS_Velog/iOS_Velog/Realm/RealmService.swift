@@ -68,7 +68,7 @@ class RealmService{
     }
     
     init() {
-        print("Realm Location: ", localRealm.configuration.fileURL ?? "cannot find location.")
+//        print("Realm Location: ", localRealm.configuration.fileURL ?? "cannot find location.")
     }
 
 }
