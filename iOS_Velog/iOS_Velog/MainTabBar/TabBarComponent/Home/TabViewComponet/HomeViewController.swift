@@ -14,7 +14,7 @@ import SnapKit
 class HomeViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
-
+    private let provider2 = MoyaProvider<TagService>()
     
     let tableViewForTagPost : UITableView = {
         let tableview = UITableView()
@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
 
         // 데이터 띄우기 직전 뷰에서 서버 통신해서 데이터 미리 받아놓아야 한다!!
         getPostDataServer()
+        getServerTag()
         
         setUI()
     }
@@ -87,6 +88,24 @@ class HomeViewController: UIViewController {
 //            print(urlList.list[x])
 //        }
         
+    }
+    
+    // 태그 추가했을 경우 서버 디비 재호출
+    func getServerTag(){
+        self.provider2.request(.gettag){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print(moyaResponse.statusCode)
+                    userTag.List = try moyaResponse.mapJSON() as! [String]
+                    print(userTag.List)
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
     
 }

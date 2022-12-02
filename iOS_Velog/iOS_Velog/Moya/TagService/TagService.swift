@@ -12,10 +12,6 @@ import RealmSwift
 import UIKit
 
 enum TagService{
-//    case addSubscriber(param: AddRequest)
-//    case getSubscriber
-//    case checkSubscriber(_ name: String)
-//    case subscriberpost
     case addtag(param: AddTag)
     case gettag
     case tagpost

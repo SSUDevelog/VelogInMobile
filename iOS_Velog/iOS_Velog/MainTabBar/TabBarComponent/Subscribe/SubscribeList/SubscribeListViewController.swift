@@ -14,7 +14,7 @@ import Moya
 class SubscribeListViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
-    var responseData: SubscriberListResponse?
+//    var responseData: SubscriberListResponse?
     
     let titleLabel = UILabel().then {
         $0.text = "Subscribe List"
@@ -140,7 +140,7 @@ class SubscribeListViewController: UIViewController {
 
 }
 
-extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource{
+extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userList.List.count
     }

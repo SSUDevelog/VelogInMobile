@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import SnapKit
+import Then
+import Moya
 
 class AddTagViewController: UIViewController {
+    
+    // for server
+    private let provider = MoyaProvider<TagService>()
+//    var responseData
+    
 
     let titleLabel = UILabel().then {
         $0.text = "Add"
@@ -23,7 +31,7 @@ class AddTagViewController: UIViewController {
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = UIColor.customColor(.pointColor)
-//        $0.addTarget(self, action: #selector(checkVelogUser), for: .touchDown)
+        $0.addTarget(self, action: #selector(checkTag), for: .touchDown)
     }
     
     let textField = UITextField().then{
@@ -89,5 +97,74 @@ class AddTagViewController: UIViewController {
         self.textField.borderStyle = UITextField.BorderStyle.roundedRect
         self.textField.clearButtonMode = .always
     }
+    
+    // tag 체크 시작점
+    @objc func checkTag(){
+        let tag = self.textField.text ?? ""
+        print(tag)
+        if checkDoubleTag(inputTag: tag) == false {
+            self.label.text = "이미 추가한 키워드입니다."
+            self.label.textColor = .red
+            self.textField.text = ""
+        }else {
+            print("태그 리스트에 없는 태그")
+            self.addTag(tag: tag)
+        }
+        
+    }
+    
+    // 추가하려는 태그가 태그리스트에 있는지 체크하는 메소드
+    func checkDoubleTag(inputTag:String)->Bool{
+        for list in userTag.List {
+            if list == inputTag {
+                return false
+            }
+        }
+        return true
+    }
+    
+    // 태그 추가
+    func addTag(tag:String){
+        let param = AddTag(tag)
+        self.provider.request(.addtag(param: param)){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print(moyaResponse.statusCode)
+                    print("최종추가됨")
+                    self.label.text = "키워드가 추가 되었습니다."
+                    self.label.textColor = UIColor.customColor(.pointColor)
+                    self.getServerTag()
+                    
+                }catch(let err){
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    // 태그 추가했을 경우 서버 디비 재호출
+    func getServerTag(){
+        self.provider.request(.gettag){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print(moyaResponse.statusCode)
+                    userTag.List = try moyaResponse.mapJSON() as! [String]
+                    print(userTag.List)
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+
+    
+    
+    
     
 }

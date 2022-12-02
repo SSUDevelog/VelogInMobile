@@ -67,6 +67,9 @@
 		91E694F82933D523000E312B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E694F72933D523000E312B /* HomeViewController.swift */; };
 		91FFF31D2939CE9800D80859 /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31C2939CE9800D80859 /* TagService.swift */; };
 		91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31E2939CF2D00D80859 /* AddTag.swift */; };
+		91FFF3222939D1FA00D80859 /* userTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF3212939D1FA00D80859 /* userTag.swift */; };
+		91FFF3242939D24300D80859 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF3232939D24300D80859 /* TagModel.swift */; };
+		91FFF3262939D5AF00D80859 /* TagTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF3252939D5AF00D80859 /* TagTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +122,9 @@
 		91E694F72933D523000E312B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		91FFF31C2939CE9800D80859 /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
 		91FFF31E2939CF2D00D80859 /* AddTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTag.swift; sourceTree = "<group>"; };
+		91FFF3212939D1FA00D80859 /* userTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userTag.swift; sourceTree = "<group>"; };
+		91FFF3232939D24300D80859 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		91FFF3252939D5AF00D80859 /* TagTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				918CDB572939100F000C016E /* HomeTabViewController.swift */,
+				91FFF3202939D1EB00D80859 /* Resoure */,
 				918CDB5A2939168A000C016E /* TabViewComponet */,
 			);
 			path = Home;
@@ -351,6 +358,7 @@
 				91E694F72933D523000E312B /* HomeViewController.swift */,
 				918CDB5329390A59000C016E /* TagViewController.swift */,
 				918CDB5529390D36000C016E /* AddTagViewController.swift */,
+				91FFF3252939D5AF00D80859 /* TagTableCell.swift */,
 			);
 			path = TabViewComponet;
 			sourceTree = "<group>";
@@ -438,6 +446,15 @@
 				91FFF31E2939CF2D00D80859 /* AddTag.swift */,
 			);
 			path = TagService;
+			sourceTree = "<group>";
+		};
+		91FFF3202939D1EB00D80859 /* Resoure */ = {
+			isa = PBXGroup;
+			children = (
+				91FFF3212939D1FA00D80859 /* userTag.swift */,
+				91FFF3232939D24300D80859 /* TagModel.swift */,
+			);
+			path = Resoure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,6 +584,8 @@
 				916827A7292A2FCA00DDA369 /* PostModel.swift in Sources */,
 				91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */,
 				91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */,
+				91FFF3242939D24300D80859 /* TagModel.swift in Sources */,
+				91FFF3262939D5AF00D80859 /* TagTableCell.swift in Sources */,
 				912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */,
 				916AEB9D28F1675F000B2DA0 /* AppDelegate.swift in Sources */,
 				9116104F292CB99200AC1627 /* SubScribeTableViewController.swift in Sources */,
@@ -574,6 +593,7 @@
 				91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */,
 				918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */,
 				918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */,
+				91FFF3222939D1FA00D80859 /* userTag.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,
