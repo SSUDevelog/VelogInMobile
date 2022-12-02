@@ -14,7 +14,7 @@ class SubScribeTableViewController: UIViewController {
 
     private let provider = MoyaProvider<SubscriberService>()
 
-    let PostVC = PostWebViewController()
+//    let PostVC = PostWebViewController()
     
     static var url:String = ""
     

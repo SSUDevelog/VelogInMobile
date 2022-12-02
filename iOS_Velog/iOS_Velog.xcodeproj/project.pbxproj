@@ -18,6 +18,7 @@
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
 		914A26E82937CF6E00F67BA0 /* urlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A26E72937CF6E00F67BA0 /* urlList.swift */; };
+		914F5249293A294900439E22 /* TagUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F5248293A294900439E22 /* TagUrlList.swift */; };
 		9160AB8E291E1D4300079BF9 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160AB8D291E1D4300079BF9 /* Token.swift */; };
 		916827A7292A2FCA00DDA369 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916827A6292A2FCA00DDA369 /* PostModel.swift */; };
 		916827A9292A487B00DDA369 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916827A8292A487A00DDA369 /* PostData.swift */; };
@@ -82,6 +83,7 @@
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
 		914A26E72937CF6E00F67BA0 /* urlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = urlList.swift; sourceTree = "<group>"; };
+		914F5248293A294900439E22 /* TagUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUrlList.swift; sourceTree = "<group>"; };
 		9160AB8D291E1D4300079BF9 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		916827A6292A2FCA00DDA369 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		916827A8292A487A00DDA369 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				91FFF3212939D1FA00D80859 /* userTag.swift */,
 				91FFF32A2939DD9300D80859 /* TagPostData.swift */,
 				91FFF3282939DCA500D80859 /* TagPostModel.swift */,
+				914F5248293A294900439E22 /* TagUrlList.swift */,
 			);
 			path = Resoure;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */,
 				91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */,
 				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
+				914F5249293A294900439E22 /* TagUrlList.swift in Sources */,
 				91FFF3292939DCA500D80859 /* TagPostModel.swift in Sources */,
 				9191602829256BE200497AC9 /* userList.swift in Sources */,
 				916AE8272922A8F6007CCDE7 /* AddRequest.swift in Sources */,
