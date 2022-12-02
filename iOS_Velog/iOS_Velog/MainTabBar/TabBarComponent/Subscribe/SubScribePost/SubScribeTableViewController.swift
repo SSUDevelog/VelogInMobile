@@ -109,6 +109,8 @@ class SubScribeTableViewController: UIViewController {
 extension SubScribeTableViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("cell touched")
 
         SubScribeTableViewController.url = urlList.list[indexPath.row]
         

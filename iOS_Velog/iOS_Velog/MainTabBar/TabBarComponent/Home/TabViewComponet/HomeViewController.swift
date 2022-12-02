@@ -161,6 +161,7 @@ extension HomeViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        print("cell did touched")
         HomeViewController.url = TagaUrlList.list[indexPath.row]
         
 //        PostWebViewController.url = URL(string: url)
