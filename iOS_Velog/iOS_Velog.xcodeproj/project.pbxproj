@@ -58,12 +58,13 @@
 		91C277172917E86600F5F53B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277162917E86600F5F53B /* SignUpModel.swift */; };
 		91C277192917EB0600F5F53B /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277182917EB0600F5F53B /* SignInModel.swift */; };
 		91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2771A2917EC1D00F5F53B /* SignInRequest.swift */; };
+		91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F4293B9FB9005084A2 /* TagUrlList.swift */; };
+		91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F6293BA056005084A2 /* BaseURL.swift */; };
 		91E47771292BAC4F00AFC26E /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 91E47770292BAC4F00AFC26E /* Tabman */; };
 		91E47773292BAC6500AFC26E /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E47772292BAC6500AFC26E /* TabViewController.swift */; };
 		91E47777292BD20400AFC26E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E47776292BD20400AFC26E /* NotificationViewController.swift */; };
 		91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */; };
 		91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777C292BECD100AFC26E /* NotificationList.swift */; };
-		91E694F62933D4E1000E312B /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E694F52933D4E1000E312B /* BaseURL.swift */; };
 		91E694F82933D523000E312B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E694F72933D523000E312B /* HomeViewController.swift */; };
 		91FFF31D2939CE9800D80859 /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31C2939CE9800D80859 /* TagService.swift */; };
 		91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31E2939CF2D00D80859 /* AddTag.swift */; };
@@ -116,11 +117,12 @@
 		91C277162917E86600F5F53B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		91C277182917EB0600F5F53B /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		91C2771A2917EC1D00F5F53B /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		91DA86F4293B9FB9005084A2 /* TagUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUrlList.swift; sourceTree = "<group>"; };
+		91DA86F6293BA056005084A2 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91E47772292BAC6500AFC26E /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		91E47776292BD20400AFC26E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		91E4777C292BECD100AFC26E /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
-		91E694F52933D4E1000E312B /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91E694F72933D523000E312B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		91FFF31C2939CE9800D80859 /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
 		91FFF31E2939CF2D00D80859 /* AddTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTag.swift; sourceTree = "<group>"; };
@@ -409,7 +411,7 @@
 		91C276FE2917A12400F5F53B /* Moya */ = {
 			isa = PBXGroup;
 			children = (
-				91E694F52933D4E1000E312B /* BaseURL.swift */,
+				91DA86F6293BA056005084A2 /* BaseURL.swift */,
 				91FFF31B2939CE8000D80859 /* TagService */,
 				916AE8232922A878007CCDE7 /* SubscriberService */,
 				912D275E291A2DE3004382BB /* SignInUpService */,
@@ -458,6 +460,7 @@
 				91FFF3212939D1FA00D80859 /* userTag.swift */,
 				91FFF32A2939DD9300D80859 /* TagPostData.swift */,
 				91FFF3282939DCA500D80859 /* TagPostModel.swift */,
+				91DA86F4293B9FB9005084A2 /* TagUrlList.swift */,
 			);
 			path = Resoure;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */,
 				91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */,
 				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
+				91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */,
 				91FFF3292939DCA500D80859 /* TagPostModel.swift in Sources */,
 				9191602829256BE200497AC9 /* userList.swift in Sources */,
 				916AE8272922A8F6007CCDE7 /* AddRequest.swift in Sources */,
@@ -587,8 +591,8 @@
 				91FFF32B2939DD9300D80859 /* TagPostData.swift in Sources */,
 				91C277172917E86600F5F53B /* SignUpModel.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
+				91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
-				91E694F62933D4E1000E312B /* BaseURL.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */,
