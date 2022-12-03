@@ -86,7 +86,7 @@ class SubScribeTableViewController: UIViewController {
 //                     이거 임시!!!
                     NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
-//                    self.tableViewForPosts.reloadData()
+//                    self.tableViewForPosts.reloadData()g
                     print("reloadData")
                     
                 }catch(let err) {
