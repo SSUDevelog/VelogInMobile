@@ -53,6 +53,7 @@ class SubScribeTableViewController: UIViewController {
         self.getServer()
 //        self.getPostDataServer() // 아직 사용하지 않는다
         tableViewForPosts.reloadData()
+        
     }
     
     func getPostDataServer(){
@@ -85,6 +86,8 @@ class SubScribeTableViewController: UIViewController {
 //                     이거 임시!!!
                     NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
+//                    self.tableViewForPosts.reloadData()
+                    print("reloadData")
                     
                 }catch(let err) {
                     print(err.localizedDescription)
@@ -100,6 +103,10 @@ class SubScribeTableViewController: UIViewController {
         print("finish to push WebView")
         let nextVC = PostWebViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        print("hahaha")
     }
     
 
