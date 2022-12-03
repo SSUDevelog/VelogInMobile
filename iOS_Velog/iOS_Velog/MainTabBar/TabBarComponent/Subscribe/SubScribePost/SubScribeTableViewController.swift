@@ -14,7 +14,7 @@ class SubScribeTableViewController: UIViewController {
 
     private let provider = MoyaProvider<SubscriberService>()
 
-    let PostVC = PostWebViewController()
+//    let PostVC = PostWebViewController()
     
     static var url:String = ""
     
@@ -53,6 +53,7 @@ class SubScribeTableViewController: UIViewController {
         self.getServer()
 //        self.getPostDataServer() // 아직 사용하지 않는다
         tableViewForPosts.reloadData()
+        
     }
     
     func getPostDataServer(){
@@ -85,6 +86,8 @@ class SubScribeTableViewController: UIViewController {
 //                     이거 임시!!!
                     NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
+//                    self.tableViewForPosts.reloadData()g
+                    print("reloadData")
                     
                 }catch(let err) {
                     print(err.localizedDescription)
@@ -102,6 +105,10 @@ class SubScribeTableViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        print("hahaha")
+    }
+    
 
 
 }
@@ -109,6 +116,8 @@ class SubScribeTableViewController: UIViewController {
 extension SubScribeTableViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("cell touched")
 
         SubScribeTableViewController.url = urlList.list[indexPath.row]
         
@@ -140,5 +149,3 @@ extension SubScribeTableViewController:UITableViewDataSource {
     }
     
 }
-
-

@@ -184,6 +184,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                 do{
                     print(moyaResponse.statusCode)
                     userList.List = try moyaResponse.mapJSON() as! [String]
+                    
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
@@ -204,4 +205,3 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     }
     
 }
-
