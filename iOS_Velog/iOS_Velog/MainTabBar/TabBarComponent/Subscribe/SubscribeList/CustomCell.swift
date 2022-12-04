@@ -20,38 +20,33 @@ class CustomCell:UITableViewCell{
         return label
     }()
     
-    lazy var rightButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemBackground
-//        button.setTitle("delete", for: .normal)
-        button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//        button.setTitleColor(UIColor.systemRed, for: .normal)
-        print("btn")
-        return button
-    }()
-
-    lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [leftLabel, rightButton])
-        stackView.spacing = 80
-        contentView.addSubview(stackView)
-
-        stackView.snp.makeConstraints{
-            $0.top.left.bottom.right.equalTo(contentView)
-        }
-        return stackView
-    }()
+//    lazy var stackView: UIStackView = {
+//        let stackView = UIStackView(arrangedSubviews: [leftLabel])
+//        stackView.spacing = 80
+//        contentView.addSubview(stackView)
+//
+//        stackView.snp.makeConstraints{
+//            $0.top.left.bottom.right.equalTo(contentView)
+//        }
+//        return stackView
+//    }()
     
     
     // 생성자
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // 어떻게 이 코드가.... 뭐지..
-        print(stackView)
+        contentView.addSubview(leftLabel)
+        leftLabel.snp.makeConstraints { make in
+            make.top.left.bottom.right.equalTo(contentView)
+        }
+        print(leftLabel)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been impl")
     }
+
     
 }
 

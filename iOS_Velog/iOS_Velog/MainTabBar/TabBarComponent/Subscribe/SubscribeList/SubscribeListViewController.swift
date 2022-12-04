@@ -21,16 +21,6 @@ class SubscribeListViewController: UIViewController {
         $0.font = UIFont(name: "Avenir-Black", size: 40)
     }
     
-    // 구독 검색 버튼
-    let addButton = UIButton().then{
-        $0.backgroundColor = .black
-        $0.setTitle("Add", for: .normal)
-        $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
-        $0.layer.cornerRadius = 10
-        $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.addTarget(self, action: #selector(addSubscribe), for: .touchUpInside)
-    }
-    
     // 구독 리스트 tableView
     let tableViewForSubscribeList :UITableView = {
         let tableview = UITableView()
@@ -84,23 +74,23 @@ class SubscribeListViewController: UIViewController {
         tableViewForSubscribeList.reloadData()
     }
     
-//    func getServer(){
-//        self.provider.request(.getSubscriber){response in
-//            switch response{
-//            case .success(let moyaResponse):
-//                do{
-//
-//                    print(moyaResponse.statusCode)
-//                    userList.List = try moyaResponse.mapJSON() as! [String]
-//
-//                }catch(let err) {
-//                    print(err.localizedDescription)
-//                }
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//        }
-//    }
+    func getServer(){
+        self.provider.request(.getSubscriber){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+
+                    print(moyaResponse.statusCode)
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
     
     func setUI(){
 
@@ -119,24 +109,6 @@ class SubscribeListViewController: UIViewController {
         let nextVC = SearchSubscribeViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-    // 일단 여긴 보류 - 아직 로컬db 데어터 삭제 불가
-    @objc func deleteBtnAction(_ sender: UIButton) {
-        let point = sender.convert(CGPoint.zero, to: tableViewForSubscribeList)
-        guard let indexPath = tableViewForSubscribeList.indexPathForRow(at: point) else { return }
-//        let person = subScribeList[indexPath.row]
-//        subScribeList.remove(at: indexPath.row)   // 일단 보류
-        tableViewForSubscribeList.deleteRows(at: [indexPath], with: .automatic)
-//        print(type(of: person)) // String
-//        let subscribeToDelete = Subscriber(velogId: person)
-//        realm.delete(subscribeToDelete)
-
-    }
-
-    
-    
-    
-
 
 }
 
@@ -149,12 +121,26 @@ extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource 
 //        var cell = UITableViewCell()
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier) as? CustomCell ?? CustomCell()
         cell.bind(model: userList.List[indexPath.row])
-//        cell.rightButton.addTarget(self, action: #selector(deleteBtnAction), for: .touchUpInside)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            userList.List.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
+    }
+    
 }
