@@ -16,6 +16,7 @@ enum SubscriberService{
     case getSubscriber
     case checkSubscriber(_ name: String)
     case subscriberpost
+    case unsubscribe(_ targetName: String)
 }
 
 extension SubscriberService: TargetType{
@@ -33,6 +34,8 @@ extension SubscriberService: TargetType{
             return "subscribe/inputname/\(name)"
         case .subscriberpost:
             return "subscribe/subscriberpost"
+        case .unsubscribe(let targetName):
+            return "subscribe/unsubscribe/\(targetName)"
         }
     }
 
@@ -47,6 +50,8 @@ extension SubscriberService: TargetType{
             return .get
         case .subscriberpost:
             return .get
+        case .unsubscribe:
+            return .delete
         }
     }
     
@@ -60,6 +65,8 @@ extension SubscriberService: TargetType{
         case .checkSubscriber:
             return .requestPlain
         case .subscriberpost:
+            return .requestPlain
+        case .unsubscribe:
             return .requestPlain
         }
 
