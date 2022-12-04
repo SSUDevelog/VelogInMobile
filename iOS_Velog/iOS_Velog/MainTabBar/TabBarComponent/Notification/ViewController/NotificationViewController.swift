@@ -47,7 +47,7 @@ class NotificationViewController: UIViewController {
     
     func resetNotificationList(){
 //        tableViewForSubscribeList.reloadData()
-        getServer()
+//        getServer()
         tableViewForNotificationList.reloadData()
     }
     

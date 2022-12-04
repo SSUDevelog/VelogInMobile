@@ -67,6 +67,9 @@ class PostWebViewController: UIViewController {
         setActivityIndicator()
         
 //        webView.load(URLRequest(url: PostWebViewController.url!))
+
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
         
         
         loadPostWebView()
