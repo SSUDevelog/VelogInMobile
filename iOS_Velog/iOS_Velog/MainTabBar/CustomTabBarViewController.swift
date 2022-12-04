@@ -45,7 +45,7 @@ class CustomTabBarController: UITabBarController{
         self.tabBar.backgroundColor = .systemBackground
 
         homeVC.title = "Home"
-        PostListVC.title = "Post"
+        PostListVC.title = "Subscribe"
         subScribeVC.title = "Notification"
         profileVC.title = "Profile"
 

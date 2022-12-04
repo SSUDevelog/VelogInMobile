@@ -33,9 +33,16 @@ class NotificationViewController: UIViewController {
     
     let noText = UILabel().then {
         $0.text = "추후 개발 예정입니다."
-//        $0.font = UIFont(name: "Avenir-Black", size: 30)
+        $0.font = UIFont(name: "Avenir-Black", size: 20)
     }
     
+    let no2Text = UILabel().then {
+        $0.text = "구독자들이 새로운 글을 썼을 때"
+    }
+    
+    let no3Text = UILabel().then{
+        $0.text = "새 글 알림을 보내도록 구현할 예정"
+    }
     
     // 구독 리스트 tableView
     let tableViewForNotificationList :UITableView = {
@@ -93,6 +100,8 @@ class NotificationViewController: UIViewController {
         // 일단 알림 구현하기 전까지는 보류
 //        view.addSubview(tableViewForNotificationList)
         view.addSubview(noText)
+        view.addSubview(no2Text)
+        view.addSubview(no3Text)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(90)
@@ -101,11 +110,24 @@ class NotificationViewController: UIViewController {
         }
             
         noText.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-100)
         }
         
+        no2Text.snp.makeConstraints { make in
+            make.top.equalTo(noText.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-10)
+        }
+        
+        no3Text.snp.makeConstraints { make in
+            make.top.equalTo(no2Text.snp.bottom).offset(5)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().offset(-10)
+        }
+        
+        // 일단 알림 구현하기 전까지는 보류
 //        tableViewForNotificationList.snp.makeConstraints { make in
 //            make.top.equalTo(titleLabel.snp.bottom).offset(30)
 //            make.leading.equalToSuperview().offset(30)
