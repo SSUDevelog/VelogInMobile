@@ -20,6 +20,23 @@ class NotificationViewController: UIViewController {
         $0.font = UIFont(name: "Avenir-Black", size: 30)
     }
     
+//    var imgView: UIImageView = {
+//        let view = UIImageView()
+//        view.image = UIImage(systemName: "pencil")
+//        view.contentMode = .scaleAspectFit
+//        view.clipsToBounds = true
+//        view.snp.makeConstraints { make in
+//            make.height.equalTo(150)
+//        }
+//        return view
+//    }()
+    
+    let noText = UILabel().then {
+        $0.text = "추후 개발 예정입니다."
+//        $0.font = UIFont(name: "Avenir-Black", size: 30)
+    }
+    
+    
     // 구독 리스트 tableView
     let tableViewForNotificationList :UITableView = {
         let tableview = UITableView()
@@ -73,7 +90,9 @@ class NotificationViewController: UIViewController {
     
     func setUI(){
         view.addSubview(titleLabel)
-        view.addSubview(tableViewForNotificationList)
+        // 일단 알림 구현하기 전까지는 보류
+//        view.addSubview(tableViewForNotificationList)
+        view.addSubview(noText)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(90)
@@ -81,13 +100,21 @@ class NotificationViewController: UIViewController {
             make.trailing.equalToSuperview().offset(-100)
         }
             
-        tableViewForNotificationList.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(30)
+        noText.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
-            make.bottom.equalToSuperview().offset(-90)
-            
+            make.trailing.equalToSuperview().offset(-100)
         }
+        
+//        tableViewForNotificationList.snp.makeConstraints { make in
+//            make.top.equalTo(titleLabel.snp.bottom).offset(30)
+//            make.leading.equalToSuperview().offset(30)
+//            make.trailing.equalToSuperview().offset(-30)
+//            make.bottom.equalToSuperview().offset(-90)
+//
+//        }
+        
+        
         
     }
 
