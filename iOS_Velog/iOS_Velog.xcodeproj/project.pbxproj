@@ -256,7 +256,6 @@
 		9142D79C292CEC2700D9BB7C /* TabBarComponent */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
 				918CDB5929391638000C016E /* Home */,
 				91B73FDC28F83EEE005159AD /* Subscribe */,
 				91E47775292BD1E000AFC26E /* Notification */,
@@ -381,6 +380,7 @@
 		91B73FDB28F83EDB005159AD /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
 				9142D79C292CEC2700D9BB7C /* TabBarComponent */,
 			);
 			path = MainTabBar;
