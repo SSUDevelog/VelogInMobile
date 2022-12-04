@@ -114,9 +114,9 @@ extension HomeTabViewController: PageboyViewControllerDataSource, TMBarDataSourc
       // MARK: -Tab 안 글씨들
       switch index {
       case 0:
-          return TMBarItem(title: "Following Post")
+          return TMBarItem(title: "Keyword Post")
       case 1:
-          return TMBarItem(title: "Following List")
+          return TMBarItem(title: "Keyword List")
       default:
           let title = "Page \(index)"
           return TMBarItem(title: title)
