@@ -19,11 +19,11 @@ class PostCell: UITableViewCell {
     
     var imgView: UIImageView = {
         let view = UIImageView()
-        let url = URL(string: "https://velog.velcdn.com/images/lms7802/post/7defe4e7-7259-4c9b-801c-bea50c1e68b9/image.png")
+//        let url = URL(string: "https://velog.velcdn.com/images/lms7802/post/7defe4e7-7259-4c9b-801c-bea50c1e68b9/image.png")
 //        view.image = UIImage(systemName: "pencil")
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
-        view.kf.setImage(with: url)
+//        view.kf.setImage(with: url)
         view.snp.makeConstraints { make in
             make.height.equalTo(150)
         }
@@ -103,6 +103,15 @@ extension PostCell {
         name.text = model.name
         date.text = model.date
 //        imgView.image = model.img
+
+        // img binging
+        if model.img == "" {
+            imgView.image = UIImage(systemName: "photo.on.rectangle.angled")
+        }else{
+            let url = URL(string: model.img)
+            imgView.kf.setImage(with: url)
+        }
+        
         print("binding")
     }
 }
