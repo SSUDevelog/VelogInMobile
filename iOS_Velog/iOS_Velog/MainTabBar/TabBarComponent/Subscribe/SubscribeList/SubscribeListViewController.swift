@@ -153,8 +153,7 @@ extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         if editingStyle == .delete {
             tableView.beginUpdates()
-//            self.deleteSubscriberList(targetName: userList.List.remove(at: indexPath.row))
-            userList.List.remove(at: indexPath.row)
+            self.deleteSubscriberList(targetName: userList.List.remove(at: indexPath.row))
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }

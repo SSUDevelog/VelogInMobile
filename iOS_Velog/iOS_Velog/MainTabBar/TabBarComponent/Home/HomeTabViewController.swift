@@ -38,6 +38,7 @@ class HomeTabViewController: TabmanViewController {
         
         super.viewDidLoad()
         self.dataSource = self
+        self.bounces = false
         
         settingTabBar(ctBar: bar)
         addBar(bar, dataSource: self, at: .custom(view: customContainer, layout: { (bar) in
