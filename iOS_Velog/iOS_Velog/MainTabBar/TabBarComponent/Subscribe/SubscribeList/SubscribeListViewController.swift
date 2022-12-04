@@ -109,6 +109,22 @@ class SubscribeListViewController: UIViewController {
         let nextVC = SearchSubscribeViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    // 구독자 리스트에서 특정 구독자 삭제
+    func deleteSubscriberList(targetName:String){
+        self.provider.request(.unsubscribe(targetName)){ response in
+            switch response {
+            case .success(let moyaResponse):
+                do {    // 여기서 do 가 필요할까?
+                    print(moyaResponse.statusCode)
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 
 }
 
@@ -137,6 +153,7 @@ extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
         if editingStyle == .delete {
             tableView.beginUpdates()
+//            self.deleteSubscriberList(targetName: userList.List.remove(at: indexPath.row))
             userList.List.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
