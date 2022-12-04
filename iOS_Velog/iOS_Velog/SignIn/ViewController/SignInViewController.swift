@@ -45,7 +45,7 @@ class SignInViewController: UIViewController {
     }
     
     let SignInButton = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.layer.cornerRadius = 10
         $0.setTitle("Login", for: .normal)
         // $0.setTitleColor(.systemBackground, for: .normal)
@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
     }
     
     let SignUpButton = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.layer.cornerRadius = 10
         $0.setTitle("For Sign Up", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)

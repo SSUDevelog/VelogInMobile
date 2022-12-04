@@ -77,7 +77,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     }
 
     let nextButton = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
+        $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.layer.cornerRadius = 10
         $0.setTitle("Next", for: .normal)
         $0.setTitleColor(.systemBackground, for: .normal)

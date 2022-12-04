@@ -7,50 +7,39 @@
 import UIKit
 import SnapKit
 import Then
+import Foundation
 
 class ProfileViewController: UIViewController {
+    
+    var cell: UITableViewCell = {
+        let cell = UITableViewCell()
+        return cell
+    }()
+    
+    private let cellTitle: [String] = ["로그아웃","회원탈퇴"]
     
     private let titleLabel = UILabel().then {
         $0.text = "My Page"
         $0.font = UIFont(name: "Avenir-Black", size: 30)
     }
-    
-    let switchforSubscription = UISwitch().then {
-        $0.backgroundColor = UIColor.customColor(.defaultBlackColor)
-        $0.onTintColor = UIColor.customColor(.defaultBackgroundColor)
-    }
-    
+
     let tableViewForProfile : UITableView = {
         let tableview = UITableView()
-//        tableview.backgroundColor = .red
+        tableview.isScrollEnabled = false
         return tableview
     }()
-    
-    let tabelCell1: UITableViewCell = {
-        let tableCell = UITableViewCell()
-        tableCell.backgroundColor = .red
-        return tableCell
-    }()
-    
-    let tableCell2: UITableViewCell = {
-        let tableCell = UITableViewCell()
-        tableCell.backgroundColor = .blue
-        return tableCell
-    }()
-    
-    let tableCell3: UITableViewCell = {
-        let tableCell = UITableViewCell()
-        tableCell.backgroundColor = .black
-        return tableCell
-    }()
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
+        
+
+        tableViewForProfile.register(UITableViewCell.self, forCellReuseIdentifier: "sectionTableViewCell")
+        // Set the DataSource.
+        tableViewForProfile.dataSource = self
+        tableViewForProfile.delegate = self
+
         
         setUI()
     }
@@ -59,11 +48,7 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(titleLabel)
         view.addSubview(tableViewForProfile)
-        tableViewForProfile.addSubview(tabelCell1)
-        tableViewForProfile.addSubview(tableCell2)
-        tableViewForProfile.addSubview(tableCell3)
-        
-        
+
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(90)
             make.leading.equalToSuperview().offset(30)
@@ -72,8 +57,8 @@ class ProfileViewController: UIViewController {
         
         tableViewForProfile.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(50)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().offset(-30)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
             make.bottom.equalToSuperview().offset(-30)
         }
 
@@ -81,24 +66,30 @@ class ProfileViewController: UIViewController {
     
 }
 
-//extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return 5
-//
-//    }
-//
-//
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CodingCustomTableViewCell", for: indexPath) as? CodingCustomTableViewCell else { return UITableViewCell() }
-//
-//
-//
-//        return cell
-//
-//    }
-//
-//}
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sectionTableViewCell", for: indexPath)
+    
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = "알림설정"
+        case 1:
+            cell.textLabel?.text = "로그아웃"
+        case 2:
+            cell.textLabel?.text = "회원탈퇴"
+        default:
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+    
+}
