@@ -11,9 +11,10 @@ import NVActivityIndicatorView
 import RxSwift
 
 class PostWebViewController: UIViewController {
-    
-    // 일단 더미, static
-//    static var url:URL?
+
+    var isComeFrom: Int = 0
+    // isComeFrom == 1 : 홈(태그 추천 뷰)에서 호출한 경우
+    // isComeFrom == 2 : 구독자 글 목록 뷰에서 호출한 경우
     
     lazy var loadingBgView: UIView = {
         let bgView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -72,22 +73,53 @@ class PostWebViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = ""
         
         
-        loadPostWebView()
+        loadPostWebView(isComeFrom: self.isComeFrom)
         
         self.Queue()
         
     }
+
+    func loadPostWebView(isComeFrom:Int){
+        
+        if isComeFrom == 2 {
+            if SubScribeTableViewController.url != ""{
+                
+                let urlString = "https://velog.io\(SubScribeTableViewController.url)"
+                //            print(urlString)
+                guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+                let PostURL = URL(string: encodedStr)!
+                //            print("url")
+                print(PostURL.absoluteString)
+                //            print(PostURL)
+                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+            }else{
+                print("해당하는 URL이 존재하지 않습니다.")
+            }
+        }else if isComeFrom == 1 {
+            if HomeViewController.url != ""{
+                
+                let urlString = "https://velog.io\(HomeViewController.url)"
+    //            print(urlString)
+                guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+                let PostURL = URL(string: encodedStr)!
+    //            print("url")
+                print(PostURL.absoluteString)
+    //            print(PostURL)
+                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+            }else{
+                print("해당하는 URL이 존재하지 않습니다.")
+            }
+        }else {
+            print("해당 URL이 존재하지 않습니다.")
+        }
+        
+        self.isComeFrom = 0
+    }
     
-    let serverURL = "https://velog.io/@bricksky/HCI-스터디-2주차"
-    let realURL = "https://velog.io/@bricksky/HCI-%EC%8A%A4%ED%84%B0%EB%94%94-2%EC%A3%BC%EC%B0%A8"
-    
-    let dummyURL = "https://stackoverflow.com/questions/24410473/how-to-convert-this-var-string-to-url-in-swift"
-    
-    
-    func loadPostWebView(){
-        if SubScribeTableViewController.url != ""{
+    func loadPostWebViewForTag(){
+        if HomeViewController.url != ""{
             
-            let urlString = "https://velog.io\(SubScribeTableViewController.url)"
+            let urlString = "https://velog.io\(HomeViewController.url)"
 //            print(urlString)
             guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
             let PostURL = URL(string: encodedStr)!
@@ -99,6 +131,8 @@ class PostWebViewController: UIViewController {
             print("해당하는 URL이 존재하지 않습니다.")
         }
     }
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

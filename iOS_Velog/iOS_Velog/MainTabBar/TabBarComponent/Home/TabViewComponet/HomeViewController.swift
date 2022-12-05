@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         getTagPostDataServer()
         
         tableViewForTagPost.register(TagPostCell.self, forCellReuseIdentifier: TagPostCell.identifier)
-//        tableViewForTagPost.delegate = self
+        tableViewForTagPost.delegate = self
         tableViewForTagPost.dataSource = self
         
         tableViewForTagPost.reloadData()
@@ -134,7 +134,9 @@ class HomeViewController: UIViewController {
     // webView 푸시
     func pushWebView(){
         print("finish to push WebView")
+        
         let nextVC = PostWebViewController()
+        nextVC.isComeFrom = 1
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -168,7 +170,7 @@ extension HomeViewController : UITableViewDelegate {
         
 //        PostWebViewController.url = URL(string: url)
         print(HomeViewController.url)  // 일단 좋아!!! 여기까지
-//        self.pushWebView()
+        self.pushWebView()
     }
 }
 
