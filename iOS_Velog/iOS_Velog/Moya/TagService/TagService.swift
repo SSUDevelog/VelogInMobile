@@ -15,7 +15,7 @@ enum TagService{
     case addtag(param: AddTag)
     case gettag
     case tagpost
-    case deletetag(param: DeleteTag)
+    case deletetag(param: String)
 }
 
 extension TagService: TargetType{
@@ -59,7 +59,7 @@ extension TagService: TargetType{
         case .tagpost:
             return .requestPlain
         case .deletetag(param: let param):
-            return .requestParameters(parameters: ["tag" : param.tag], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["tag" : param], encoding: URLEncoding.queryString)
         }
 
     }
