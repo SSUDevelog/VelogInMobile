@@ -77,6 +77,7 @@ class HomeViewController: UIViewController {
                     
                     print(moyaResponse.statusCode)
                     PostData.Post = try moyaResponse.map(PostList.self)
+                    
                     self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
                     
                     print("성공")
@@ -142,13 +143,15 @@ class HomeViewController: UIViewController {
     
     func resetURL(indexSize:Int){
         
+        urlList.list.removeAll()
+        
         for x in 0..<indexSize {
             urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
         }
         
-//        for x in 0..<indexSize {
-//            print(urlList.list[x])
-//        }
+        for x in 0..<indexSize {
+            print(urlList.list[x])
+        }
         
     }
     
