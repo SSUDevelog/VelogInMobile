@@ -58,6 +58,7 @@
 		91C277172917E86600F5F53B /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277162917E86600F5F53B /* SignUpModel.swift */; };
 		91C277192917EB0600F5F53B /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277182917EB0600F5F53B /* SignInModel.swift */; };
 		91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2771A2917EC1D00F5F53B /* SignInRequest.swift */; };
+		91C35509293DE8B40087ADD1 /* DeleteTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C35508293DE8B40087ADD1 /* DeleteTag.swift */; };
 		91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F4293B9FB9005084A2 /* TagUrlList.swift */; };
 		91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F6293BA056005084A2 /* BaseURL.swift */; };
 		91E47771292BAC4F00AFC26E /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 91E47770292BAC4F00AFC26E /* Tabman */; };
@@ -117,6 +118,7 @@
 		91C277162917E86600F5F53B /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		91C277182917EB0600F5F53B /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		91C2771A2917EC1D00F5F53B /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		91C35508293DE8B40087ADD1 /* DeleteTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTag.swift; sourceTree = "<group>"; };
 		91DA86F4293B9FB9005084A2 /* TagUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUrlList.swift; sourceTree = "<group>"; };
 		91DA86F6293BA056005084A2 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91E47772292BAC6500AFC26E /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			children = (
 				91FFF31C2939CE9800D80859 /* TagService.swift */,
 				91FFF31E2939CF2D00D80859 /* AddTag.swift */,
+				91C35508293DE8B40087ADD1 /* DeleteTag.swift */,
 			);
 			path = TagService;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				9191602829256BE200497AC9 /* userList.swift in Sources */,
 				916AE8272922A8F6007CCDE7 /* AddRequest.swift in Sources */,
 				914A26E82937CF6E00F67BA0 /* urlList.swift in Sources */,
+				91C35509293DE8B40087ADD1 /* DeleteTag.swift in Sources */,
 				916827A9292A487B00DDA369 /* PostData.swift in Sources */,
 				91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */,
 				91FFF32B2939DD9300D80859 /* TagPostData.swift in Sources */,
