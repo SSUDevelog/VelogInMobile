@@ -16,7 +16,9 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     private let provider = MoyaProvider<SubscriberService>()
     var responseData: AddSubscriberResponse?
     
-
+    // prevent UIButton double touch
+    var preventButtonTouch = false
+    
     let titleLabel = UILabel().then {
         $0.text = "Search"
         $0.font = UIFont(name: "Avenir-Black", size: 40)
@@ -31,7 +33,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.addTarget(self, action: #selector(checkVelogUser), for: .touchDown)
+        $0.addTarget(self, action: #selector(onTouchedButton), for: .touchDown)
     }
     
     let textField = UITextField().then{
@@ -112,8 +114,23 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         self.textField.clearButtonMode = .always
     }
     
+    // prevent UIButton double touch
+    @objc func onTouchedButton(){
+        
+        if preventButtonTouch == true {
+            return
+        }
+        
+        preventButtonTouch = true
+        // do Something
+        self.checkVelogUser()
+        // Method body ends
+        preventButtonTouch = false
+        
+    }
+    
     // velog 유저 체크 시작점
-    @objc func checkVelogUser(){
+    func checkVelogUser(){
         let id = self.textField.text ?? ""
         print(id)
         postServer(id: id)
