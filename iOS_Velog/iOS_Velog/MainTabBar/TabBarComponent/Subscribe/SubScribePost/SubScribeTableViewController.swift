@@ -35,6 +35,15 @@ class SubScribeTableViewController: UIViewController {
 //        getPostDataServer()
         setUI()
 //        print(PostData.Post.subscribePostDtoList)
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getServer()
+//        self.getPostDataServer() // 아직 사용하지 않는다
+        tableViewForPosts.reloadData()
+        
     }
     
     func setUI(){
@@ -46,14 +55,6 @@ class SubScribeTableViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
             $0.bottom.equalToSuperview().offset(-90)
         }
-    }
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.getServer()
-//        self.getPostDataServer() // 아직 사용하지 않는다
-        tableViewForPosts.reloadData()
-        
     }
     
     func getPostDataServer(){

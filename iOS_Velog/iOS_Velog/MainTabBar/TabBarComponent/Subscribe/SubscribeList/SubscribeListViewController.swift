@@ -48,50 +48,6 @@ class SubscribeListViewController: UIViewController {
     
     }
     
-    func getPostDataServer(){
-        self.provider.request(.subscriberpost){ response in
-            switch response{
-            case .success(let moyaResponse):
-                do{
-                    print("getPost")
-                    print(moyaResponse.statusCode)
-                    PostData.Post = try moyaResponse.map(PostList.self)
-                    print("성공")
-                }catch(let err){
-                    print(err.localizedDescription)
-                    print("맵핑 안됨")
-                }
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
-
-
-    // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
-    func resetSubScribeList(){
-//        getServer()
-        tableViewForSubscribeList.reloadData()
-    }
-    
-    func getServer(){
-        self.provider.request(.getSubscriber){response in
-            switch response{
-            case .success(let moyaResponse):
-                do{
-
-                    print(moyaResponse.statusCode)
-                    userList.List = try moyaResponse.mapJSON() as! [String]
-
-                }catch(let err) {
-                    print(err.localizedDescription)
-                }
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
-    
     func setUI(){
 
         view.addSubview(tableViewForSubscribeList)
@@ -117,6 +73,65 @@ class SubscribeListViewController: UIViewController {
             case .success(let moyaResponse):
                 do {    // 여기서 do 가 필요할까?
                     print(moyaResponse.statusCode)
+                    self.getPostDataServer()
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    print(moyaResponse.statusCode)
+                    PostData.Post = try moyaResponse.map(PostList.self)
+                    self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func resetURL(indexSize:Int){
+        
+        urlList.list.removeAll()
+        
+        for x in 0..<indexSize {
+            urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
+        }
+        
+        for x in 0..<indexSize {
+            print(urlList.list[x])
+        }
+        
+    }
+    
+    // 구독 서치에서 추가된 경우 Realm을 다시 서치한다.
+    func resetSubScribeList(){
+//        getServer()
+        tableViewForSubscribeList.reloadData()
+    }
+    
+    func getServer(){
+        self.provider.request(.getSubscriber){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+
+                    print(moyaResponse.statusCode)
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
@@ -126,6 +141,9 @@ class SubscribeListViewController: UIViewController {
         }
     }
 
+
+    
+    
 }
 
 extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource {
