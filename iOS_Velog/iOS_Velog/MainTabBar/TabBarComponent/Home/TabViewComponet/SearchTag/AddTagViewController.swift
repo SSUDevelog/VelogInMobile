@@ -16,6 +16,9 @@ class AddTagViewController: UIViewController {
     private let provider = MoyaProvider<TagService>()
 //    var responseData
     
+    // prevent UIButton double touch
+    var preventButtonTouch = false
+    
 
     let titleLabel = UILabel().then {
         $0.text = "Add"
@@ -31,7 +34,7 @@ class AddTagViewController: UIViewController {
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.addTarget(self, action: #selector(checkTag), for: .touchDown)
+        $0.addTarget(self, action: #selector(onTouchedButton), for: .touchDown)
     }
     
     let textField = UITextField().then{
@@ -96,6 +99,21 @@ class AddTagViewController: UIViewController {
         self.textField.autocapitalizationType = .none
         self.textField.borderStyle = UITextField.BorderStyle.roundedRect
         self.textField.clearButtonMode = .always
+    }
+    
+    // prevent UIButton double touch
+    @objc func onTouchedButton(){
+        
+        if preventButtonTouch == true {
+            return
+        }
+        
+        preventButtonTouch = true
+        // do Something
+        self.checkTag()
+        // Method body ends
+        preventButtonTouch = false
+        
     }
     
     // tag 체크 시작점
