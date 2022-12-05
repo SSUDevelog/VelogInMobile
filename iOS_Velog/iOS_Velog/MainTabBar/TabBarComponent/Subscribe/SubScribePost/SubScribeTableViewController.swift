@@ -86,7 +86,7 @@ class SubScribeTableViewController: UIViewController {
 //                     이거 임시!!!
                     NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
-//                    self.tableViewForPosts.reloadData()g
+//                    self.tableViewForPosts.reloadData()
                     print("reloadData")
                     
                 }catch(let err) {
@@ -102,15 +102,9 @@ class SubScribeTableViewController: UIViewController {
     func pushWebView(){
         print("finish to push WebView")
         let nextVC = PostWebViewController()
+        nextVC.isComeFrom = 2
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        print("hahaha")
-    }
-    
-
-
 }
 
 extension SubScribeTableViewController : UITableViewDelegate {
