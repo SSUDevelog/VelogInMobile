@@ -42,6 +42,8 @@ class HomeViewController: UIViewController {
 //        tableViewForTagPost.delegate = self
         tableViewForTagPost.dataSource = self
         
+        tableViewForTagPost.reloadData()
+        
         setUI()
     }
 
