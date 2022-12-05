@@ -182,6 +182,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                     print(moyaResponse.statusCode)
                     print("최종추가됨")
                     self.getServer()
+                    self.getPostDataServer()
                 }catch(let err){
                     print(err.localizedDescription)
                 }
@@ -219,6 +220,44 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             }
         }
         return true
+    }
+    
+    // 구독자 글 호출
+    func getPostDataServer(){
+        self.provider.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPost")
+                    
+                    print(moyaResponse.statusCode)
+                    PostData.Post = try moyaResponse.map(PostList.self)
+                    
+                    self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
+                    
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func resetURL(indexSize:Int){
+        
+        urlList.list.removeAll()
+        
+        for x in 0..<indexSize {
+            urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
+        }
+        
+        for x in 0..<indexSize {
+            print(urlList.list[x])
+        }
+        
     }
     
 }
