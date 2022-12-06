@@ -357,7 +357,6 @@
 				918CDB572939100F000C016E /* HomeTabViewController.swift */,
 				91FFF3202939D1EB00D80859 /* Resoure */,
 				918CDB5A2939168A000C016E /* TabViewComponet */,
-				911A1A56293F218B00D1C3CD /* LoadingViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -385,6 +384,7 @@
 		91B73FDB28F83EDB005159AD /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				911A1A56293F218B00D1C3CD /* LoadingViewController.swift */,
 				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
 				9142D79C292CEC2700D9BB7C /* TabBarComponent */,
 			);
