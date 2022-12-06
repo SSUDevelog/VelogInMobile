@@ -17,10 +17,12 @@ class LoadingViewController: UIViewController {
     private let concurrentQueue = DispatchQueue.init(label: "LoadingQueue",attributes: .concurrent)
 
 
-    let titleLabel = UILabel().then {
-        $0.text = "Velog in Mobile"
-        $0.font = UIFont(name: "Avenir-Black", size: 50)
-    }
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Loading..."
+        label.textColor = .gray
+        return label
+    }()
     
 
     override func viewDidLoad() {
