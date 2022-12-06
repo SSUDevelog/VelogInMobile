@@ -72,10 +72,10 @@ class PostWebViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
         
+        self.Queue()
         
         loadPostWebView(isComeFrom: self.isComeFrom)
-        
-        self.Queue()
+
         
     }
 
