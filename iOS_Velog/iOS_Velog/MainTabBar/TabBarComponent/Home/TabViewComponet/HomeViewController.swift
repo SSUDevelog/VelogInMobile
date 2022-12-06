@@ -57,7 +57,6 @@ class HomeViewController: UIViewController {
 
         view.addSubview(tableViewForTagPost)
 
-        
         tableViewForTagPost.snp.makeConstraints {
             $0.top.equalToSuperview().offset(250)
             $0.leading.equalToSuperview().offset(30)
@@ -66,7 +65,6 @@ class HomeViewController: UIViewController {
         }
     }
 
-    
     
     func getPostDataServer(){
         self.provider.request(.subscriberpost){ response in
@@ -161,7 +159,6 @@ class HomeViewController: UIViewController {
             TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
         }
     }
-
 }
 
 

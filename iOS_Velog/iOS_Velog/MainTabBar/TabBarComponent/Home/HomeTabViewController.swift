@@ -33,6 +33,7 @@ class HomeTabViewController: TabmanViewController {
     
     // 페이징 할 뷰 컨트롤러
     var viewControllers: Array<UIViewController> = [HomeViewController(),TagViewController()]
+//    var viewControllers: Array<UIViewController> = [,TagViewController()]
 
     override func viewDidLoad() {
         

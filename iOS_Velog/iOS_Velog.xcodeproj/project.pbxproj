@@ -14,6 +14,7 @@
 		91178E0A2934A79300A9BDE7 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E092934A79300A9BDE7 /* SwiftSoup */; };
 		91178E112934B90E00A9BDE7 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E102934B90E00A9BDE7 /* NVActivityIndicatorView */; };
 		91178E132934B90E00A9BDE7 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E122934B90E00A9BDE7 /* NVActivityIndicatorViewExtended */; };
+		911A1A57293F218B00D1C3CD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A1A56293F218B00D1C3CD /* LoadingViewController.swift */; };
 		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
@@ -80,6 +81,7 @@
 		9109F2642935E1B500DDE54B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeTableViewController.swift; sourceTree = "<group>"; };
 		91178E042934803B00A9BDE7 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
+		911A1A56293F218B00D1C3CD /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				918CDB572939100F000C016E /* HomeTabViewController.swift */,
 				91FFF3202939D1EB00D80859 /* Resoure */,
 				918CDB5A2939168A000C016E /* TabViewComponet */,
+				911A1A56293F218B00D1C3CD /* LoadingViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */,
 				918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */,
 				91FFF3222939D1FA00D80859 /* userTag.swift in Sources */,
+				911A1A57293F218B00D1C3CD /* LoadingViewController.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,

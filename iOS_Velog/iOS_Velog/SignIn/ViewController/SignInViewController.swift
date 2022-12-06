@@ -155,7 +155,8 @@ class SignInViewController: UIViewController {
     }
     
     private func ifSuccessPushHome(){
-        let nextVC = CustomTabBarController()
+//        let nextVC = CustomTabBarController()
+        let nextVC = LoadingViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
