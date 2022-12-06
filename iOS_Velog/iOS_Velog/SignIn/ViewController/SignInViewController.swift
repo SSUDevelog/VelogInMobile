@@ -91,7 +91,8 @@ class SignInViewController: UIViewController {
             getTagPostDataServer()
             ifSuccessPushHome()
         }
-  
+
+        self.navigationItem.hidesBackButton = true 
         
         setUIForSignIn()
     }

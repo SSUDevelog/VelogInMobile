@@ -153,7 +153,7 @@ class AddTagViewController: UIViewController {
                     self.label.text = "키워드가 추가 되었습니다."
                     self.label.textColor = UIColor.customColor(.pointColor)
                     self.getServerTag()
-                    
+                    self.getTagPostDataServer()
                 }catch(let err){
                     print(err.localizedDescription)
                 }
@@ -178,6 +178,35 @@ class AddTagViewController: UIViewController {
             case .failure(let err):
                 print(err.localizedDescription)
             }
+        }
+    }
+    
+    // 태그 맞춤 글 추천 아직 어디에 사용할 지 모름, 이런
+    func getTagPostDataServer(){
+        self.provider.request(.tagpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPostTag")
+                    print(moyaResponse.statusCode)
+                    TagPostData.Post = try moyaResponse.map(PostTagList.self)
+                    // for test
+                    print(TagPostData.Post.tagPostDtoList.count)
+                    self.resetTagURL(indexSize: TagPostData.Post.tagPostDtoList.count)
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    func resetTagURL(indexSize:Int){
+        
+        for x in 0..<indexSize {
+            TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
         }
     }
 

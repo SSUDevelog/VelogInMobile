@@ -66,6 +66,7 @@ class TagViewController: UIViewController {
             case .success(let moyaResponse):
                 do {    // 여기서 do 가 필요할까?
                     print(moyaResponse.statusCode)
+                    self.getTagPostDataServer()
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
@@ -74,6 +75,36 @@ class TagViewController: UIViewController {
             }
         }
     }
+    
+    // 태그 맞춤 글 추천 아직 어디에 사용할 지 모름, 이런
+    func getTagPostDataServer(){
+        self.provider.request(.tagpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPostTag")
+                    print(moyaResponse.statusCode)
+                    TagPostData.Post = try moyaResponse.map(PostTagList.self)
+                    // for test
+                    print(TagPostData.Post.tagPostDtoList.count)
+                    self.resetTagURL(indexSize: TagPostData.Post.tagPostDtoList.count)
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    func resetTagURL(indexSize:Int){
+        
+        for x in 0..<indexSize {
+            TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
+        }
+    }
+
     
 }
 

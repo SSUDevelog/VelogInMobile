@@ -156,13 +156,14 @@ class HomeViewController: UIViewController {
     }
     
     func resetTagURL(indexSize:Int){
-        
+
         for x in 0..<indexSize {
             TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
         }
     }
-    
+
 }
+
 
 extension HomeViewController : UITableViewDelegate {
     
