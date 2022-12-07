@@ -50,6 +50,8 @@ class AddTagViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.dismissKeyboard()
+        
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
         

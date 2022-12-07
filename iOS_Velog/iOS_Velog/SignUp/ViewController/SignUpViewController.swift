@@ -23,8 +23,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     // make components
 
     let maxLength:Int = 8
-
-
+    
     private let titleLabel = UILabel().then {
         $0.text = "Sign Up"
         $0.font = UIFont(name: "Avenir-Black", size: 50)
@@ -34,7 +33,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         $0.font = UIFont(name: "Avenir-Black", size: 25)
     }
     private let labelForEmailTextField = UILabel().then{
-        $0.text = "Email"
+        $0.text = "ID (Email)"
         $0.font = UIFont(name: "Avenir-Black", size: 25)
     }
     private let labelForPasswordTextField = UILabel().then{
@@ -134,12 +133,13 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
         print("viewDidLoad")
         self.view.backgroundColor = .systemBackground
 
+        self.dismissKeyboard()
+        
         
 //        nameTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nameTextField)
         NotificationCenter.default.addObserver(self, selector: #selector(textDemailchange(_:)), name: UITextField.textDidChangeNotification, object: emailTextField)
 
-        
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true  // for hideBackBtn in NavigationController
 
@@ -182,13 +182,14 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
 
     @objc func pushView(){
         self.postServer()
-        let nextVC = SearchKeywordViewController()
+//        let nextVC = SearchKeywordViewController()
+        let nextVC = SignInViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-
+    
     func postServer(){
         // name : id , pw : pw
-        let param = SignUpRequest.init(self.nameTextField.text!, self.emailTextField.text!, self.passwordTextField.text!, self.checkPasswordTextField.text!)
+        let param = SignUpRequest.init(self.emailTextField.text!, self.nameTextField.text!, self.passwordTextField.text!, self.checkPasswordTextField.text!)
         print(param)
         provider.request(.signUp(param: param)) { response in
                 switch response {
@@ -276,7 +277,7 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     // 이메일 형식 검사 함수
     func checkEmail(str: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        print("check")
+//        print("check")
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
     }
 
