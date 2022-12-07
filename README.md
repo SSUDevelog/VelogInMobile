@@ -31,9 +31,9 @@
        3.1 [브랜치 규칙](#31-브랜치-규칙)
        3.2 [커밋 규칙](#32-커밋-규칙)
               
-4. [프로젝트 제작에 참고된 참고문헌, 서적, URL](#4프로젝트-제작에-참고된-참고문헌-서적-url)
+4. [프로젝트 제작에 참고된 문헌, 서적, URL](#4프로젝트-제작에-참고된-문헌-서적-url)
 
-5. [프로젝트 개발자 정보](#5-프로젝트-개발자-정보)
+5. [프로젝트 참여 개발자 정보](#5-프로젝트--개발자-정보)
 
 
  
@@ -231,3 +231,19 @@ URL을 통해 앱 사용자가 터치한 글이 보여진다.
 - feat : Sort list context menu
 - feat : Resize minimize/delete handle icons so they take up the entire topbar
 - fix : Fix typo in cleanup.sh file
+
+
+# 4. 프로젝트 제작에 참고된 문헌, 서적, URL
+
+https://developer.apple.com/documentation
+
+
+# 5. 프로젝트  개발자 정보
+
+iOS : 홍준혁 Github Profile - https://github.com/hongjunehuke
+
+iOS : 주현아 Github Profile - https://github.com/JuHyeonAh
+
+Server : 국혜경 Github Profile - https://github.com/k0000k 
+
+Server : 김진수 Github Profile - https://github.com/kikuke
