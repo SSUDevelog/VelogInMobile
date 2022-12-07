@@ -1,5 +1,5 @@
 # <img width="97" alt="스크린샷 2022-12-07 오후 6 10 21" src="https://user-images.githubusercontent.com/83629193/206136882-9a05f2fa-bbca-4443-b84d-87b38539e952.png">
-### "안녕하세요 기술 공유에 편리함을  Velog In Mobile입니다."
+### "안녕하세요 기술 공유에 편리함을 제공하는 Velog In Mobile입니다."
 
 # 목차
  1. [프로젝트 소개](#1-프로젝트-소개)                                           
