@@ -44,19 +44,20 @@ class LoadingViewController: UIViewController {
     
     func QueueAsynchronous(){
         
-        concurrentQueue.sync {
-            self.getServerTag()
-            print("async1")
-        }
-        concurrentQueue.sync {
-            self.getServer()
-            print("async2")
-        }
-        concurrentQueue.sync {
+//        concurrentQueue.async {
+//            self.getServerTag()
+//            print("async1")
+//        }
+//        concurrentQueue.async {
+//            self.getServer()
+//            print("async2")
+//        }
+        
+        concurrentQueue.async {
             self.getPostDataServer()
             print("async3")
         }
-        concurrentQueue.sync {
+        concurrentQueue.async {
             self.getTagPostDataServer()
             print("async4")
         }
@@ -73,13 +74,18 @@ class LoadingViewController: UIViewController {
             switch response{
             case .success(let moyaResponse):
                 do{
-                    print("getPost")
+                    print("getPostDataServer")
                     
                     print(moyaResponse.statusCode)
                     PostData.Post = try moyaResponse.map(PostList.self)
                     
                     self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
-                    
+//
+//                    DispatchQueue.main.async {
+//                        print("pushToHome")
+//                        self.pushToHome()
+//                    }
+//                    
                     print("성공")
                 }catch(let err){
                     print(err.localizedDescription)
@@ -114,9 +120,16 @@ class LoadingViewController: UIViewController {
             switch response{
             case .success(let moyaResponse):
                 do{
-                    print(moyaResponse.statusCode)
+//                    print(moyaResponse.statusCode)
+                    print("getServerTag")
                     userTag.List = try moyaResponse.mapJSON() as! [String]
-                    print(userTag.List)
+//                    print(userTag.List)
+                    
+//                    DispatchQueue.main.async {
+//                        print("pushToHome by getServerTag")
+//                        self.pushToHome()
+//                    }
+                    
                 }catch(let err) {
                     print(err.localizedDescription)
                 }
@@ -132,16 +145,17 @@ class LoadingViewController: UIViewController {
             switch response{
             case .success(let moyaResponse):
                 do{
-                    print("getPostTag")
-                    print(moyaResponse.statusCode)
+                    print("getTagPostDataServer")
+//                    print(moyaResponse.statusCode)
                     TagPostData.Post = try moyaResponse.map(PostTagList.self)
                     // for test
-                    print(TagPostData.Post.tagPostDtoList.count)
+//                    print(TagPostData.Post.tagPostDtoList.count)
                     self.resetTagURL(indexSize: TagPostData.Post.tagPostDtoList.count)
-                    print("성공")
+//                    print("성공")
                     
                     // 서버 응답 받아오는 것 종료!!! 여기서 뷰 HomeView 호출
                     DispatchQueue.main.async {
+                        print("pushToHome by getTagPost")
                         self.pushToHome()
                     }
                     
@@ -167,6 +181,7 @@ class LoadingViewController: UIViewController {
     }
     
     func resetTagURL(indexSize:Int){
+        TagaUrlList.list.removeAll()
         for x in 0..<indexSize {
             TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
         }

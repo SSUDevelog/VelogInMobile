@@ -20,6 +20,8 @@ class SignInViewController: UIViewController {
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
     private let provider = MoyaProvider<SignServices>()
     private let providerForTag = MoyaProvider<TagService>()
+    private let providerForSubscriber = MoyaProvider<SubscriberService>()
+    private let concurrentQueue = DispatchQueue.init(label: "SignInView",attributes: .concurrent)
     
     // ResponseModel를 userData에 넣어주자!
     var userData: SignInModel?
@@ -88,7 +90,16 @@ class SignInViewController: UIViewController {
         // 자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
         // 자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
-            getTagPostDataServer()
+//            getTagPostDataServer()
+            concurrentQueue.async {
+                self.getServerTag()
+                print("async1")
+            }
+            concurrentQueue.async {
+                self.getServer()
+                print("async2")
+            }
+            
             ifSuccessPushHome()
         }
 
@@ -224,15 +235,64 @@ class SignInViewController: UIViewController {
         realm.addToken(item: item)
     }
     
-    // 태그 맞춤 글 추천 아직 어디에 사용할 지 모름
-    func getTagPostDataServer(){
-        self.providerForTag.request(.tagpost){ response in
+    func getServer(){
+        self.providerForSubscriber.request(.getSubscriber){response in
             switch response{
             case .success(let moyaResponse):
                 do{
-                    print("getPostTag in SingUp")
+
                     print(moyaResponse.statusCode)
-//                    TagPostData.Post = try moyaResponse.map(PostTagList.self)
+                    userList.List = try moyaResponse.mapJSON() as! [String]
+
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getServerTag(){
+        self.providerForTag.request(.gettag){response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+//                    print(moyaResponse.statusCode)
+                    print("getServerTag")
+                    userTag.List = try moyaResponse.mapJSON() as! [String]
+//                    print(userTag.List)
+                    
+                    DispatchQueue.main.async {
+                        print("pushToHome")
+//                        self.pushToHome()
+                    }
+                }catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    
+    func getPostDataServer(){
+        self.providerForSubscriber.request(.subscriberpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPostDataServer")
+                    
+                    print(moyaResponse.statusCode)
+                    PostData.Post = try moyaResponse.map(PostList.self)
+                    
+                    self.resetURL(indexSize: PostData.Post.subscribePostDtoList.count)
+                    
+//                    DispatchQueue.main.async {
+//                        print("pushToHome")
+//                        self.pushToHome()
+//                    }
                     
                     print("성공")
                 }catch(let err){
@@ -243,6 +303,50 @@ class SignInViewController: UIViewController {
                 print(err.localizedDescription)
             }
         }
+    }
+    
+    func resetURL(indexSize:Int){
+        urlList.list.removeAll()
+        for x in 0..<indexSize {
+            urlList.list.append(PostData.Post.subscribePostDtoList[x].url)
+        }
+//        for x in 0..<indexSize {
+//            print("UrlList")
+//            print(urlList.list[x])
+//        }
+    }
+    
+    // 태그 맞춤 글 추천 아직 어디에 사용할 지 모름
+    func getTagPostDataServer(){
+        self.providerForTag.request(.tagpost){ response in
+            switch response{
+            case .success(let moyaResponse):
+                do{
+                    print("getPostTag in Singin")
+                    print(moyaResponse.statusCode)
+//                    TagPostData.Post = try moyaResponse.map(PostTagList.self)
+                    TagPostData.Post = try moyaResponse.map(PostTagList.self)
+                    self.resetTagURL(indexSize: TagPostData.Post.tagPostDtoList.count)
+                    print("성공")
+                }catch(let err){
+                    print(err.localizedDescription)
+                    print("맵핑 안됨")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func resetTagURL(indexSize:Int){
+        for x in 0..<indexSize {
+            TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
+        }
+//        for x in 0..<indexSize {
+//            print("TagUrlList")
+//            print(TagaUrlList.list[x])
+//        }
+
     }
     
     
