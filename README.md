@@ -118,6 +118,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 <img width="363" alt="스크린샷 2022-12-07 오후 5 36 59" src="https://user-images.githubusercontent.com/83629193/206129621-0f65f8df-0f3a-4359-8529-db276b35e3a6.png">
 
 
+
 ### 2.3.3 로딩뷰
 
 로그인 성공 시 로딩뷰로 넘어가며 비동기로 서버 통신을 진행합니다.
@@ -125,6 +126,8 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 로딩이 끝나면 자동으로 홈뷰로 이동합니다.
 
 <img width="363" alt="스크린샷 2022-12-07 오후 5 37 06" src="https://user-images.githubusercontent.com/83629193/206129651-2a847d92-1763-40b0-8e91-d2ba061e263f.png">
+
+
 
 ### 2.3.4 홈뷰(키워드 글뷰)
 
@@ -144,6 +147,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 <img width="363" alt="스크린샷 2022-12-07 오후 5 37 26" src="https://user-images.githubusercontent.com/83629193/206129705-4d9d05c3-27c8-4402-9171-af88c0ba4459.png">
 
 
+
 ### 2.3.5 키워드 검색뷰
 
 홈뷰와 키워드 리스트뷰 우측 상단에 태그 아이콘을 터치하면 키워드 검색뷰로 이동합니다.
@@ -151,6 +155,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 이미 추가했던 키워드는 중복으로 추가되지 않습니다.
 
 <img width="363" alt="스크린샷 2022-12-07 오후 5 37 18" src="https://user-images.githubusercontent.com/83629193/206129755-ec616b2e-71ca-4a89-8a85-9a6d2c8ce82a.png"> <img width="363" alt="스크린샷 2022-12-07 오후 5 37 21" src="https://user-images.githubusercontent.com/83629193/206129763-d5217a7c-94cb-4a46-b40a-d27255b83410.png">
+
 
 
 ### 2.3.6 구독자 글뷰
@@ -162,11 +167,13 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 <img width="363" alt="스크린샷 2022-12-07 오후 5 37 44" src="https://user-images.githubusercontent.com/83629193/206129836-bc90e5e0-c606-4054-b90d-6c95486b5faf.png">
 
 
+
 ### 2.3.7 글웹뷰
 
 URL을 통해 앱 사용자가 터치한 글이 보여진다.
 글웹뷰를 불러오는 동안 비동기적으로 애니메이션이 보여진다.
 <img width="363" alt="스크린샷 2022-12-07 오후 5 38 18" src="https://user-images.githubusercontent.com/83629193/206129911-c298529b-aa51-4ce4-a1b0-07430af55da1.png"> <img width="363" alt="스크린샷 2022-12-07 오후 5 38 23" src="https://user-images.githubusercontent.com/83629193/206129901-729b7258-4533-40f1-b1bb-f2a33dee0edd.png">
+
 
 
 ### 2.3.8 구독자 리스트뷰
@@ -196,11 +203,13 @@ URL을 통해 앱 사용자가 터치한 글이 보여진다.
 <img width="363" alt="스크린샷 2022-12-07 오후 5 38 06" src="https://user-images.githubusercontent.com/83629193/206130045-d1ae1d22-61d7-409d-8d6b-7107539fa983.png">
 
 
+
 ### 2.3.11 프로필뷰
 
 푸쉬 알림을 끄고 킬 수 있는 버튼, 로그아웃, 회원탈퇴 기능이 구현되어있다.
 
 <img width="363" alt="스크린샷 2022-12-07 오후 5 38 10" src="https://user-images.githubusercontent.com/83629193/206130051-57807413-971e-4171-8917-fee9ca6f26b7.png">
+
 
 
 # 3.협업 규칙
