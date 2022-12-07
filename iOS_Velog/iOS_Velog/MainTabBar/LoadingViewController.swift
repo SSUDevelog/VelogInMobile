@@ -44,14 +44,14 @@ class LoadingViewController: UIViewController {
     
     func QueueAsynchronous(){
         
-//        concurrentQueue.async {
-//            self.getServerTag()
-//            print("async1")
-//        }
-//        concurrentQueue.async {
-//            self.getServer()
-//            print("async2")
-//        }
+        concurrentQueue.async {
+            self.getServerTag()
+            print("async1")
+        }
+        concurrentQueue.async {
+            self.getServer()
+            print("async2")
+        }
         
         concurrentQueue.async {
             self.getPostDataServer()
@@ -120,16 +120,8 @@ class LoadingViewController: UIViewController {
             switch response{
             case .success(let moyaResponse):
                 do{
-//                    print(moyaResponse.statusCode)
                     print("getServerTag")
                     userTag.List = try moyaResponse.mapJSON() as! [String]
-//                    print(userTag.List)
-                    
-//                    DispatchQueue.main.async {
-//                        print("pushToHome by getServerTag")
-//                        self.pushToHome()
-//                    }
-                    
                 }catch(let err) {
                     print(err.localizedDescription)
                 }

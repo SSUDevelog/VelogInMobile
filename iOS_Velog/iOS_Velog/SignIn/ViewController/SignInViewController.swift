@@ -85,23 +85,24 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         print("singIn")
-//        realm.resetDB()
+        realm.resetDB()
         
-        // 자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
-        // 자동로그인 시 새로운 토큰 발급 받지 않는다
-        if checkRealmToken() {
-//            getTagPostDataServer()
-            concurrentQueue.async {
-                self.getServerTag()
-                print("async1")
-            }
-            concurrentQueue.async {
-                self.getServer()
-                print("async2")
-            }
-            
-            ifSuccessPushHome()
-        }
+        
+        self.dismissKeyboard()
+//         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
+//         자동로그인 시 새로운 토큰 발급 받지 않는다
+//        if checkRealmToken() {
+//            concurrentQueue.async {
+//                self.getServerTag()
+//                print("async1")
+//            }
+//            concurrentQueue.async {
+//                self.getServer()
+//                print("async2")
+//            }
+//
+//            ifSuccessPushHome()
+//        }
 
         self.navigationItem.hidesBackButton = true 
         

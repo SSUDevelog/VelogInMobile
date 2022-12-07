@@ -52,6 +52,8 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         self.textField.delegate = self  // 필요??
         
+        self.dismissKeyboard()
+        
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
         
