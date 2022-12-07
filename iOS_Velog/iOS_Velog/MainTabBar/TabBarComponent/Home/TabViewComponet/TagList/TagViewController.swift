@@ -18,7 +18,6 @@ class TagViewController: UIViewController {
     // 태그 리스트 tableView
     let tableViewForTag :UITableView = {
         let tableview = UITableView()
-//        tableview.backgroundColor = .blue
         return tableview
     }()
     
@@ -31,21 +30,13 @@ class TagViewController: UIViewController {
         tableViewForTag.delegate = self
         tableViewForTag.dataSource = self
         
-        
-        
-        
         setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        resetTagList()
-    }
-    
-    func resetTagList(){
         tableViewForTag.reloadData()
     }
-    
     
     func setUI(){
 
@@ -99,6 +90,7 @@ class TagViewController: UIViewController {
         }
     }
     func resetTagURL(indexSize:Int){
+        TagaUrlList.list.removeAll()
         
         for x in 0..<indexSize {
             TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)

@@ -61,8 +61,6 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-//        getServer() -> 일단 보류!!!
     }
 
     
