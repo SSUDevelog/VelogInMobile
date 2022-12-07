@@ -85,7 +85,7 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         print("singIn")
-        realm.resetDB()
+//        realm.resetDB()
         
         
         self.dismissKeyboard()
