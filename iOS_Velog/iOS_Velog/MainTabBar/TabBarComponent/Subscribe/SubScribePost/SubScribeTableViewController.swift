@@ -40,7 +40,7 @@ class SubScribeTableViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.getServer()
+//        self.getServer()
 //        self.getPostDataServer() // 아직 사용하지 않는다
         tableViewForPosts.reloadData()
         
@@ -84,10 +84,7 @@ class SubScribeTableViewController: UIViewController {
                 do{
                     print(moyaResponse.statusCode)
                     userList.List = try moyaResponse.mapJSON() as! [String]
-//                     이거 임시!!!
-                    NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
                     print(userList.List)
-//                    self.tableViewForPosts.reloadData()
                     print("reloadData")
                     
                 }catch(let err) {

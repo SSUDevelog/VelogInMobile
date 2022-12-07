@@ -339,6 +339,7 @@ class SignInViewController: UIViewController {
     }
     
     func resetTagURL(indexSize:Int){
+        TagaUrlList.list.removeAll()
         for x in 0..<indexSize {
             TagaUrlList.list.append(TagPostData.Post.tagPostDtoList[x].url)
         }
