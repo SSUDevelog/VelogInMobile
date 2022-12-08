@@ -123,6 +123,7 @@ extension SubScribeTableViewController : UITableViewDelegate {
 extension SubScribeTableViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(PostData.Post.subscribePostDtoList.count)
         return PostData.Post.subscribePostDtoList.count
     }
     
