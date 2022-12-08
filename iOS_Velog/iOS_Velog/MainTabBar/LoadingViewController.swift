@@ -154,6 +154,11 @@ class LoadingViewController: UIViewController {
                 }catch(let err){
                     print(err.localizedDescription)
                     print("맵핑 안됨")
+                    // 초기 시작 경우 로딩 뷰에서 일단 넘어가야함
+                    DispatchQueue.main.async {
+                        print("pushToHome by getTagPost")
+                        self.pushToHome()
+                    }
                 }
             case .failure(let err):
                 print(err.localizedDescription)

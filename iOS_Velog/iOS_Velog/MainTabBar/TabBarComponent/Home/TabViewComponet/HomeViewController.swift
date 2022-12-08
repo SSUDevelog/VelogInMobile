@@ -177,6 +177,7 @@ extension HomeViewController : UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(TagPostData.Post.tagPostDtoList.count)
         return TagPostData.Post.tagPostDtoList.count
     }
     

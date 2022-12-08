@@ -85,6 +85,7 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         print("singIn")
+        
 //        realm.resetDB()
         
         
@@ -142,32 +143,21 @@ class SignInViewController: UIViewController {
         let nextVC = SignUpViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
 
+    
     @objc func pushViewForSignIn(){
         switch checkRealmToken() {
         case false :   // 토근 발급 전
             // 서버 통신
             print("no token")
-            let successInt = postServer()
-            if successInt > 200 {
-                // 잘못된 접근
-                showFailAlert()
-                break
-            }
-            else{
-                // 올바른 접근
-//                getTagPostDataServer()
-                ifSuccessPushHome()
-                break
-            }
+            postServer()
         default:
             ifSuccessPushHome()
         }
     }
+
     
     private func ifSuccessPushHome(){
-//        let nextVC = CustomTabBarController()
         let nextVC = LoadingViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -182,32 +172,31 @@ class SignInViewController: UIViewController {
     }
     
     
-    func postServer()->Int{
-        var successInt = 499
-        
+    func postServer(){
         // server
         let param = SignInRequest.init("temporaryFCMToken", self.EmailTextField.text ?? "" ,self.PasswordTextField.text ?? "")
         print(param)
         self.provider.request(.signIn(param: param)){ response in
             switch response {
                 case .success(let moyaResponse):
-//                    var responseData = moyaResponse.data
                     do {
-//                        print(moyaResponse.statusCode)
-                        successInt =  moyaResponse.statusCode
-//                        print(responseData.token)
+                        print("post Server aa")
                         let responseData = try moyaResponse.map(SigninResponse.self)
                         // 로컬에 토큰 저장
                         self.addTokenInRealm(item: responseData.token)
-                        
+                        print("ok you sign in")
+                        self.ifSuccessPushHome()
                     } catch(let err) {
                         print(err.localizedDescription)
+                        print("nonono")
+                        self.showFailAlert()
                     }
                 case .failure(let err):
                     print(err.localizedDescription)
+                    print("nonono")
+                    self.showFailAlert()
             }
         }
-        return successInt
     }
     
     
