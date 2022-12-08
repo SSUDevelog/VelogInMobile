@@ -105,9 +105,9 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 ### 2.3.0 시현영상
 
-https://user-images.githubusercontent.com/83629193/206406223-b93aa3a4-5606-4e77-9b22-adfb1962d803.mov 
+https://user-images.githubusercontent.com/83629193/206408636-be9ff172-34aa-4c1e-bc59-9c2cbe3b840e.mov
 
-https://user-images.githubusercontent.com/83629193/206405697-da019f5a-a24d-4d5e-be3d-5fcace1c3298.mov
+https://user-images.githubusercontent.com/83629193/206408670-577d94d8-6b70-4f06-9796-e0ea7adc62a4.mov
 
 
 
