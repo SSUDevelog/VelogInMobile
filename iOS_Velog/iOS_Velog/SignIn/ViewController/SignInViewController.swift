@@ -86,7 +86,7 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("singIn")
         
-        realm.resetDB()
+//        realm.resetDB()
         
         
         self.dismissKeyboard()
@@ -181,7 +181,6 @@ class SignInViewController: UIViewController {
                 case .success(let moyaResponse):
                     do {
                         print("post Server aa")
-                        successInt =  moyaResponse.statusCode
                         let responseData = try moyaResponse.map(SigninResponse.self)
                         // 로컬에 토큰 저장
                         self.addTokenInRealm(item: responseData.token)
