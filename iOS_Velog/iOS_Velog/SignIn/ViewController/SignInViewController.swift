@@ -30,10 +30,14 @@ class SignInViewController: UIViewController {
     let realm = RealmService()
     
     
-    private let titleLabel = UILabel().then {
-        $0.text = "Login"
-        $0.font = UIFont(name: "Avenir-Black", size: 50)
-    }
+    private let titleLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Login"
+        label.textColor = UIColor.customColor(.pointColor)
+//        $0.text = "Login"
+        label.font = UIFont(name: "Avenir", size: 50)
+        return label
+    }()
     
     let EmailTextField = UITextField().then{
         $0.placeholder = ("Email")
@@ -50,7 +54,6 @@ class SignInViewController: UIViewController {
         $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.layer.cornerRadius = 10
         $0.setTitle("Login", for: .normal)
-        // $0.setTitleColor(.systemBackground, for: .normal)
         $0.addTarget(self, action: #selector(pushViewForSignIn), for: .touchUpInside)
     }
     
@@ -86,24 +89,24 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("singIn")
         
-//        realm.resetDB()
+        realm.resetDB()
         
         
         self.dismissKeyboard()
 //         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
 //         자동로그인 시 새로운 토큰 발급 받지 않는다
-        if checkRealmToken() {
-            concurrentQueue.async {
-                self.getServerTag()
-                print("async1")
-            }
-            concurrentQueue.async {
-                self.getServer()
-                print("async2")
-            }
-
-            ifSuccessPushHome()
-        }
+//        if checkRealmToken() {
+//            concurrentQueue.async {
+//                self.getServerTag()
+//                print("async1")
+//            }
+//            concurrentQueue.async {
+//                self.getServer()
+//                print("async2")
+//            }
+//
+//            ifSuccessPushHome()
+//        }
 
         self.navigationItem.hidesBackButton = true 
         
