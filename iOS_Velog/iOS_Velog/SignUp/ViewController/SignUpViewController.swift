@@ -26,23 +26,28 @@ class SignUpViewController: UIViewController,UITextFieldDelegate {
     
     private let titleLabel = UILabel().then {
         $0.text = "Sign Up"
-        $0.font = UIFont(name: "Avenir-Black", size: 50)
+        $0.font = UIFont(name: "Avenir", size: 50)
+        $0.textColor = UIColor.customColor(.pointColor)
     }
     private let labelForNameTextField = UILabel().then{
         $0.text = "Name"
-        $0.font = UIFont(name: "Avenir-Black", size: 25)
+        $0.font = UIFont(name: "Avenir", size: 25)
+//        $0.textColor = UIColor.customColor(.pointColor)
     }
     private let labelForEmailTextField = UILabel().then{
         $0.text = "ID (Email)"
-        $0.font = UIFont(name: "Avenir-Black", size: 25)
+        $0.font = UIFont(name: "Avenir", size: 25)
+//        $0.textColor = UIColor.customColor(.pointColor)
     }
     private let labelForPasswordTextField = UILabel().then{
         $0.text = "Password"
-        $0.font = UIFont(name: "Avenir-Black", size: 25)
+        $0.font = UIFont(name: "Avenir", size: 25)
+//        $0.textColor = UIColor.customColor(.pointColor)
     }
     private let labelForCheckpasswordTextField = UILabel().then{
         $0.text = "Check password"
-        $0.font = UIFont(name: "Avenir-Black", size: 25)
+        $0.font = UIFont(name: "Avenir", size: 25)
+//        $0.textColor = UIColor.customColor(.pointColor)
     }
 
     // width, height 의 의미가 있을까?
