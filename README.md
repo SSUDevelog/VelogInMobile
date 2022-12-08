@@ -82,7 +82,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 <img width="453" alt="스크린샷 2022-12-07 오후 4 30 55" src="https://user-images.githubusercontent.com/83629193/206118938-10cbc0ea-4070-4072-8697-600bffbc6547.png">
 
 
-## 1.3 프로그램 파일 분할
+## 1.5 프로그램 파일 분할
 
 <img width="400" alt="스크린샷 2022-12-07 오후 4 41 04" src="https://user-images.githubusercontent.com/83629193/206119199-6a00553b-c4db-437c-8770-f51142ad5819.png">
 <img width="399" alt="스크린샷 2022-12-07 오후 4 48 41" src="https://user-images.githubusercontent.com/83629193/206119257-552af41c-d9ad-4adf-8881-ebf659c3ac2e.png">
