@@ -78,6 +78,22 @@ class PostWebViewController: UIViewController {
 
         
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // check network
+        guard Reachability.networkConnected() else {
+            let alert = UIAlertController(title: "NetworkError", message: "네트워크가 연결되어있지 않습니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "종료", style: .default) { (action) in
+                exit(0)
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+    }
 
     func loadPostWebView(isComeFrom:Int){
         
