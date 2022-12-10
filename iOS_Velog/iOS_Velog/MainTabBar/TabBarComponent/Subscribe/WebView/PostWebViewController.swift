@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import NVActivityIndicatorView
 import RxSwift
+import SwiftSoup
 
 class PostWebViewController: UIViewController {
 
@@ -107,7 +108,8 @@ class PostWebViewController: UIViewController {
                 //            print("url")
                 print(PostURL.absoluteString)
                 //            print(PostURL)
-                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+//                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+                self.crawl(inputUrl: encodedStr)
             }else{
                 print("해당하는 URL이 존재하지 않습니다.")
             }
@@ -121,7 +123,8 @@ class PostWebViewController: UIViewController {
     //            print("url")
                 print(PostURL.absoluteString)
     //            print(PostURL)
-                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+//                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+                self.crawl(inputUrl: encodedStr)
             }else{
                 print("해당하는 URL이 존재하지 않습니다.")
             }
@@ -146,6 +149,31 @@ class PostWebViewController: UIViewController {
         }else{
             print("해당하는 URL이 존재하지 않습니다.")
         }
+    }
+    
+    func crawl(inputUrl:String){
+        let url = URL(string: inputUrl)
+
+        guard let myURL = url else {   return    }
+
+        do {
+            let html = try String(contentsOf: myURL, encoding: .utf8)
+            let doc: Document = try SwiftSoup.parse(html)
+            let headerTitle = try doc.title()
+            print(headerTitle)
+
+            let firstLinkTitles:Elements = try doc.select(".head-wrapper").select("h1") //.은 클래스
+            for i in firstLinkTitles {
+                print("title: ", try i.text())
+            }
+
+
+        } catch Exception.Error(let type, let message) {
+            print("Message: \(message)")
+        } catch {
+            print("error")
+        }
+
     }
     
     
