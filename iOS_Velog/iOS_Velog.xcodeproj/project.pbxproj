@@ -60,6 +60,7 @@
 		91C277192917EB0600F5F53B /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277182917EB0600F5F53B /* SignInModel.swift */; };
 		91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2771A2917EC1D00F5F53B /* SignInRequest.swift */; };
 		91C35509293DE8B40087ADD1 /* DeleteTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C35508293DE8B40087ADD1 /* DeleteTag.swift */; };
+		91D0649C294477FC00E99C7C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0649B294477FC00E99C7C /* Reachability.swift */; };
 		91D342AC294066EB00251C56 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D342AB294066EB00251C56 /* UIViewController.swift */; };
 		91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F4293B9FB9005084A2 /* TagUrlList.swift */; };
 		91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F6293BA056005084A2 /* BaseURL.swift */; };
@@ -122,6 +123,7 @@
 		91C277182917EB0600F5F53B /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		91C2771A2917EC1D00F5F53B /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		91C35508293DE8B40087ADD1 /* DeleteTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTag.swift; sourceTree = "<group>"; };
+		91D0649B294477FC00E99C7C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		91D342AB294066EB00251C56 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		91DA86F4293B9FB9005084A2 /* TagUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUrlList.swift; sourceTree = "<group>"; };
 		91DA86F6293BA056005084A2 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
+				91D0649B294477FC00E99C7C /* Reachability.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
 				91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
+				91D0649C294477FC00E99C7C /* Reachability.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
 				91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */,
