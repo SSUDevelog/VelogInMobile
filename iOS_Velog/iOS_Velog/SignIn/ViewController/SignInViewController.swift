@@ -15,7 +15,9 @@ import RealmSwift
 
 class SignInViewController: UIViewController {
 
-    
+    static var FcmToken:String!
+    static var ID:String!
+    static var PW:String!
     
     // MoyaTarget과 상호작용하는 MoyaProvider를 생성하기 위해 MoyaProvider인스턴스 생성
     private let provider = MoyaProvider<SignServices>()
@@ -88,6 +90,8 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         print("singIn")
+//        print(SignInViewController.FcmToken)
+        
         
 //        realm.resetDB()
         
@@ -96,15 +100,6 @@ class SignInViewController: UIViewController {
 //         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
 //         자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
-            concurrentQueue.async {
-                self.getServerTag()
-                print("async1")
-            }
-            concurrentQueue.async {
-                self.getServer()
-                print("async2")
-            }
-
             ifSuccessPushHome()
         }
 
@@ -188,6 +183,10 @@ class SignInViewController: UIViewController {
                         // 로컬에 토큰 저장
                         self.addTokenInRealm(item: responseData.token)
                         print("ok you sign in")
+                        self.realm.addProfile(ID: self.EmailTextField.text ?? "", PW: self.PasswordTextField.text ?? "")
+                        print(self.realm.getProfileID(),self.realm.getProfilePW())
+                        SignInViewController.ID = self.EmailTextField.text ?? ""
+                        SignInViewController.PW = self.PasswordTextField.text ?? ""
                         self.ifSuccessPushHome()
                     } catch(let err) {
                         print(err.localizedDescription)
@@ -211,8 +210,8 @@ class SignInViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { okAction in   // 여기에 클로저 형태로 이후 이벤트 구현
             
             // 텍스트 필드 초기화
-            self.EmailTextField.text = ""
-            self.PasswordTextField.text = ""
+//            self.EmailTextField.text = ""
+//            self.PasswordTextField.text = ""
             
         })
     

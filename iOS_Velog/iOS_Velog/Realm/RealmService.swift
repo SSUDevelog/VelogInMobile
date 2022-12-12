@@ -28,12 +28,30 @@ class RealmService{
         }
     }
     
+    func addProfile(ID:String,PW:String){
+        let profile = Profile(ID: ID, PW: PW)
+        try! localRealm.write{
+            localRealm.add(profile)
+        }
+    }
+    
     func getToken()->String{
         let token = localRealm.objects(Token.self)
-//        return token[0].token
+        //        return token[0].token
         // 가장 마지막 토큰을 헤더에 넣기
         return token.last?.token ?? ""
     }
+    
+    func getProfileID()->String{
+        let profile = localRealm.objects(Profile.self)
+        return profile.last?.ID ?? ""
+    }
+    
+    func getProfilePW()->String{
+        let profile = localRealm.objects(Profile.self)
+        return profile.last?.PW ?? ""
+    }
+    
     
     func delete(deleteId:String) {
         try! localRealm.write{

@@ -49,6 +49,7 @@
 		918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB572939100F000C016E /* HomeTabViewController.swift */; };
 		9191602829256BE200497AC9 /* userList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191602729256BE200497AC9 /* userList.swift */; };
 		91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */; };
+		91ACBB0329479B930079B358 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACBB0229479B930079B358 /* Profile.swift */; };
 		91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD128F80142005159AD /* SearchKeywordViewController.swift */; };
 		91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */; };
 		91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD928F83DB1005159AD /* ProfileViewController.swift */; };
@@ -118,6 +119,7 @@
 		918CDB572939100F000C016E /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTabViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/HomeTabViewController.swift; sourceTree = SOURCE_ROOT; };
 		9191602729256BE200497AC9 /* userList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userList.swift; sourceTree = "<group>"; };
 		91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		91ACBB0229479B930079B358 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		91B73FD128F80142005159AD /* SearchKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordViewController.swift; sourceTree = "<group>"; };
 		91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		91B73FD928F83DB1005159AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				9160AB8D291E1D4300079BF9 /* Token.swift */,
+				91ACBB0229479B930079B358 /* Profile.swift */,
 				9172F29F2916340600C6C890 /* Subscriber.swift */,
 				9172F2A12916358900C6C890 /* RealmService.swift */,
 			);
@@ -619,6 +622,7 @@
 				91C277172917E86600F5F53B /* SignUpModel.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
 				91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */,
+				91ACBB0329479B930079B358 /* Profile.swift in Sources */,
 				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				91D0649C294477FC00E99C7C /* Reachability.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,

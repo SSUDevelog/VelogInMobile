@@ -15,14 +15,15 @@ class HomeViewController: UIViewController {
     
     private let provider = MoyaProvider<SubscriberService>()
     private let providerForTag = MoyaProvider<TagService>()
+    private let providerForSignIn = MoyaProvider<SignServices>()
     static var url:String = ""
+    
+    let realm = RealmService()
     
     let tableViewForTagPost : UITableView = {
         let tableview = UITableView()
         return tableview
     }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,10 @@ class HomeViewController: UIViewController {
         tableViewForTagPost.dataSource = self
         
         tableViewForTagPost.reloadData()
+        
+        // 일단 빌드 한번할 때 마다 SignIn API 호출하고 있다.
+        self.postServer()
+
         
         setUI()
     }
@@ -61,6 +66,37 @@ class HomeViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-30)
             $0.bottom.equalToSuperview().offset(-90)
         }
+    }
+    
+    func postServer(){
+        // server
+        
+        let id = self.realm.getProfileID()
+        let pw = self.realm.getProfilePW()
+        
+        let param = SignInRequest.init(SignInViewController.FcmToken, id, pw)
+        print(param)
+        self.providerForSignIn.request(.signIn(param: param)){ response in
+            switch response {
+                case .success(let moyaResponse):
+                    do {
+                        let responseData = try moyaResponse.map(SigninResponse.self)
+                        // 로컬에 토큰 저장
+                        self.addTokenInRealm(item: responseData.token)
+                        print("this is your second signIn")
+                    } catch(let err) {
+                        print(err.localizedDescription)
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+            }
+        }
+    }
+
+    func addTokenInRealm(item:String){
+        // add token in realm
+        realm.addToken(item: item)
+        print(item)
     }
 
     
