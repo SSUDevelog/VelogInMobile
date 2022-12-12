@@ -52,7 +52,7 @@ class LoadingViewController: UIViewController {
             self.getServer()
             print("async2")
         }
-        
+
         concurrentQueue.async {
             self.getPostDataServer()
             print("async3")
@@ -104,7 +104,7 @@ class LoadingViewController: UIViewController {
                 do{
 
                     print(moyaResponse.statusCode)
-                    userList.List = try moyaResponse.mapJSON() as! [String]
+                    userList.List = try moyaResponse.mapJSON() as! [String] // 여기 예외처리 필요
 
                 }catch(let err) {
                     print(err.localizedDescription)

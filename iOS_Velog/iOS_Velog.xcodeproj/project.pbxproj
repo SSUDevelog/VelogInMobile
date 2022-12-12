@@ -41,6 +41,9 @@
 		917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1C528F465B3004EF8DB /* UIStackView+.swift */; };
 		917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917AA1CB28F46BB4004EF8DB /* UIView+.swift */; };
 		917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 917AA1CE28F4738B004EF8DB /* SnapKit */; };
+		917C40C52947478C004146F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 917C40C42947478C004146F0 /* GoogleService-Info.plist */; };
+		917C40C829474874004146F0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 917C40C729474874004146F0 /* FirebaseAnalytics */; };
+		917C40CA29474874004146F0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 917C40C929474874004146F0 /* FirebaseMessaging */; };
 		918CDB5429390A59000C016E /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB5329390A59000C016E /* TagViewController.swift */; };
 		918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB5529390D36000C016E /* AddTagViewController.swift */; };
 		918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB572939100F000C016E /* HomeTabViewController.swift */; };
@@ -108,6 +111,8 @@
 		917AA1C328F46053004EF8DB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		917AA1C528F465B3004EF8DB /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		917AA1CB28F46BB4004EF8DB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		917C40C42947478C004146F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		917C40CB294749FF004146F0 /* iOS_VelogDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_VelogDebug.entitlements; sourceTree = "<group>"; };
 		918CDB5329390A59000C016E /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/TagList/TagViewController.swift; sourceTree = SOURCE_ROOT; };
 		918CDB5529390D36000C016E /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTagViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/SearchTag/AddTagViewController.swift; sourceTree = SOURCE_ROOT; };
 		918CDB572939100F000C016E /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTabViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/HomeTabViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -146,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917C40C829474874004146F0 /* FirebaseAnalytics in Frameworks */,
 				91C277072917A3D100F5F53B /* ReactiveMoya in Frameworks */,
 				9168AD5E290FBC2200BA42E2 /* RealmSwift in Frameworks */,
 				9168AD5C290FBC2200BA42E2 /* Realm in Frameworks */,
@@ -157,6 +163,7 @@
 				9109F26929367A5400DDE54B /* Kingfisher in Frameworks */,
 				91178E112934B90E00A9BDE7 /* NVActivityIndicatorView in Frameworks */,
 				91178E132934B90E00A9BDE7 /* NVActivityIndicatorViewExtended in Frameworks */,
+				917C40CA29474874004146F0 /* FirebaseMessaging in Frameworks */,
 				917AA1CF28F4738B004EF8DB /* SnapKit in Frameworks */,
 				91178E0A2934A79300A9BDE7 /* SwiftSoup in Frameworks */,
 			);
@@ -301,6 +308,7 @@
 		916AEB9B28F1675F000B2DA0 /* iOS_Velog */ = {
 			isa = PBXGroup;
 			children = (
+				917C40CB294749FF004146F0 /* iOS_VelogDebug.entitlements */,
 				91C276FE2917A12400F5F53B /* Moya */,
 				9172F29E291633ED00C6C890 /* Realm */,
 				91B73FDB28F83EDB005159AD /* MainTabBar */,
@@ -312,6 +320,7 @@
 				916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */,
 				916AEBA528F16762000B2DA0 /* Assets.xcassets */,
 				916AEBA728F16762000B2DA0 /* LaunchScreen.storyboard */,
+				917C40C42947478C004146F0 /* GoogleService-Info.plist */,
 				916AEBAA28F16762000B2DA0 /* Info.plist */,
 			);
 			path = iOS_Velog;
@@ -524,6 +533,8 @@
 				91178E102934B90E00A9BDE7 /* NVActivityIndicatorView */,
 				91178E122934B90E00A9BDE7 /* NVActivityIndicatorViewExtended */,
 				9109F26829367A5400DDE54B /* Kingfisher */,
+				917C40C729474874004146F0 /* FirebaseAnalytics */,
+				917C40C929474874004146F0 /* FirebaseMessaging */,
 			);
 			productName = iOS_Velog;
 			productReference = 916AEB9928F1675F000B2DA0 /* iOS_Velog.app */;
@@ -562,6 +573,7 @@
 				91178E082934A79300A9BDE7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				91178E0F2934B90D00A9BDE7 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				9109F26729367A5400DDE54B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				917C40C629474873004146F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 916AEB9A28F1675F000B2DA0 /* Products */;
 			projectDirPath = "";
@@ -579,6 +591,7 @@
 			files = (
 				916AEBA928F16762000B2DA0 /* LaunchScreen.storyboard in Resources */,
 				916AEBA628F16762000B2DA0 /* Assets.xcassets in Resources */,
+				917C40C52947478C004146F0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +795,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS_Velog/iOS_VelogDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D96A3BCL3R;
@@ -905,6 +919,14 @@
 				kind = branch;
 			};
 		};
+		917C40C629474873004146F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		91C277012917A3D100F5F53B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -963,6 +985,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 917AA1CD28F4738B004EF8DB /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		917C40C729474874004146F0 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 917C40C629474873004146F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		917C40C929474874004146F0 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 917C40C629474873004146F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		91C277022917A3D100F5F53B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

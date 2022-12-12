@@ -253,7 +253,7 @@ class SignInViewController: UIViewController {
                 do{
 //                    print(moyaResponse.statusCode)
                     print("getServerTag")
-                    userTag.List = try moyaResponse.mapJSON() as! [String]
+                    userTag.List = try moyaResponse.mapJSON() as! [String]  // 여기도 예외처리 필요
 //                    print(userTag.List)
                     
                     DispatchQueue.main.async {
