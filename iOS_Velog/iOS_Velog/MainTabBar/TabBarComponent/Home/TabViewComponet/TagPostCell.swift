@@ -63,11 +63,11 @@ class TagPostCell: UITableViewCell {
     
     lazy var GlobalstackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [imgView,UserAndDateStackView,title,textView])
-        stackView.spacing = 5
+//        stackView.spacing = 5
 //        stackView.backgroundColor = .blue
         stackView.alignment = .fill
-        stackView.distribution = .fill
-//        stackView.distribution = .fillProportionally // 이걸로 하면 다 나온다... 왜지
+//        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally // 이걸로 하면 다 나온다... 왜지
         stackView.axis = .vertical
         contentView.addSubview(stackView)
         

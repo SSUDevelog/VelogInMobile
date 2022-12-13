@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 extension AppDelegate : MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         SignInViewController.FcmToken = fcmToken
-//        print("파이어베이스 토큰: \(String(describing: fcmToken))")
+        print("파이어베이스 토큰: \(String(describing: fcmToken))")
 //        print(SignInViewController.FcmToken!)
     }
 //    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
