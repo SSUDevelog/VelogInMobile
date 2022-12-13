@@ -54,9 +54,9 @@ class CustomTabBarController: UITabBarController{
         self.setViewControllers(ViewControllers, animated: true)
 
         homeVC.tabBarItem.image = UIImage(systemName: "house")
-        PostListVC.tabBarItem.image = UIImage(systemName: "scribble")
+        PostListVC.tabBarItem.image = UIImage(systemName: "person.2")
         subScribeVC.tabBarItem.image = UIImage(systemName: "megaphone")
-        profileVC.tabBarItem.image = UIImage(systemName: "person")
+        profileVC.tabBarItem.image = UIImage(systemName: "person.crop.square")
         
         //네비게이션 뷰컨으로 푸쉬했을 때 밑에 바가 사라지지 않도록
         self.hidesBottomBarWhenPushed = false
