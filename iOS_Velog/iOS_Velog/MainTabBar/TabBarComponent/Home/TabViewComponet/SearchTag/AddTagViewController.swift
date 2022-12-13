@@ -143,6 +143,7 @@ class AddTagViewController: UIViewController {
         return true
     }
     
+    // 시간 딜레이 함수
     func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()

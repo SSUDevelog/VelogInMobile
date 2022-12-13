@@ -59,7 +59,7 @@ class TabViewController: TabmanViewController {
         view.addSubview(customContainer)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(90)
+            make.top.equalToSuperview().offset(70)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-100)
         }
@@ -70,9 +70,9 @@ class TabViewController: TabmanViewController {
         }
         
         customContainer.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(30)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(50)
-            make.trailing.equalToSuperview().offset(50)
+            make.trailing.equalToSuperview().offset(-50)
         }
     }
     
