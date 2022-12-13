@@ -64,6 +64,7 @@
 		91C277192917EB0600F5F53B /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C277182917EB0600F5F53B /* SignInModel.swift */; };
 		91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C2771A2917EC1D00F5F53B /* SignInRequest.swift */; };
 		91C35509293DE8B40087ADD1 /* DeleteTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C35508293DE8B40087ADD1 /* DeleteTag.swift */; };
+		91C7997F29485FEF0029AC10 /* isUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C7997E29485FEF0029AC10 /* isUser.swift */; };
 		91D0649C294477FC00E99C7C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0649B294477FC00E99C7C /* Reachability.swift */; };
 		91D342AC294066EB00251C56 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D342AB294066EB00251C56 /* UIViewController.swift */; };
 		91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F4293B9FB9005084A2 /* TagUrlList.swift */; };
@@ -130,6 +131,7 @@
 		91C277182917EB0600F5F53B /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		91C2771A2917EC1D00F5F53B /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		91C35508293DE8B40087ADD1 /* DeleteTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTag.swift; sourceTree = "<group>"; };
+		91C7997E29485FEF0029AC10 /* isUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isUser.swift; sourceTree = "<group>"; };
 		91D0649B294477FC00E99C7C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		91D342AB294066EB00251C56 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		91DA86F4293B9FB9005084A2 /* TagUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUrlList.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		9172F29E291633ED00C6C890 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				91C7997E29485FEF0029AC10 /* isUser.swift */,
 				9160AB8D291E1D4300079BF9 /* Token.swift */,
 				91ACBB0229479B930079B358 /* Profile.swift */,
 				9172F29F2916340600C6C890 /* Subscriber.swift */,
@@ -610,6 +613,7 @@
 				91D342AC294066EB00251C56 /* UIViewController.swift in Sources */,
 				91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */,
 				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
+				91C7997F29485FEF0029AC10 /* isUser.swift in Sources */,
 				91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */,
 				91FFF3292939DCA500D80859 /* TagPostModel.swift in Sources */,
 				9191602829256BE200497AC9 /* userList.swift in Sources */,

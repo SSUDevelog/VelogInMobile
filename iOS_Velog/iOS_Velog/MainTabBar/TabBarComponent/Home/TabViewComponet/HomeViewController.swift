@@ -43,9 +43,11 @@ class HomeViewController: UIViewController {
         
         tableViewForTagPost.reloadData()
         
-        // 일단 빌드 한번할 때 마다 SignIn API 호출하고 있다.
-        self.postServer()
-
+        if realm.getIsUser() != "true" {
+            // 일단 빌드 한번할 때 마다 SignIn API 호출하고 있다.
+            print("FCM 토큰 넣고 로그인 API 한번 더 호출")
+            self.postServer()
+        }
         
         setUI()
     }
@@ -83,6 +85,7 @@ class HomeViewController: UIViewController {
                         let responseData = try moyaResponse.map(SigninResponse.self)
                         // 로컬에 토큰 저장
                         self.addTokenInRealm(item: responseData.token)
+                        self.addIsUserInRealm(input: "true")
                         print("this is your second signIn")
                     } catch(let err) {
                         print(err.localizedDescription)
@@ -98,6 +101,12 @@ class HomeViewController: UIViewController {
         realm.addToken(item: item)
         print(item)
     }
+    
+    func addIsUserInRealm(input:String){
+        realm.addisUser(input: input)
+        print(input)
+    }
+    
 
     
     func getPostDataServer(){

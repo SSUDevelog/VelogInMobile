@@ -35,6 +35,14 @@ class RealmService{
         }
     }
     
+    // 여기서 isUser는 FCM Token을 넣은 상태의 SignIn API를 호출한 유저를 뜻함
+    func addisUser(input:String){
+        let isUser = isUser(input: input)
+        try! localRealm.write{
+            localRealm.add(isUser)
+        }
+    }
+    
     func getToken()->String{
         let token = localRealm.objects(Token.self)
         //        return token[0].token
@@ -52,6 +60,10 @@ class RealmService{
         return profile.last?.PW ?? ""
     }
     
+    func getIsUser()->String{
+        let isUser = localRealm.objects(isUser.self)
+        return isUser.last?.isuser ?? ""
+    }
     
     func delete(deleteId:String) {
         try! localRealm.write{
