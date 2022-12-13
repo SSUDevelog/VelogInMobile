@@ -90,23 +90,28 @@ class SignInViewController: UIViewController {
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
         print("singIn")
-//        print(SignInViewController.FcmToken)
+        //        print(SignInViewController.FcmToken)
         
         
 //        realm.resetDB()
         
         
         self.dismissKeyboard()
-//         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
-//         자동로그인 시 새로운 토큰 발급 받지 않는다
+        //         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
+        //         자동로그인 시 새로운 토큰 발급 받지 않는다
         if checkRealmToken() {
             ifSuccessPushHome()
         }
-
-        self.navigationItem.hidesBackButton = true 
+        
+        self.navigationItem.hidesBackButton = true
         
         setUIForSignIn()
     }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        print(SignInViewController.FcmToken!)
+//        print(AppDelegate.FcmToken ?? "")
+//    }
 
     func setUIForSignIn(){
         view.addSubview(titleLabel)
