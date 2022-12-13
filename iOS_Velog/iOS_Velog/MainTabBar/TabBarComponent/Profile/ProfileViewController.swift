@@ -89,20 +89,20 @@ class ProfileViewController: UIViewController {
         
         let alert = UIAlertController(title: "로그아웃", message: "정말 로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
 
-        let okAction = UIAlertAction(title: "예", style: .default, handler: { okAction in
+        let okAction = UIAlertAction(title: "예", style: .destructive, handler: { okAction in
             // 여기에 클로저 형태로 이후 이벤트 구현
             print("예")
             // 로컬 DB 초기화
             self.realm.resetDB()
-            
+            // 일단 보류...
             
             
 //            self.realm.addToken(item: "")
 //            self.realm.addProfile(ID: "", PW: "")
 //            print(self.realm.getToken())
-            let nextVC = SignInViewController()
+//            let nextVC = SignInViewController()
 //            self.realm.resetDB()
-            self.navigationController?.pushViewController(nextVC, animated: true)
+//            self.navigationController?.pushViewController(nextVC, animated: true)
         })
         
         let noAction = UIAlertAction(title: "아니요", style: .default, handler: { okAction in
@@ -121,7 +121,7 @@ class ProfileViewController: UIViewController {
         
         let alert = UIAlertController(title: "회원탈퇴", message: "정말 탈퇴 하시겠습니까? 기존 정보가 사라집니다.", preferredStyle: UIAlertController.Style.alert)
 
-        let okAction = UIAlertAction(title: "예", style: .default, handler: { okAction in
+        let okAction = UIAlertAction(title: "예", style: .destructive, handler: { okAction in
             // 여기에 클로저 형태로 이후 이벤트 구현
             print("예")
         })
