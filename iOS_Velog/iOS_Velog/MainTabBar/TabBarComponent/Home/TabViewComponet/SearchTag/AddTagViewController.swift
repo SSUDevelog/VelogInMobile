@@ -143,6 +143,12 @@ class AddTagViewController: UIViewController {
         return true
     }
     
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
+    
     // 태그 추가
     func addTag(tag:String){
         let param = AddTag(tag)
@@ -152,8 +158,14 @@ class AddTagViewController: UIViewController {
                 do{
                     print(moyaResponse.statusCode)
                     print("최종추가됨")
+                    
                     self.label.text = "키워드가 추가 되었습니다."
                     self.label.textColor = UIColor.customColor(.pointColor)
+                    
+                    self.delayWithSeconds(1) {
+                        self.label.text = ""
+                    }
+                    
                     self.getServerTag()
                     self.getTagPostDataServer()
                 }catch(let err){

@@ -151,17 +151,27 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                     if self.checkDoubleSubscription(inputId: responseData.userName) == false {
                         self.label.text = "이미 구독한 유저입니다."
                         self.label.textColor = .red
-                        self.textField.text = ""
+                        self.delayWithSeconds(1) {
+                            self.label.text = ""
+//                            self.textField.text = ""
+                        }
                     }else if responseData.validate == true {
                         print("구독자 추가 성공!")
                         self.label.textColor = UIColor.customColor(.pointColor)
                         self.label.text = "구독 추가 되었습니다."
+                        self.delayWithSeconds(1) {
+                            self.label.text = ""
+//                            self.textField.text = ""
+                        }
                         // 최종 구독자 추가
                         self.addSubscriber(Id: id)
                     }else {
                         print("없는 사용자입니다.")
                         self.label.text = "없는 사용자입니다."
-                        self.textField.text = ""
+                        self.delayWithSeconds(1) {
+                            self.label.text = ""
+//                            self.textField.text = ""
+                        }
                     }
                 }catch(let err){
                     print(err.localizedDescription)
@@ -169,6 +179,12 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             case .failure(let err):
                 print(err.localizedDescription)
             }
+        }
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
     }
     
@@ -181,6 +197,8 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                 do{
                     print(moyaResponse.statusCode)
                     print("최종추가됨")
+                    
+                    
                     self.getServer()
                     self.getPostDataServer()
                 }catch(let err){

@@ -156,17 +156,44 @@ extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource 
         return 55
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+//        if editingStyle == .delete {
+//            tableView.beginUpdates()
+//            self.deleteSubscriberList(targetName: userList.List.remove(at: indexPath.row))
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.endUpdates()
+//        }
+//    }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        
+        let alert = UIAlertController(title: "구독자 삭제", message: "해당 구독자를 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+
+        let okAction = UIAlertAction(title: "예", style: .destructive, handler: { okAction in
+            // 여기에 클로저 형태로 이후 이벤트 구현
+            print("예")
             tableView.beginUpdates()
             self.deleteSubscriberList(targetName: userList.List.remove(at: indexPath.row))
+
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-        }
+        })
+        
+        let noAction = UIAlertAction(title: "아니요", style: .default, handler: { okAction in
+            // 여기에 클로저 형태로 이후 이벤트 구현
+            print("아니요")
+        })
+        
+        alert.addAction(okAction)
+        alert.addAction(noAction)
+        
+        present(alert, animated: true, completion: nil)
     }
+    
     
 }
