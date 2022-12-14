@@ -191,7 +191,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     
     // 구독자 최종 추가
     func addSubscriber(Id:String){
-        let param = AddRequest("temporaryFCMToken", Id)
+        let param = AddRequest(SignInViewController.FcmToken, Id)
         self.provider.request(.addSubscriber(param: param)){ response in
             switch response{
             case .success(let moyaResponse):

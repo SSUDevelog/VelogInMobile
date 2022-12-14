@@ -175,14 +175,14 @@ class HomeViewController: UIViewController {
     }
     
     // webView 푸시
-    func pushWebView(){
+    func pushWebView(url:String){
         print("finish to push WebView")
-        
-        let nextVC = PostWebViewController()
+
+        let nextVC = PostWebViewController(url: url)
         nextVC.isComeFrom = 1
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
+
     func resetURL(indexSize:Int){
         
         urlList.list.removeAll()
@@ -215,7 +215,7 @@ extension HomeViewController : UITableViewDelegate {
         
 //        PostWebViewController.url = URL(string: url)
         print(HomeViewController.url)  // 일단 좋아!!! 여기까지
-        self.pushWebView()
+        self.pushWebView(url: HomeViewController.url)
     }
 }
 

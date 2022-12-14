@@ -19,6 +19,7 @@
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
 		914A26E82937CF6E00F67BA0 /* urlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A26E72937CF6E00F67BA0 /* urlList.swift */; };
+		915020152949C9480055DED8 /* SubscriberPostWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915020142949C9480055DED8 /* SubscriberPostWebView.swift */; };
 		9160AB8E291E1D4300079BF9 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160AB8D291E1D4300079BF9 /* Token.swift */; };
 		916827A7292A2FCA00DDA369 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916827A6292A2FCA00DDA369 /* PostModel.swift */; };
 		916827A9292A487B00DDA369 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916827A8292A487A00DDA369 /* PostData.swift */; };
@@ -93,6 +94,7 @@
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
 		914A26E72937CF6E00F67BA0 /* urlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = urlList.swift; sourceTree = "<group>"; };
+		915020142949C9480055DED8 /* SubscriberPostWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberPostWebView.swift; sourceTree = "<group>"; };
 		9160AB8D291E1D4300079BF9 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		916827A6292A2FCA00DDA369 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		916827A8292A487A00DDA369 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
@@ -179,7 +181,6 @@
 		9109F2662935E84D00DDE54B /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
 				91D0649B294477FC00E99C7C /* Reachability.swift */,
 			);
 			path = WebView;
@@ -276,6 +277,7 @@
 		9142D79C292CEC2700D9BB7C /* TabBarComponent */ = {
 			isa = PBXGroup;
 			children = (
+				9109F2662935E84D00DDE54B /* WebView */,
 				918CDB5929391638000C016E /* Home */,
 				91B73FDC28F83EEE005159AD /* Subscribe */,
 				91E47775292BD1E000AFC26E /* Notification */,
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				918CDB572939100F000C016E /* HomeTabViewController.swift */,
+				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
 				91FFF3202939D1EB00D80859 /* Resoure */,
 				918CDB5A2939168A000C016E /* TabViewComponet */,
 			);
@@ -416,8 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				91E47772292BAC6500AFC26E /* TabViewController.swift */,
+				915020142949C9480055DED8 /* SubscriberPostWebView.swift */,
 				9142D798292CEB0D00D9BB7C /* Resource */,
-				9109F2662935E84D00DDE54B /* WebView */,
 				912D275A291A2CAF004382BB /* SubScribePost */,
 				9170F13E291549040056E182 /* SubscribeList */,
 				912D275B291A2CC9004382BB /* SearchSubScribe */,
@@ -614,6 +617,7 @@
 				91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */,
 				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
 				91C7997F29485FEF0029AC10 /* isUser.swift in Sources */,
+				915020152949C9480055DED8 /* SubscriberPostWebView.swift in Sources */,
 				91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */,
 				91FFF3292939DCA500D80859 /* TagPostModel.swift in Sources */,
 				9191602829256BE200497AC9 /* userList.swift in Sources */,
