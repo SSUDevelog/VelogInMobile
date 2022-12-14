@@ -14,7 +14,6 @@ class AddTagViewController: UIViewController {
     
     // for server
     private let provider = MoyaProvider<TagService>()
-//    var responseData
     
     // prevent UIButton double touch
     var preventButtonTouch = false
@@ -23,10 +22,6 @@ class AddTagViewController: UIViewController {
     let titleLabel = UILabel().then {
         $0.text = "Add Your Keywords"
         $0.font = UIFont(name: "Avenir-Black", size: 20)
-    }
-    let titleLabel2 = UILabel().then {
-        $0.text = "New Keyword"
-        $0.font = UIFont(name: "Avenir-Black", size: 40)
     }
     
     let AddTagBtn = UIButton().then {
@@ -68,7 +63,6 @@ class AddTagViewController: UIViewController {
         view.backgroundColor = .systemBackground
 
         view.addSubviews(titleLabel)
-//        view.addSubviews(titleLabel2)
         view.addSubviews(textField)
         view.addSubviews(label)
         view.addSubviews(AddTagBtn)
@@ -77,28 +71,20 @@ class AddTagViewController: UIViewController {
             $0.top.equalToSuperview().offset(60)
             $0.centerX.equalToSuperview()
         }
-//        titleLabel2.snp.makeConstraints{
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
-//            $0.centerX.equalTo(titleLabel)
-//        }
         
         textField.snp.makeConstraints { make in
-//            make.top.equalTo(titleLabel2.snp.bottom).offset(60)
             make.top.equalTo(titleLabel.snp.bottom).offset(35)
-//            make.centerX.equalTo(titleLabel2)
             make.leading.equalToSuperview().offset(41)
             make.trailing.equalToSuperview().offset(-47)
         }
         
         label.snp.makeConstraints{ make in
             make.top.equalTo(textField.snp.bottom).offset(5)
-//            make.centerX.equalTo(textField)
             make.leading.equalTo(textField.snp.leading)
         }
         
         AddTagBtn.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom).offset(50)
-//            make.leading.equalToSuperview().offset(150)
             make.leading.equalTo(textField.snp.leading)
             make.trailing.equalTo(textField.snp.trailing)
         }
@@ -234,8 +220,4 @@ class AddTagViewController: UIViewController {
         }
     }
 
-    
-    
-    
-    
 }

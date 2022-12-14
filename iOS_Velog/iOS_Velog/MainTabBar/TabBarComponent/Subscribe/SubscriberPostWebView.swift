@@ -16,7 +16,7 @@ import Alamofire
 
 class SubscriberPostWebView: UIViewController {
 
-    var isComeFrom: Int = 0
+//    var isComeFrom: Int = 0
     // isComeFrom == 1 : 홈(태그 추천 뷰)에서 호출한 경우
     // isComeFrom == 2 : 구독자 글 목록 뷰에서 호출한 경우
     
@@ -78,7 +78,7 @@ class SubscriberPostWebView: UIViewController {
         
         self.Queue()
         
-        loadPostWebView(isComeFrom: self.isComeFrom)
+        loadPostWebView()
 
         
     }
@@ -100,43 +100,22 @@ class SubscriberPostWebView: UIViewController {
     }
 
 
-    func loadPostWebView(isComeFrom:Int){
+    func loadPostWebView(){
         
-        if isComeFrom == 2 {
-            if SubScribeTableViewController.url != ""{
+        if SubScribeTableViewController.url != ""{
                 
-                let urlString = "https://velog.io\(SubScribeTableViewController.url)"
-                //            print(urlString)
-                guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
-                let PostURL = URL(string: encodedStr)!
-                //            print("url")
-                print(PostURL.absoluteString)
-                //            print(PostURL)
-                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
-//                self.crawl(inputUrl: encodedStr)
+            let urlString = "https://velog.io\(SubScribeTableViewController.url)"
+            //            print(urlString)
+            guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
+            let PostURL = URL(string: encodedStr)!
+            //            print("url")
+            print(PostURL.absoluteString)
+            //            print(PostURL)
+            webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
+//               self.crawl(inputUrl: encodedStr)
             }else{
                 print("해당하는 URL이 존재하지 않습니다.")
             }
-        }else if isComeFrom == 1 {
-            if HomeViewController.url != ""{
-                
-                let urlString = "https://velog.io\(HomeViewController.url)"
-    //            print(urlString)
-                guard let encodedStr = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return}
-                let PostURL = URL(string: encodedStr)!
-    //            print("url")
-                print(PostURL.absoluteString)
-    //            print(PostURL)
-                webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
-//                self.crawl(inputUrl: encodedStr)
-            }else{
-                print("해당하는 URL이 존재하지 않습니다.")
-            }
-        }else {
-            print("해당 URL이 존재하지 않습니다.")
-        }
-        
-        self.isComeFrom = 0
     }
     
     func loadPostWebViewForTag(){

@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseCore
 import UserNotifications
+import UserNotificationsUI
 
 
 @main
@@ -62,10 +63,20 @@ extension AppDelegate : MessagingDelegate {
 
 extension AppDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("foreground")
+//        print(notification.request.content
+        print(notification.request.content.body)    // body
+        print(notification.request.content.title)   // title
         completionHandler([.alert, .badge, .sound])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,didReceive response: UNNotificationResponse,withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("background")
+        print(response.notification.request.content.title)
+        print(response.notification.request.content.body)
+        print(response.notification.request.content.subtitle)
+        print(response.notification.request.content.badge)
+        // [completionHandler : 푸시 알림 상태창 표시]
         completionHandler()
     }
 }

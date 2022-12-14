@@ -23,10 +23,6 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         $0.text = "Add Your Subscribers"
         $0.font = UIFont(name: "Avenir-Black", size: 20)
     }
-    let titleLabel2 = UILabel().then {
-        $0.text = "Subscriber"
-        $0.font = UIFont(name: "Avenir-Black", size: 40)
-    }
     
     let AddSubscriberBtn = UIButton().then {
         $0.setTitle("구독 추가", for: .normal)
@@ -76,7 +72,6 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         view.backgroundColor = .systemBackground
 
         view.addSubviews(titleLabel)
-//        view.addSubviews(titleLabel2)
         view.addSubviews(textField)
         view.addSubviews(label)
         view.addSubviews(AddSubscriberBtn)
@@ -87,30 +82,21 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
             $0.centerX.equalToSuperview()
         }
         
-//        titleLabel2.snp.makeConstraints{
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
-//            $0.centerX.equalTo(titleLabel)
-//        }
-        
         textField.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(35)
-//            make.centerX.equalTo(titleLabel2)
             make.leading.equalToSuperview().offset(41)
             make.trailing.equalToSuperview().offset(-47)
         }
         
         label.snp.makeConstraints{ make in
             make.top.equalTo(textField.snp.bottom).offset(5)
-//            make.centerX.equalTo(textField)
             make.leading.equalTo(textField.snp.leading)
         }
         
         AddSubscriberBtn.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom).offset(50)
-//            make.leading.equalToSuperview().offset(150)
             make.leading.equalTo(textField.snp.leading)
             make.trailing.equalTo(textField.snp.trailing)
-            
         }
 
         
