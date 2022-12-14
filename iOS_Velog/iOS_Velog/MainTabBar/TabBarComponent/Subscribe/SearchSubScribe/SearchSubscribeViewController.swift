@@ -20,8 +20,8 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     var preventButtonTouch = false
     
     let titleLabel = UILabel().then {
-        $0.text = "Search"
-        $0.font = UIFont(name: "Avenir-Black", size: 40)
+        $0.text = "Add Your Subscribers"
+        $0.font = UIFont(name: "Avenir-Black", size: 20)
     }
     let titleLabel2 = UILabel().then {
         $0.text = "Subscriber"
@@ -31,18 +31,21 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
     let AddSubscriberBtn = UIButton().then {
         $0.setTitle("구독 추가", for: .normal)
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
-        $0.layer.cornerRadius = 10
+        $0.layer.cornerRadius = 4
         $0.backgroundColor = UIColor.customColor(.pointColor)
+        $0.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
         $0.addTarget(self, action: #selector(onTouchedButton), for: .touchDown)
     }
     
     let textField = UITextField().then{
         $0.placeholder = "velog 아이디를 입력해주세요."
+        $0.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
     }
     
     let label = UILabel().then{
         $0.text = ""
         $0.textColor = UIColor.red
+        $0.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
     }
 
 
@@ -73,35 +76,40 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
         view.backgroundColor = .systemBackground
 
         view.addSubviews(titleLabel)
-        view.addSubviews(titleLabel2)
+//        view.addSubviews(titleLabel2)
         view.addSubviews(textField)
-        view.addSubviews(AddSubscriberBtn)
         view.addSubviews(label)
+        view.addSubviews(AddSubscriberBtn)
         
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
+            $0.top.equalToSuperview().offset(60)
             $0.centerX.equalToSuperview()
         }
-        titleLabel2.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
-            $0.centerX.equalTo(titleLabel)
-        }
+        
+//        titleLabel2.snp.makeConstraints{
+//            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
+//            $0.centerX.equalTo(titleLabel)
+//        }
         
         textField.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel2.snp.bottom).offset(60)
-            make.centerX.equalTo(titleLabel2)
+            make.top.equalTo(titleLabel.snp.bottom).offset(35)
+//            make.centerX.equalTo(titleLabel2)
+            make.leading.equalToSuperview().offset(41)
+            make.trailing.equalToSuperview().offset(-47)
         }
         
         label.snp.makeConstraints{ make in
             make.top.equalTo(textField.snp.bottom).offset(5)
-            make.centerX.equalTo(textField)
+//            make.centerX.equalTo(textField)
+            make.leading.equalTo(textField.snp.leading)
         }
         
         AddSubscriberBtn.snp.makeConstraints { make in
-            make.top.equalTo(textField.snp.bottom).offset(90)
-            make.leading.equalToSuperview().offset(90)
-            make.trailing.equalToSuperview().offset(-90)
+            make.top.equalTo(textField.snp.bottom).offset(50)
+//            make.leading.equalToSuperview().offset(150)
+            make.leading.equalTo(textField.snp.leading)
+            make.trailing.equalTo(textField.snp.trailing)
             
         }
 
@@ -162,6 +170,7 @@ class SearchSubscribeViewController: UIViewController, UITextFieldDelegate{
                         self.delayWithSeconds(1) {
                             self.label.text = ""
 //                            self.textField.text = ""
+                            self.label.textColor = .red
                         }
                         // 최종 구독자 추가
                         self.addSubscriber(Id: id)
