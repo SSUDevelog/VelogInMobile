@@ -14,36 +14,34 @@ class AddTagViewController: UIViewController {
     
     // for server
     private let provider = MoyaProvider<TagService>()
-//    var responseData
     
     // prevent UIButton double touch
     var preventButtonTouch = false
     
 
     let titleLabel = UILabel().then {
-        $0.text = "Add"
-        $0.font = UIFont(name: "Avenir-Black", size: 40)
-    }
-    let titleLabel2 = UILabel().then {
-        $0.text = "New Keyword"
-        $0.font = UIFont(name: "Avenir-Black", size: 40)
+        $0.text = "Add Your Keywords"
+        $0.font = UIFont(name: "Avenir-Black", size: 20)
     }
     
     let AddTagBtn = UIButton().then {
         $0.setTitle("키워드 추가", for: .normal)
         $0.setTitleColor(UIColor.customColor(.defaultBackgroundColor), for: .normal)
-        $0.layer.cornerRadius = 10
+        $0.layer.cornerRadius = 4
+        $0.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
         $0.backgroundColor = UIColor.customColor(.pointColor)
         $0.addTarget(self, action: #selector(onTouchedButton), for: .touchDown)
     }
     
     let textField = UITextField().then{
         $0.placeholder = "키워드를 입력해주세요."
+        $0.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
     }
     
     let label = UILabel().then{
         $0.text = ""
         $0.textColor = UIColor.red
+        $0.font = UIFont(name: "Apple SD Gothic Neo", size: 16)
     }
 
     override func viewDidLoad() {
@@ -65,34 +63,30 @@ class AddTagViewController: UIViewController {
         view.backgroundColor = .systemBackground
 
         view.addSubviews(titleLabel)
-        view.addSubviews(titleLabel2)
         view.addSubviews(textField)
-        view.addSubviews(AddTagBtn)
         view.addSubviews(label)
+        view.addSubviews(AddTagBtn)
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(100)
+            $0.top.equalToSuperview().offset(60)
             $0.centerX.equalToSuperview()
-        }
-        titleLabel2.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
-            $0.centerX.equalTo(titleLabel)
         }
         
         textField.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel2.snp.bottom).offset(60)
-            make.centerX.equalTo(titleLabel2)
+            make.top.equalTo(titleLabel.snp.bottom).offset(35)
+            make.leading.equalToSuperview().offset(41)
+            make.trailing.equalToSuperview().offset(-47)
         }
         
         label.snp.makeConstraints{ make in
             make.top.equalTo(textField.snp.bottom).offset(5)
-            make.centerX.equalTo(textField)
+            make.leading.equalTo(textField.snp.leading)
         }
         
         AddTagBtn.snp.makeConstraints { make in
-            make.top.equalTo(textField.snp.bottom).offset(90)
-            make.leading.equalToSuperview().offset(90)
-            make.trailing.equalToSuperview().offset(-90)
+            make.top.equalTo(textField.snp.bottom).offset(50)
+            make.leading.equalTo(textField.snp.leading)
+            make.trailing.equalTo(textField.snp.trailing)
         }
         
     }
@@ -165,6 +159,7 @@ class AddTagViewController: UIViewController {
                     
                     self.delayWithSeconds(1) {
                         self.label.text = ""
+                        self.label.textColor = UIColor.red
                     }
                     
                     self.getServerTag()
@@ -225,8 +220,4 @@ class AddTagViewController: UIViewController {
         }
     }
 
-    
-    
-    
-    
 }

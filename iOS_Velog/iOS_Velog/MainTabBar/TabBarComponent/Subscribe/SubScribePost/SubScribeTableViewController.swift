@@ -99,8 +99,8 @@ class SubScribeTableViewController: UIViewController {
     // webView 푸시
     func pushWebView(){
         print("finish to push WebView")
-        let nextVC = PostWebViewController()
-        nextVC.isComeFrom = 2
+//        let nextVC = PostWebViewController()
+        let nextVC = SubscriberPostWebView()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

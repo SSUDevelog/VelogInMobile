@@ -28,9 +28,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
-        // 일단... 어디 넣을지 몰라서 ...
-//        getTagPostDataServer() // 서버 업데이트 되면 돌려보자
+    
+//        getTagPostDataServer()
         print("HomeView")
         // 데이터 띄우기 직전 뷰에서 서버 통신해서 데이터 미리 받아놓아야 한다!!
 //        getPostDataServer()
@@ -175,14 +174,13 @@ class HomeViewController: UIViewController {
     }
     
     // webView 푸시
-    func pushWebView(){
+    func pushWebView(url:String){
         print("finish to push WebView")
-        
-        let nextVC = PostWebViewController()
-        nextVC.isComeFrom = 1
+
+        let nextVC = PostWebViewController(url: url)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-    
+
     func resetURL(indexSize:Int){
         
         urlList.list.removeAll()
@@ -215,7 +213,7 @@ extension HomeViewController : UITableViewDelegate {
         
 //        PostWebViewController.url = URL(string: url)
         print(HomeViewController.url)  // 일단 좋아!!! 여기까지
-        self.pushWebView()
+        self.pushWebView(url: HomeViewController.url)
     }
 }
 

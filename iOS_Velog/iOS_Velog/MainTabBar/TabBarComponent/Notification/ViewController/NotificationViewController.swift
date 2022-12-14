@@ -104,7 +104,7 @@ class NotificationViewController: UIViewController {
         view.addSubview(no3Text)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(90)
+            make.top.equalToSuperview().offset(70)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().offset(-100)
         }

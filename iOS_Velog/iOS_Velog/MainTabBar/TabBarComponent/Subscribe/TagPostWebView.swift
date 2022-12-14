@@ -1,8 +1,8 @@
 //
-//  PostWebViewController.swift
+//  TagPostWebView.swift
 //  iOS_Velog
 //
-//  Created by 홍준혁 on 2022/11/28.
+//  Created by 홍준혁 on 2022/12/14.
 //
 
 import UIKit
@@ -14,11 +14,14 @@ import Alamofire
 
 
 
-class PostWebViewController: UIViewController {
+class SubscriberPostWebView: UIViewController {
 
     var isComeFrom: Int = 0
     // isComeFrom == 1 : 홈(태그 추천 뷰)에서 호출한 경우
     // isComeFrom == 2 : 구독자 글 목록 뷰에서 호출한 경우
+    
+    var url:String = ""
+    var subScribeName: String = ""
     
     lazy var loadingBgView: UIView = {
         let bgView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -63,9 +66,6 @@ class PostWebViewController: UIViewController {
         return webView
     }()
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(webView)
@@ -98,6 +98,7 @@ class PostWebViewController: UIViewController {
             return
         }
     }
+
 
     func loadPostWebView(isComeFrom:Int){
         
@@ -211,6 +212,8 @@ class PostWebViewController: UIViewController {
                 self.loadingBgView.removeFromSuperview()
         }
     }
+    
+    
 }
 
 

@@ -35,51 +35,65 @@ class SignInViewController: UIViewController {
     private let titleLabel : UILabel = {
         let label = UILabel()
         label.text = "Login"
-        label.textColor = UIColor.customColor(.pointColor)
+        label.textColor = UIColor.customColor(.defaultBlackColor)
 //        $0.text = "Login"
-        label.font = UIFont(name: "Avenir", size: 50)
+        label.font = UIFont(name: "Apple SD Gothic Neo", size: 25)
         return label
     }()
     
     let EmailTextField = UITextField().then{
-        $0.placeholder = ("Email")
-        $0.layer.cornerRadius = 10
+        $0.placeholder = ("아이디(이메일)")
+        $0.font = UIFont(name: "Apple SD Gothic Neo", size: 14)
+        $0.layer.cornerRadius = 4
         $0.borderStyle = .roundedRect
     }
     let PasswordTextField = UITextField().then{
-        $0.placeholder = ("Password")
-        $0.layer.cornerRadius = 10
+        $0.placeholder = ("비밀번호")
+        $0.font = UIFont(name: "Apple SD Gothic Neo", size: 14)
+        $0.layer.cornerRadius = 4
         $0.borderStyle = .roundedRect
     }
     
     let SignInButton = UIButton().then{
         $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.layer.cornerRadius = 10
-        $0.setTitle("Login", for: .normal)
+        $0.layer.cornerRadius = 4
+        $0.setTitle("로그인", for: .normal)
+        $0.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo", size: 18)
         $0.addTarget(self, action: #selector(pushViewForSignIn), for: .touchUpInside)
     }
     
-    let SignUpButton = UIButton().then{
-        $0.backgroundColor = UIColor.customColor(.pointColor)
-        $0.layer.cornerRadius = 10
-        $0.setTitle("For Sign Up", for: .normal)
-        $0.setTitleColor(.systemBackground, for: .normal)
-        $0.addTarget(self, action: #selector(pushViewForSignUp), for: .touchUpInside)
-    }
+    let SignUpButton : UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .systemBackground
+        btn.setTitle("회원가입", for: .normal)
+        btn.setTitleColor(UIColor.gray, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo", size: 13)
+        btn.addTarget(self, action: #selector(pushViewForSignUp), for: .touchUpInside)
+        return btn
+    }()
+    
+    let GetIdPwButton : UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .systemBackground
+        btn.setTitle("아이디/비밀번호 찾기", for: .normal)
+        btn.setTitleColor(UIColor.gray, for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo", size: 13)
+        return btn
+    }()
     
     let stackView = UIStackView().then{
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
         $0.alignment = .fill
-        $0.spacing = 20
+        $0.spacing = 10
         $0.distribution = .equalSpacing
     }
     
-    let stackView2 = UIStackView().then{
+    let stackViewForSignUpGet = UIStackView().then{
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.axis = .vertical
+        $0.axis = .horizontal
         $0.alignment = .fill
-        $0.spacing = 20
+        $0.spacing = 26
         $0.distribution = .equalSpacing
     }
 
@@ -109,29 +123,36 @@ class SignInViewController: UIViewController {
     func setUIForSignIn(){
         view.addSubview(titleLabel)
         view.addSubview(stackView)
-        view.addSubview(stackView2)
+        view.addSubview(SignInButton)
+        view.addSubviews(stackViewForSignUpGet)
         self.stackView.addArrangedSubviews([EmailTextField,PasswordTextField])
-        self.stackView2.addArrangedSubviews([SignInButton,SignUpButton])
+        self.stackViewForSignUpGet.addArrangedSubviews([SignUpButton,GetIdPwButton])
 
 
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(200)
-            $0.leading.equalToSuperview().offset(130)
-            $0.trailing.equalToSuperview().offset(-100)
+            $0.top.equalToSuperview().offset(87)
+            $0.leading.equalToSuperview().offset(157)
+            $0.trailing.equalToSuperview().offset(-156)
         }
         
         stackView.snp.makeConstraints{
-            $0.top.equalTo(titleLabel.snp.bottom).offset(50)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(168)
+            $0.leading.equalToSuperview().offset(38)
+            $0.trailing.equalToSuperview().offset(-37)
         }
         
-        stackView2.snp.makeConstraints{
-            $0.top.equalTo(stackView.snp.bottom).offset(100)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
+        SignInButton.snp.makeConstraints {
+            $0.top.equalTo(stackView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(38)
+            $0.trailing.equalToSuperview().offset(-37)
         }
         
+        stackViewForSignUpGet.snp.makeConstraints {
+            $0.top.equalTo(SignInButton.snp.bottom).offset(15)
+            $0.leading.equalToSuperview().offset(94)
+            $0.trailing.equalToSuperview().offset(-94)
+            $0.bottom.equalToSuperview().offset(-340)
+        }
         
     }
     
