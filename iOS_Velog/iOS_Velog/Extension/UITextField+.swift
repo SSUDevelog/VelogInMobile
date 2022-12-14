@@ -14,8 +14,8 @@ extension UITextField {
     class func attributedTextField(frame: CGRect) -> UITextField {
         let textField = UITextField(frame: frame)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 2
+//        textField.layer.cornerRadius = 5
+//        textField.layer.borderWidth = 2
         textField.layer.masksToBounds = true
 
         // padding
