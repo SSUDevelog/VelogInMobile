@@ -89,11 +89,6 @@ extension AppDelegate {
             pushLink = linkDic as! String
             print(pushLink)
         }
-        
-        
-//        if dicData.keys.contains("link") {
-//            print(dicData.keys.contains("link"))
-//        }
         completionHandler([.alert, .badge, .sound])
     }
 
