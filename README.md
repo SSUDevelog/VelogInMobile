@@ -122,7 +122,8 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 이메일과 비밀번호는 유효성 검사를 거치게 됩니다.
 
-<img width="363" alt="스크린샷 2022-12-16 오전 1 03 15" src="https://user-images.githubusercontent.com/83629193/207909661-5e8d8c1a-efcc-4f6b-bb3c-6bd29c53a0ee.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 15" src="https://user-images.githubusercontent.com/83629193/207909661-5e8d8c1a-efcc-4f6b-bb3c-6bd29c53a0ee.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 14 12" src="https://user-images.githubusercontent.com/83629193/207912049-df795369-aba3-4ec8-a3c2-451249483dee.png">
+
 
 
 
@@ -132,7 +133,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 로딩이 끝나면 자동으로 홈뷰로 이동합니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 37 06" src="https://user-images.githubusercontent.com/83629193/206129651-2a847d92-1763-40b0-8e91-d2ba061e263f.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 13 43" src="https://user-images.githubusercontent.com/83629193/207911790-25d8b645-8a18-44f5-91da-53569c9964e9.png">
 
 
 
@@ -180,8 +181,11 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 ### 2.3.7 글웹뷰
 
 URL을 통해 앱 사용자가 터치한 글이 보여진다.
+
 글웹뷰를 불러오는 동안 비동기적으로 애니메이션이 보여진다.
-<img width="363" alt="스크린샷 2022-12-07 오후 5 38 18" src="https://user-images.githubusercontent.com/83629193/206129911-c298529b-aa51-4ce4-a1b0-07430af55da1.png"> <img width="363" alt="스크린샷 2022-12-07 오후 5 38 23" src="https://user-images.githubusercontent.com/83629193/206129901-729b7258-4533-40f1-b1bb-f2a33dee0edd.png">
+
+<img width="360" alt="스크린샷 2022-12-16 오전 1 14 01" src="https://user-images.githubusercontent.com/83629193/207911985-112a61cd-b78b-435a-b6a1-6fc8793dc60d.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 13 48" src="https://user-images.githubusercontent.com/83629193/207911960-8cb0f91a-7c26-4293-ad1b-ff73d359b73f.png">
+
 
 
 
