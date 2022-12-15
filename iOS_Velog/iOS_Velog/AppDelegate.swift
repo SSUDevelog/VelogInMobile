@@ -64,13 +64,42 @@ extension AppDelegate : MessagingDelegate {
 extension AppDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("foreground")
-//        print(notification.request.content
-        print(notification.request.content.body)    // body
-        print(notification.request.content.title)   // title
+//        print(notification.request.content.body)    // body
+//        print(notification.request.content.title)   // title
+        let dicData = notification.request.content.userInfo
+        print(dicData)
+        var pushTitle = ""
+        var pushMessage = ""
+        var pushLink = ""
+        
+        if dicData.keys.contains("aps") {
+            var apsDic = dicData["aps"] as! [String: Any]
+            
+            if (apsDic.keys.contains("alert")){
+                var alert = apsDic["alert"] as! [String: Any]
+                pushTitle = String(describing: alert["title"] ?? "")
+                pushMessage = String(describing: alert["body"] ?? "")
+                print(pushTitle)
+                print(pushMessage)
+            }
+        }
+        
+        if dicData.keys.contains("link") {
+            var linkDic = dicData["link"] ?? ""
+            pushLink = linkDic as! String
+            print(pushLink)
+        }
+        
+        
+//        if dicData.keys.contains("link") {
+//            print(dicData.keys.contains("link"))
+//        }
         completionHandler([.alert, .badge, .sound])
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter,didReceive response: UNNotificationResponse,withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print(userInfo)
         print("background")
         print(response.notification.request.content.title)
         print(response.notification.request.content.body)
