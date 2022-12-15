@@ -111,7 +111,8 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 로그인뷰에서 사용자의 ID와 Password를 입력받는다.
 자동 로그인 기능으로 첫 로그인 이후 자동 로그인 가능합니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 36 49" src="https://user-images.githubusercontent.com/83629193/206129576-3d234003-75bb-4994-ab27-79a3973045a1.png"> <img width="363" alt="스크린샷 2022-12-07 오후 5 36 55" src="https://user-images.githubusercontent.com/83629193/206129590-53a7cf13-3437-4cb6-b8e4-6e2d69858da6.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 08" src="https://user-images.githubusercontent.com/83629193/207909624-cd1208f5-b7fa-4661-b759-6452561fe158.png">
+
 
 
 
@@ -121,7 +122,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 이메일과 비밀번호는 유효성 검사를 거치게 됩니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 36 59" src="https://user-images.githubusercontent.com/83629193/206129621-0f65f8df-0f3a-4359-8529-db276b35e3a6.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 15" src="https://user-images.githubusercontent.com/83629193/207909661-5e8d8c1a-efcc-4f6b-bb3c-6bd29c53a0ee.png">
 
 
 
@@ -141,16 +142,18 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 특정 글을 터치하면 글의 웹뷰로 이동하여 해당 글을 읽을 수 있습니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 37 10" src="https://user-images.githubusercontent.com/83629193/206129678-091b992d-cd81-4b97-9623-539e84ad708a.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 21" src="https://user-images.githubusercontent.com/83629193/207909697-59013262-697c-4c8e-ab57-e0d6bb1ff936.png">
+
 
 
 ### 2.3.4 키워드 리스트뷰
 
 앱 유저가 추가해둔 키워드를 보여주는 리스트뷰입니다.
 
-특정 키워드를 가로 스와이프 제스처를 통해 삭제 가능합니다.
+키워드 리스트에서 삭제하고 싶은 키워드를 클릭하면 Alert 창이 뜨며 삭제할 수 있습니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 37 26" src="https://user-images.githubusercontent.com/83629193/206129705-4d9d05c3-27c8-4402-9171-af88c0ba4459.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 27" src="https://user-images.githubusercontent.com/83629193/207909741-92e9a24a-12b2-4dc9-ad30-1c91ac942099.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 04 49" src="https://user-images.githubusercontent.com/83629193/207910315-1762cf03-f580-4b23-8009-dc0e62775c1c.png">
+
 
 
 
@@ -160,7 +163,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 이미 추가했던 키워드는 중복으로 추가되지 않습니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 37 18" src="https://user-images.githubusercontent.com/83629193/206129755-ec616b2e-71ca-4a89-8a85-9a6d2c8ce82a.png"> <img width="363" alt="스크린샷 2022-12-07 오후 5 37 21" src="https://user-images.githubusercontent.com/83629193/206129763-d5217a7c-94cb-4a46-b40a-d27255b83410.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 33" src="https://user-images.githubusercontent.com/83629193/207909785-28f2eff2-c956-4a07-83c6-226e7636f2bc.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 03 37" src="https://user-images.githubusercontent.com/83629193/207909797-cf5e0ca1-6275-4618-9cc4-533e2020745a.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 03 44" src="https://user-images.githubusercontent.com/83629193/207909817-86e697cd-7a46-4c99-a66f-91725b3c2115.png">
 
 
 
@@ -170,7 +173,7 @@ Velog 앱 서비스는 Velog 웹 서비스와 상부상조하는 관계가 될 �
 
 특정 글을 터치하면 글의 웹뷰로 이동하여 해당 글을 읽을 수 있습니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 37 44" src="https://user-images.githubusercontent.com/83629193/206129836-bc90e5e0-c606-4054-b90d-6c95486b5faf.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 50" src="https://user-images.githubusercontent.com/83629193/207909903-ed7e6f5f-ed98-4714-b3e3-e333837708d7.png">
 
 
 
@@ -186,9 +189,10 @@ URL을 통해 앱 사용자가 터치한 글이 보여진다.
 
 앱 유저가 추가해둔 구독자를 보여주는 리스트뷰입니다.
 
-특정 구독자를 가로 스와이프 제스처를 통해 삭제 가능합니다.
+구독자 리스트에서 삭제하고 싶은 구독자를 클릭하면 Alert 창이 뜨며 삭제할 수 있습니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 38 14" src="https://user-images.githubusercontent.com/83629193/206129946-e7a59e96-8cd1-4f4b-9b64-b4b77e5100db.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 03 55" src="https://user-images.githubusercontent.com/83629193/207909963-acf0bd76-267a-442b-960f-d1c6cebc1954.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 04 20" src="https://user-images.githubusercontent.com/83629193/207910148-8ebabe41-09ad-494c-8f8f-95f366a59306.png">
+
 
 
 ### 2.3.9 구독자 검색뷰
@@ -197,7 +201,8 @@ URL을 통해 앱 사용자가 터치한 글이 보여진다.
 
 이미 추가했던 구독자는 중복으로 추가되지 않고 Velog 웹 서비스에 없는 사용자는 구독할 수 없습니다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 37 36" src="https://user-images.githubusercontent.com/83629193/206129978-94e22349-590c-4fd9-9eca-b80ab56da4a7.png"> <img width="363" alt="스크린샷 2022-12-07 오후 5 37 41" src="https://user-images.githubusercontent.com/83629193/206130005-e06b9a49-6b70-4cd5-9e1e-f02d61248de2.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 04 00" src="https://user-images.githubusercontent.com/83629193/207910007-781fdc0d-04d7-4d3c-9684-04dcfb418dff.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 04 04" src="https://user-images.githubusercontent.com/83629193/207910019-aeda02d8-e356-42c0-9e19-9f06ddb0b6d0.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 04 10" src="https://user-images.githubusercontent.com/83629193/207910036-1040070c-5f49-403a-83bb-b09944132b5f.png"><img width="363" alt="스크린샷 2022-12-16 오전 1 04 15" src="https://user-images.githubusercontent.com/83629193/207910052-551d8a0f-deeb-4142-9904-87d0c8b6025a.png">
+
 
 
 ### 2.3.10 알림뷰
