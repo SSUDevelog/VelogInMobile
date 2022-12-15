@@ -226,11 +226,16 @@ URL을 통해 앱 사용자가 터치한 글이 보여진다.
 
 푸쉬 알림을 끄고 킬 수 있는 버튼, 로그아웃, 회원탈퇴 기능이 구현되어있다.
 
-<img width="363" alt="스크린샷 2022-12-07 오후 5 38 10" src="https://user-images.githubusercontent.com/83629193/206130051-57807413-971e-4171-8917-fee9ca6f26b7.png">
+<img width="363" alt="스크린샷 2022-12-16 오전 1 33 07" src="https://user-images.githubusercontent.com/83629193/207916298-7cfbd329-f7ab-4c67-b7fc-38e0e18ce84a.png">
 
 
 
 ### 2.3.13 시현영상
+
+https://user-images.githubusercontent.com/83629193/207916430-1667628f-b4dc-4d65-b851-1b535d8b5b52.mp4 
+
+https://user-images.githubusercontent.com/83629193/207916508-0ca2c0e4-b91b-454a-a1a2-3c2302e7f10a.mp4
+
 
 
 # 3.협업 규칙
