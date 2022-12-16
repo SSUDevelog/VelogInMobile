@@ -85,6 +85,19 @@
 		91FFF32D2939E3BF00D80859 /* TagPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF32C2939E3BF00D80859 /* TagPostCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		91502025294A07EC0055DED8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9109F2642935E1B500DDE54B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeTableViewController.swift; sourceTree = "<group>"; };
@@ -522,6 +535,7 @@
 				916AEB9528F1675F000B2DA0 /* Sources */,
 				916AEB9628F1675F000B2DA0 /* Frameworks */,
 				916AEB9728F1675F000B2DA0 /* Resources */,
+				91502025294A07EC0055DED8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -556,7 +570,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					916AEB9828F1675F000B2DA0 = {
