@@ -51,6 +51,7 @@
 		9191602829256BE200497AC9 /* userList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191602729256BE200497AC9 /* userList.swift */; };
 		91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */; };
 		91ACBB0329479B930079B358 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACBB0229479B930079B358 /* Profile.swift */; };
+		91B5CF1A294DCD44008EE4F8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5CF19294DCD44008EE4F8 /* Notification.swift */; };
 		91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD128F80142005159AD /* SearchKeywordViewController.swift */; };
 		91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */; };
 		91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD928F83DB1005159AD /* ProfileViewController.swift */; };
@@ -136,6 +137,7 @@
 		9191602729256BE200497AC9 /* userList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userList.swift; sourceTree = "<group>"; };
 		91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91ACBB0229479B930079B358 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		91B5CF19294DCD44008EE4F8 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		91B73FD128F80142005159AD /* SearchKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordViewController.swift; sourceTree = "<group>"; };
 		91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		91B73FD928F83DB1005159AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				91ACBB0229479B930079B358 /* Profile.swift */,
 				9172F29F2916340600C6C890 /* Subscriber.swift */,
 				9172F2A12916358900C6C890 /* RealmService.swift */,
+				91B5CF19294DCD44008EE4F8 /* Notification.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */,
 				918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */,
 				918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */,
+				91B5CF1A294DCD44008EE4F8 /* Notification.swift in Sources */,
 				91FFF3222939D1FA00D80859 /* userTag.swift in Sources */,
 				911A1A57293F218B00D1C3CD /* LoadingViewController.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,

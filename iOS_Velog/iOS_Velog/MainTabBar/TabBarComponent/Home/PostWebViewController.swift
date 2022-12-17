@@ -220,8 +220,6 @@ class PostWebViewController: UIViewController {
         if let button = sender as? UIBarButtonItem {
             switch button.tag {
             case 1:
-                // Change the background color to blue.
-//                self.view.backgroundColor = .blue
                 break
             case 2:
                 var value:Int = 0
