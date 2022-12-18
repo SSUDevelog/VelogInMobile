@@ -73,10 +73,10 @@ extension AppDelegate {
         var pushLink = ""
         
         if dicData.keys.contains("aps") {
-            var apsDic = dicData["aps"] as! [String: Any]
+            let apsDic = dicData["aps"] as! [String: Any]
             
             if (apsDic.keys.contains("alert")){
-                var alert = apsDic["alert"] as! [String: Any]
+                let alert = apsDic["alert"] as! [String: Any]
                 pushTitle = String(describing: alert["title"] ?? "")
                 pushMessage = String(describing: alert["body"] ?? "")
                 print(pushTitle)
@@ -85,7 +85,7 @@ extension AppDelegate {
         }
         
         if dicData.keys.contains("link") {
-            var linkDic = dicData["link"] ?? ""
+            let linkDic = dicData["link"] ?? ""
             pushLink = linkDic as! String
             print(pushLink)
         }
@@ -99,7 +99,6 @@ extension AppDelegate {
         print(response.notification.request.content.title)
         print(response.notification.request.content.body)
         print(response.notification.request.content.subtitle)
-        print(response.notification.request.content.badge)
         // [completionHandler : 푸시 알림 상태창 표시]
         completionHandler()
     }
