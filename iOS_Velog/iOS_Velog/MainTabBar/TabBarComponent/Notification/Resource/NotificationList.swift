@@ -6,10 +6,12 @@
 //
 
 import Foundation
+
+
 struct NotificationList{
-    static var notificationList = [String]()
+    static var notificationList = [String,String,String]()
     
-    init(notificationList:[String]){
+    init(notificationList:[String,String,String]){
         NotificationList.notificationList = notificationList
     }
 }

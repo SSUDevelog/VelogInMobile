@@ -10,10 +10,13 @@ import Firebase
 import FirebaseCore
 import UserNotifications
 import UserNotificationsUI
+import Realm
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
+    let realm = RealmService()
     
     static var FcmToken:String!
 
@@ -81,6 +84,7 @@ extension AppDelegate {
                 pushMessage = String(describing: alert["body"] ?? "")
                 print(pushTitle)
                 print(pushMessage)
+                
             }
         }
         
@@ -89,6 +93,16 @@ extension AppDelegate {
             pushLink = linkDic as! String
             print(pushLink)
         }
+        
+        self.realm.addNotificationForNewPost(title: pushTitle, body: pushMessage, link: pushLink)
+        
+        NotificationList.notificationList.append([pushTitle,pushMessage,pushLink])
+        
+        print(NotificationList.notificationList[0][0])
+        print(NotificationList.notificationList[0][1])
+        
+        //        cell.bindForNotification(title: NotificationList.notificationList[indexPath.row][0], body: NotificationList.notificationList[indexPath.row][1])
+        
         completionHandler([.alert, .badge, .sound])
     }
 

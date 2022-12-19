@@ -77,12 +77,12 @@ class RealmService{
         return notification.last?.title ?? ""
     }
     
-    func getNotificationBody()->String{
+    func getNotificationBody(index:Int)->String{
         let notification = localRealm.objects(notificationForNewPost.self)
         return notification.last?.body ?? ""
     }
     
-    func getNotificationLink()->String{
+    func getNotificationLink(index:Int)->String{
         let notification = localRealm.objects(notificationForNewPost.self)
         return notification.last?.link ?? ""
     }
