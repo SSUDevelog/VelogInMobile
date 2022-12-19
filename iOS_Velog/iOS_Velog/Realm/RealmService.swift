@@ -43,6 +43,13 @@ class RealmService{
         }
     }
     
+    func addNotificationForNewPost(title:String,body:String,link:String){
+        let notificationForNewPost = notificationForNewPost(title: title, body: body, link: link)
+        try! localRealm.write{
+            localRealm.add(notificationForNewPost)
+        }
+    }
+    
     func getToken()->String{
         let token = localRealm.objects(Token.self)
         //        return token[0].token
@@ -63,6 +70,21 @@ class RealmService{
     func getIsUser()->String{
         let isUser = localRealm.objects(isUser.self)
         return isUser.last?.isuser ?? ""
+    }
+    
+    func getNotificationTitle()->String{
+        let notification = localRealm.objects(notificationForNewPost.self)
+        return notification.last?.title ?? ""
+    }
+    
+    func getNotificationBody()->String{
+        let notification = localRealm.objects(notificationForNewPost.self)
+        return notification.last?.body ?? ""
+    }
+    
+    func getNotificationLink()->String{
+        let notification = localRealm.objects(notificationForNewPost.self)
+        return notification.last?.link ?? ""
     }
     
     func delete(deleteId:String) {
