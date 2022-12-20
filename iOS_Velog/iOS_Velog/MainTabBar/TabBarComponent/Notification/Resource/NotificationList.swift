@@ -9,9 +9,14 @@ import Foundation
 
 
 struct NotificationList{
-    static var notificationList = [String,String,String]()
+    static var notificationTitleList = [String]()
+    static var notificationBodyList = [String]()
+    static var notificationLinkList = [String]()
     
-    init(notificationList:[String,String,String]){
-        NotificationList.notificationList = notificationList
+    init(notificationTitle:String,notificationBody:String,notificationLink:String){
+        
+        NotificationList.notificationTitleList.append(notificationTitle)
+        NotificationList.notificationBodyList.append(notificationBody)
+        NotificationList.notificationLinkList.append(notificationLink)
     }
 }
