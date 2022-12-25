@@ -244,24 +244,44 @@ class PostWebViewController: UIViewController {
                 self.didTouchedSubscribe = true
                 print(subScribeName)
                 
-                let alert = UIAlertController(title: "구독자 추가", message: "해당 글을 쓴 유저를 구독하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-
-                let okAction = UIAlertAction(title: "Yes", style: .default, handler: { okAction in
-                    self.addSubscriber(Id: self.subScribeName)
-                })
-                
-                let noAction = UIAlertAction(title: "No", style: .destructive,handler: {noAction in
-                    return
-                })
-                                
-                alert.addAction(okAction)
-                alert.addAction(noAction)
-                present(alert, animated: true, completion: nil)
-                
+                // 이미 구독한 사람이면
+                if checkDoubleSubscription(inputId: subScribeName) == false {
+                    let alertForOut = UIAlertController(title: "이미 구독한 사용자입니다.", message: "구독자 리스트를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: { okAction in
+                        return
+                    })
+                    alertForOut.addAction(okAction)
+                    present(alertForOut,animated: true,completion: nil)
+                    
+                }else {
+                    let alert = UIAlertController(title: "구독자 추가", message: "해당 글을 쓴 유저를 구독하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+                    
+                    let okAction = UIAlertAction(title: "Yes", style: .default, handler: { okAction in
+                        self.addSubscriber(Id: self.subScribeName)
+                    })
+                    
+                    let noAction = UIAlertAction(title: "No", style: .destructive,handler: {noAction in
+                        return
+                    })
+                    
+                    alert.addAction(okAction)
+                    alert.addAction(noAction)
+                    present(alert, animated: true, completion: nil)
+                }
             default:
                 print("error")
             }
         }
+    }
+    
+    // 구독하려는 아이디가 구독리스트에 있는지 체크하는 메소드
+    func checkDoubleSubscription(inputId:String)->Bool{
+        for list in userList.List {
+            if list == inputId {
+                return false
+            }
+        }
+        return true
     }
     
     // 구독자 최종 추가
