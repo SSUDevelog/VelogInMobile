@@ -246,10 +246,16 @@ class PostWebViewController: UIViewController {
                 
                 let alert = UIAlertController(title: "구독자 추가", message: "해당 글을 쓴 유저를 구독하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
 
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: { okAction in
+                let okAction = UIAlertAction(title: "Yes", style: .default, handler: { okAction in
                     self.addSubscriber(Id: self.subScribeName)
                 })
+                
+                let noAction = UIAlertAction(title: "No", style: .destructive,handler: {noAction in
+                    return
+                })
+                                
                 alert.addAction(okAction)
+                alert.addAction(noAction)
                 present(alert, animated: true, completion: nil)
                 
             default:

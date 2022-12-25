@@ -63,8 +63,8 @@ class HomeViewController: UIViewController {
 
         tableViewForTagPost.snp.makeConstraints {
             $0.top.equalToSuperview().offset(185)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-90)
         }
     }

@@ -108,12 +108,12 @@ class SignInViewController: UIViewController {
 //        realm.resetDB()
         
         self.dismissKeyboard()
-        //         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
-        //         자동로그인 시 새로운 토큰 발급 받지 않는다
-//        if checkRealmToken() {
-//            ifSuccessPushHome()
-//        }
-//
+//         자동로그인 - 로컬에 토큰 있으면 자동 로그인 됨
+//         자동로그인 시 새로운 토큰 발급 받지 않는다
+        if checkRealmToken() {
+            ifSuccessPushHome()
+        }
+
         self.navigationItem.hidesBackButton = true
         
         setUIForSignIn()
@@ -131,14 +131,11 @@ class SignInViewController: UIViewController {
 
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(30)
-//            $0.leading.equalToSuperview().offset(10)
-//            $0.trailing.equalToSuperview().offset(-10)
             $0.centerX.equalToSuperview()
         }
         
         stackView.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-//            $0.top.equalTo(titleLabel.snp.bottom).offset(168)
             $0.top.equalTo(titleLabel.snp.bottom).offset(30)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)

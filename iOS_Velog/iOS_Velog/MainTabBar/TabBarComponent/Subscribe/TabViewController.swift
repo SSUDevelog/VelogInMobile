@@ -45,7 +45,6 @@ class TabViewController: TabmanViewController {
         settingTabBar(ctBar: bar)
         addBar(bar, dataSource: self, at: .custom(view: customContainer, layout: { (bar) in
             bar.snp.makeConstraints { make in
-
                 make.leading.equalToSuperview()
                 make.trailing.equalToSuperview()
             }
@@ -70,7 +69,7 @@ class TabViewController: TabmanViewController {
         }
         
         customContainer.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(50)
             make.trailing.equalToSuperview().offset(-50)
         }
