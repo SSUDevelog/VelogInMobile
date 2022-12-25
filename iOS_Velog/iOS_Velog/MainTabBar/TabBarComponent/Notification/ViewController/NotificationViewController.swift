@@ -12,6 +12,8 @@ import Moya
 
 class NotificationViewController: UIViewController {
 
+    let realm = RealmService()
+    
     private let provider = MoyaProvider<SubscriberService>()
     var responseData: SubscriberListResponse?
     
@@ -50,7 +52,7 @@ class NotificationViewController: UIViewController {
         return tableview
     }()
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -84,7 +86,7 @@ class NotificationViewController: UIViewController {
                 do{
                     
                     print(moyaResponse.statusCode)
-                    NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
+//                    NotificationList.notificationList = try moyaResponse.mapJSON() as! [String]
 
                 }catch(let err) {
                     print(err.localizedDescription)
@@ -144,16 +146,15 @@ class NotificationViewController: UIViewController {
 
 extension NotificationViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return data.count // 더미 데이터 코드
-//        return userList.List.count
-        return NotificationList.notificationList.count
+
+        return NotificationList.notificationTitleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell = UITableViewCell()
         let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier) as? NotificationTableViewCell ?? NotificationTableViewCell()
-        cell.bind(model: NotificationList.notificationList[indexPath.row])
-//        cell.rightButton.addTarget(self, action: #selector(deleteBtnAction), for: .touchUpInside)
+
+//        cell.bindForNotification(title: NotificationList.notificationList[indexPath.row][0], body: NotificationList.notificationList[indexPath.row][1])
+        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         return cell

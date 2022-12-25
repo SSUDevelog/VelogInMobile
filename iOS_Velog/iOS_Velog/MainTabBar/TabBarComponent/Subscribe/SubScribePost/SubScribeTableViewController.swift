@@ -51,8 +51,8 @@ class SubScribeTableViewController: UIViewController {
         
         tableViewForPosts.snp.makeConstraints {
             $0.top.equalToSuperview().offset(185)
-            $0.leading.equalToSuperview().offset(30)
-            $0.trailing.equalToSuperview().offset(-30)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview().offset(-90)
         }
     }
@@ -114,7 +114,7 @@ extension SubScribeTableViewController : UITableViewDelegate {
         SubScribeTableViewController.url = urlList.list[indexPath.row]
         
 //        PostWebViewController.url = URL(string: url)
-        print(SubScribeTableViewController.url)  // 일단 좋아!!! 여기까지
+//        print(SubScribeTableViewController.url)  // 일단 좋아!!! 여기까지
         self.pushWebView()
     }
 }
@@ -138,7 +138,7 @@ extension SubScribeTableViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 340
     }
     
 }

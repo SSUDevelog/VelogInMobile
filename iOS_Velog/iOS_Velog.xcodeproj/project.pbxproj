@@ -363,8 +363,8 @@
 				9160AB8D291E1D4300079BF9 /* Token.swift */,
 				91ACBB0229479B930079B358 /* Profile.swift */,
 				9172F29F2916340600C6C890 /* Subscriber.swift */,
-				9172F2A12916358900C6C890 /* RealmService.swift */,
 				91B5CF19294DCD44008EE4F8 /* notificationForNewPost.swift */,
+				9172F2A12916358900C6C890 /* RealmService.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";

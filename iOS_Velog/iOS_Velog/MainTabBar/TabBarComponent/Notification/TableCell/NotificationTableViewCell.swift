@@ -11,23 +11,25 @@ class NotificationTableViewCell: UITableViewCell {
     // id 정의
     static let identifier = "NotificationTableViewCell"
     
-    var leftLabel:UILabel = {
+    var title:UILabel = {
         let label = UILabel()
         label.tintColor = UIColor.customColor(.defaultBlackColor)
         return label
     }()
     
-    // 해당 알림 글로 넘어간다!
-    lazy var rightButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemBackground
-        button.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
-        return button
+    var textView:UITextView = {
+        let textView = UITextView()
+        textView.tintColor = UIColor.gray
+        return textView
     }()
+    
+//    var link: String = ""
+    
 
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [leftLabel, rightButton])
-        stackView.spacing = 80
+        let stackView = UIStackView(arrangedSubviews: [title,textView])
+        stackView.spacing = 10
+        stackView.axis = .vertical
         contentView.addSubview(stackView)
 
         stackView.snp.makeConstraints{
@@ -53,7 +55,8 @@ class NotificationTableViewCell: UITableViewCell {
 
 
 extension NotificationTableViewCell {
-    public func bind(model: String) {
-        leftLabel.text = model
+    public func bindForNotification(title:String,body:String) {
+        self.title.text = title
+        self.textView.text = body
     }
 }

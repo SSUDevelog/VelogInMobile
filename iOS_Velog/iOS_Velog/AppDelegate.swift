@@ -10,10 +10,13 @@ import Firebase
 import FirebaseCore
 import UserNotifications
 import UserNotificationsUI
+import Realm
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
+    let realm = RealmService()
     
     static var FcmToken:String!
 
@@ -81,6 +84,7 @@ extension AppDelegate {
                 pushMessage = String(describing: alert["body"] ?? "")
                 print(pushTitle)
                 print(pushMessage)
+                
             }
         }
         
@@ -89,6 +93,29 @@ extension AppDelegate {
             pushLink = linkDic as! String
             print(pushLink)
         }
+        
+        // 1. 로컬 DB에 추가
+        self.realm.addNotificationForNewPost(title: pushTitle, body: pushMessage, link: pushLink)
+        
+        
+        // 2. 전역 변수에 추가
+//        NotificationList.init(notificationTitle: pushTitle, notificationBody: pushMessage, notificationLink: pushLink)
+        
+        NotificationList.notificationTitleList.append(pushTitle)
+        NotificationList.notificationBodyList.append(pushMessage)
+        NotificationList.notificationLinkList.append(pushLink)
+        
+        print(NotificationList.notificationTitleList)
+        print(NotificationList.notificationBodyList)
+        print(NotificationList.notificationLinkList)
+        
+//        NotificationList.notificationList.append([pushTitle,pushMessage,pushLink])
+//
+//        print(NotificationList.notificationList[0][0])
+//        print(NotificationList.notificationList[0][1])
+        
+        //        cell.bindForNotification(title: NotificationList.notificationList[indexPath.row][0], body: NotificationList.notificationList[indexPath.row][1])
+        
         completionHandler([.alert, .badge, .sound])
     }
 
