@@ -93,6 +93,8 @@ class SubscribeListViewController: UIViewController {
                 }catch(let err){
                     print(err.localizedDescription)
                     print("맵핑 안됨")
+                    // 구독자 모두 삭제 했을 떄 여기로 들어온다.
+
                 }
             case .failure(let err):
                 print(err.localizedDescription)
@@ -155,19 +157,6 @@ extension SubscribeListViewController:UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
     }
-    
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        return .delete
-//    }
-//
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-//        if editingStyle == .delete {
-//            tableView.beginUpdates()
-//            self.deleteSubscriberList(targetName: userList.List.remove(at: indexPath.row))
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            tableView.endUpdates()
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)

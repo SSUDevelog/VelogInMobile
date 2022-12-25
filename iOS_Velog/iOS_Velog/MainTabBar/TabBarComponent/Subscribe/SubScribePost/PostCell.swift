@@ -11,6 +11,7 @@ import SnapKit
 import Then
 import Kingfisher
 
+
 class PostCell: UITableViewCell {
     
     
@@ -23,7 +24,7 @@ class PostCell: UITableViewCell {
         view.clipsToBounds = true
 //        view.kf.setImage(with: url)
         view.snp.makeConstraints { make in
-            make.height.equalTo(150)
+            make.height.equalTo(200)
         }
         return view
     }()
@@ -41,9 +42,14 @@ class PostCell: UITableViewCell {
         return textView
     }()
     
-    var title = UILabel().then{
-        $0.font = UIFont(name: "Avenir-Black", size: 15)
-    }
+    var title : UILabel = {
+        let title = UILabel()
+        title.font = UIFont(name: "Avenir-Black", size: 15)
+        title.snp.makeConstraints { make in
+            make.height.equalTo(20)
+        }
+        return title
+    }()
     
     var date = UILabel().then {
         $0.font = UIFont.systemFont(ofSize: 13)
@@ -96,6 +102,14 @@ class PostCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been impl")
     }
+
+
+    // tableViewCell.swift
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print("reset")
+            // 셀을 초기화 해주는 코드.
+    }
     
 }
 
@@ -107,11 +121,11 @@ extension PostCell {
         
         name.text = model.name
         date.text = model.date
-//        imgView.image = model.img
-
+        //        imgView.image = model.img
+        
         // img binging
         if model.img == "" {
-            imgView.image = UIImage(systemName: "photo.on.rectangle.angled")
+            imgView.image = UIImage(systemName: "photo.on.rectangle.angled")?.withTintColor(.gray)
         }else{
             let url = URL(string: model.img)
             imgView.kf.setImage(with: url)
