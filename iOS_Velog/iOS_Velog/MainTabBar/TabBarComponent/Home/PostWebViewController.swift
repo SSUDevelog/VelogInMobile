@@ -256,17 +256,29 @@ class PostWebViewController: UIViewController {
                 }else {
                     let alert = UIAlertController(title: "구독자 추가", message: "해당 글을 쓴 유저를 구독하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
                     
-                    let okAction = UIAlertAction(title: "Yes", style: .default, handler: { okAction in
-                        self.addSubscriber(Id: self.subScribeName)
+                    let SuccessAlert = UIAlertController(title: "구독자 추가 되었습니다.", message: "구독자 리스트를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    
+                    let okActionForSuccessAlert = UIAlertAction(title: "확인", style: .default,handler: {noAction in
+                        return
                     })
                     
-                    let noAction = UIAlertAction(title: "No", style: .destructive,handler: {noAction in
+                    let okAction = UIAlertAction(title: "네", style: .default, handler: { okAction in
+                        self.addSubscriber(Id: self.subScribeName)
+                        
+                        SuccessAlert.addAction(okActionForSuccessAlert)
+                        self.present(SuccessAlert,animated: true,completion: nil)
+                    })
+                    
+                    let noAction = UIAlertAction(title: "아니요", style: .destructive,handler: {noAction in
                         return
                     })
                     
                     alert.addAction(okAction)
                     alert.addAction(noAction)
                     present(alert, animated: true, completion: nil)
+                    
+                    
+                    
                 }
             default:
                 print("error")
@@ -282,6 +294,13 @@ class PostWebViewController: UIViewController {
             }
         }
         return true
+    }
+    
+    // 시간 딜레이 함수
+    public func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
     }
     
     // 구독자 최종 추가
