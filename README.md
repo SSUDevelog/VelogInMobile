@@ -267,10 +267,6 @@ https://user-images.githubusercontent.com/83629193/207916508-0ca2c0e4-b91b-454a-
 - fix : Fix typo in cleanup.sh file
 
 
-# 4. 프로젝트 제작에 참고된 문헌, 서적, URL
-
-https://developer.apple.com/documentation
-
 # 5. 프로젝트  개발자 정보
 
 iOS : 홍준혁 Github Profile - https://github.com/hongjunehuke
