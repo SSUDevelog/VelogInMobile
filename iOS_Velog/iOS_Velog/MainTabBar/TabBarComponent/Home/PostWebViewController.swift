@@ -20,11 +20,6 @@ class PostWebViewController: UIViewController {
     private let provider = MoyaProvider<SubscriberService>()
     
     var didTouchedSubscribe = false
-    
-//    var isComeFrom: Int = 0
-//    // isComeFrom == 1 : 홈(태그 추천 뷰)에서 호출한 경우
-//    // isComeFrom == 2 : 구독자 글 목록 뷰에서 호출한 경우
-    
     var url:String = ""
     var subScribeName: String = ""
     
@@ -102,7 +97,7 @@ class PostWebViewController: UIViewController {
         self.Queue()
         
         loadPostWebView()
-        
+    
         self.navigationItem.rightBarButtonItem = self.rightButton
         
     }
@@ -135,7 +130,7 @@ class PostWebViewController: UIViewController {
                 print(PostURL.absoluteString)
     //            print(PostURL)
                 webView.load(URLRequest(url: PostURL)) // !가능 할 것 같은데
-//                self.crawl(inputUrl: encodedStr)
+                self.crawl(inputUrl: encodedStr)
             }else{
                 print("해당하는 URL이 존재하지 않습니다.")
             }
@@ -180,11 +175,36 @@ class PostWebViewController: UIViewController {
                 let doc: Document = try SwiftSoup.parse(html)
 //                let headerTitle = try doc.title()
 //                print(headerTitle)
-                print(doc)
+//                print(doc)
                 // #newsContents > div > div.postRankSubjectList.f_clear
-//                let elements: Elements = try doc.select("#root > div.sc-efQSVx.kdrjec.sc-cTAqQK.gdjBUK > div.sc-jUosCB.gbQfRh")
+                
+//                let elements: Elements = try doc.select("#root > sc-efQSVx kdrjec sc-cTAqQK gdjBUK > sc-jUosCB gbQfRh > sc-hOGkXu ljCkfJ > sc-dtMgUX uWDEh atom-one")
+                
+                let html = try doc.text()
+//                print (html)
+                
+                // [특정 첫번째 태그 선택 : p 태그]
+                let title: Element = try doc.select("h1").first()!
+                let userName: Element = try doc.select("span").first()!
+                let postDate: Element = try doc.select("span").get(2)
+            
+                
+                // [텍스트 내용 출력 실시]
+                let text = try title.text()
+                let user = try userName.text()
+                let date = try postDate.text()
+
+                
+//                print("tag : ", tag)
+                print("text : ", text)
+                print("user : ", user)
+                print("date : ", date)
+                
+                
+                
+                
 //                for element in elements {
-//                    print(try element.select("div > div"))
+//                    print(try element.select(element.))
 //                }
 
             }catch {
@@ -377,9 +397,7 @@ class PostWebViewController: UIViewController {
         self.didTouchedSubscribe = false
         
     }
-    
-    
-    
+
 }
 
 
