@@ -72,7 +72,7 @@ class TagPostCell: UITableViewCell {
         contentView.addSubview(stackView)
         
 //        stackView.snp.makeConstraints{
-//            $0.top.left.bottom.right.equalTo(contentView)
+//            $0.top.leading.bottom.trailing.equalTo(contentView)
 //        }
         
         stackView.snp.makeConstraints { make in
