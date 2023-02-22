@@ -30,15 +30,8 @@ class CustomTabBarController: UITabBarController{
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         setUpTabBar()
-        print("tabBar")
     }
     
-    
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        setUpTabBar()
-//    }
-
     func setUpTabBar(){
         self.tabBar.tintColor = UIColor.customColor(.pointColor)
         self.tabBar.unselectedItemTintColor = .black

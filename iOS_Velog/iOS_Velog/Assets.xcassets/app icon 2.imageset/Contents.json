@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "app icon 3.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "app icon 4.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

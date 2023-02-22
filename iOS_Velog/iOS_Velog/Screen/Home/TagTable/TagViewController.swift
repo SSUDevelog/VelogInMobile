@@ -2,7 +2,7 @@
 //  TagViewController.swift
 //  iOS_Velog
 //
-//  Created by 홍준혁 on 2022/12/02.
+//  Created by 홍준혁 on 2023/02/22.
 //
 
 import UIKit
@@ -42,7 +42,7 @@ class TagViewController: UIViewController {
 
         view.addSubview(tableViewForTag)
 
-        tableViewForTag.snp.makeConstraints { 
+        tableViewForTag.snp.makeConstraints {
             $0.top.equalToSuperview().offset(185)
             $0.leading.equalToSuperview().offset(30)
             $0.trailing.equalToSuperview().offset(-30)
@@ -142,4 +142,3 @@ extension TagViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
     
-

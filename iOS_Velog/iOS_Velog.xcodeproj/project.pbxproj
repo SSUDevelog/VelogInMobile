@@ -15,7 +15,6 @@
 		91178E112934B90E00A9BDE7 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E102934B90E00A9BDE7 /* NVActivityIndicatorView */; };
 		91178E132934B90E00A9BDE7 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 91178E122934B90E00A9BDE7 /* NVActivityIndicatorViewExtended */; };
 		911A1A57293F218B00D1C3CD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911A1A56293F218B00D1C3CD /* LoadingViewController.swift */; };
-		912322862909010900C204A8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322852909010900C204A8 /* SearchViewController.swift */; };
 		912322892909102E00C204A8 /* SubscribeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912322882909102E00C204A8 /* SubscribeListViewController.swift */; };
 		9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */; };
 		914A26E82937CF6E00F67BA0 /* urlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914A26E72937CF6E00F67BA0 /* urlList.swift */; };
@@ -45,14 +44,17 @@
 		917C40C52947478C004146F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 917C40C42947478C004146F0 /* GoogleService-Info.plist */; };
 		917C40C829474874004146F0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 917C40C729474874004146F0 /* FirebaseAnalytics */; };
 		917C40CA29474874004146F0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 917C40C929474874004146F0 /* FirebaseMessaging */; };
-		918CDB5429390A59000C016E /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB5329390A59000C016E /* TagViewController.swift */; };
-		918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB5529390D36000C016E /* AddTagViewController.swift */; };
-		918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918CDB572939100F000C016E /* HomeTabViewController.swift */; };
+		9187F3DE29A5F6CB00DC6524 /* SignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3DD29A5F6CB00DC6524 /* SignAPI.swift */; };
+		9187F3E029A5F6D400DC6524 /* SubscriberAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3DF29A5F6D400DC6524 /* SubscriberAPI.swift */; };
+		9187F3E229A5F6E400DC6524 /* TagAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3E129A5F6E400DC6524 /* TagAPI.swift */; };
+		9187F3E629A5F83B00DC6524 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3E529A5F83B00DC6524 /* HomeTabViewController.swift */; };
+		9187F3E829A5F85100DC6524 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3E729A5F85100DC6524 /* HomeViewController.swift */; };
+		9187F3EA29A5F87F00DC6524 /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3E929A5F87F00DC6524 /* AddTagViewController.swift */; };
+		9187F3EC29A5F8B700DC6524 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9187F3EB29A5F8B700DC6524 /* TagViewController.swift */; };
 		9191602829256BE200497AC9 /* userList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191602729256BE200497AC9 /* userList.swift */; };
 		91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */; };
 		91ACBB0329479B930079B358 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACBB0229479B930079B358 /* Profile.swift */; };
 		91B5CF1A294DCD44008EE4F8 /* notificationForNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5CF19294DCD44008EE4F8 /* notificationForNewPost.swift */; };
-		91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD128F80142005159AD /* SearchKeywordViewController.swift */; };
 		91B73FD428F83D53005159AD /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */; };
 		91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FD928F83DB1005159AD /* ProfileViewController.swift */; };
 		91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B73FDE28F84405005159AD /* SignInViewController.swift */; };
@@ -70,13 +72,12 @@
 		91D0649C294477FC00E99C7C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0649B294477FC00E99C7C /* Reachability.swift */; };
 		91D342AC294066EB00251C56 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D342AB294066EB00251C56 /* UIViewController.swift */; };
 		91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F4293B9FB9005084A2 /* TagUrlList.swift */; };
-		91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA86F6293BA056005084A2 /* BaseURL.swift */; };
 		91E47771292BAC4F00AFC26E /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 91E47770292BAC4F00AFC26E /* Tabman */; };
 		91E47773292BAC6500AFC26E /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E47772292BAC6500AFC26E /* TabViewController.swift */; };
 		91E47777292BD20400AFC26E /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E47776292BD20400AFC26E /* NotificationViewController.swift */; };
 		91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */; };
 		91E4777D292BECD100AFC26E /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4777C292BECD100AFC26E /* NotificationList.swift */; };
-		91E694F82933D523000E312B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E694F72933D523000E312B /* HomeViewController.swift */; };
+		91EA53B929A4EC24007AB248 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EA53B829A4EC24007AB248 /* BaseURL.swift */; };
 		91FFF31D2939CE9800D80859 /* TagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31C2939CE9800D80859 /* TagService.swift */; };
 		91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF31E2939CF2D00D80859 /* AddTag.swift */; };
 		91FFF3222939D1FA00D80859 /* userTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FFF3212939D1FA00D80859 /* userTag.swift */; };
@@ -104,7 +105,6 @@
 		9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubScribeTableViewController.swift; sourceTree = "<group>"; };
 		91178E042934803B00A9BDE7 /* PostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWebViewController.swift; sourceTree = "<group>"; };
 		911A1A56293F218B00D1C3CD /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		912322852909010900C204A8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		912322882909102E00C204A8 /* SubscribeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeListViewController.swift; sourceTree = "<group>"; };
 		9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubscribeViewController.swift; sourceTree = "<group>"; };
 		914A26E72937CF6E00F67BA0 /* urlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = urlList.swift; sourceTree = "<group>"; };
@@ -131,14 +131,17 @@
 		917AA1CB28F46BB4004EF8DB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		917C40C42947478C004146F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		917C40CB294749FF004146F0 /* iOS_VelogDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_VelogDebug.entitlements; sourceTree = "<group>"; };
-		918CDB5329390A59000C016E /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TagViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/TagList/TagViewController.swift; sourceTree = SOURCE_ROOT; };
-		918CDB5529390D36000C016E /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTagViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/SearchTag/AddTagViewController.swift; sourceTree = SOURCE_ROOT; };
-		918CDB572939100F000C016E /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeTabViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/HomeTabViewController.swift; sourceTree = SOURCE_ROOT; };
+		9187F3DD29A5F6CB00DC6524 /* SignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAPI.swift; sourceTree = "<group>"; };
+		9187F3DF29A5F6D400DC6524 /* SubscriberAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberAPI.swift; sourceTree = "<group>"; };
+		9187F3E129A5F6E400DC6524 /* TagAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagAPI.swift; sourceTree = "<group>"; };
+		9187F3E529A5F83B00DC6524 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
+		9187F3E729A5F85100DC6524 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9187F3E929A5F87F00DC6524 /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagViewController.swift; sourceTree = "<group>"; };
+		9187F3EB29A5F8B700DC6524 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		9191602729256BE200497AC9 /* userList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userList.swift; sourceTree = "<group>"; };
 		91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		91ACBB0229479B930079B358 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		91B5CF19294DCD44008EE4F8 /* notificationForNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationForNewPost.swift; sourceTree = "<group>"; };
-		91B73FD128F80142005159AD /* SearchKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchKeywordViewController.swift; sourceTree = "<group>"; };
 		91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		91B73FD928F83DB1005159AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		91B73FDE28F84405005159AD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -152,12 +155,11 @@
 		91D0649B294477FC00E99C7C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		91D342AB294066EB00251C56 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		91DA86F4293B9FB9005084A2 /* TagUrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUrlList.swift; sourceTree = "<group>"; };
-		91DA86F6293BA056005084A2 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91E47772292BAC6500AFC26E /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		91E47776292BD20400AFC26E /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		91E4777C292BECD100AFC26E /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
-		91E694F72933D523000E312B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = iOS_Velog/MainTabBar/TabBarComponent/Home/TabViewComponet/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		91EA53B829A4EC24007AB248 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		91FFF31C2939CE9800D80859 /* TagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagService.swift; sourceTree = "<group>"; };
 		91FFF31E2939CF2D00D80859 /* AddTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTag.swift; sourceTree = "<group>"; };
 		91FFF3212939D1FA00D80859 /* userTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userTag.swift; sourceTree = "<group>"; };
@@ -193,52 +195,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9109F2662935E84D00DDE54B /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				91D0649B294477FC00E99C7C /* Reachability.swift */,
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
 		9123228A290916AC00C204A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				91B73FD928F83DB1005159AD /* ProfileViewController.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		912D2753291A2AE1004382BB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				91C277162917E86600F5F53B /* SignUpModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		912D2756291A2BA4004382BB /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		912D2758291A2C4A004382BB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				91C277182917EB0600F5F53B /* SignInModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		912D2759291A2C58004382BB /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				91B73FDE28F84405005159AD /* SignInViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		912D275A291A2CAF004382BB /* SubScribePost */ = {
@@ -248,66 +210,6 @@
 				9116104E292CB99200AC1627 /* SubScribeTableViewController.swift */,
 			);
 			path = SubScribePost;
-			sourceTree = "<group>";
-		};
-		912D275B291A2CC9004382BB /* SearchSubScribe */ = {
-			isa = PBXGroup;
-			children = (
-				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
-			);
-			path = SearchSubScribe;
-			sourceTree = "<group>";
-		};
-		912D275E291A2DE3004382BB /* SignInUpService */ = {
-			isa = PBXGroup;
-			children = (
-				91C277102917CCF100F5F53B /* SignServices.swift */,
-				91C2771A2917EC1D00F5F53B /* SignInRequest.swift */,
-				91C277142917E72A00F5F53B /* SignUpRequest.swift */,
-			);
-			path = SignInUpService;
-			sourceTree = "<group>";
-		};
-		9142D798292CEB0D00D9BB7C /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				9191602729256BE200497AC9 /* userList.swift */,
-				916827A8292A487A00DDA369 /* PostData.swift */,
-				916827A6292A2FCA00DDA369 /* PostModel.swift */,
-				914A26E72937CF6E00F67BA0 /* urlList.swift */,
-				91755F1A29233C24005C94D7 /* SubscriberListModel.swift */,
-				916AE8212922A706007CCDE7 /* SubscriberModel.swift */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		9142D79A292CEB3500D9BB7C /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				91E4777C292BECD100AFC26E /* NotificationList.swift */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		9142D79C292CEC2700D9BB7C /* TabBarComponent */ = {
-			isa = PBXGroup;
-			children = (
-				9109F2662935E84D00DDE54B /* WebView */,
-				918CDB5929391638000C016E /* Home */,
-				91B73FDC28F83EEE005159AD /* Subscribe */,
-				91E47775292BD1E000AFC26E /* Notification */,
-				9123228A290916AC00C204A8 /* Profile */,
-			);
-			path = TabBarComponent;
-			sourceTree = "<group>";
-		};
-		916AE8232922A878007CCDE7 /* SubscriberService */ = {
-			isa = PBXGroup;
-			children = (
-				916AE8242922A89D007CCDE7 /* SubscriberService.swift */,
-				916AE8262922A8F6007CCDE7 /* AddRequest.swift */,
-			);
-			path = SubscriberService;
 			sourceTree = "<group>";
 		};
 		916AEB9028F1675F000B2DA0 = {
@@ -329,16 +231,13 @@
 		916AEB9B28F1675F000B2DA0 /* iOS_Velog */ = {
 			isa = PBXGroup;
 			children = (
-				917C40CB294749FF004146F0 /* iOS_VelogDebug.entitlements */,
-				91C276FE2917A12400F5F53B /* Moya */,
+				91C276FE2917A12400F5F53B /* Network */,
 				9172F29E291633ED00C6C890 /* Realm */,
-				91B73FDB28F83EDB005159AD /* MainTabBar */,
-				91B73FD028F8012A005159AD /* SearchKeyword */,
-				917AA1BB28F2A8B9004EF8DB /* SignUp */,
-				91B73FDD28F843BB005159AD /* SignIn */,
-				917AA1BC28F2A8D8004EF8DB /* Extension */,
+				9187F3F029A5FABB00DC6524 /* Screen */,
+				9187F3E329A5F72B00DC6524 /* Global */,
 				91A15B4E28F6C75D00FA3150 /* SceneDelegate.swift */,
 				916AEB9C28F1675F000B2DA0 /* AppDelegate.swift */,
+				917C40CB294749FF004146F0 /* iOS_VelogDebug.entitlements */,
 				916AEBA528F16762000B2DA0 /* Assets.xcassets */,
 				916AEBA728F16762000B2DA0 /* LaunchScreen.storyboard */,
 				917C40C42947478C004146F0 /* GoogleService-Info.plist */,
@@ -372,8 +271,7 @@
 		917AA1BB28F2A8B9004EF8DB /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				912D2756291A2BA4004382BB /* ViewController */,
-				912D2753291A2AE1004382BB /* Model */,
+				916AEBA028F1675F000B2DA0 /* SignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -390,45 +288,118 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		918CDB5929391638000C016E /* Home */ = {
+		9187F3DA29A5F5EA00DC6524 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				918CDB572939100F000C016E /* HomeTabViewController.swift */,
-				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
-				91FFF3202939D1EB00D80859 /* Resoure */,
-				918CDB5A2939168A000C016E /* TabViewComponet */,
+				91C277142917E72A00F5F53B /* SignUpRequest.swift */,
+				91C2771A2917EC1D00F5F53B /* SignInRequest.swift */,
+				916AE8262922A8F6007CCDE7 /* AddRequest.swift */,
+				91C35508293DE8B40087ADD1 /* DeleteTag.swift */,
+				91FFF31E2939CF2D00D80859 /* AddTag.swift */,
+				91C277182917EB0600F5F53B /* SignInModel.swift */,
+				91C277162917E86600F5F53B /* SignUpModel.swift */,
+				9191602729256BE200497AC9 /* userList.swift */,
+				916827A8292A487A00DDA369 /* PostData.swift */,
+				916827A6292A2FCA00DDA369 /* PostModel.swift */,
+				914A26E72937CF6E00F67BA0 /* urlList.swift */,
+				91755F1A29233C24005C94D7 /* SubscriberListModel.swift */,
+				916AE8212922A706007CCDE7 /* SubscriberModel.swift */,
+				91FFF3212939D1FA00D80859 /* userTag.swift */,
+				91FFF32A2939DD9300D80859 /* TagPostData.swift */,
+				91FFF3282939DCA500D80859 /* TagPostModel.swift */,
+				91DA86F4293B9FB9005084A2 /* TagUrlList.swift */,
 			);
-			path = Home;
+			path = DTO;
 			sourceTree = "<group>";
 		};
-		918CDB5A2939168A000C016E /* TabViewComponet */ = {
+		9187F3DB29A5F61800DC6524 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				91FFF32C2939E3BF00D80859 /* TagPostCell.swift */,
-				91E694F72933D523000E312B /* HomeViewController.swift */,
-				91FFF32F2939E5F900D80859 /* SearchTag */,
-				91FFF32E2939E5E500D80859 /* TagList */,
+				91C277102917CCF100F5F53B /* SignServices.swift */,
+				916AE8242922A89D007CCDE7 /* SubscriberService.swift */,
+				91FFF31C2939CE9800D80859 /* TagService.swift */,
 			);
-			path = TabViewComponet;
+			path = Router;
 			sourceTree = "<group>";
 		};
-		91B73FD028F8012A005159AD /* SearchKeyword */ = {
+		9187F3DC29A5F63C00DC6524 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				91B73FD128F80142005159AD /* SearchKeywordViewController.swift */,
-				912322852909010900C204A8 /* SearchViewController.swift */,
+				9187F3DD29A5F6CB00DC6524 /* SignAPI.swift */,
+				9187F3DF29A5F6D400DC6524 /* SubscriberAPI.swift */,
+				9187F3E129A5F6E400DC6524 /* TagAPI.swift */,
 			);
-			path = SearchKeyword;
+			path = API;
 			sourceTree = "<group>";
 		};
-		91B73FDB28F83EDB005159AD /* MainTabBar */ = {
+		9187F3E329A5F72B00DC6524 /* Global */ = {
 			isa = PBXGroup;
 			children = (
 				911A1A56293F218B00D1C3CD /* LoadingViewController.swift */,
-				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
-				9142D79C292CEC2700D9BB7C /* TabBarComponent */,
+				9187F3E429A5F74100DC6524 /* NetworkCheck */,
+				917AA1BC28F2A8D8004EF8DB /* Extension */,
 			);
-			path = MainTabBar;
+			path = Global;
+			sourceTree = "<group>";
+		};
+		9187F3E429A5F74100DC6524 /* NetworkCheck */ = {
+			isa = PBXGroup;
+			children = (
+				91D0649B294477FC00E99C7C /* Reachability.swift */,
+			);
+			path = NetworkCheck;
+			sourceTree = "<group>";
+		};
+		9187F3ED29A5F93E00DC6524 /* PostWebView */ = {
+			isa = PBXGroup;
+			children = (
+				91178E042934803B00A9BDE7 /* PostWebViewController.swift */,
+			);
+			path = PostWebView;
+			sourceTree = "<group>";
+		};
+		9187F3EE29A5FA4200DC6524 /* TagTable */ = {
+			isa = PBXGroup;
+			children = (
+				91FFF3252939D5AF00D80859 /* TagTableCell.swift */,
+				9187F3EB29A5F8B700DC6524 /* TagViewController.swift */,
+			);
+			path = TagTable;
+			sourceTree = "<group>";
+		};
+		9187F3EF29A5FA7500DC6524 /* TagPostCard */ = {
+			isa = PBXGroup;
+			children = (
+				91FFF32C2939E3BF00D80859 /* TagPostCell.swift */,
+				9187F3E729A5F85100DC6524 /* HomeViewController.swift */,
+			);
+			path = TagPostCard;
+			sourceTree = "<group>";
+		};
+		9187F3F029A5FABB00DC6524 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				91B73FD328F83D53005159AD /* CustomTabBarViewController.swift */,
+				918CDB5929391638000C016E /* Home */,
+				91B73FDC28F83EEE005159AD /* Subscribe */,
+				91E47775292BD1E000AFC26E /* Notification */,
+				9123228A290916AC00C204A8 /* Profile */,
+				9187F3ED29A5F93E00DC6524 /* PostWebView */,
+				917AA1BB28F2A8B9004EF8DB /* SignUp */,
+				91B73FDD28F843BB005159AD /* SignIn */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		918CDB5929391638000C016E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9187F3E529A5F83B00DC6524 /* HomeTabViewController.swift */,
+				9187F3EF29A5FA7500DC6524 /* TagPostCard */,
+				9187F3EE29A5FA4200DC6524 /* TagTable */,
+				9187F3E929A5F87F00DC6524 /* AddTagViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		91B73FDC28F83EEE005159AD /* Subscribe */ = {
@@ -436,10 +407,9 @@
 			children = (
 				91E47772292BAC6500AFC26E /* TabViewController.swift */,
 				915020142949C9480055DED8 /* SubscriberPostWebView.swift */,
-				9142D798292CEB0D00D9BB7C /* Resource */,
+				9123228C2909181900C204A8 /* SearchSubscribeViewController.swift */,
 				912D275A291A2CAF004382BB /* SubScribePost */,
 				9170F13E291549040056E182 /* SubscribeList */,
-				912D275B291A2CC9004382BB /* SearchSubScribe */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -447,85 +417,30 @@
 		91B73FDD28F843BB005159AD /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				912D2759291A2C58004382BB /* ViewController */,
-				912D2758291A2C4A004382BB /* Model */,
+				91B73FDE28F84405005159AD /* SignInViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
 		};
-		91C276FE2917A12400F5F53B /* Moya */ = {
+		91C276FE2917A12400F5F53B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				91DA86F6293BA056005084A2 /* BaseURL.swift */,
-				91FFF31B2939CE8000D80859 /* TagService */,
-				916AE8232922A878007CCDE7 /* SubscriberService */,
-				912D275E291A2DE3004382BB /* SignInUpService */,
+				91EA53B829A4EC24007AB248 /* BaseURL.swift */,
+				9187F3DC29A5F63C00DC6524 /* API */,
+				9187F3DB29A5F61800DC6524 /* Router */,
+				9187F3DA29A5F5EA00DC6524 /* DTO */,
 			);
-			path = Moya;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		91E47775292BD1E000AFC26E /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				9142D79A292CEB3500D9BB7C /* Resource */,
-				91E4777F292BF3C700AFC26E /* ViewController */,
-				91E4777E292BF3BA00AFC26E /* TableCell */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
-		91E4777E292BF3BA00AFC26E /* TableCell */ = {
-			isa = PBXGroup;
-			children = (
+				91E4777C292BECD100AFC26E /* NotificationList.swift */,
+				91E47776292BD20400AFC26E /* NotificationViewController.swift */,
 				91E4777A292BEAE500AFC26E /* NotificationTableViewCell.swift */,
 			);
-			path = TableCell;
-			sourceTree = "<group>";
-		};
-		91E4777F292BF3C700AFC26E /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				91E47776292BD20400AFC26E /* NotificationViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		91FFF31B2939CE8000D80859 /* TagService */ = {
-			isa = PBXGroup;
-			children = (
-				91FFF31C2939CE9800D80859 /* TagService.swift */,
-				91FFF31E2939CF2D00D80859 /* AddTag.swift */,
-				91C35508293DE8B40087ADD1 /* DeleteTag.swift */,
-			);
-			path = TagService;
-			sourceTree = "<group>";
-		};
-		91FFF3202939D1EB00D80859 /* Resoure */ = {
-			isa = PBXGroup;
-			children = (
-				91FFF3212939D1FA00D80859 /* userTag.swift */,
-				91FFF32A2939DD9300D80859 /* TagPostData.swift */,
-				91FFF3282939DCA500D80859 /* TagPostModel.swift */,
-				91DA86F4293B9FB9005084A2 /* TagUrlList.swift */,
-			);
-			path = Resoure;
-			sourceTree = "<group>";
-		};
-		91FFF32E2939E5E500D80859 /* TagList */ = {
-			isa = PBXGroup;
-			children = (
-				91FFF3252939D5AF00D80859 /* TagTableCell.swift */,
-				918CDB5329390A59000C016E /* TagViewController.swift */,
-			);
-			path = TagList;
-			sourceTree = "<group>";
-		};
-		91FFF32F2939E5F900D80859 /* SearchTag */ = {
-			isa = PBXGroup;
-			children = (
-				918CDB5529390D36000C016E /* AddTagViewController.swift */,
-			);
-			path = SearchTag;
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -631,24 +546,26 @@
 				916AE8252922A89D007CCDE7 /* SubscriberService.swift in Sources */,
 				91B73FDF28F84405005159AD /* SignInViewController.swift in Sources */,
 				91D342AC294066EB00251C56 /* UIViewController.swift in Sources */,
+				9187F3E229A5F6E400DC6524 /* TagAPI.swift in Sources */,
 				91FFF31F2939CF2D00D80859 /* AddTag.swift in Sources */,
 				91C277112917CCF100F5F53B /* SignServices.swift in Sources */,
+				9187F3EC29A5F8B700DC6524 /* TagViewController.swift in Sources */,
 				91C7997F29485FEF0029AC10 /* isUser.swift in Sources */,
 				915020152949C9480055DED8 /* SubscriberPostWebView.swift in Sources */,
 				91DA86F5293B9FB9005084A2 /* TagUrlList.swift in Sources */,
 				91FFF3292939DCA500D80859 /* TagPostModel.swift in Sources */,
 				9191602829256BE200497AC9 /* userList.swift in Sources */,
 				916AE8272922A8F6007CCDE7 /* AddRequest.swift in Sources */,
+				9187F3DE29A5F6CB00DC6524 /* SignAPI.swift in Sources */,
 				914A26E82937CF6E00F67BA0 /* urlList.swift in Sources */,
+				9187F3EA29A5F87F00DC6524 /* AddTagViewController.swift in Sources */,
 				91C35509293DE8B40087ADD1 /* DeleteTag.swift in Sources */,
 				916827A9292A487B00DDA369 /* PostData.swift in Sources */,
 				91A15B4F28F6C75D00FA3150 /* SceneDelegate.swift in Sources */,
 				91FFF32B2939DD9300D80859 /* TagPostData.swift in Sources */,
 				91C277172917E86600F5F53B /* SignUpModel.swift in Sources */,
 				916AEBA128F1675F000B2DA0 /* SignUpViewController.swift in Sources */,
-				91DA86F7293BA056005084A2 /* BaseURL.swift in Sources */,
 				91ACBB0329479B930079B358 /* Profile.swift in Sources */,
-				91B73FD228F80142005159AD /* SearchKeywordViewController.swift in Sources */,
 				91D0649C294477FC00E99C7C /* Reachability.swift in Sources */,
 				91C277192917EB0600F5F53B /* SignInModel.swift in Sources */,
 				917AA1C028F2A93C004EF8DB /* UITextField+.swift in Sources */,
@@ -660,13 +577,11 @@
 				91B73FDA28F83DB1005159AD /* ProfileViewController.swift in Sources */,
 				91FFF31D2939CE9800D80859 /* TagService.swift in Sources */,
 				9172F2A02916340600C6C890 /* Subscriber.swift in Sources */,
-				918CDB5429390A59000C016E /* TagViewController.swift in Sources */,
+				9187F3E829A5F85100DC6524 /* HomeViewController.swift in Sources */,
 				91FFF32D2939E3BF00D80859 /* TagPostCell.swift in Sources */,
-				91E694F82933D523000E312B /* HomeViewController.swift in Sources */,
 				91E47773292BAC6500AFC26E /* TabViewController.swift in Sources */,
 				91C277152917E72A00F5F53B /* SignUpRequest.swift in Sources */,
 				9170F14029154A720056E182 /* CustomCell.swift in Sources */,
-				912322862909010900C204A8 /* SearchViewController.swift in Sources */,
 				916827A7292A2FCA00DDA369 /* PostModel.swift in Sources */,
 				91C2771B2917EC1D00F5F53B /* SignInRequest.swift in Sources */,
 				91E4777B292BEAE500AFC26E /* NotificationTableViewCell.swift in Sources */,
@@ -676,15 +591,16 @@
 				9116104F292CB99200AC1627 /* SubScribeTableViewController.swift in Sources */,
 				917AA1CC28F46BB4004EF8DB /* UIView+.swift in Sources */,
 				91178E052934803B00A9BDE7 /* PostWebViewController.swift in Sources */,
-				918CDB582939100F000C016E /* HomeTabViewController.swift in Sources */,
-				918CDB5629390D36000C016E /* AddTagViewController.swift in Sources */,
+				91EA53B929A4EC24007AB248 /* BaseURL.swift in Sources */,
 				91B5CF1A294DCD44008EE4F8 /* notificationForNewPost.swift in Sources */,
 				91FFF3222939D1FA00D80859 /* userTag.swift in Sources */,
 				911A1A57293F218B00D1C3CD /* LoadingViewController.swift in Sources */,
 				9123228D2909181900C204A8 /* SearchSubscribeViewController.swift in Sources */,
+				9187F3E029A5F6D400DC6524 /* SubscriberAPI.swift in Sources */,
 				917AA1C428F46053004EF8DB /* UIColor+.swift in Sources */,
 				916AE8222922A706007CCDE7 /* SubscriberModel.swift in Sources */,
 				9109F2652935E1B500DDE54B /* PostCell.swift in Sources */,
+				9187F3E629A5F83B00DC6524 /* HomeTabViewController.swift in Sources */,
 				917AA1C628F465B3004EF8DB /* UIStackView+.swift in Sources */,
 				9172F2A22916358900C6C890 /* RealmService.swift in Sources */,
 			);

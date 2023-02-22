@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  iOS_Velog
 //
-//  Created by 홍준혁 on 2022/11/28.
+//  Created by 홍준혁 on 2023/02/22.
 //
 
 import Foundation
@@ -28,13 +28,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-    
-//        getTagPostDataServer()
-        print("HomeView")
-        // 데이터 띄우기 직전 뷰에서 서버 통신해서 데이터 미리 받아놓아야 한다!!
-//        getPostDataServer()
-//        getServerTag()
-//        getTagPostDataServer()
         
         tableViewForTagPost.register(TagPostCell.self, forCellReuseIdentifier: TagPostCell.identifier)
         tableViewForTagPost.delegate = self
